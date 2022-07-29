@@ -1,10 +1,10 @@
-//#include<iostream>
-//#include<string>
-//int main()
-//{
-//	//¾²Ì¬¶ÏÑÔ±àÒëÆ÷¼ì²â£¬¼õÉÙ¿ªÏú
-//	//static_assert(³£Á¿±í´ïÊ½Ìõ¼ş,"ÌáÊ¾µÄ×Ö·û´®"),ÎªÕæ¼ÌĞø£¬Îª¼Ù¾ÍÌáÊ¾´íÎó
-//	static_assert(sizeof(void*) == 4, "64Î»ÏµÍ³²»Ö§³Ö");
-//	std::cout << "hello C++" << std::endl;
-//	return 0;
-//}
+ï»¿#include<iostream>
+#include<string>
+int main()
+{
+	//é™æ€æ–­è¨€ç¼–è¯‘å™¨æ£€æµ‹ï¼Œå‡å°‘å¼€é”€
+	//static_assert(å¸¸é‡è¡¨è¾¾å¼æ¡ä»¶,"æç¤ºçš„å­—ç¬¦ä¸²"),ä¸ºçœŸç»§ç»­ï¼Œä¸ºå‡å°±æç¤ºé”™è¯¯
+	static_assert(sizeof(void*) == 4, "64ä½ç³»ç»Ÿä¸æ”¯æŒ");
+	std::cout << "hello C++" << std::endl;
+	return 0;
+}

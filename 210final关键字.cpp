@@ -1,30 +1,30 @@
-//#include<iostream>
-//using namespace std;
-//
-//#if 0
-////×èÖ¹ÀàµÄ½øÒ»²½ÅÉÉú£¬Ğéº¯ÊıµÄ½øÒ»²½ÖØĞ´£¬µÚ¾ÅĞĞ±¨´í
-//class A1 final//¼ÓÉÏfinal£¬Ö¸¶¨A1²»ÄÜÅÉÉú
-//{
-//	int a;
-//};
-//class A2 :public A1	//err£¬»ùÀà²»ÄÜÔÙÅÉÉúÁË
-//{
-//
-//};
-//#endif
-////»ùÀà
-//class B1
-//{
-//public:
-//	virtual void func()final{}
-//};
-////ÅÉÉúÀàÖØĞ´»ùÀàµÄĞéº¯Êı
-//class B2 :public B1
-//{
-//	//virtual void func(){}//err,»ùÀàÖĞ×îÖÕ°æ±¾µÄĞéº¯Êı£¬²»ÄÜÔÚÖØĞ´
-//};
-//int main()
-//{
-//
-//	return 0;
-//}
+ï»¿#include<iostream>
+using namespace std;
+
+#if 0
+//é˜»æ­¢ç±»çš„è¿›ä¸€æ­¥æ´¾ç”Ÿï¼Œè™šå‡½æ•°çš„è¿›ä¸€æ­¥é‡å†™ï¼Œç¬¬ä¹è¡ŒæŠ¥é”™
+class A1 final//åŠ ä¸Šfinalï¼ŒæŒ‡å®šA1ä¸èƒ½æ´¾ç”Ÿ
+{
+	int a;
+};
+class A2 :public A1	//errï¼ŒåŸºç±»ä¸èƒ½å†æ´¾ç”Ÿäº†
+{
+
+};
+#endif
+//åŸºç±»
+class B1
+{
+public:
+	virtual void func()final {}
+};
+//æ´¾ç”Ÿç±»é‡å†™åŸºç±»çš„è™šå‡½æ•°
+class B2 :public B1
+{
+	//virtual void func(){}//err,åŸºç±»ä¸­æœ€ç»ˆç‰ˆæœ¬çš„è™šå‡½æ•°ï¼Œä¸èƒ½åœ¨é‡å†™
+};
+int main()
+{
+
+	return 0;
+}

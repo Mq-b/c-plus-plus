@@ -1,35 +1,35 @@
-//#include<iostream>
-//#include<string>
-//using namespace std;
-//
-//template<class T>void func(const T&)
-//{
-//	cout << "const T &" << endl;
-//}
-//
-//template<class T>void func(T&)
-//{
-//	cout << "T &" << endl;
-//}
-//
-//template<class T>void func(T&&)
-//{
-//	cout << "T &&" << endl;
-//}
-//
-//template<class T>void forward_val(T &&temp)//²ÎÊıÎªÓÒÖµÒıÓÃ
-//{
-//	//±£´æ²ÎÊıµÄ×óÖµÓÒÖµÊôĞÔ
-//	func(std::forward<T>(temp));
-//}
-//
-//int main()
-//{
-//	int a = 0;
-//	const int& b = 1;
-//	forward_val(a);//T &
-//	forward_val(b);//const T &
-//	forward_val(111);//const T &&
-//	forward_val(std::move(10));//const T &&		ÕâÁ½¸öÏàÍ¬µÄ£¬¼Ó²»¼Ómove¶¼ÊÇÓÒÖµ
-//	return 0;
-//}
+ï»¿#include<iostream>
+#include<string>
+using namespace std;
+
+template<class T>void func(const T&)
+{
+	cout << "const T &" << endl;
+}
+
+template<class T>void func(T&)
+{
+	cout << "T &" << endl;
+}
+
+template<class T>void func(T&&)
+{
+	cout << "T &&" << endl;
+}
+
+template<class T>void forward_val(T&& temp)//å‚æ•°ä¸ºå³å€¼å¼•ç”¨
+{
+	//ä¿å­˜å‚æ•°çš„å·¦å€¼å³å€¼å±æ€§
+	func(std::forward<T>(temp));
+}
+
+int main()
+{
+	int a = 0;
+	const int& b = 1;
+	forward_val(a);//T &
+	forward_val(b);//const T &
+	forward_val(111);//const T &&
+	forward_val(std::move(10));//const T &&		è¿™ä¸¤ä¸ªç›¸åŒçš„ï¼ŒåŠ ä¸åŠ moveéƒ½æ˜¯å³å€¼
+	return 0;
+}

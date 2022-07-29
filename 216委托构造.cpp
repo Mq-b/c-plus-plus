@@ -1,33 +1,33 @@
-//#include<iostream>
-//using namespace std;
-//
-//class Test
-//{
-//public:
-//	//Î¯ÍĞ¹¹Ôì£¬Ò»¶¨ÒªÍ¨¹ı³õÊ¼»¯ÁĞ±í·½Ê½
-//	Test() :Test(1, 'a')
-//	{
-//
-//	}
-//
-//	Test(int x) :a(x)
-//	{
-//
-//	}
-//
-//	Test(int x,int y) :a(x),b(y)
-//	{
-//
-//	}
-//
-//	int a;
-//	char b;
-//};
-//int main()
-//{
-//	Test a;//Î¯ÍĞ¹¹Ôì
-//	cout << a.a << " " << a.b << endl;
-//	Test b(10);
-//	cout << b.a << " " << b.b << endl;
-//	return 0;
-//}
+ï»¿#include<iostream>
+using namespace std;
+
+class Test
+{
+public:
+	//å§”æ‰˜æ„é€ ï¼Œä¸€å®šè¦é€šè¿‡åˆå§‹åŒ–åˆ—è¡¨æ–¹å¼
+	Test() :Test(1, 'a')
+	{
+
+	}
+
+	Test(int x) :a(x)
+	{
+
+	}
+
+	Test(int x, int y) :a(x), b(y)
+	{
+
+	}
+
+	int a;
+	char b;
+};
+int main()
+{
+	Test a;//å§”æ‰˜æ„é€ 
+	cout << a.a << " " << a.b << endl;
+	Test b(10);
+	cout << b.a << " " << b.b << endl;
+	return 0;
+}

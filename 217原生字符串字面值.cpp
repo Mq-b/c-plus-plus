@@ -1,16 +1,16 @@
-//#define  _CRT_SECURE_NO_WARNINGS
-//#include<iostream>
-//#include<string>
-//using namespace std;
-//
-//int main()
-//{
-//	//Ëù¼û¼´ËùµÃ
-//	cout << R"(hello,\n
-//		word)";
-//	string str = R"(hello\4\r
-//	abc,mike
-//	hello\n)";
-//	cout << str;
-//	return 0;
-//}
+ï»¿#define  _CRT_SECURE_NO_WARNINGS
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	//æ‰€è§å³æ‰€å¾—
+	cout << R"(hello,\n
+		word)";
+	string str = R"(hello\4\r
+	abc,mike
+	hello\n)";
+	cout << str;
+	return 0;
+}

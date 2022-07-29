@@ -1,20 +1,20 @@
-//#include<iostream>
-//#include<string>
-//#include<memory>
-//using namespace std;
-//int main()
-//{
-//	shared_ptr<int>sp1(new int(11));
-//	shared_ptr<int>sp2(sp1);//ºÍunique_ptr²»Í¬£¬ÔÊĞí¿½±´¹¹Ôì,ÓĞÁ½¸ö¶ÔÏóºÍ¶ÑÇø°ó¶¨
-//
-//	cout << "num=" << sp2.use_count() << endl;//´òÓ¡¼ÆÊıÆ÷£¬Ò²¾ÍÊÇÓĞ¶àÉÙ¸ö¶ÔÏóºÍ¶ÑÇø°ó¶¨ÁË
-//
-//	//ÊÍ·ÅÕâ¸öÖÇÄÜÖ¸ÕëºÍ¶ÑÇøµÄ°ó¶¨£¬Ã»ÓĞÊÍ·Å¶ÑÇøÄÚ´æ£¬ÎŞ·¨Í¨¹ısp1²Ù×÷¶ÑÇøÄÚ´æ
-//	sp1.reset();
-//	cout << "num=" << sp2.use_count() << endl;
-//
-//	//ÊÍ·Åsq2£¬µ±¼ÆÊıÆ÷µÄÖµÎª0£¬¶ÑÇø¿Õ¼ä¾Í»áÊÍ·Å
-//	sp2.reset();
-//	cout << "num=" << sp2.use_count() << endl;
-//	return 0;
-//}
+ï»¿#include<iostream>
+#include<string>
+#include<memory>
+using namespace std;
+int main()
+{
+	shared_ptr<int>sp1(new int(11));
+	shared_ptr<int>sp2(sp1);//å’Œunique_pträ¸åŒï¼Œå…è®¸æ‹·è´æ„é€ ,æœ‰ä¸¤ä¸ªå¯¹è±¡å’Œå †åŒºç»‘å®š
+
+	cout << "num=" << sp2.use_count() << endl;//æ‰“å°è®¡æ•°å™¨ï¼Œä¹Ÿå°±æ˜¯æœ‰å¤šå°‘ä¸ªå¯¹è±¡å’Œå †åŒºç»‘å®šäº†
+
+	//é‡Šæ”¾è¿™ä¸ªæ™ºèƒ½æŒ‡é’ˆå’Œå †åŒºçš„ç»‘å®šï¼Œæ²¡æœ‰é‡Šæ”¾å †åŒºå†…å­˜ï¼Œæ— æ³•é€šè¿‡sp1æ“ä½œå †åŒºå†…å­˜
+	sp1.reset();
+	cout << "num=" << sp2.use_count() << endl;
+
+	//é‡Šæ”¾sq2ï¼Œå½“è®¡æ•°å™¨çš„å€¼ä¸º0ï¼Œå †åŒºç©ºé—´å°±ä¼šé‡Šæ”¾
+	sp2.reset();
+	cout << "num=" << sp2.use_count() << endl;
+	return 0;
+}
