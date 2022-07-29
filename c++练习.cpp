@@ -3458,7 +3458,7 @@ int main()
 #include<iostream>
 class Test {
 public:
-	Test(int i) :a(i) {}
+	Test(int i) :a(i) {};
 	int a = 0;
 };
 auto a()->Test
