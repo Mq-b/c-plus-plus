@@ -3455,16 +3455,3 @@ int main()
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
 //}
-#include<iostream>
-class Test {
-public:
-	Test(int i) :a(i) {};
-	int a = 0;
-};
-auto a()->Test
-{
-	return 5;
-}
-int main() {
-
-}
