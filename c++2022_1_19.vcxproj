@@ -601,6 +601,7 @@
     <ClCompile Include="306c++11内联命名空间.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="307任意进制转10进制.cpp" />
     <ClCompile Include="30c++面向对象编程，全局区.cpp" />
     <ClCompile Include="31栈区.cpp" />
     <ClCompile Include="32堆区new.cpp" />

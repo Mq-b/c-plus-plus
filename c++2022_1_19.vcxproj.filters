@@ -939,6 +939,9 @@
     <ClCompile Include="306c++11内联命名空间.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="307任意进制转10进制.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
