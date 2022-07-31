@@ -951,6 +951,12 @@
     <ClCompile Include="310union类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="311懒汉单例(线程不安全).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="312饿汉单例.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
