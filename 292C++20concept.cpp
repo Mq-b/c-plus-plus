@@ -1,17 +1,17 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<type_traits>
 template<typename T>
-concept Integral = std::is_integral<T>::value;//·µ»ØboolÀàĞÍ£¬¸ù¾İÊÇ·ñÎªintegral
+concept Integral = std::is_integral<T>::value;//è¿”å›boolç±»å‹ï¼Œæ ¹æ®æ˜¯å¦ä¸ºintegral
 
 template<Integral T>
 T inc(T a)
 {
-    return ++a;
+	return ++a;
 }
 
 int main(int argc, const char* argv[])
 {
-    int a = 0;
-    std::cout << inc(a) << std::endl;
-    return 0;
+	int a = 0;
+	std::cout << inc(a) << std::endl;
+	return 0;
 }
