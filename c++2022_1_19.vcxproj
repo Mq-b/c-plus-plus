@@ -291,7 +291,9 @@
     <ClCompile Include="200set容器算法.cpp" />
     <ClCompile Include="201transform算法.cpp" />
     <ClCompile Include="202cout_cin的格式.cpp" />
-    <ClCompile Include="203decltype关键字的使用.cpp" />
+    <ClCompile Include="203decltype关键字的使用.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="204Lambda函数.cpp" />
     <ClCompile Include="205可变参数模板.cpp" />
     <ClCompile Include="206partition算法forward_list容器.cpp" />
@@ -423,8 +425,8 @@
     <ClCompile Include="248addressoff()获取任意对象类型的地址.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="249c++元组.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    <ClCompile Include="249c++tuple元组.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="24结构体数组.cpp" />
     <ClCompile Include="250bitset 容器.cpp">
@@ -613,6 +615,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="30c++面向对象编程，全局区.cpp" />
+    <ClCompile Include="310union类.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="31栈区.cpp" />
     <ClCompile Include="32堆区new.cpp" />
     <ClCompile Include="33new操作符.cpp" />

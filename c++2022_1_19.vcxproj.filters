@@ -765,7 +765,7 @@
     <ClCompile Include="248addressoff()获取任意对象类型的地址.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="249c++元组.cpp">
+    <ClCompile Include="249c++tuple元组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="250bitset 容器.cpp">
@@ -946,6 +946,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="309volatile修饰符.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="310union类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
