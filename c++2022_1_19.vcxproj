@@ -291,7 +291,7 @@
     <ClCompile Include="200set容器算法.cpp" />
     <ClCompile Include="201transform算法.cpp" />
     <ClCompile Include="202cout_cin的格式.cpp" />
-    <ClCompile Include="203新增函数声明语法和decltype关键字.cpp" />
+    <ClCompile Include="203decltype关键字的使用.cpp" />
     <ClCompile Include="204Lambda函数.cpp" />
     <ClCompile Include="205可变参数模板.cpp" />
     <ClCompile Include="206partition算法forward_list容器.cpp" />
