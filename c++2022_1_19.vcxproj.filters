@@ -945,6 +945,9 @@
     <ClCompile Include="308位域.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="309volatile修饰符.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">

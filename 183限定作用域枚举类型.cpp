@@ -1,98 +1,20 @@
-//#include<iostream>
-//#include<iomanip>
-//#include<string>
-//#include"conio.h"
-//#include"windows.h"
-//#include<vector>
-//#include<Windows.h>
-//using namespace std;
-//
-////·½ÏòÃ¶¾Ù
-////ÏŞ¶¨×÷ÓÃÓòÃ¶¾ÙÀàĞÍ!!!
-////1¡¢Ã¶¾ÙÀàĞÍÖĞÃ¶¾Ù³ÉÔ±µÄÀàĞÍ¿ÉÒÔÏÔÊ½Ö¸¶¨£¬Ö¸¶¨·½Ê½ÊÇÔÚÃ¶¾ÙÀàĞÍÃû³Æºó¼ÓÃ°ºÅºÍÃ¶¾Ù³ÉÔ±ÀàĞÍ¡£
-//enum class MOVE :int
-//{
-//
-//	UP = 72,//ÏòÉÏ
-//	DOWN = 80,//ÏòÏÂ
-//	LEFT = 75,//Ïò×ó
-//	RIGHT = 77//ÏòÓÒ
-//};
-//
-//int main()
-//{
-//
-//	HANDLE hOut;
-//	COORD pos = { 1,1 };
-//	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-//	CONSOLE_CURSOR_INFO CursorInfo;
-//	GetConsoleCursorInfo(hOut, &CursorInfo);//»ñÈ¡¿ØÖÆÌ¨¹â±êĞÅÏ¢
-//	CursorInfo.bVisible = false; //Òş²Ø¿ØÖÆÌ¨¹â±ê
-//	SetConsoleCursorInfo(hOut, &CursorInfo);//ÉèÖÃ¿ØÖÆÌ¨¹â±ê×´Ì¬
-//
-//	int x = 0;
-//	int y = 0;
-//	char c;
-//	while (true)
-//	{
-//		c = _getch();
-//		switch (c)
-//		{
-//		case (int)MOVE::UP: //ÉÏ 
-//		{
-//			if (x > 1)
-//			{
-//				x--;
-//			}
-//			break;
-//		}
-//		case (int)MOVE::DOWN://ÏÂ
-//		{
-//			if (x < 8)
-//			{
-//				x++;
-//			}
-//			break;
-//		}
-//		case (int)MOVE::LEFT://×ó
-//		{
-//			if (y > 1)
-//			{
-//				y--;
-//			}
-//			break;
-//		}
-//		case (int)MOVE::RIGHT://ÓÒ
-//		{
-//			if (y < 8)
-//			{
-//				y++;
-//			}
-//			break;
-//		}
-//		}
-//		for (int i = 0; i < 10; i++)
-//		{
-//			for (int j = 0; j < 10; j++)
-//			{
-//				if (i == 9 || i == 0 || j == 9 || j == 0 || (i == y && j == x))
-//				{
-//					pos.X = i * 2;
-//					pos.Y = j;
-//					SetConsoleCursorPosition(hOut, pos);
-//					cout << "¡ö";
-//				}
-//				else
-//				{
-//					pos.X = i * 2;
-//					pos.Y = j;
-//					SetConsoleCursorPosition(hOut, pos);
-//					cout << "  ";
-//				}
-//			}
-//			cout << endl;
-//		}
-//	}
-//	system("pause");
-//	return 0;
-//}
+ï»¿#include<iostream>
+#include<iomanip>
+#include<iostream>
+#include<vector>
+//é™å®šä½œç”¨åŸŸæšä¸¾ç±»å‹!!!
+//1ã€æšä¸¾ç±»å‹ä¸­æšä¸¾æˆå‘˜çš„ç±»å‹å¯ä»¥æ˜¾å¼æŒ‡å®šï¼ŒæŒ‡å®šæ–¹å¼æ˜¯åœ¨æšä¸¾ç±»å‹åç§°ååŠ å†’å·å’Œæšä¸¾æˆå‘˜ç±»å‹ã€‚
+enum class move :int	//è¿™ä¸ªintå…¶å®ä¹Ÿæ²¡å•¥ç”¨
+{
+
+	up = 72,//å‘ä¸Š
+	down = 80,//å‘ä¸‹
+	left = 75,//å‘å·¦
+	right = 77//å‘å³
+};
+
+int main()
+{
+	std::cout << static_cast<int>(move::down) << std::endl;
+	std::cout << static_cast<uint32_t>(move::down) << std::endl;
+}
