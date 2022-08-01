@@ -957,6 +957,12 @@
     <ClCompile Include="312饿汉单例.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="313clock()计时函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="314GetTickCount()计时函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
