@@ -1,10 +1,10 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<string>
-void f(auto&& x)//string¶ÔÏóÎÞ·¨°ó¶¨ÓÒÖµÒýÓÃ£¬auto×Ô¶¯È¥µôÁËÒ»¸ö&£¬ËùÒÔÊµ¼ÊÊÇÆÕÍ¨µÄ×óÖµÒýÓÃ
+void f(auto&& x)//stringå¯¹è±¡æ— æ³•ç»‘å®šå³å€¼å¼•ç”¨ï¼Œautoè‡ªåŠ¨åŽ»æŽ‰äº†ä¸€ä¸ª&ï¼Œæ‰€ä»¥å®žé™…æ˜¯æ™®é€šçš„å·¦å€¼å¼•ç”¨
 {
-	auto p = &x; 
-	auto q = std::addressof(x); 
-	x = "¹þ¹þ¹þ";
+	auto p = &x;
+	auto q = std::addressof(x);
+	x = "å“ˆå“ˆå“ˆ";
 	std::cout << typeid(p).name() << std::endl;
 	std::cout << typeid(q).name() << std::endl;
 }
@@ -16,6 +16,6 @@ int main()
 	std::cout << name << std::endl;
 	return 0;
 }
-/*º¯ÊýÄ£°åstd::addressof<>()»á·µ»ØÒ»¸ö¶ÔÏó»òÕßº¯ÊýµÄ×¼È·µØÖ·¡£¼´Ê¹Ò»¸ö¶ÔÏóÖØÔØÁËÔËËã
-·û&Ò²ÊÇÕâÑù¡£ËäÈ»ºóÕßÖÐµÄÇé¿öºÜÉÙÓöµ½£¬µ«ÊÇÒ²»á·¢Éú£¨±ÈÈçÔÚÖÇÄÜÖ¸ÕëÖÐ£©¡£Òò´Ë£¬
-Èç¹ûÐèÒª»ñµÃÈÎÒâÀàÐÍµÄ¶ÔÏóµÄµØÖ·£¬ÄÇÃ´ÍÆ¼öÊ¹ÓÃaddressof()£º*/
+/*å‡½æ•°æ¨¡æ¿std::addressof<>()ä¼šè¿”å›žä¸€ä¸ªå¯¹è±¡æˆ–è€…å‡½æ•°çš„å‡†ç¡®åœ°å€ã€‚å³ä½¿ä¸€ä¸ªå¯¹è±¡é‡è½½äº†è¿ç®—
+ç¬¦&ä¹Ÿæ˜¯è¿™æ ·ã€‚è™½ç„¶åŽè€…ä¸­çš„æƒ…å†µå¾ˆå°‘é‡åˆ°ï¼Œä½†æ˜¯ä¹Ÿä¼šå‘ç”Ÿï¼ˆæ¯”å¦‚åœ¨æ™ºèƒ½æŒ‡é’ˆä¸­ï¼‰ã€‚å› æ­¤ï¼Œ
+å¦‚æžœéœ€è¦èŽ·å¾—ä»»æ„ç±»åž‹çš„å¯¹è±¡çš„åœ°å€ï¼Œé‚£ä¹ˆæŽ¨èä½¿ç”¨addressof()ï¼š*/
