@@ -45,5 +45,6 @@ int main() {
 	std::cout << a.m << std::endl;
 
 	a.test();		//由此可见，function可以绑定任意的泛型lambda
+
 }
 //lambda是一个匿名类，重载了operator()且有template，所以可以这样做，详情看232
