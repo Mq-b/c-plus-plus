@@ -636,7 +636,12 @@
     <ClCompile Include="316map的function绑定泛型lambda函数式编程.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="317atomic_flag.cpp" />
+    <ClCompile Include="317atomic_flag.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="318保证先后一致次序的操作序列.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="31栈区.cpp" />
     <ClCompile Include="32堆区new.cpp" />
     <ClCompile Include="33new操作符.cpp" />

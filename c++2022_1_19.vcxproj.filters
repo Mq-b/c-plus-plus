@@ -972,6 +972,9 @@
     <ClCompile Include="317atomic_flag.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="318保证先后一致次序的操作序列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
