@@ -966,6 +966,9 @@
     <ClCompile Include="315strtol任意进制字符串转10进制整形.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="316map的function绑定泛型lambda函数式编程.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
