@@ -633,7 +633,10 @@
     <ClCompile Include="315strtol任意进制字符串转10进制整形.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="316map的function绑定泛型lambda函数式编程.cpp" />
+    <ClCompile Include="316map的function绑定泛型lambda函数式编程.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="317atomic_flag.cpp" />
     <ClCompile Include="31栈区.cpp" />
     <ClCompile Include="32堆区new.cpp" />
     <ClCompile Include="33new操作符.cpp" />

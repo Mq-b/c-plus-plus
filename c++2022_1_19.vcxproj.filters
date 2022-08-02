@@ -969,6 +969,9 @@
     <ClCompile Include="316map的function绑定泛型lambda函数式编程.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="317atomic_flag.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
