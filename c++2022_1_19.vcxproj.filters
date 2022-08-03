@@ -984,6 +984,9 @@
     <ClCompile Include="321获取-释放次序.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="322any与泛型lambda.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">

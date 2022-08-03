@@ -649,7 +649,10 @@
     <ClCompile Include="320多个线程上的宽松原子操作.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="321获取-释放次序.cpp" />
+    <ClCompile Include="321获取-释放次序.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="322any与泛型lambda.cpp" />
     <ClCompile Include="32堆区new.cpp" />
     <ClCompile Include="33new操作符.cpp" />
     <ClCompile Include="34引用.cpp" />
