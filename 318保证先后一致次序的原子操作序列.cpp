@@ -37,7 +37,7 @@ int main() {
 	d.join();
 
 	assert(z.load() != 0);
-	std::cout << z << std::endl;
+	std::cout << z << std::endl;//至少为1
 }
 /*
 	若某项操作被标记为std::memory_order_seq_cst，则编译器和CPU必须严格遵守源代码逻辑流程的先后顺序。在相同线程上，以该操作为界，其后方的任何操作不得重新编排到它前面，而前方的任何操作
