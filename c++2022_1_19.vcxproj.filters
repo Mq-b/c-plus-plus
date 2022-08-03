@@ -972,10 +972,13 @@
     <ClCompile Include="317atomic_flag.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="318保证先后一致次序的原子操作序列.cpp">
+    <ClCompile Include="318保证先后一致次序的原子操作次序.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="319宽松原子操作.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="320多个线程上的宽松原子操作.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

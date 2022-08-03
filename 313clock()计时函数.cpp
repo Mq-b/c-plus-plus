@@ -3,7 +3,7 @@ int main()
 {
 	double start, end, cost;
 	start = clock();
-	_sleep(100);
+	_sleep(1);
 	end = clock();
 	cost = end - start;
 	printf("%f\n", start);
