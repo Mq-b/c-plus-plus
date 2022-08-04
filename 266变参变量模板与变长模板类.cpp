@@ -1,19 +1,18 @@
-#include<iostream>
-//±ä³¤Ä£°åÀàÕÛµş±í´ïÊ½½â°ü
+ï»¿#include<iostream>
+//å˜é•¿æ¨¡æ¿ç±»æŠ˜å è¡¨è¾¾å¼è§£åŒ…
 template<auto... args>
 struct Mul
 {
 	constexpr static auto value = (... * args);
 };
 
-//±ä²Î±äÁ¿Ä£°å,ÕÛµş±í´ïÊ½½â°ü
+//å˜å‚å˜é‡æ¨¡æ¿,æŠ˜å è¡¨è¾¾å¼è§£åŒ…
 template<auto... args>
 constexpr auto Mul_ = (...*args);
 
 int main() {
 	std::cout << Mul<5, 6, 7, 8, 10.0>::value << std::endl;
 
-	std::cout << Mul_<5, 6, 7, 8, 10.0> << std::endl;
+	std::cout << Mul_<5, 6, 7, 8, 10.0> << std::endl;		//gccä¸Šåªèƒ½æ˜¯ä¸€ä¸ªç±»å‹ï¼Œ10.0è¿™ç§æ˜¯ä¸è¡Œçš„
 
-	system("pause");
 }

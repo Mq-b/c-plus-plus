@@ -1,5 +1,5 @@
-//#include<iostream>
-////ÉèÖÃÍË³öÌõ¼þ
+ï»¿//#include<iostream>
+////è®¾ç½®é€€å‡ºæ¡ä»¶
 //void show(){}
 //template<typename T,typename ...Args>
 //void show(T v, Args... args)
@@ -16,14 +16,14 @@
 //	test01();
 //	return 0;
 //}
-////±¾ÖÊÉÏÊÇµÝ¹éµ÷ÓÃ£¬º¯Êý9¸ö²½Öè£¬´«µÝÍê²ÎÊýºó¿ªÊ¼Êä³ö£¬ËÄÂÖ£¬È»ºóÃ»ÓÐÊý¾ÝÁË¾Í½øÈë½áÊøµÄÖØÔØº¯Êý£¬Ö´ÐÐÍêºó
-////¿ªÊ¼½áÊø£¬ÏúÕ»£¬Ïú»ÙÕ»ÇøÒ²ÊÇËÄÂÖ£¬Ïà·´Ë³Ðò¡£
-////c++ prime plus P670Ãæ£¬ÕâÖÖ²Ù×÷»¹ÓÐºÜ¶àÓÃ·¨.
+////æœ¬è´¨ä¸Šæ˜¯é€’å½’è°ƒç”¨ï¼Œå‡½æ•°9ä¸ªæ­¥éª¤ï¼Œä¼ é€’å®Œå‚æ•°åŽå¼€å§‹è¾“å‡ºï¼Œå››è½®ï¼Œç„¶åŽæ²¡æœ‰æ•°æ®äº†å°±è¿›å…¥ç»“æŸçš„é‡è½½å‡½æ•°ï¼Œæ‰§è¡Œå®ŒåŽ
+////å¼€å§‹ç»“æŸï¼Œé”€æ ˆï¼Œé”€æ¯æ ˆåŒºä¹Ÿæ˜¯å››è½®ï¼Œç›¸åé¡ºåºã€‚
+////c++ prime plus P670é¢ï¼Œè¿™ç§æ“ä½œè¿˜æœ‰å¾ˆå¤šç”¨æ³•.
 
-////ÕâÊÇÆÕÍ¨µÄ¿É±ä²ÎÊý£¬²»ÄÜ½ÓÊÕÈÎÒâÀàÐÍ£¬ÊÇc·ç¸ñµÄ
+////è¿™æ˜¯æ™®é€šçš„å¯å˜å‚æ•°ï¼Œä¸èƒ½æŽ¥æ”¶ä»»æ„ç±»åž‹ï¼Œæ˜¯cé£Žæ ¼çš„
 //#include<iostream>
 //#include<cstdarg>
-////¿É±ä²ÎÊýµÄº¯Êý
+////å¯å˜å‚æ•°çš„å‡½æ•°
 //void vair_fun(int count, ...)
 //{
 //    va_list args;
@@ -38,15 +38,15 @@
 //
 //int main()
 //{
-//    //¿É±ä²ÎÊýÓÐ 4 ¸ö£¬·Ö±ðÎª 10¡¢20¡¢30¡¢40
+//    //å¯å˜å‚æ•°æœ‰ 4 ä¸ªï¼Œåˆ†åˆ«ä¸º 10ã€20ã€30ã€40
 //    vair_fun(4, 10, 20, 30, 40);
 //    return 0;
 //}
 
-////´¿´¿µÄc++11·ç¸ñµÄ¿É±ä²ÎÊýÄ£°å
+////çº¯çº¯çš„c++11é£Žæ ¼çš„å¯å˜å‚æ•°æ¨¡æ¿
 //#include <iostream>
 //using namespace std;
-////Ä£°åº¯ÊýµÝ¹éµÄ³ö¿Ú
+////æ¨¡æ¿å‡½æ•°é€’å½’çš„å‡ºå£
 //void vir_fun() {
 //
 //}
@@ -55,7 +55,7 @@
 //void vir_fun(T argc, args... argv)
 //{
 //    cout << argc << endl;
-//    //¿ªÊ¼µÝ¹é£¬½«µÚÒ»¸ö²ÎÊýÍâµÄ argv ²ÎÊý°üÖØÐÂ´«µÝ¸ø vir_fun
+//    //å¼€å§‹é€’å½’ï¼Œå°†ç¬¬ä¸€ä¸ªå‚æ•°å¤–çš„ argv å‚æ•°åŒ…é‡æ–°ä¼ é€’ç»™ vir_fun
 //    vir_fun(argv...);
 //}
 //
