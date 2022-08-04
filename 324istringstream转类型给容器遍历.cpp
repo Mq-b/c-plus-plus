@@ -11,6 +11,5 @@ auto main()->int {
 	int i(0);
 	while (out >> i)//遍历放入容器
 		V.push_back(i);
-
 	std::ranges::copy(V, std::ostream_iterator<int>(std::cout, " "));
 }
