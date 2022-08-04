@@ -661,6 +661,9 @@
     <ClCompile Include="324istringstream转类型给容器遍历.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="325io优化.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="32堆区new.cpp" />
     <ClCompile Include="33new操作符.cpp" />
     <ClCompile Include="34引用.cpp" />
