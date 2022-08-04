@@ -990,6 +990,9 @@
     <ClCompile Include="323C++17visit.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="324istringstream转类型给容器遍历.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
