@@ -667,7 +667,12 @@
     <ClCompile Include="326string_literals内预定义字面量后缀运算符与字符串字面量运算符模板.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="327栅栏令宽松原子操作服从一定的次序.cpp" />
+    <ClCompile Include="327栅栏令宽松原子操作服从一定的次序.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="328向非原子操作服从内存次序.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="32堆区new.cpp" />
     <ClCompile Include="33new操作符.cpp" />
     <ClCompile Include="34引用.cpp" />
