@@ -996,6 +996,9 @@
     <ClCompile Include="325io优化.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="326string_literals内预定义字面量后缀运算符与字符串字面量运算符模板.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
