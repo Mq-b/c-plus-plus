@@ -7,12 +7,12 @@ std::atomic<bool>x(false), y(false);
 std::atomic<int>z(0);
 void write_x_then_y() {
 	x.store(true, std::memory_order_relaxed);	//宽松
-	std::atomic_thread_fence(std::memory_order_release);	//加入释放栅栏，设置当前线程中的读或写不能被重排到此存储“后”，后面那句就是y
+	std::atomic_thread_fence(std::memory_order_release);	//加入释放栅栏，限制了原子操作前面的指令不能重排到 release 之“后”，后就是设置y，设置y的那指令为std::memory_order_release
 	y.store(true, std::memory_order_relaxed);
 }
 void read_y_then_x() {
 	while (!y.load(std::memory_order_relaxed));	//宽松
-	std::atomic_thread_fence(std::memory_order_acquire);	//获取栅栏 设置当前线程中读或写不能被重排到此加载“前”，前面那句也是y
+	std::atomic_thread_fence(std::memory_order_acquire);	//获取栅栏 设置当前线程中读或写不能被重排到此加载“前”，前面那句指令也就是y，设置y的指令为std::memory_order_acquire
 	if (x.load(std::memory_order_relaxed))
 		++z;
 }
@@ -34,4 +34,11 @@ auto main()->int {
 
 /*释放和获取栅栏都相当于重新设置y的操作次序*/
 
-/*栅栏的运作思路是:若存储操作处于释放栅栏后面，而存储操作的结果也为获取操作所见，则该释放栅栏与获取操作同步*/
+void test() {
+	//std::atomic_thread_fence(std::memory_order_release);		//如果将栅栏写到这里将毫无意义，因为相当于给x为std::memory_order_release，x前面没有指令，没有限制任何东西，x可以重排到y后面
+	x.store(true, std::memory_order_relaxed);
+	std::atomic_thread_fence(std::memory_order_release);	//栅栏
+	y.store(true, std::memory_order_relaxed);
+}
+
+/*不要带入栅栏视角，它只是个无情的更改原子操作次序的工具*/
