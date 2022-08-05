@@ -999,6 +999,9 @@
     <ClCompile Include="326string_literals内预定义字面量后缀运算符与字符串字面量运算符模板.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="327栅栏令宽松原子操作服从一定的次序.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
