@@ -16,10 +16,10 @@ struct Test {	//Test是字面量类型，因为A和char都是字面量类型，�
 	char p[N * 2 - 1]{};
 	constexpr Test(char const(&pp)[N])//数组引用，N的值自动推导
 	{
-		std::ranges::copy(pp, p);//将字符串字面量拷贝给p
-		std::ranges::copy(pp, p + N - 1);//再拷贝一次，拷贝到p的后方
+		std::ranges::copy(pp, p);
+		std::ranges::copy(pp, p + N - 1);
 	};
-	constexpr int getN()noexcept { return N; }
+	constexpr int getN()const noexcept { return N; }	//字面量类型内部的函数都必须是constexpr
 };
 
 template<Test A>//字符串字面量运算符模板只能以字面量类型作为类型，如Test
