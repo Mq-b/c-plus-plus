@@ -8,7 +8,7 @@ class threadsafe_queue {
 private:
 	struct node {
 		std::shared_ptr<T>data;
-		std::unique_ptr<T>next;
+		std::unique_ptr<node>next;
 	};
 	std::mutex head_mutex;
 	std::unique_ptr<node>head;
@@ -37,7 +37,7 @@ public:
 		return old_head ? old_head->data : std::shared_ptr<T>();
 	}
 	void push(T new_value) {
-		std::shared_ptr<T>new_data(std::make_shared<T>(std::move(new_value)));
+		std::shared_ptr<T>new_data(std::make_shared<T>(new_value));
 		std::unique_ptr<node>p(new node);
 		node* const new_tail = p.get();
 		std::lock_guard<std::mutex>tail_lock(tail_mutex);
@@ -46,3 +46,9 @@ public:
 		tail = new_tail;
 	}
 };
+int main() {
+	threadsafe_queue<int>t;
+	t.push(10);
+	auto i = t.try_pop();
+	std::cout << *i << std::endl;
+}
