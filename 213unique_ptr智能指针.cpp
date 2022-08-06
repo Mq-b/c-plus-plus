@@ -2,6 +2,12 @@
 #include<string>
 #include<memory>//智能指针头文件
 using namespace std;
+
+struct node {
+	int data;
+	node* next;
+};
+
 int main()
 {
 	unique_ptr<int>up1(new int(11));//创建指针对象同时初始化
@@ -28,7 +34,10 @@ int main()
 	cout << "p=" << *p << endl;
 	//需要手动释放
 	delete p;
-	return 0;
+
+	unique_ptr<node>n(new node);	//处理自定义数据类型
+	(*n).data = 100;
+	std::cout << "n.get()->data = " << n.get()->data << std::endl;
 }
 //移动构造后原来的智能指针不能再操控它的内存了，是野指针
 //释放控制权后的智能指针不能再操控了，且需要手动释放
