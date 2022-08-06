@@ -1008,6 +1008,9 @@
     <ClCompile Include="329带有精细粒度锁的线程安全队列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="330C++11hash的使用与quoted.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
