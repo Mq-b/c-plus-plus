@@ -1011,6 +1011,12 @@
     <ClCompile Include="330C++11hash的使用与quoted.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="331线程安全链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="332unique_copy与back_inserter后端插入.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">

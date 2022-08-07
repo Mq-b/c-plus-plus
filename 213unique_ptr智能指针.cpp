@@ -37,7 +37,7 @@ int main()
 
 	unique_ptr<node>n(new node);	//处理自定义数据类型
 	(*n).data = 100;
-	std::cout << "n.get()->data = " << n.get()->data << std::endl;
+	std::cout << "n.get()->data = " << n->data << std::endl;
 }
 //移动构造后原来的智能指针不能再操控它的内存了，是野指针
 //释放控制权后的智能指针不能再操控了，且需要手动释放
