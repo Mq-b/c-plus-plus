@@ -1,26 +1,26 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
-//1¡¢±ä³¤Ä£°åÉùÃ÷
+//1ã€å˜é•¿æ¨¡æ¿å£°æ˜
 template<auto...last>
 class Test
 {
 
 };
-//2¡¢±ä³¤Ä£°åÀà¶¨Òå
+//2ã€å˜é•¿æ¨¡æ¿ç±»å®šä¹‰
 template<auto first, auto...last>
 class Test<first, last...>
 {
 public:
 	static const auto val = first * Test<last...>::val;
 };
-//±ß½çÌõ¼ş
+//è¾¹ç•Œæ¡ä»¶
 template<>
 class Test<>
 {
 public:
 	static const auto val = 1;
 };
-//±ä³¤Ä£°åÀàÕÛµş±í´ïÊ½½â°ü
+//å˜é•¿æ¨¡æ¿ç±»æŠ˜å è¡¨è¾¾å¼è§£åŒ…
 template<auto... args>
 struct Mul
 {
@@ -29,7 +29,7 @@ struct Mul
 
 template<auto... args>
 constexpr auto Mul_ = (...*args);
-//¼ÆËã¿É±ä²ÎÊı¸öÊı,Í¬Ê±´òÓ¡´«ÈëµÄÖµ£¬µİ¹é
+//è®¡ç®—å¯å˜å‚æ•°ä¸ªæ•°,åŒæ—¶æ‰“å°ä¼ å…¥çš„å€¼ï¼Œé€’å½’
 void func() {}
 template<class T, class ...argv>
 void func(T num, argv...args)
@@ -50,4 +50,4 @@ int main()
 	//func(10, 1, "jjj");
 	return 0;
 }
-//µİ¹é·½Ê½µÄ½â°üÒ»¶¨Òª°Ñ³ö¿ÚĞ´ÔÚÄ£°åÉÏÃæ
+//é€’å½’æ–¹å¼çš„è§£åŒ…ä¸€å®šè¦æŠŠå‡ºå£å†™åœ¨æ¨¡æ¿ä¸Šé¢

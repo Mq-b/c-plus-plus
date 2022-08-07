@@ -1,15 +1,15 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 class A
 {
 public:
-	//µÚÒ»¸öĞéº¯Êı(ÕâÀïÊÇ´¿Ğéº¯Êı)£¬Ã»ÓĞÖØĞ´£¬²»ÄÜÓÃvoerrideĞŞÊÎ
+	//ç¬¬ä¸€ä¸ªè™šå‡½æ•°(è¿™é‡Œæ˜¯çº¯è™šå‡½æ•°)ï¼Œæ²¡æœ‰é‡å†™ï¼Œä¸èƒ½ç”¨voerrideä¿®é¥°
 	virtual void func(int a) = 0;
 };
-class B:public A
+class B :public A
 {
 public:
-	//ÔÚÖØĞ´Ğéº¯ÊıµÄµØ·½¼ÓÉÏoverride£¬ÒªÇóÖØĞ´µÄĞéº¯ÊıºÍ»ùÀàÒ»Ä£Ò»Ñù£¬²»È»ÎŞ·¨Í¨¹ı±àÒë
+	//åœ¨é‡å†™è™šå‡½æ•°çš„åœ°æ–¹åŠ ä¸Šoverrideï¼Œè¦æ±‚é‡å†™çš„è™šå‡½æ•°å’ŒåŸºç±»ä¸€æ¨¡ä¸€æ ·ï¼Œä¸ç„¶æ— æ³•é€šè¿‡ç¼–è¯‘
 	virtual void func()override
 	{
 
@@ -17,5 +17,5 @@ public:
 };
 int main()
 {
-	
+
 }

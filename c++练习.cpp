@@ -3455,3 +3455,8 @@ int main()
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
 //}
+//#include<iostream>
+//int main() {
+//	const char* str = "ABCDEFG";
+//	fwrite(str, 1, 8, stdout);
+//}

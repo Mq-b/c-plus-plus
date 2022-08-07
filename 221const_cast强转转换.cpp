@@ -1,11 +1,11 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<string>
-//c++ÖĞÒ»µ©const¾ø¶ÔÎŞ·¨ĞŞ¸Ä
+//c++ä¸­ä¸€æ—¦constç»å¯¹æ— æ³•ä¿®æ”¹
 int main()
 {
 	const int n = 10;
-	int* p = const_cast<int*>(&n);//Ç¿ÖÆÈ¥µôconstÊôĞÔ
-	*p = 2;						//µ«ÊÇÔÚc++11ÒÀ¾ÉÎŞ·¨ĞŞ¸Ä£¬¿ÉÒÔ±àÒëÍ¨¹ı£¬½ûÖ¹Ö´ĞĞ
+	int* p = const_cast<int*>(&n);//å¼ºåˆ¶å»æ‰constå±æ€§
+	*p = 2;						//ä½†æ˜¯åœ¨c++11ä¾æ—§æ— æ³•ä¿®æ”¹ï¼Œå¯ä»¥ç¼–è¯‘é€šè¿‡ï¼Œç¦æ­¢æ‰§è¡Œ
 	std::cout << n << std::endl;
 	return 0;
 }
