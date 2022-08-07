@@ -1017,6 +1017,9 @@
     <ClCompile Include="332unique_copy与back_inserter后端插入.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="333四种类型转换.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">

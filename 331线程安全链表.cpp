@@ -45,7 +45,8 @@ private:
 		node* current = &head;
 		std::unique_lock<std::mutex>lk(head.m);
 		while (node* const next = current->next.get()) {
-			std::unique_ptr
+			std::unique_lock<std::mutex>next_lk(next->m);
 		}
 	}
 };
+/*没写完*/
