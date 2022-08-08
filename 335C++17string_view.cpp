@@ -29,3 +29,5 @@ int main() {
 	func(view);
 }
 /* string_view是只读的，同时它能带来更高的性能 */
+
+/* https://zh.cppreference.com/w/cpp/string/basic_string_view */
