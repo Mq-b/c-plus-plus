@@ -1023,6 +1023,9 @@
     <ClCompile Include="334source_location.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="335C++17string_view.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
