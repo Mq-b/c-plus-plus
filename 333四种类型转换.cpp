@@ -55,7 +55,7 @@ int main() {
 	ff2->print();
 #endif
 
-	/* 使用dynamic_cast转换毫不相干的类型 非常危险不推荐使用*/
+	/* 使用reinterpret_cast转换毫不相干的类型 非常危险*/
 	int* p = new int(5);
 	uint64_t p_val = reinterpret_cast<uint64_t>(p);		/* 指针转换为整形 */
 

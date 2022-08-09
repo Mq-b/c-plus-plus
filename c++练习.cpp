@@ -3459,4 +3459,3 @@ int main()
 //int main() {
 //	const char* str = "ABCDEFG";
 //	fwrite(str, 1, 8, stdout);
-//}

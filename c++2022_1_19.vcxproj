@@ -695,7 +695,10 @@
     <ClCompile Include="335C++17string_view.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="336进程线程CPU时间片轮转.cpp" />
+    <ClCompile Include="336进程线程CPU时间片轮转.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="337聚合初始化与聚合类.cpp" />
     <ClCompile Include="33new操作符.cpp" />
     <ClCompile Include="34引用.cpp" />
     <ClCompile Include="35引用做函数参数.cpp" />

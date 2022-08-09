@@ -1029,6 +1029,9 @@
     <ClCompile Include="336进程线程CPU时间片轮转.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="337聚合初始化与聚合类.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
