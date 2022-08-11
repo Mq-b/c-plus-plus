@@ -1032,6 +1032,12 @@
     <ClCompile Include="337聚合初始化与聚合类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="338遍历tuple.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="339less与包装可变参数版min.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
