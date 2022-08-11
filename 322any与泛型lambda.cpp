@@ -6,7 +6,11 @@
 int main() {
 
 	auto a = [](auto a, auto b) {return a + b; };
-	using Type = decltype(a);	//获得泛型lambda的类型
+	a(10, 20);					//我们能直接使用a可以猜测是lambda类返回了自己的对象
+	using Type = decltype(a);	//获得泛型lambda的类型 lambda是一个匿名类
+	auto i = Type()(10, 20);	//这相当于直接先构造了一个对象，然后调用了operator()
+	std::cout<<i<<std::endl;
+
 	std::vector<std::any>V;
 	V.push_back(a);		//将泛型lambda插入到容器中，any 类为任何可复制构造类型的单个值描述了一个类型安全的容器。
 

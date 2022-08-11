@@ -17,7 +17,7 @@ void func(Test::T num) {
 		std::cout << num / 10 << "," << num % 10 << std::endl;
 	}
 }
-auto operator | (Test::T a, Test::T b) {
+constexpr auto operator | (Test::T a, Test::T b) {
 	return Test::T(a * 10 + b);
 }
 int main() {
