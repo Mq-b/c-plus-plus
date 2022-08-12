@@ -22,5 +22,10 @@ int main() {
 
 	V.push_back(100);	//any可以接收任何类型
 	std::cout << std::any_cast<int>(V[1]) << std::endl;	//使用std::any_cast将类型转换回来即可
+
+	int b = 0;
+	double c;
+	auto a = [=]() {std::cout << b << c << std::endl; };
+	std::cout << sizeof a << std::endl;									//16，这不是空类，它有着捕获的成员变量，同时遵守正常的内存对齐
 }
-//不能对进行了捕获的lambda进行这些操作 不管是& 还是=
+//不能对进行了捕获的lambda调用构造函数 不管是& 还是=
