@@ -7,6 +7,7 @@ public:
 	};
 	int a=0;
 };
+
 int main() {
 	Test::T a;
 	a.a = 100;

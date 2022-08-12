@@ -924,7 +924,7 @@
     <ClCompile Include="301C++11thread_local关键字.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="302logic_error.cpp">
+    <ClCompile Include="302logic_error抛出异常信息.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="303allocarot空间配置器、.cpp">
