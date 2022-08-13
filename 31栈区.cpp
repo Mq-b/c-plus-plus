@@ -1,17 +1,17 @@
 //#include<iostream>
 //using namespace std;
 //
-////Õ»Çø×¢ÒâÊÂÏî ²»Òª·µ»Ø¾Ö²¿±äÁ¿µÄµØÖ·£¡£¡ÏÂ·½´íÎóÊ¾·¶
-//int* fun(int b)//ÐÎ²ÎÊý¾ÝÒ²»á·ÅÔÚÕ»Çø
+////æ ˆåŒºæ³¨æ„äº‹é¡¹ ä¸è¦è¿”å›žå±€éƒ¨å˜é‡çš„åœ°å€ï¼ï¼ä¸‹æ–¹é”™è¯¯ç¤ºèŒƒ
+//int* fun(int b)//å½¢å‚æ•°æ®ä¹Ÿä¼šæ”¾åœ¨æ ˆåŒº
 //{
-//	int a = 10;//¾Ö²¿±äÁ¿ ´æ·ÅÔÚÕ»Çø£¬Õ»ÇøµÄÊý¾ÝÔÚº¯ÊýÖ´ÐÐÍê×Ô¶¯ÊÍ·Å
-//	return &a;//·µ»ØÇø¾Ö±äÁ¿µÄµØÖ·
+//	int a = 10;//å±€éƒ¨å˜é‡ å­˜æ”¾åœ¨æ ˆåŒºï¼Œæ ˆåŒºçš„æ•°æ®åœ¨å‡½æ•°æ‰§è¡Œå®Œè‡ªåŠ¨é‡Šæ”¾
+//	return &a;//è¿”å›žåŒºå±€å˜é‡çš„åœ°å€
 //}
 //int main()
 //{
-//	//½ÓÊÕfunº¯ÊýµÄ·µ»ØÖµ
+//	//æŽ¥æ”¶funå‡½æ•°çš„è¿”å›žå€¼
 //	int* p = fun(1);
-//	cout << *p << endl;//µÚÒ»´Î¿ÉÒÔ´òÓ¡ÕýÈ·µÄÊý×Ö£¬ÊÇÒòÎª±àÒëÆ÷×öÁË±£Áô
-//	cout << *p << endl;//µÚ¶þ´Î²»ÔÙ±£ÁôÁË
+//	cout << *p << endl;//ç¬¬ä¸€æ¬¡å¯ä»¥æ‰“å°æ­£ç¡®çš„æ•°å­—ï¼Œæ˜¯å› ä¸ºç¼–è¯‘å™¨åšäº†ä¿ç•™
+//	cout << *p << endl;//ç¬¬äºŒæ¬¡ä¸å†ä¿ç•™äº†
 //	return 0;
 //}

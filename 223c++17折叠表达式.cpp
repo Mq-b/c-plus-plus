@@ -1,23 +1,23 @@
 #include<iostream>
 template<typename... Args>
 auto left_sub(Args&&... args) {
-    return (... - args);//×óÕÛµş
+    return (... - args);//å·¦æŠ˜å 
 }
 
 template<typename... Args>
 auto right_sub(Args&&... args) {
-    return (args - ...);//ÓÒÕÛµş
+    return (args - ...);//å³æŠ˜å 
 }
 
 template<typename...Args>
 auto print(Args&&...args) {
-    (std::cout << ... << args) << std::endl;//´òÓ¡Êä³öµÄÕÛµş±í´ïÊ½µÃÊ¹ÓÃĞ¡À¨ºÅ
+    (std::cout << ... << args) << std::endl;//æ‰“å°è¾“å‡ºçš„æŠ˜å è¡¨è¾¾å¼å¾—ä½¿ç”¨å°æ‹¬å·
 }
 int main() {
     auto a = left_sub(2, 3, 4);  // ((2 - ) -3 ) - 4) = -5
     auto b = right_sub(2, 3, 4); // (2 - (3 - 4)) = 3
     std::cout << a << "," << b << std::endl;
 
-    print(1, 2, 3, 4, 5, 6,"¹ş¹ş¹ş");
+    print(1, 2, 3, 4, 5, 6,"å“ˆå“ˆå“ˆ");
 }
-//ÕâÖÖ¿É±Èc++11µÄ¿É±ä²ÎÊıÄ£°åÒªºÃµÄ¶à
+//è¿™ç§å¯æ¯”c++11çš„å¯å˜å‚æ•°æ¨¡æ¿è¦å¥½çš„å¤š

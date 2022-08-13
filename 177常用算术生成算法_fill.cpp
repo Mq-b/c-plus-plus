@@ -17,10 +17,10 @@
 //
 //	vector<int> v;
 //	v.resize(10);
-//	//Ìî³ä
+//	//å¡«å……
 //	fill(v.begin(), v.end(), 100);
 //
-//	for_each(v.begin(), v.end(), myPrint());//±éÀúÊä³ö
+//	for_each(v.begin(), v.end(), myPrint());//éå†è¾“å‡º
 //	cout << endl;
 //}
 //
@@ -32,14 +32,14 @@
 //
 //	return 0;
 //}
-//¶ÔÊı×é²Ù×÷
-//#include <numeric>//Ìá¹©fillËã·¨
+//å¯¹æ•°ç»„æ“ä½œ
+//#include <numeric>//æä¾›fillç®—æ³•
 //#include<iostream>
 //using namespace std;
 //int main()
 //{
 //	int a[10] = { 0 };
-//	fill(a, a + 10,1000);//Ìî³äº¯Êı
+//	fill(a, a + 10,1000);//å¡«å……å‡½æ•°
 //	for (int i = 0; i < 10; i++)cout << a[i] << " ";
 //}
-//ÀûÓÃfill½«ÈİÆ÷Çø¼äÄÚÔªËØÌî³äÎªÖ¸¶¨µÄÖµ
+//åˆ©ç”¨fillå°†å®¹å™¨åŒºé—´å†…å…ƒç´ å¡«å……ä¸ºæŒ‡å®šçš„å€¼

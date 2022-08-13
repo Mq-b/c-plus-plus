@@ -1,17 +1,17 @@
 //#include<iostream>
 //#include<string>
 //using namespace std;
-////½¨ÖşÎïÀà
+////å»ºç­‘ç‰©ç±»
 //class Building
 //{
-//	//goodGayÈ«¾Öº¯ÊıÊÇBuildingºÃÅóÓÑ£¬¿ÉÒÔ·ÃÎÊBuildingË½ÓĞ³ÉÔ±
+//	//goodGayå…¨å±€å‡½æ•°æ˜¯Buildingå¥½æœ‹å‹ï¼Œå¯ä»¥è®¿é—®Buildingç§æœ‰æˆå‘˜
 //	 friend void gooGay(Building& building);
 //
 //public:
 //	Building()
 //	{
-//		m_SittingRoom = "¿ÍÌü";//¿ÍÌü
-//		m_BedRoom = "ÎÔÊÒ";//
+//		m_SittingRoom = "å®¢å…";//å®¢å…
+//		m_BedRoom = "å§å®¤";//
 //	}
 //public:
 //	string m_SittingRoom;
@@ -19,12 +19,12 @@
 //	string m_BedRoom;
 //};
 //
-////È«¾Öº¯Êı
+////å…¨å±€å‡½æ•°
 //void gooGay(Building& building)
 //{
-//	cout << "ºÃ»ùÓÑµÄÈ«¾Öº¯Êı	ÕıÔÚ·ÃÎÊ£º" << building.m_SittingRoom << endl;
+//	cout << "å¥½åŸºå‹çš„å…¨å±€å‡½æ•°	æ­£åœ¨è®¿é—®ï¼š" << building.m_SittingRoom << endl;
 //
-//	cout << "ºÃ»ùÓÑµÄÈ«¾Öº¯Êı	ÕıÔÚ·ÃÎÊ£º" << building.m_BedRoom << endl;
+//	cout << "å¥½åŸºå‹çš„å…¨å±€å‡½æ•°	æ­£åœ¨è®¿é—®ï¼š" << building.m_BedRoom << endl;
 //
 //}
 //

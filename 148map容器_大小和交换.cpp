@@ -1,7 +1,7 @@
 //#include<iostream>
 //using namespace std;
 //#include<map>
-////mapÈİÆ÷´óĞ¡ºÍ½»»»
+////mapå®¹å™¨å¤§å°å’Œäº¤æ¢
 //void printMap(map<int, int>& m)
 //{
 //	for (map<int, int>::iterator it = m.begin(); it != m.end(); it++)
@@ -10,7 +10,7 @@
 //	}
 //	cout << endl;
 //}
-////´óĞ¡
+////å¤§å°
 //void test01()
 //{
 //	map<int, int>m;
@@ -20,15 +20,15 @@
 //
 //	if (m.empty())
 //	{
-//		cout << "mÎª¿Õ" << endl;
+//		cout << "mä¸ºç©º" << endl;
 //	}
 //	else
 //	{
-//		cout << "m²»Îª¿Õ" << endl;
-//		cout << "m´óĞ¡Îª:" << m.size() << endl;
+//		cout << "mä¸ä¸ºç©º" << endl;
+//		cout << "må¤§å°ä¸º:" << m.size() << endl;
 //	}
 //}
-////½»»»
+////äº¤æ¢
 //void test02()
 //{
 //	map<int, int>m;
@@ -41,12 +41,12 @@
 //	m2.insert(pair<int, int>(5, 200));
 //	m2.insert(pair<int, int>(6, 300));
 //
-//	cout << "½»»»Ç°" << endl;
+//	cout << "äº¤æ¢å‰" << endl;
 //	printMap(m);
 //	printMap(m2);
 //
 //	m.swap(m2);
-//	cout << "½»»»ºó" << endl;
+//	cout << "äº¤æ¢å" << endl;
 //	printMap(m);
 //	printMap(m2);
 //}

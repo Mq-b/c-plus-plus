@@ -10,7 +10,7 @@
 //	}
 //	cout << endl;
 //}
-////vector¸³Öµ²Ù×÷
+////vectorèµ‹å€¼æ“ä½œ
 //void test01()
 //{
 //	vector<int>v1;
@@ -20,17 +20,17 @@
 //	}
 //	printVector(v1);
 //
-//	//¸³Öµ operator=
+//	//èµ‹å€¼ operator=
 //	vector<int>v2;
 //	v2 = v1;
 //	printVector(v2);
 //
 //	//assign
 //	vector<int>v3;
-//	v3.assign(v1.begin(), v1.end());//·¶Î§¸³ÖµĞĞÎª
+//	v3.assign(v1.begin(), v1.end());//èŒƒå›´èµ‹å€¼è¡Œä¸º
 //	printVector(v3);
 //
-//	//n¸öelem·½Ê½¸³Öµ
+//	//nä¸ªelemæ–¹å¼èµ‹å€¼
 //	vector<int>v4;
 //	v4.assign(10, 100);
 //	printVector(v4);

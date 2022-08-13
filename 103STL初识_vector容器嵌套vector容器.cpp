@@ -2,18 +2,18 @@
 //using namespace std;
 //#include<vector>
 //#include<string>
-////ÈİÆ÷Ç¶Ì×ÈİÆ÷
+////å®¹å™¨åµŒå¥—å®¹å™¨
 //void test01()
 //{
 //	vector<vector<int>>v;
 //
-//	//´´½¨Ğ¡ÈİÆ÷
+//	//åˆ›å»ºå°å®¹å™¨
 //	vector<int>v1;
 //	vector<int>v2;
 //	vector<int>v3;
 //	vector<int>v4;
 //
-//	//ÏòĞ¡ÈİÆ÷ÖĞÌí¼ÓÊı¾İ
+//	//å‘å°å®¹å™¨ä¸­æ·»åŠ æ•°æ®
 //	for (int i = 0; i < 4; i++)
 //	{
 //		v1.push_back(i + 1);
@@ -22,13 +22,13 @@
 //		v4.push_back(i + 1);
 //	}
 //
-//	//½«Ğ¡ÈİÆ÷²åÈëµ½´óÈİÆ÷ÖĞ
+//	//å°†å°å®¹å™¨æ’å…¥åˆ°å¤§å®¹å™¨ä¸­
 //	v.push_back(v1);
 //	v.push_back(v2);
 //	v.push_back(v3);
 //	v.push_back(v4);
 //
-//	//Í¨¹ı´óÈİÆ÷£¬°ÑËùÓĞµÄÊı¾İ±éÀúÒ»±é
+//	//é€šè¿‡å¤§å®¹å™¨ï¼ŒæŠŠæ‰€æœ‰çš„æ•°æ®éå†ä¸€é
 //	for (vector<vector<int>>::iterator it = v.begin(); it != v.end(); it++)
 //	{
 //		for (vector<int>::iterator vit = (*it).begin(); vit != (*it).end(); vit++)

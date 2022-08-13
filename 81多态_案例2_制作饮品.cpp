@@ -1,18 +1,18 @@
 //#include<iostream>
 //using namespace std;
-////¶àÌ¬°¸Àı2 ÖÆ×÷ÒûÆ·Àà
+////å¤šæ€æ¡ˆä¾‹2 åˆ¶ä½œé¥®å“ç±»
 //class AbstractDrinking
 //{
 //public:
-//	//ÖóË®£¬´¿Ğéº¯Êı
+//	//ç…®æ°´ï¼Œçº¯è™šå‡½æ•°
 //	virtual void Boil() = 0;
-//	//³åÅİ
+//	//å†²æ³¡
 //	virtual void Brew() = 0;
-//	//µ¹Èë±­ÖĞ
+//	//å€’å…¥æ¯ä¸­
 //	virtual void PourInCup() = 0;
-//	//¼ÓÈë¸¨ÁÏ
+//	//åŠ å…¥è¾…æ–™
 //	virtual void putSomething() = 0;
-//	//ÖÆ×÷ÒûÆ·
+//	//åˆ¶ä½œé¥®å“
 //	void makeDerink()
 //	{
 //		Boil();
@@ -22,70 +22,70 @@
 //	}
 //};
 //
-////ÖÆ×÷¿§·È
+////åˆ¶ä½œå’–å•¡
 //class Coffee :public AbstractDrinking
 //{
 //public:
-//	//ÖóË®£¬´¿Ğéº¯Êı
+//	//ç…®æ°´ï¼Œçº¯è™šå‡½æ•°
 //	virtual void Boil()
 //	{
-//		cout << "ÖóÅ©·òÉ½Èª" << endl;
+//		cout << "ç…®å†œå¤«å±±æ³‰" << endl;
 //	}
-//	//³åÅİ
+//	//å†²æ³¡
 //	virtual void Brew()
 //	{
-//		cout << "³åÅİ¿§·È" << endl;
+//		cout << "å†²æ³¡å’–å•¡" << endl;
 //	}
-//	//µ¹Èë±­ÖĞ
+//	//å€’å…¥æ¯ä¸­
 //	virtual void PourInCup()
 //	{
-//		cout << "µ¹Èë±­ÖĞ" << endl;
+//		cout << "å€’å…¥æ¯ä¸­" << endl;
 //	}
-//	//¼ÓÈë¸¨ÁÏ
+//	//åŠ å…¥è¾…æ–™
 //	virtual void putSomething()
 //	{
-//		cout << "¼ÓÈëÅ£ÄÌºÍÌÇ" << endl;
+//		cout << "åŠ å…¥ç‰›å¥¶å’Œç³–" << endl;
 //	}
 //};
 //
-////ÖÆ×÷²èÒ¶
+////åˆ¶ä½œèŒ¶å¶
 //class Tea :public AbstractDrinking
 //{
 //public:
-//	//ÖóË®£¬´¿Ğéº¯Êı
+//	//ç…®æ°´ï¼Œçº¯è™šå‡½æ•°
 //	virtual void Boil()
 //	{
-//		cout << "Öó¿óÈªË®" << endl;
+//		cout << "ç…®çŸ¿æ³‰æ°´" << endl;
 //	}
-//	//³åÅİ
+//	//å†²æ³¡
 //	virtual void Brew()
 //	{
-//		cout << "³åÅİ²èÒ¶" << endl;
+//		cout << "å†²æ³¡èŒ¶å¶" << endl;
 //	}
-//	//µ¹Èë±­ÖĞ
+//	//å€’å…¥æ¯ä¸­
 //	virtual void PourInCup()
 //	{
-//		cout << "µ¹Èë±­ÖĞ" << endl;
+//		cout << "å€’å…¥æ¯ä¸­" << endl;
 //	}
-//	//¼ÓÈë¸¨ÁÏ
+//	//åŠ å…¥è¾…æ–™
 //	virtual void putSomething()
 //	{
-//		cout << "¼ÓÈëÄûÃÊèÛè½" << endl;
+//		cout << "åŠ å…¥æŸ æª¬æ¸æ" << endl;
 //	}
 //};
-////ÖÆ×÷º¯Êı
+////åˆ¶ä½œå‡½æ•°
 //void doWork(AbstractDrinking* abs)
 //{
 //	abs->makeDerink();
-//	delete abs;//ÊÍ·Å
+//	delete abs;//é‡Šæ”¾
 //}
 //
 //void test01()
 //{
-//	//ÖÆ×÷¿§·È
-//	doWork(new Coffee);//new´´½¨ÄÚ´æ¿Õ¼ä£¬·µ»ØÖµÊÇ¿Õ¼äµÄµØÖ·£¬º¯Êı²ÎÊıÒ²ÊÇÖ¸Õë£¬ËùÒÔÖ±½Ó´«µİ¾ÍĞĞ
+//	//åˆ¶ä½œå’–å•¡
+//	doWork(new Coffee);//newåˆ›å»ºå†…å­˜ç©ºé—´ï¼Œè¿”å›å€¼æ˜¯ç©ºé—´çš„åœ°å€ï¼Œå‡½æ•°å‚æ•°ä¹Ÿæ˜¯æŒ‡é’ˆï¼Œæ‰€ä»¥ç›´æ¥ä¼ é€’å°±è¡Œ
 //	cout << "-------------" << endl;
-//	//ÖÆ×÷²èÒ¶
+//	//åˆ¶ä½œèŒ¶å¶
 //	doWork(new Tea);
 //}
 //int main()

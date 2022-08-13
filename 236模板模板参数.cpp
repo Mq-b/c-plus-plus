@@ -5,11 +5,11 @@
 #include <queue>
 #include<deque>
 
-template<typename T, template<typename> typename Container>//Ä£°åµÄµÚ¶ş¸ö²ÎÊıÎªÄ£°å£¬Íâ²¿µÄtypename±íÊ¾ÕâÊÇÒ»¸öÀàĞÍ£¬Ä£°å£¬²»ĞèÒª±äÁ¿
+template<typename T, template<typename> typename Container>//æ¨¡æ¿çš„ç¬¬äºŒä¸ªå‚æ•°ä¸ºæ¨¡æ¿ï¼Œå¤–éƒ¨çš„typenameè¡¨ç¤ºè¿™æ˜¯ä¸€ä¸ªç±»å‹ï¼Œæ¨¡æ¿ï¼Œä¸éœ€è¦å˜é‡
 class XCls
 {
 private:
-    Container<T> c;//ÓÃÄ£°åµÄÄ£°å²ÎÊı´´½¨Ä£°å¶ÔÏó
+    Container<T> c;//ç”¨æ¨¡æ¿çš„æ¨¡æ¿å‚æ•°åˆ›å»ºæ¨¡æ¿å¯¹è±¡
 };
 template<typename T>
 class test
@@ -17,7 +17,7 @@ class test
 private:
     T t;
 };
-//Ò²¿ÉÒÔÉèÖÃÄ¬ÈÏ²ÎÊı,ÎÒÃÇ·¢ÏÖÒ»¼şÓĞÈ¤µÄÊÂÇé£¬²»ÄÜÊ¹ÓÃusing»òÕßtypedefµÄ±ğÃû,±ÈÈçstring£¬vector,Ä£°åµÄ²ÎÊı±ØĞëºÍ´«ÈëµÄÄ£°åÎÇºÏ£¬ÈçÏÂ
+//ä¹Ÿå¯ä»¥è®¾ç½®é»˜è®¤å‚æ•°,æˆ‘ä»¬å‘ç°ä¸€ä»¶æœ‰è¶£çš„äº‹æƒ…ï¼Œä¸èƒ½ä½¿ç”¨usingæˆ–è€…typedefçš„åˆ«å,æ¯”å¦‚stringï¼Œvector,æ¨¡æ¿çš„å‚æ•°å¿…é¡»å’Œä¼ å…¥çš„æ¨¡æ¿å»åˆï¼Œå¦‚ä¸‹
 template<typename T, template <class _Ty, class _Container = std::deque<_Ty>>typename Container=std::queue>
 class XCls2
 {

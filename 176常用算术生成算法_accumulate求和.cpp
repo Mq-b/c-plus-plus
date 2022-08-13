@@ -3,7 +3,7 @@
 //#include<vector>
 //#include<numeric>
 //
-////³£ÓÃËãÊõÉú³ÉËã·¨
+////å¸¸ç”¨ç®—æœ¯ç”Ÿæˆç®—æ³•
 //int main()
 //{
 //	vector<int>v;
@@ -13,18 +13,18 @@
 //		v.push_back(i);
 //	}
 //
-//	int total=accumulate(v.begin(), v.end(), 0);//0±íÊ¾³õÊ¼´Ó0¿ªÊ¼£¬Ã»ÒªÇó¾Í0
+//	int total=accumulate(v.begin(), v.end(), 0);//0è¡¨ç¤ºåˆå§‹ä»0å¼€å§‹ï¼Œæ²¡è¦æ±‚å°±0
 //
-//	cout << "total=" << total << endl;//¼ÆËã×ÜºÍ£¬ÕâÀïÊÇ1+µ½100µÄºÍ¾ÍÊÇ5050
+//	cout << "total=" << total << endl;//è®¡ç®—æ€»å’Œï¼Œè¿™é‡Œæ˜¯1+åˆ°100çš„å’Œå°±æ˜¯5050
 //	return 0;
 //}
 
-//#include<iostream>//¼ÆËãÊı×éµÄ·½Ê½
+//#include<iostream>//è®¡ç®—æ•°ç»„çš„æ–¹å¼
 //using namespace std;
-//#include<numeric>//Ìá¹©Ëã·¨
+//#include<numeric>//æä¾›ç®—æ³•
 //int main()
 //{
 //	int num[10] = { 1,2,3,4,5,6,7,8,9 ,10 };
-//	int total = accumulate(num, num + 10, 0);//×ÜºÍ£¬¼ÆËãÊı×éµÄ×ÜºÍ
+//	int total = accumulate(num, num + 10, 0);//æ€»å’Œï¼Œè®¡ç®—æ•°ç»„çš„æ€»å’Œ
 //	cout << total << endl;
 //}

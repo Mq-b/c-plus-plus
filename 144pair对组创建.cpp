@@ -1,19 +1,19 @@
 //#include<iostream>
 //using namespace std;
 //#include<string>
-////pair¶Ô×éµÄ´´½¨
+////pairå¯¹ç»„çš„åˆ›å»º
 //void test01()
 //{
-//	//µÚÒ»ÖÖ·½Ê½
+//	//ç¬¬ä¸€ç§æ–¹å¼
 //	pair<string, int>p("Tom", 20);
 //
-//	//µÚÒ»¸öÊı¾İ½Ğfirst£¬µÚ¶ş¸öÊı¾İ½Ğsecond
-//	cout << "ĞÕÃû£º" << p.first << "ÄêÁä£º" << p.second << endl;
+//	//ç¬¬ä¸€ä¸ªæ•°æ®å«firstï¼Œç¬¬äºŒä¸ªæ•°æ®å«second
+//	cout << "å§“åï¼š" << p.first << "å¹´é¾„ï¼š" << p.second << endl;
 //
-//	//µÚ¶şÖÖ·½Ê½
+//	//ç¬¬äºŒç§æ–¹å¼
 //	pair<string, int>p2 = make_pair("Jerry", 30);
 //
-//	cout << "ĞÕÃû£º" << p2.first << "ÄêÁä£º" << p2.second << endl;
+//	cout << "å§“åï¼š" << p2.first << "å¹´é¾„ï¼š" << p2.second << endl;
 //
 //}
 //
@@ -22,4 +22,4 @@
 //	test01();
 //	return 0;
 //}
-////Á½ÖÖ¶¼ĞĞ£¬¼Ç×¡¼´¿É
+////ä¸¤ç§éƒ½è¡Œï¼Œè®°ä½å³å¯

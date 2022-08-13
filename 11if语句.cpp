@@ -4,13 +4,13 @@
 //int main()
 //{
 //	int score=0;
-//	cout << "ÇëÊäÈë·ÖÊý" << endl;
+//	cout << "è¯·è¾“å…¥åˆ†æ•°" << endl;
 //	cin >> score;
-//	if (score == 100)cout << "Âú·Ö66666666" << endl;
-//	else if (score > 80)cout << "¿¼µÄ²»´í" << endl;
-//	else if (score >= 60)cout << "¼°¸ñ" << endl;
-//	else cout << "²»¼°¸ñ" << endl;
+//	if (score == 100)cout << "æ»¡åˆ†66666666" << endl;
+//	else if (score > 80)cout << "è€ƒçš„ä¸é”™" << endl;
+//	else if (score >= 60)cout << "åŠæ ¼" << endl;
+//	else cout << "ä¸åŠæ ¼" << endl;
 //	
-//	//ºÃÁËÕâ¸öÌ«¼òµ¥ÁË£¬²»¸ãÁË
+//	//å¥½äº†è¿™ä¸ªå¤ªç®€å•äº†ï¼Œä¸æžäº†
 //	return 0;
 //}

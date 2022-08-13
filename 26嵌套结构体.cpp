@@ -19,11 +19,11 @@
 //{
 //	teacher t;
 //	t.id = 10000;
-//	t.name = "小美";
+//	t.name = "灏忕編";
 //	t.age = 18;
-//	t.stu.name = "老王";
+//	t.stu.name = "鑰佺帇";
 //    t.stu.age = 16;
 //	t.stu.score = 100;
-//	//输出
+//	//杈撳嚭
 //	cout << t.id << " " << t.name << " " << t.age << " " << t.stu.name << " " << t.stu.age << " " << t.stu.score << endl;
 //}

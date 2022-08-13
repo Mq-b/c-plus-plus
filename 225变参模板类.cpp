@@ -9,15 +9,15 @@ template<class... Args1> struct zip
     template<class... Args2> struct with
     {
         typedef Tuple<Pair<Args1, Args2>...> type;
-        // Pair<Args1, Args2>... ÊÇ°üÕ¹¿ª
-        // Pair<Args1, Args2> ÊÇÄ£Ê½
+        // Pair<Args1, Args2>... æ˜¯åŒ…å±•å¼€
+        // Pair<Args1, Args2> æ˜¯æ¨¡å¼
     };
 };
 
 typedef zip<short, int>::with<unsigned short, unsigned>::type T1;
-// Pair<Args1, Args2>... »áÕ¹¿ª³É
+// Pair<Args1, Args2>... ä¼šå±•å¼€æˆ
 // Pair<short, unsigned short>, Pair<int, unsigned int> 
-// T1 ÊÇ Tuple<Pair<short, unsigned short>, Pair<int, unsigned>>
+// T1 æ˜¯ Tuple<Pair<short, unsigned short>, Pair<int, unsigned>>
 int main()
 {
 

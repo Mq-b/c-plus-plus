@@ -2,12 +2,12 @@
 //using namespace std;
 //#include<set>
 //
-////setÈİÆ÷ÅÅĞò
+////setå®¹å™¨æ’åº
 //
-//class MyCompare//·Âº¯Êı±¾ÖÊÉÏÊÇÀàĞÍ
+//class MyCompare//ä»¿å‡½æ•°æœ¬è´¨ä¸Šæ˜¯ç±»å‹
 //{
 //public:
-//	bool operator()(int v1, int v2)const//vsÖØÔØ(),Ò²¾ÍÊÇĞ´·Âº¯ÊıµÃ¼Óconst
+//	bool operator()(int v1, int v2)const//vsé‡è½½(),ä¹Ÿå°±æ˜¯å†™ä»¿å‡½æ•°å¾—åŠ const
 //	{
 //		return v1>v2;
 //	}
@@ -28,7 +28,7 @@
 //	}
 //	cout << endl;
 //
-//	//Ö¸¶¨ÅÅĞò¹æÔòÎª´Ó´óµ½Ğ¡
+//	//æŒ‡å®šæ’åºè§„åˆ™ä¸ºä»å¤§åˆ°å°
 //	set<int,MyCompare>s2;
 //
 //	s2.insert(10);
@@ -48,5 +48,5 @@
 //	test01();
 //	return 0;
 //}
-//ÀûÓÃ·Âº¯Êı¿ÉÒÔÖ¸¶¨setÈİÆ÷µÄÅÅĞò¹æÔò
+//åˆ©ç”¨ä»¿å‡½æ•°å¯ä»¥æŒ‡å®šsetå®¹å™¨çš„æ’åºè§„åˆ™
 //

@@ -14,8 +14,8 @@
 //	case 6:cout << "2222" << endl; break;
 //	case 5:cout << "111" << endl; break;
 //	case 4:cout << "99999" << endl; break;
-//	default: cout << "Ôã¸â" << endl; break;
+//	default: cout << "ç³Ÿç³•" << endl; break;
 //	}
-//	//½Ì±¦±¦Ò»Ñù£¬½áÊø
+//	//æ•™å®å®ä¸€æ ·ï¼Œç»“æŸ
 //	return 0;
 //}

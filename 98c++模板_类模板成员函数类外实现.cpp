@@ -2,7 +2,7 @@
 //using namespace std;
 //#include<string>
 //
-////ÀàÄ£°å³ÉÔ±º¯ÊıÀàÍâÊµÏÖ
+////ç±»æ¨¡æ¿æˆå‘˜å‡½æ•°ç±»å¤–å®ç°
 //template<class T1,class T2>
 //class Person
 //{
@@ -16,7 +16,7 @@
 //	T2 m_Age;
 //};
 //
-////¹¹Ôìº¯ÊıÀàÍâÊµÏÖ
+////æ„é€ å‡½æ•°ç±»å¤–å®ç°
 //template<class T1, class T2>
 //Person<T1,T2>::Person(T1 name, T2 age)
 //{
@@ -24,11 +24,11 @@
 //	this->m_Age = age;
 //}
 //
-////³ÉÔ±º¯ÊıµÄÀàÍâÊµÏÖ
+////æˆå‘˜å‡½æ•°çš„ç±»å¤–å®ç°
 //template<class T1, class T2>
 //void Person<T1,T2>::showPerson()
 //{
-//		cout << "ĞÕÃû:" << this->m_Name << "ÄêÁä:" << this->m_Age << endl;
+//		cout << "å§“å:" << this->m_Name << "å¹´é¾„:" << this->m_Age << endl;
 //}
 //
 //void test01()
@@ -41,4 +41,4 @@
 //	test01();
 //	return 0;
 //}
-////ÀàÄ£°åÖĞ³ÉÔ±º¯ÊıÀàÍâÊµÏÖÊ±£¬ĞèÒª¼ÓÉÏÄ£°å²ÎÊıÁĞ±í
+////ç±»æ¨¡æ¿ä¸­æˆå‘˜å‡½æ•°ç±»å¤–å®ç°æ—¶ï¼Œéœ€è¦åŠ ä¸Šæ¨¡æ¿å‚æ•°åˆ—è¡¨

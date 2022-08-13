@@ -3,15 +3,15 @@
 //using namespace std;
 //void f1()
 //{
-//	cout << "Éµ×Ó1" << endl;
+//	cout << "å‚»å­1" << endl;
 //}
 //void f2()
 //{
-//	cout << "Éµ×Ó2" << endl;
+//	cout << "å‚»å­2" << endl;
 //}
 //int main()
 //{
-//	atexit(f1);//atexit()×¢²áº¯Êý
+//	atexit(f1);//atexit()æ³¨å†Œå‡½æ•°
 //	atexit(f2);
 //	
 //	exit(0);

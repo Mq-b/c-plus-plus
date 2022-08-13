@@ -1,107 +1,107 @@
 //#include<iostream>
 //using namespace std;
-//#include<vector>//Ìá¹©vectorÈİÆ÷
-//#include<string>//Ìá¹©stringÈİÆ÷
-//#include<map>//Ìá¹©multimapÈİÆ÷
-//#include<ctime>//Ìá¹©ÕæËæ»úÊı
-//enum ave//Ê¹ÓÃÃ¶¾ÙÒª±Èºê¶¨Òå¼ò½à
+//#include<vector>//æä¾›vectorå®¹å™¨
+//#include<string>//æä¾›stringå®¹å™¨
+//#include<map>//æä¾›multimapå®¹å™¨
+//#include<ctime>//æä¾›çœŸéšæœºæ•°
+//enum ave//ä½¿ç”¨æšä¸¾è¦æ¯”å®å®šä¹‰ç®€æ´
 //{
-//	CEHUA, MEISHU, YANFA//²ß»® ÃÀÊõ ÑĞ·¢
+//	CEHUA, MEISHU, YANFA//ç­–åˆ’ ç¾æœ¯ ç ”å‘
 //};
-////#define CEHUA 0//²ß»®
-////#define MEISHU 1//ÃÀÊõ
-////#define YANFA 2//ÑĞ·¢
+////#define CEHUA 0//ç­–åˆ’
+////#define MEISHU 1//ç¾æœ¯
+////#define YANFA 2//ç ”å‘
 //class Worker
 //{
 //public:
 //	string m_Name;
 //	int m_Salary;
 //};
-////¸ø³õÊ¼Ô±¹¤ÈİÆ÷¸³Öµ
+////ç»™åˆå§‹å‘˜å·¥å®¹å™¨èµ‹å€¼
 //void creatoWorker(vector<Worker>& v)
 //{
 //	string nameSeed = "ABCDEFGHJK";
 //	for (int i = 0; i < 10; i++)
 //	{
 //		Worker worker;
-//		worker.m_Name = "Ô±¹¤";
-//		worker.m_Name += nameSeed[i];//¸øÔ±¹¤Ãû×Ö¸³Öµ
+//		worker.m_Name = "å‘˜å·¥";
+//		worker.m_Name += nameSeed[i];//ç»™å‘˜å·¥åå­—èµ‹å€¼
 //
-//		worker.m_Salary = rand() % 10000 + 10000;//10000~19999 ¸øÔ±¹¤¹¤×Ê¸³Öµ
-//		//½«Ô±¹¤·ÅÈëµ½ÈİÆ÷ÖĞ
+//		worker.m_Salary = rand() % 10000 + 10000;//10000~19999 ç»™å‘˜å·¥å·¥èµ„èµ‹å€¼
+//		//å°†å‘˜å·¥æ”¾å…¥åˆ°å®¹å™¨ä¸­
 //		v.push_back(worker);
 //
 //	}
 //}
-////Ô±¹¤·Ö×é
+////å‘˜å·¥åˆ†ç»„
 //void setGroup(vector<Worker>& v, multimap<int, Worker>& m)
 //{
 //	for (vector<Worker>::iterator it = v.begin(); it != v.end(); it++)
 //	{
-//		//²úÉúËæ»ú²¿ÃÅµÄ±àºÅ
+//		//äº§ç”Ÿéšæœºéƒ¨é—¨çš„ç¼–å·
 //		int depId = rand() % 3;//0 1 2
 //
-//		//½«Ô±¹¤²åÈëµ½·Ö×éÖĞ
-//		//key´ú±í²¿ÃÅµÄ±àºÅ£¬value´ú±í¾ßÌåÔ±¹¤
-//		m.insert(make_pair(depId ,*it));//multimap mÈİÆ÷½ÓÊÕµ½·Ö×éºÍvÈİÆ÷µÄÖµ
+//		//å°†å‘˜å·¥æ’å…¥åˆ°åˆ†ç»„ä¸­
+//		//keyä»£è¡¨éƒ¨é—¨çš„ç¼–å·ï¼Œvalueä»£è¡¨å…·ä½“å‘˜å·¥
+//		m.insert(make_pair(depId ,*it));//multimap må®¹å™¨æ¥æ”¶åˆ°åˆ†ç»„å’Œvå®¹å™¨çš„å€¼
 //
 //	}
 //}
-////ÏÔÊ¾Ô±¹¤
+////æ˜¾ç¤ºå‘˜å·¥
 //void showWorkerByGourp(multimap<int,Worker>&m)
 //{
 //	//0 A B C 1 D E 2 F G...
-//	cout << "²ß»®²¿ÃÅ:" << endl;
+//	cout << "ç­–åˆ’éƒ¨é—¨:" << endl;
 //
-//	multimap<int,Worker>::iterator pos = m.find(CEHUA);//m²éÕÒkeyÎª0µÄµØÖ·£¬¸³Öµ¸øposµü´úÆ÷
-//	int count = m.count(CEHUA);//Í³¼Æ²ß»®²¿ÃÅ¾ßÌåÈËÊı
+//	multimap<int,Worker>::iterator pos = m.find(CEHUA);//mæŸ¥æ‰¾keyä¸º0çš„åœ°å€ï¼Œèµ‹å€¼ç»™posè¿­ä»£å™¨
+//	int count = m.count(CEHUA);//ç»Ÿè®¡ç­–åˆ’éƒ¨é—¨å…·ä½“äººæ•°
 //	int index = 0;
 //	for (; pos != m.end() && index < count; pos++, index++)
 //	{
-//		//posµü´úÆ÷ÊÇmultimap<int,Worker>ÀàĞÍµÄ£¬firstÊÇkey Ë÷Òı£¬secondÊÇvalue Öµ£»ËùÒÔµÃposÖ¸Ïòsecond¾ÍÊÇvalueµÄÖµ,×Ô¶¨ÒåÊı¾İÀàĞÍ.À´È¡Öµ
-//		cout << "ĞÕÃû:" << pos->second.m_Name << " ¹¤×Ê:" << pos->second.m_Salary << endl;
+//		//posè¿­ä»£å™¨æ˜¯multimap<int,Worker>ç±»å‹çš„ï¼Œfirstæ˜¯key ç´¢å¼•ï¼Œsecondæ˜¯value å€¼ï¼›æ‰€ä»¥å¾—posæŒ‡å‘secondå°±æ˜¯valueçš„å€¼,è‡ªå®šä¹‰æ•°æ®ç±»å‹.æ¥å–å€¼
+//		cout << "å§“å:" << pos->second.m_Name << " å·¥èµ„:" << pos->second.m_Salary << endl;
 //	}
 //
 //	cout << "--------------------" << endl;
-//	cout << "ÃÀÊõ²¿ÃÅ" << endl;
-//	//pos,count,index²»ÓÃÖØĞÂ´´½¨ÁË
+//	cout << "ç¾æœ¯éƒ¨é—¨" << endl;
+//	//pos,count,indexä¸ç”¨é‡æ–°åˆ›å»ºäº†
 //	pos = m.find(MEISHU);
 //	count = m.count(MEISHU);
 //	index = 0;
 //	for (; pos != m.end() && index < count; pos++, index++)
 //	{
-//		cout << "ĞÕÃû:" << pos->second.m_Name << " ¹¤×Ê:" << pos->second.m_Salary << endl;
+//		cout << "å§“å:" << pos->second.m_Name << " å·¥èµ„:" << pos->second.m_Salary << endl;
 //	}
 //
 //	cout << "--------------------" << endl;
-//	cout << "ÑĞ·¢²¿ÃÅ" << endl;
+//	cout << "ç ”å‘éƒ¨é—¨" << endl;
 //	pos = m.find(YANFA);
 //	count = m.count(YANFA);
 //	index = 0;
 //	for (; pos != m.end() && index < count; pos++, index++)
 //	{
-//		cout << "ĞÕÃû:" << pos->second.m_Name << " ¹¤×Ê:" << pos->second.m_Salary << endl;
+//		cout << "å§“å:" << pos->second.m_Name << " å·¥èµ„:" << pos->second.m_Salary << endl;
 //	}
 //}
 //
 //int main()
 //{
-//	srand((unsigned int)time(NULL));//Ëæ»úÊıÖÖ×Ó
+//	srand((unsigned int)time(NULL));//éšæœºæ•°ç§å­
 //
-//	//1.´´½¨Ô±¹¤
+//	//1.åˆ›å»ºå‘˜å·¥
 //	vector<Worker>vWorker;
 //	creatoWorker(vWorker);
 //
-//	//2.Ô±¹¤·Ö×é
+//	//2.å‘˜å·¥åˆ†ç»„
 //	multimap<int, Worker>mWorker;
 //	setGroup(vWorker, mWorker);
 //
-//	//3.·Ö×éÏÔÊ¾Ô±¹¤
+//	//3.åˆ†ç»„æ˜¾ç¤ºå‘˜å·¥
 //	showWorkerByGourp(mWorker);
-//	////²âÊÔ
+//	////æµ‹è¯•
 //	//for (vector<Worker>::iterator it = vWorker.begin(); it != vWorker.end(); it++)
 //	//{
-//	//	cout << "ĞÕÃû=" << it->m_Name << "¹¤×Ê" << it->m_Salary << endl;
+//	//	cout << "å§“å=" << it->m_Name << "å·¥èµ„" << it->m_Salary << endl;
 //	//}
 //	return 0;
 //}

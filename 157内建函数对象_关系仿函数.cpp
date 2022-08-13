@@ -1,15 +1,15 @@
 //#include<iostream>
 //using namespace std;
 //#include<vector>
-//#include<algorithm>//Ìá¹©sortËã·¨
-//#include<functional>//Ìá¹©ÄÚÖÃ·Âº¯Êı
-////¹ØÏµ·Âº¯Êı
+//#include<algorithm>//æä¾›sortç®—æ³•
+//#include<functional>//æä¾›å†…ç½®ä»¿å‡½æ•°
+////å…³ç³»ä»¿å‡½æ•°
 //
-////´óÓÚ greater
+////å¤§äº greater
 //class MyCompare
 //{
 //public:
-//	bool operator()(int v1, int v2)//Ê¹ÓÃ×Ô¼ºĞ´·Âº¯ÊıµÄ·½·¨
+//	bool operator()(int v1, int v2)//ä½¿ç”¨è‡ªå·±å†™ä»¿å‡½æ•°çš„æ–¹æ³•
 //	{
 //		return v1 > v2;
 //	}
@@ -30,10 +30,10 @@
 //	}
 //	cout << endl;
 //
-//	//½µĞò
-//	//sort(v.begin(), v.end(), MyCompare());//Ê¹ÓÃ×Ô¼ºĞ´µÄ·Âº¯Êı£¬·½·¨1
+//	//é™åº
+//	//sort(v.begin(), v.end(), MyCompare());//ä½¿ç”¨è‡ªå·±å†™çš„ä»¿å‡½æ•°ï¼Œæ–¹æ³•1
 //	//gerator<int>();
-//	sort(v.begin(), v.end(), greater<int>());//¿â·Âº¯ÊıÊÇÄ£°åµÃÌí¼ÓÀàĞÍ£¬·½·¨2³£ÓÃ
+//	sort(v.begin(), v.end(), greater<int>());//åº“ä»¿å‡½æ•°æ˜¯æ¨¡æ¿å¾—æ·»åŠ ç±»å‹ï¼Œæ–¹æ³•2å¸¸ç”¨
 //	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
 //	{
 //		cout << *it << " ";
@@ -44,4 +44,4 @@
 //	test01();
 //	return 0;
 //}
-////¹ØÏµ·Âº¯ÊıÖĞ×î³£ÓÃµÄ¾ÍÊÇgreator<>´óÓÚ
+////å…³ç³»ä»¿å‡½æ•°ä¸­æœ€å¸¸ç”¨çš„å°±æ˜¯greator<>å¤§äº

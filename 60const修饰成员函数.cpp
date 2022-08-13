@@ -1,18 +1,18 @@
 //#include<iostream>
 //using namespace std;
 //
-////³£º¯Êý
+////å¸¸å‡½æ•°
 //class Person
 //{
 //public:
 //
-//	//thisÖ¸ÕëµÄ±¾ÖÊÊÇÖ¸Õë³£Á¿	Ö¸ÕëµÄÖ¸ÏòÊÇ²»¿ÉÒÔÐÞ¸ÄµÄ
-//	//ÔÚthisº¯ÊýºóÃæ¼Óconst£¬ÐÞÊÎµÄÊÇthisÖ¸Ïò£¬ÈÃÖ¸ÕëÖ¸ÏòµÄÖµÒ²²»¿ÉÐÞ¸Ä
+//	//thisæŒ‡é’ˆçš„æœ¬è´¨æ˜¯æŒ‡é’ˆå¸¸é‡	æŒ‡é’ˆçš„æŒ‡å‘æ˜¯ä¸å¯ä»¥ä¿®æ”¹çš„
+//	//åœ¨thiså‡½æ•°åŽé¢åŠ constï¼Œä¿®é¥°çš„æ˜¯thisæŒ‡å‘ï¼Œè®©æŒ‡é’ˆæŒ‡å‘çš„å€¼ä¹Ÿä¸å¯ä¿®æ”¹
 //	void showPerson() const
 //	{
 //		this->m_B = 20;
 //		//this->m_A = 100;
-//		//this=NULL//thisÖ¸ÕëÊÇ²»¿ÉÒÔÐÞ¸ÄÖ¸ÕëµÄÖ¸ÏòµÄ
+//		//this=NULL//thisæŒ‡é’ˆæ˜¯ä¸å¯ä»¥ä¿®æ”¹æŒ‡é’ˆçš„æŒ‡å‘çš„
 //	}
 //
 //	void func()
@@ -20,7 +20,7 @@
 //
 //	}
 //	int m_A;
-//	mutable int m_B;//ÌØÊâ±äÁ¿£¬¼´Ê¹ÔÚ³£º¯ÊýÖÐ£¬Ò²¿ÉÒÔÐÞ¸ÄÕâ¸öÖµ,¼ÓÉÏ¹Ø¼ü×Ömutable
+//	mutable int m_B;//ç‰¹æ®Šå˜é‡ï¼Œå³ä½¿åœ¨å¸¸å‡½æ•°ä¸­ï¼Œä¹Ÿå¯ä»¥ä¿®æ”¹è¿™ä¸ªå€¼,åŠ ä¸Šå…³é”®å­—mutable
 //};
 //
 //void test01()
@@ -29,17 +29,17 @@
 //	p.showPerson();
 //}
 //
-////³£¶ÔÏó
+////å¸¸å¯¹è±¡
 //
 //void test02()
 //{
-//	const Person p;//ÔÚ¶ÔÏóÇ°Ãæ¼Óconst£¬±äÎª³£¶ÔÏó
-//	//p.m_A=100´íÎóµÄ
-//	p.m_B = 100;//m_BÊÇÌØÊâÖµ£¬ÔÚ³£¶ÔÏóÏÂÒ²¿ÉÒÔÐÞ¸Ä
+//	const Person p;//åœ¨å¯¹è±¡å‰é¢åŠ constï¼Œå˜ä¸ºå¸¸å¯¹è±¡
+//	//p.m_A=100é”™è¯¯çš„
+//	p.m_B = 100;//m_Bæ˜¯ç‰¹æ®Šå€¼ï¼Œåœ¨å¸¸å¯¹è±¡ä¸‹ä¹Ÿå¯ä»¥ä¿®æ”¹
 //
-//	//³£¶ÔÏóÖ»ÄÜµ÷ÓÃ³£º¯Êý
+//	//å¸¸å¯¹è±¡åªèƒ½è°ƒç”¨å¸¸å‡½æ•°
 //	p.showPerson();
-//	//p.func()//²»ÔÊÐíµÄ	ÒòÎª³£¶ÔÏó²»¿É²»µ÷ÓÃÆÕÍ¨µÄ³ÉÔ±º¯Êý£¬ÒòÎªÆÕÍ¨³ÉÔ±º¯Êý¿ÉÒÔÐÞ¸ÄÊôÐÔ
+//	//p.func()//ä¸å…è®¸çš„	å› ä¸ºå¸¸å¯¹è±¡ä¸å¯ä¸è°ƒç”¨æ™®é€šçš„æˆå‘˜å‡½æ•°ï¼Œå› ä¸ºæ™®é€šæˆå‘˜å‡½æ•°å¯ä»¥ä¿®æ”¹å±žæ€§
 //}
 //int main()
 //{

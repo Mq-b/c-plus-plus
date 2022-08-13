@@ -1,45 +1,45 @@
 //#include<iostream>
 //using namespace std;
-//#include<fstream>//м╥нд╪Ч╟Э╨╛
+//#include<fstream>//Е╓╢Ф√┤Д╩╤Е▄┘Е░╚
 //#include<string>
-////нд╠╬нд╪Ч ╤анд╪Ч
+////Ф√┤Ф°╛Ф√┤Д╩╤ Х╞╩Ф√┤Д╩╤
 //
 //void test01()
 //{
-//	//1║╒╟Э╨╛м╥нд╪Ч
+//	//1Ц─│Е▄┘Е░╚Е╓╢Ф√┤Д╩╤
 //
-//	//2║╒╢╢╫╗аВ╤тоС
+//	//2Ц─│Е┬⌡Е╩╨Ф╣│Е╞╧Х╠║
 //	ifstream ifs;
-//	//3║╒╢Р©╙нд╪Чё╛еп╤ойг╥Я╢Р©╙Ёи╧╕
-//	ifs.open("нд╪Ч.txt",ios::in);
+//	//3Ц─│Ф┴⌠Е╪─Ф√┤Д╩╤О╪▄Е┬╓Ф√╜Ф≤╞Е░╕Ф┴⌠Е╪─Ф┬░Е┼÷
+//	ifs.open("Ф√┤Д╩╤.txt",ios::in);
 //	if (ifs.is_open()==NULL)
 //	{
-//		cout << "нд╪Ч╢Р©╙й╖╟э" << endl;
+//		cout << "Ф√┤Д╩╤Ф┴⌠Е╪─Е╓╠Х╢╔" << endl;
 //		return ;
 //	}
-//	//4║╒╤айЩ╬щ
+//	//4Ц─│Х╞╩Ф∙╟Ф█╝
 //
-//	//╣зр╩жж
+//	//Г╛╛Д╦─Г╖█
 //	char buf[1024] = { 0 };
 //	while (ifs >> buf)
 //	{
 //		cout << buf << endl;
 //	}
-//	//╣з╤Чжж
+//	//Г╛╛Д╨▄Г╖█
 //	char buf2[1024] = { 0 };
 //	while (ifs.getline(buf2, sizeof(buf2)))
 //	{
 //		cout << buf2 << endl;
 //	}
-//	//╣зхЩжж
+//	//Г╛╛Д╦┴Г╖█
 //	string buf3;
 //	while (getline(ifs, buf3))
 //	{
 //		cout << buf3 << endl;
 //	}
-//	//╣зкджж
+//	//Г╛╛Е⌡⌡Г╖█
 //	char c;
-//	while ((c = ifs.get()) != EOF)//╡╩мф╪Ж
+//	while ((c = ifs.get()) != EOF)//Д╦█Ф▌╗Х█░
 //	{
 //		cout << c;
 //	}

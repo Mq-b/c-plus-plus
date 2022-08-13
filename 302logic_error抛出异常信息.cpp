@@ -2,6 +2,6 @@
 #include<iostream>
 
 int main() {
-    //logic_error构造函数的字符串会显示在控制台，用throw抛出异常
+    //logic_error鏋勯�犲嚱鏁扮殑瀛楃涓蹭細鏄剧ず鍦ㄦ帶鍒跺彴锛岀敤throw鎶涘嚭寮傚父
     std::cout << (2 + 3 == 4 ? "OK" : throw std::logic_error("2+3!=4"));
 }

@@ -1,20 +1,20 @@
 #include<iostream>
 #include<string>
-template<unsigned p, unsigned d> // p£ºÒª¼ì²éµÄÊı×Ö£¬d£ºµ±Ç°³ıÊı
+template<unsigned p, unsigned d> // pï¼šè¦æ£€æŸ¥çš„æ•°å­—ï¼Œdï¼šå½“å‰é™¤æ•°
 struct DoIsPrime {
 	static constexpr bool value = (p % d != 0) && DoIsPrime<p, d - 1>::value;
 };
-template<unsigned p> // Èç¹û³ıÊıÎª 2£¬Ôò½áÊøµİ¹é
+template<unsigned p> // å¦‚æœé™¤æ•°ä¸º 2ï¼Œåˆ™ç»“æŸé€’å½’
 struct DoIsPrime<p, 2> {
 	static constexpr bool value = (p % 2 != 0);
 };
-template<unsigned p> // Ö÷Ä£°å
+template<unsigned p> // ä¸»æ¨¡æ¿
 struct IsPrime {
-	// ´Ó p/2 ¿ªÊ¼ÓÃ³ıÊı¿ªÊ¼µİ¹é£º
+	// ä» p/2 å¼€å§‹ç”¨é™¤æ•°å¼€å§‹é€’å½’ï¼š
 	static constexpr bool value = DoIsPrime<p, p / 2>::value;
 };
 
-//ÀàÄ£°åÌØÀı»¯£¬·ÀÖ¹ÕâĞ©ÌØÊâÇé¿ö
+//ç±»æ¨¡æ¿ç‰¹ä¾‹åŒ–ï¼Œé˜²æ­¢è¿™äº›ç‰¹æ®Šæƒ…å†µ
 template<>//
 struct IsPrime<0> { static constexpr bool value = false; };
 template<>
@@ -25,25 +25,25 @@ template<>
 struct IsPrime<3> { static constexpr bool value = true; };
 
 void test01() {
-	int num[IsPrime<5>::value]{ 10 };	//ÒòÎª±àÒëÆÚ¾ÍÒÑ¾­µÃ³ö½á¹û£¬ËùÒÔ¿ÉÒÔ×öÊı×éÏÂ±ê
+	int num[IsPrime<5>::value]{ 10 };	//å› ä¸ºç¼–è¯‘æœŸå°±å·²ç»å¾—å‡ºç»“æœï¼Œæ‰€ä»¥å¯ä»¥åšæ•°ç»„ä¸‹æ ‡
 	std::cout << *num << std::endl;
 	std::cout << IsPrime<21>::value << std::endl;
 	std::cout << IsPrime<3>::value << std::endl;
 }
 
-//Ê¹ÓÃº¯Êı±àÒëÆÚÅĞ¶Ï
-constexpr bool doIsPrime(unsigned p, unsigned d) // p£ºÒª¼ì²éµÄ±àºÅ£¬d£ºµ±Ç°
+//ä½¿ç”¨å‡½æ•°ç¼–è¯‘æœŸåˆ¤æ–­
+constexpr bool doIsPrime(unsigned p, unsigned d) // pï¼šè¦æ£€æŸ¥çš„ç¼–å·ï¼Œdï¼šå½“å‰
 {
 	return d != 2 ? (p % d != 0) && doIsPrime(p, d - 1) // check this and smaller
-		: (p % 2 != 0); // Èç¹û³ıÊıÎª 2£¬Ôò½áÊøµİ¹é
+		: (p % 2 != 0); // å¦‚æœé™¤æ•°ä¸º 2ï¼Œåˆ™ç»“æŸé€’å½’
 }
 constexpr bool isPrime(unsigned p)
 {
-	return p < 4 ? !(p < 2) // ´¦ÀíÌØÊâÇé¿ö	Èç¹ûĞ¡ÓÚ4£¬ÄÇÃ´1 2 3Ö»ÓĞ1²»ÊÇÖÊÊı£¬ËùÒÔÕâÑùÉè¼Æ
-		: doIsPrime(p, p / 2); // Ê¹ÓÃ³ıÊı fromp / 2 ¿ªÊ¼µİ¹é
+	return p < 4 ? !(p < 2) // å¤„ç†ç‰¹æ®Šæƒ…å†µ	å¦‚æœå°äº4ï¼Œé‚£ä¹ˆ1 2 3åªæœ‰1ä¸æ˜¯è´¨æ•°ï¼Œæ‰€ä»¥è¿™æ ·è®¾è®¡
+		: doIsPrime(p, p / 2); // ä½¿ç”¨é™¤æ•° fromp / 2 å¼€å§‹é€’å½’
 }
 
-//c++14ÒÔºóconstexprº¯Êı¿ÉÒÔÊ¹ÓÃ³£¹æC++´úÂëÖĞ´ó²¿·ÖµÄ¿ØÖÆ½á¹¹£¬ËùÒÔÎÒÃÇÖ±½ÓÊ¹ÓÃÒ»¸öforÑ­»·Ò²ĞĞ
+//c++14ä»¥åconstexprå‡½æ•°å¯ä»¥ä½¿ç”¨å¸¸è§„C++ä»£ç ä¸­å¤§éƒ¨åˆ†çš„æ§åˆ¶ç»“æ„ï¼Œæ‰€ä»¥æˆ‘ä»¬ç›´æ¥ä½¿ç”¨ä¸€ä¸ªforå¾ªç¯ä¹Ÿè¡Œ
 constexpr bool isPrime_(unsigned int p)
 {
 	for (unsigned int d = 2; d <= p / 2; ++d) {
@@ -63,7 +63,7 @@ void test02() {
 }
 int main()
 {
-	//test01();	//Àà
-	test02();	//º¯Êı
+	//test01();	//ç±»
+	test02();	//å‡½æ•°
 	return 0;
 }

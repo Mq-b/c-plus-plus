@@ -1,7 +1,7 @@
 #include<iostream>
 #include<random>
 #include<algorithm>
-#include <execution>//Ìá¹©Ö´ĞĞ²ßÂÔ
+#include <execution>//æä¾›æ‰§è¡Œç­–ç•¥
 
 int main() {
 	std::mt19937 rand(time(0));
@@ -16,8 +16,8 @@ int main() {
 	for (auto i : V)
 		std::cout << i << std::endl;
 }
-/*ÄãÒ²¿ÉÒÔÏò²¢ĞĞSTLËã·¨´«µİ²»Í¬µÄ Ö´ĞĞ²ßÂÔ(execution policies) ×÷ÎªµÚÒ»¸ö²ÎÊı¡£ ËüÃÇ¶¨ÒåÔÚÍ·ÎÄ¼ş<execution>ÖĞ¡£ ±íÖ´ĞĞ²ßÂÔÁĞ³öÁËËùÓĞ±ê×¼µÄ Ö´ĞĞ²ßÂÔ ¡£
-²ßÂÔ 	º¬Òå
-std::execution::seq 	Ë³ĞòÖ´ĞĞ
-std::execution::par 	²¢ĞĞ»¯Ë³ĞòÖ´ĞĞ
-std::execution::par_unseq 	²¢ĞĞ»¯ÂÒĞò£¨Ê¸Á¿»¯£©Ö´ĞĞ*/
+/*ä½ ä¹Ÿå¯ä»¥å‘å¹¶è¡ŒSTLç®—æ³•ä¼ é€’ä¸åŒçš„ æ‰§è¡Œç­–ç•¥(execution policies) ä½œä¸ºç¬¬ä¸€ä¸ªå‚æ•°ã€‚ å®ƒä»¬å®šä¹‰åœ¨å¤´æ–‡ä»¶<execution>ä¸­ã€‚ è¡¨æ‰§è¡Œç­–ç•¥åˆ—å‡ºäº†æ‰€æœ‰æ ‡å‡†çš„ æ‰§è¡Œç­–ç•¥ ã€‚
+ç­–ç•¥ 	å«ä¹‰
+std::execution::seq 	é¡ºåºæ‰§è¡Œ
+std::execution::par 	å¹¶è¡ŒåŒ–é¡ºåºæ‰§è¡Œ
+std::execution::par_unseq 	å¹¶è¡ŒåŒ–ä¹±åºï¼ˆçŸ¢é‡åŒ–ï¼‰æ‰§è¡Œ*/

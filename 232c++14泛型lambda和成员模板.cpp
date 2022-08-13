@@ -1,17 +1,17 @@
 #include<iostream>
 #include<string>
-/*ÔÚC++14 ÖĞÒıÈëµÄ·ºĞÍlambdas£¬ÊÇÒ»ÖÖ³ÉÔ±Ä£°åµÄ¼ò»¯¡£¶ÔÓÚÒ»¸ö¼òµ¥µÄ¼ÆËãÁ½¸öÈÎÒâÀà
-ĞÍ²ÎÊıÖ®ºÍµÄlambda£º*/
+/*åœ¨C++14 ä¸­å¼•å…¥çš„æ³›å‹lambdasï¼Œæ˜¯ä¸€ç§æˆå‘˜æ¨¡æ¿çš„ç®€åŒ–ã€‚å¯¹äºä¸€ä¸ªç®€å•çš„è®¡ç®—ä¸¤ä¸ªä»»æ„ç±»
+å‹å‚æ•°ä¹‹å’Œçš„lambdaï¼š*/
 
 /*
 [](auto x, auto y) {
 	return x + y;
 }
 */
-//±àÒëÆ÷»áÄ¬ÈÏÎªËü¹¹ÔìÏÂÃæÕâÑùÒ»¸öÀà£º
+//ç¼–è¯‘å™¨ä¼šé»˜è®¤ä¸ºå®ƒæ„é€ ä¸‹é¢è¿™æ ·ä¸€ä¸ªç±»ï¼š
 class SomeCompilerSpecificName {
 public:
-	SomeCompilerSpecificName(){}; // ¹¹Ôìº¯ÊıÖ»ÄÜÓÉ±àÒëÆ÷µ÷ÓÃ
+	SomeCompilerSpecificName(){}; // æ„é€ å‡½æ•°åªèƒ½ç”±ç¼–è¯‘å™¨è°ƒç”¨
 		template<typename T1, typename T2>
 	auto operator() (T1 x, T2 y) const {
 		return x + y;
@@ -27,7 +27,7 @@ int main()
 	std::cout << fool(x, i) << std::endl;//5.4
 	return 0;
 }
-//ÏÂÃæÊÇÒ»¸öÊµ¼ÊÊ¹ÓÃµÄÀı×Ó
+//ä¸‹é¢æ˜¯ä¸€ä¸ªå®é™…ä½¿ç”¨çš„ä¾‹å­
 #include<iostream>
 #include<string>
 #include<array>

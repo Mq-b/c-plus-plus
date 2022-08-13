@@ -3,8 +3,8 @@
 //
 //int main()
 //{
-//	//´´½¨boolÊı¾İÀàĞÍ
-//	bool flag = true;//true±íÊ¾Õæ,Ğ´³ÉÊı¾İ³£Á¿Ò²ĞĞ
+//	//åˆ›å»ºboolæ•°æ®ç±»å‹
+//	bool flag = true;//trueè¡¨ç¤ºçœŸ,å†™æˆæ•°æ®å¸¸é‡ä¹Ÿè¡Œ
 //	cout << flag << endl;
 //	cout << sizeof(bool) << endl;
 //	return 0;

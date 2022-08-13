@@ -4,9 +4,9 @@
 //	Person::print();
 //	Person::person v;
 //
-//	v.print(56, "¹ş¹ş¹ş");
+//	v.print(56, "å“ˆå“ˆå“ˆ");
 //
-//	Person::person v2(12, "ÀëÆ×");
+//	Person::person v2(12, "ç¦»è°±");
 //	v.print(v2);
 //
 //	int person = 20;
@@ -15,9 +15,9 @@
 //
 //void test02()
 //{
-//	//Ê¹ÓÃusing±àÒëÖ¸Áî£¬ÔÚÓï¾ä¿éÖĞÒıÈëÁËPersonÃüÃû¿Õ¼ä
+//	//ä½¿ç”¨usingç¼–è¯‘æŒ‡ä»¤ï¼Œåœ¨è¯­å¥å—ä¸­å¼•å…¥äº†Personå‘½åç©ºé—´
 //	using namespace Person;
-//	person v(12, "¹ş¹ş¹ş");
+//	person v(12, "å“ˆå“ˆå“ˆ");
 //	v.print(v);
 //	print();
 //}

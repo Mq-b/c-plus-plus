@@ -4,8 +4,8 @@
 #include<vector>
 int main() {
 	std::vector<int>i{ 1,2,3,4,5 };
-	std::ranges::for_each(i, [](auto v) {std::cout << v << " "; });//ÀûÓÃrangesµÄÐ´·¨
+	std::ranges::for_each(i, [](auto v) {std::cout << v << " "; });//åˆ©ç”¨rangesçš„å†™æ³•
 	std::cout << std::endl;
-	std::for_each(i.begin(), i.end(), [](auto v) {std::cout << v << " "; });//ÀÏÊ½Ð´·¨
+	std::for_each(i.begin(), i.end(), [](auto v) {std::cout << v << " "; });//è€å¼å†™æ³•
 	return 0;
 }

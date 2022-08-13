@@ -2,16 +2,16 @@
 using namespace std;
 void foo(int m, int n)
 {
-	//Òì³£´¦Àí
+	//å¼‚å¸¸å¤„ç†
 	try {
-		//Å×³öÒì³£
+		//æŠ›å‡ºå¼‚å¸¸
 		//int t = m / n;
 
-		//0x0000005Òì³£
+		//0x0000005å¼‚å¸¸
 		//char* p = nullptr;
 		//*p = 123;
 
-		//ÈËÎªÅ×³öÒì³£
+		//äººä¸ºæŠ›å‡ºå¼‚å¸¸
 		//throw 1;
 		//throw 1.0f;
 		//throw "Hello";
@@ -19,12 +19,12 @@ void foo(int m, int n)
 	}
 	catch (int n)
 	{
-		//ÔÚcatch¿éÖĞĞ´³öÄãËù¹ØĞÄµÄÒì³£ÀàĞÍ
+		//åœ¨catchå—ä¸­å†™å‡ºä½ æ‰€å…³å¿ƒçš„å¼‚å¸¸ç±»å‹
 		cout << n << endl;
-		//ÔÚcatchÅ×Òì³££¬µ±È»Ò»°ã¶øÑÔ²»ÒªÔÚcatch¿éÀïÅ×Òì³£
+		//åœ¨catchæŠ›å¼‚å¸¸ï¼Œå½“ç„¶ä¸€èˆ¬è€Œè¨€ä¸è¦åœ¨catchå—é‡ŒæŠ›å¼‚å¸¸
 		throw "123";
 	}
-	//Èı¸öµã£¬±íÊ¾ÄÜ½ÓÊÕËùÓĞÀàĞÍµÄÒì³£
+	//ä¸‰ä¸ªç‚¹ï¼Œè¡¨ç¤ºèƒ½æ¥æ”¶æ‰€æœ‰ç±»å‹çš„å¼‚å¸¸
 	catch (...) {
 		cout << "error" << endl;
 	}
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 		//throw std::exception("hello123");
 	}
 	catch (std::exception& e) {
-		//½Ó×¡ÁË£¬È»ºó´òÓ¡
+		//æ¥ä½äº†ï¼Œç„¶åæ‰“å°
 		cout << e.what() << endl;
 	}
 	return 0;

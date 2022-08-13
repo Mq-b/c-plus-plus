@@ -1,14 +1,14 @@
 //#include<iostream>
 //using namespace std;
 //
-//void myswap01(int *a, int *b)//µØÖ·´«µİ
+//void myswap01(int *a, int *b)//åœ°å€ä¼ é€’
 //{
 //	int temp = *a;
 //	*a = *b;
 //	*b = temp;
 //}
 //
-//void myswap02(int &a, int &b)//ÒıÓÃ´«µİ£¬¾ÍÏàµ±ÓÚ±ğÃû£¬aºÍb¾ÍÊÇÊµ²Î±ğÃû£¬ËûÃÇ²Ù¿ØÍ¬Ò»¿éÄÚ´æ
+//void myswap02(int &a, int &b)//å¼•ç”¨ä¼ é€’ï¼Œå°±ç›¸å½“äºåˆ«åï¼Œaå’Œbå°±æ˜¯å®å‚åˆ«åï¼Œä»–ä»¬æ“æ§åŒä¸€å—å†…å­˜
 //{
 //	int temp = a;
 //	a = b;

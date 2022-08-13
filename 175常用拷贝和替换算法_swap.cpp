@@ -20,13 +20,13 @@
 //		v2.push_back(i + 100);
 //	}
 //
-//	cout << "½»»»Ç°£º " << endl;
+//	cout << "äº¤æ¢å‰ï¼š " << endl;
 //	for_each(v1.begin(), v1.end(), myPrint());
 //	cout << endl;
 //	for_each(v2.begin(), v2.end(), myPrint());
 //	cout << endl;
 //
-//	cout << "½»»»ºó£º " << endl;
+//	cout << "äº¤æ¢åï¼š " << endl;
 //	swap(v1, v2);
 //	for_each(v1.begin(), v1.end(), myPrint());
 //	cout << endl;
@@ -42,7 +42,7 @@
 //
 //	return 0;
 //}
-////×¢ÒâµÃÊÇÍ¬ÖÖÀàĞÍ½»»»¡¢
+////æ³¨æ„å¾—æ˜¯åŒç§ç±»å‹äº¤æ¢ã€
 
 //#include<stdio.h>
 //#include<time.h>
@@ -60,7 +60,7 @@
 //}
 //int main()
 //{
-//	srand((unsigned int)time(NULL));///Ê¹ÓÃËæ»úÊıÖÖ×Ó
+//	srand((unsigned int)time(NULL));///ä½¿ç”¨éšæœºæ•°ç§å­
 //	int a[1000] = { 0 };
 //	for (int i = 0; i < 1000; i++)
 //	{

@@ -1,58 +1,58 @@
-/*bitsetÈÝÆ÷ÆäÊµ¾ÍÊÇ¸ö01´®¡£¿ÉÒÔ±»¿´×÷ÊÇÒ»¸öboolÊý×é¡£Ëü±ÈboolÊý×é¸üÓÅÐãµÄÓÅµãÊÇ£º½ÚÔ¼¿Õ¼ä£¬½ÚÔ¼Ê±¼ä£¬Ö§³Ö»ù±¾µÄÎ»ÔËËã¡£ÔÚbitsetÈÝÆ÷ÖÐ£¬8Î»Õ¼Ò»¸ö×Ö½Ú£¬
+/*bitsetå®¹å™¨å…¶å®žå°±æ˜¯ä¸ª01ä¸²ã€‚å¯ä»¥è¢«çœ‹ä½œæ˜¯ä¸€ä¸ªboolæ•°ç»„ã€‚å®ƒæ¯”boolæ•°ç»„æ›´ä¼˜ç§€çš„ä¼˜ç‚¹æ˜¯ï¼šèŠ‚çº¦ç©ºé—´ï¼ŒèŠ‚çº¦æ—¶é—´ï¼Œæ”¯æŒåŸºæœ¬çš„ä½è¿ç®—ã€‚åœ¨bitsetå®¹å™¨ä¸­ï¼Œ8ä½å ä¸€ä¸ªå­—èŠ‚ï¼Œ
 * 
-Ïà±ÈÓÚboolÊý×é4Î»Ò»¸ö×Ö½ÚµÄ¿Õ¼äÀûÓÃÂÊÒª¸ßºÜ¶à¡£Í¬Ê±£¬nÎ»µÄbitsetÔÚÖ´ÐÐÒ»´ÎÎ»ÔËËãµÄ¸´ÔÓ¶È¿ÉÒÔ±»¿´×÷ÊÇn/32£¬Õâ¶¼ÊÇbool Êý×éËùÃ»ÓÐµÄÓÅÐãÐÔÖÊ¡£
+ç›¸æ¯”äºŽboolæ•°ç»„4ä½ä¸€ä¸ªå­—èŠ‚çš„ç©ºé—´åˆ©ç”¨çŽ‡è¦é«˜å¾ˆå¤šã€‚åŒæ—¶ï¼Œnä½çš„bitsetåœ¨æ‰§è¡Œä¸€æ¬¡ä½è¿ç®—çš„å¤æ‚åº¦å¯ä»¥è¢«çœ‹ä½œæ˜¯n/32ï¼Œè¿™éƒ½æ˜¯bool æ•°ç»„æ‰€æ²¡æœ‰çš„ä¼˜ç§€æ€§è´¨ã€‚
 
-ÈÝÆ÷°üº¬ÔÚC++×Ô´øµÄbitset¿âÖÐ¡£*/
+å®¹å™¨åŒ…å«åœ¨C++è‡ªå¸¦çš„bitsetåº“ä¸­ã€‚*/
 #include<bitset>
 #include<iostream>
 
 int main() {
 	std::bitset<10>s;
 	for (int i = 0; i < 10; i++)s[i] = false;
-	//count()º¯Êý	count£¬ÊýÊýµÄÒâË¼¡£ËüµÄ×÷ÓÃÊÇÊý³ö1µÄ¸öÊý¡£¼´s.count()·µ»ØsÖÐÓÐ¶àÉÙ¸ö1.
-	std::cout << s.count() << std::endl;//Êä³ö0
+	//count()å‡½æ•°	countï¼Œæ•°æ•°çš„æ„æ€ã€‚å®ƒçš„ä½œç”¨æ˜¯æ•°å‡º1çš„ä¸ªæ•°ã€‚å³s.count()è¿”å›žsä¸­æœ‰å¤šå°‘ä¸ª1.
+	std::cout << s.count() << std::endl;//è¾“å‡º0
 
-	/*any()/none()º¯Êý*/
-	//any£¬ÈÎºÎµÄÒâË¼¡£none£¬É¶Ò²Ã»ÓÐµÄÒâË¼¡£ÕâÁ½¸öº¯ÊýÊÇÔÚ¼ì²ébitsetÈÝÆ÷ÖÐÈ«0µÄÇé¿ö¡£
+	/*any()/none()å‡½æ•°*/
+	//anyï¼Œä»»ä½•çš„æ„æ€ã€‚noneï¼Œå•¥ä¹Ÿæ²¡æœ‰çš„æ„æ€ã€‚è¿™ä¸¤ä¸ªå‡½æ•°æ˜¯åœ¨æ£€æŸ¥bitsetå®¹å™¨ä¸­å…¨0çš„æƒ…å†µã€‚
 
-	//Èç¹û£¬bitsetÖÐÈ«¶¼Îª0£¬ÄÇÃ´s.any()·µ»Øfalse£¬s.none()·µ»Øtrue¡£
+	//å¦‚æžœï¼Œbitsetä¸­å…¨éƒ½ä¸º0ï¼Œé‚£ä¹ˆs.any()è¿”å›žfalseï¼Œs.none()è¿”å›žtrueã€‚
 	std::cout << s.any() << "," << s.none() << std::endl;
 
-	//set()º¯Êý,°ÑbitsetÈ«²¿ÉèÖÃÎª1	
-	s.set();							//È«²¿ÉèÖÃÎª1
-	std::cout << s.count() << std::endl;//Êä³ö10
-	//set()º¯ÊýÀïÃæ¿ÉÒÔ´«²ÎÊý¡£set(u, v)µÄÒâË¼ÊÇ°ÑbitsetÖÐµÄµÚuÎ»±ä³Év, v¡Ê0 / 1¡£
+	//set()å‡½æ•°,æŠŠbitsetå…¨éƒ¨è®¾ç½®ä¸º1	
+	s.set();							//å…¨éƒ¨è®¾ç½®ä¸º1
+	std::cout << s.count() << std::endl;//è¾“å‡º10
+	//set()å‡½æ•°é‡Œé¢å¯ä»¥ä¼ å‚æ•°ã€‚set(u, v)çš„æ„æ€æ˜¯æŠŠbitsetä¸­çš„ç¬¬uä½å˜æˆv, vâˆˆ0 / 1ã€‚
 	s.set(0, 5);
 
-	//reset()º¯Êý,ºÍÉÏÃæµÄÏà·´,²»¹ýÖ»½ÓÊÕÒ»Î»²ÎÊý
-	s.reset(2);							//°Ñ0-2·¶Î§µÄ»»³É0
-	std::cout << s.count() << std::endl;//Êä³ö9
-	//s.reset();							//È«²¿»»³É0
-	//std::cout << s.count() << std::endl;//Êä³ö0
+	//reset()å‡½æ•°,å’Œä¸Šé¢çš„ç›¸å,ä¸è¿‡åªæŽ¥æ”¶ä¸€ä½å‚æ•°
+	s.reset(2);							//æŠŠ0-2èŒƒå›´çš„æ¢æˆ0
+	std::cout << s.count() << std::endl;//è¾“å‡º9
+	//s.reset();							//å…¨éƒ¨æ¢æˆ0
+	//std::cout << s.count() << std::endl;//è¾“å‡º0
 
-	//flip()º¯ÊýÓëÇ°Á½¸öº¯Êý²»Í¬£¬ËüµÄ×÷ÓÃÊÇ½«Õû¸öbitsetÈÝÆ÷°´Î»È¡·´¡£
+	//flip()å‡½æ•°ä¸Žå‰ä¸¤ä¸ªå‡½æ•°ä¸åŒï¼Œå®ƒçš„ä½œç”¨æ˜¯å°†æ•´ä¸ªbitsetå®¹å™¨æŒ‰ä½å–åã€‚
 	s.flip();
 	std::cout << s << std::endl;	//0000000100
-	//Í¬ÉÏ£¬Æä´«½øµÄ²ÎÊý±íÊ¾°ÑÆäÖÐÒ»Î»È¡·´¡£Ïàµ±ÓÚÎ»ÔËËãµÄ~
-	s.flip(1);						//´ÓÓÒ±ßÊýµÚ¶þÎ»Ò²¾ÍÊÇ1·´×ª
+	//åŒä¸Šï¼Œå…¶ä¼ è¿›çš„å‚æ•°è¡¨ç¤ºæŠŠå…¶ä¸­ä¸€ä½å–åã€‚ç›¸å½“äºŽä½è¿ç®—çš„~
+	s.flip(1);						//ä»Žå³è¾¹æ•°ç¬¬äºŒä½ä¹Ÿå°±æ˜¯1åè½¬
 	std::cout << s << std::endl;	//0000000110
-	/*ÎÒÃÇÔÚ±àÐ´³ÌÐòµÄÊ±ºò¶ÔÊý½øÐÐµÄ¶þ½øÖÆÔËËã¾ù¿ÉÒÔÓÃÔÚbitset
+	/*æˆ‘ä»¬åœ¨ç¼–å†™ç¨‹åºçš„æ—¶å€™å¯¹æ•°è¿›è¡Œçš„äºŒè¿›åˆ¶è¿ç®—å‡å¯ä»¥ç”¨åœ¨bitset
 
-	º¯ÊýÉÏ¡£
+	å‡½æ•°ä¸Šã€‚
 
-	±ÈÈç£º
+	æ¯”å¦‚ï¼š
 
-	~£º°´Î»È¡·´
+	~ï¼šæŒ‰ä½å–å
 
-	&£º°´Î»Óë
+	&ï¼šæŒ‰ä½ä¸Ž
 
-	|£º°´Î»»ò
+	|ï¼šæŒ‰ä½æˆ–
 
-	^£º°´Î»Òì»ò
+	^ï¼šæŒ‰ä½å¼‚æˆ–
 
-	<< >>£º×ó/ÓÒÒÆ
+	<< >>ï¼šå·¦/å³ç§»
 
-	==/£¡=£º±È½ÏÁ½¸öbitset
-	ÊÇ·ñÏàµÈ¡£*/
+	==/ï¼=ï¼šæ¯”è¾ƒä¸¤ä¸ªbitset
+	æ˜¯å¦ç›¸ç­‰ã€‚*/
 	return 0;
 }

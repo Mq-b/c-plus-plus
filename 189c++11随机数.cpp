@@ -3,8 +3,8 @@
 
 int main()
 {
-    std::default_random_engine random(time(NULL));//构造随机数种子
-    std::uniform_int_distribution<int> u(0, 100);//设置范围
+    std::default_random_engine random(time(NULL));//鏋勯�犻殢鏈烘暟绉嶅瓙
+    std::uniform_int_distribution<int> u(0, 100);//璁剧疆鑼冨洿
     for (int i = 0; i < 20; ++i)
         std::cout << u(random) << ' ';
     std::cout << std::endl;

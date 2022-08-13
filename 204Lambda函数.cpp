@@ -1,4 +1,4 @@
-////lambda ¾ßÌå¿´c++ prime plus P662-665
+////lambda å…·ä½“çœ‹c++ prime plus P662-665
 //#include<iostream>
 //#include<algorithm>
 //void print(int a)
@@ -8,19 +8,19 @@
 //void test01()
 //{
 //	int num[10]{ 1,2,3,4,5,6,7,8,9,10 };
-//	//ÕâÀïµÄµÚÈý¸ö²ÎÊýÊ¹ÓÃlamdbaº¯Êý£¬Ò²ÊÇÄäÃûº¯Êý×ö²ÎÊý
+//	//è¿™é‡Œçš„ç¬¬ä¸‰ä¸ªå‚æ•°ä½¿ç”¨lamdbaå‡½æ•°ï¼Œä¹Ÿæ˜¯åŒ¿åå‡½æ•°åšå‚æ•°
 //	int a = std::count_if(num, num + 10, [](int a) {return a > 3; });
 //	std::cout << a << std::endl;
 //}
 //void test02()
 //{
 //	int num[10]{ 1,2,3,4,5,6,7,8,9,10 };
-//	//´ËÊ±µÄvÏàµ±ÓÚÕâ¸öÄäÃûlambdaº¯ÊýµÄÃû×ÖÒ»ÑùÊ¹ÓÃ
+//	//æ­¤æ—¶çš„vç›¸å½“äºŽè¿™ä¸ªåŒ¿ålambdaå‡½æ•°çš„åå­—ä¸€æ ·ä½¿ç”¨
 //	auto v = [](int a) {return a > 3; };
 //	int a = std::count_if(num, num + 10, v);
 //	std::cout << a << std::endl;
 //
-//	//ÎÒÃÇÉõÖÁ¿ÉÒÔÏñµ÷ÓÃÆÕÍ¨µÄº¯ÊýÒ»Ñùµ÷ÓÃËü
+//	//æˆ‘ä»¬ç”šè‡³å¯ä»¥åƒè°ƒç”¨æ™®é€šçš„å‡½æ•°ä¸€æ ·è°ƒç”¨å®ƒ
 //	bool temp = v(10);
 //	std::cout << temp << std::endl;
 //
@@ -30,7 +30,7 @@
 //	test01();
 //	test02();
 //}
-////¾ßÌåÕâÑùºÃ´¦²»ÔÙ½éÉÜ¡£
+////å…·ä½“è¿™æ ·å¥½å¤„ä¸å†ä»‹ç»ã€‚
 
 //#include<iostream>
 //#include<string>

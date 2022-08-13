@@ -7,17 +7,17 @@
 //
 //	string str = "abcdef";
 //
-//	string subStr = str.substr(1, 3);//Çó×Ó´®£¬¾ÍÊÇ°ÑstrµÄ1µ½3µÄ×Ö·û¸³Öµ¸øsubStr
+//	string subStr = str.substr(1, 3);//æ±‚å­ä¸²ï¼Œå°±æ˜¯æŠŠstrçš„1åˆ°3çš„å­—ç¬¦èµ‹å€¼ç»™subStr
 //
 //	cout << subStr << endl;
 //}
 //
-////ÊµÓÃ²Ù×÷
+////å®ç”¨æ“ä½œ
 //void test02()
 //{
-//	string email = "ÕÅÈı@qq.com";
+//	string email = "å¼ ä¸‰@qq.com";
 //
-//	int pos = email.find("@");//ÏÈÕÒ³ö×Ö·û´®ÖĞµ½@ÎªÖ¹µÄÏÂ±ê
+//	int pos = email.find("@");//å…ˆæ‰¾å‡ºå­—ç¬¦ä¸²ä¸­åˆ°@ä¸ºæ­¢çš„ä¸‹æ ‡
 //	cout << pos << endl;
 //	string Name = email.substr(0, pos);
 //	cout << Name << endl;

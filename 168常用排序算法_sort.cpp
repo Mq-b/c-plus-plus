@@ -15,13 +15,13 @@
 //	v.push_back(20);
 //	v.push_back(40);
 //
-//	//sortÄ¬ÈÏ´ÓĞ¡µ½´óÅÅĞò
+//	//sorté»˜è®¤ä»å°åˆ°å¤§æ’åº
 //	sort(v.begin(), v.end());
-//	for_each(v.begin(), v.end(), myPrint);//ÔÚ±éÀúµÄ¹ı³ÌÖĞµ÷ÓÃmyPrintÖ±½ÓÊä³ö
+//	for_each(v.begin(), v.end(), myPrint);//åœ¨éå†çš„è¿‡ç¨‹ä¸­è°ƒç”¨myPrintç›´æ¥è¾“å‡º
 //	cout << endl;
 //
-//	//´Ó´óµ½Ğ¡ÅÅĞò
-//	sort(v.begin(), v.end(), greater<int>());//Ê¹ÓÃÄÚ½¨º¯Êı¶ÔÏó£¬¾ÍÊÇÎ½´Ê
+//	//ä»å¤§åˆ°å°æ’åº
+//	sort(v.begin(), v.end(), greater<int>());//ä½¿ç”¨å†…å»ºå‡½æ•°å¯¹è±¡ï¼Œå°±æ˜¯è°“è¯
 //	for_each(v.begin(), v.end(), myPrint);
 //	cout << endl;
 //}

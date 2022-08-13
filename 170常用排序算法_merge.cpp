@@ -3,8 +3,8 @@
 //#include<vector>
 //#include<algorithm>
 //
-////³£ÓÃÅÅĞòËã·¨ merge
-////Á½¸öÈİÆ÷ºÏ²¢µ½Ò»¸öÈİÆ÷ÖĞ ×¢ÒâÁ½¸öÈİÆ÷¶¼µÃÊÇÓĞĞòµÄ
+////å¸¸ç”¨æ’åºç®—æ³• merge
+////ä¸¤ä¸ªå®¹å™¨åˆå¹¶åˆ°ä¸€ä¸ªå®¹å™¨ä¸­ æ³¨æ„ä¸¤ä¸ªå®¹å™¨éƒ½å¾—æ˜¯æœ‰åºçš„
 //
 //void myPrint(int v)
 //{
@@ -22,13 +22,13 @@
 //		v2.push_back(i + 1);
 //	}
 //
-//	//Ä¿±êÈİÆ÷
+//	//ç›®æ ‡å®¹å™¨
 //	vector<int>vTarget;
 //
-//	//ÌáÇ°¸øÄ¿±êÈİÆ÷·ÖÅä¿Õ¼ä
+//	//æå‰ç»™ç›®æ ‡å®¹å™¨åˆ†é…ç©ºé—´
 //	vTarget.resize(v1.size() + v2.size());
 //
-//	merge(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget.begin());//ºÏ²¢Ä¬ÈÏÊÇÉıĞò,¿ÉÒÔ¼ÓÎ½´Ê
+//	merge(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget.begin());//åˆå¹¶é»˜è®¤æ˜¯å‡åº,å¯ä»¥åŠ è°“è¯
 //
 //	for_each(vTarget.begin(), vTarget.end(), myPrint);
 //	cout << endl;

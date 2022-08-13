@@ -1,11 +1,11 @@
 //#include<iostream>
 //using namespace std;
-////Èı¸öÈËÈıÃÅ·ÖÊı£¬¼ÆËãÃ¿ÈËµÄ×Ü·ÖÊä³ö
+////ä¸‰ä¸ªäººä¸‰é—¨åˆ†æ•°ï¼Œè®¡ç®—æ¯äººçš„æ€»åˆ†è¾“å‡º
 //int main()
 //{
 //	int score[3][3],sum=0;
 //	for (int i = 0; i < 3; i++)
-//		for (int j = 0; j < 3; j++)cin >> score[i][j];//³õÊ¼»¯
+//		for (int j = 0; j < 3; j++)cin >> score[i][j];//åˆå§‹åŒ–
 //	for (int i = 0; i < 3; i++)
 //	{
 //		for (int j = 0; j < 3; j++)

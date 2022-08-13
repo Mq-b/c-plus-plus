@@ -1,5 +1,5 @@
 //#include<iostream>
-//#pragma pack(1)//ÉèÖÃÄÚ´æ¶ÔÆëÎª1
+//#pragma pack(1)//è®¾ç½®å†…å­˜å¯¹é½ä¸º1
 //struct arr
 //{
 //	double a;

@@ -1,16 +1,16 @@
 //#include<iostream>
 //using namespace std;
 //
-///*×Ö·û´®²åÈëºÍÉ¾³ı*/
+///*å­—ç¬¦ä¸²æ’å…¥å’Œåˆ é™¤*/
 //void test01()
 //{
 //	string str = "hello";
-//	//²åÈë
+//	//æ’å…¥
 //	str.insert(1, "111");
 //	cout << str << endl;
 //
-//	//É¾³ı
-//	str.erase(1, 3);//É¾³ı´Ó1µ½ÈıµÄ×Ö·û
+//	//åˆ é™¤
+//	str.erase(1, 3);//åˆ é™¤ä»1åˆ°ä¸‰çš„å­—ç¬¦
 //	cout << str << endl;
 //}
 //

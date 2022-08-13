@@ -1,12 +1,12 @@
 //#include<iostream>
 //using namespace std;
-//#include<string>//ÓÃc++·ç¸ñ×Ö·û´®°üº¬µÄÍ·ÎÄ¼ş
+//#include<string>//ç”¨c++é£æ ¼å­—ç¬¦ä¸²åŒ…å«çš„å¤´æ–‡ä»¶
 //int main()
 //{
-//	char ch[] = "hello word";//c·ç¸ñ×Ö·û´®
+//	char ch[] = "hello word";//cé£æ ¼å­—ç¬¦ä¸²
 //	cout << ch << endl;
 //
-//	string str2 = "hello word";//c++·ç¸ñ×Ö·û´®
+//	string str2 = "hello word";//c++é£æ ¼å­—ç¬¦ä¸²
 //	cout << str2 << endl;
 //	return 0;
 //}

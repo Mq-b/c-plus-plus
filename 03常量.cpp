@@ -1,10 +1,10 @@
 //#include<iostream>
 //using namespace std;
-////³£Á¿¶¨ÒåµÄ·½Ê½
-//#define Day 7//ºê³£Á¿
+////å¸¸é‡å®šä¹‰çš„æ–¹å¼
+//#define Day 7//å®å¸¸é‡
 //int main()
 //{
-//	const int  moth = 12;//¶¨Òå³£Á¿£¬c++ÄÚÕâÖÖĞ´·¨ÊÇ³£Á¿
-//	cout << "Ò»ÖÜ×Ü¹²ÓĞ" << Day << "Ìì" << endl;
+//	const int  moth = 12;//å®šä¹‰å¸¸é‡ï¼Œc++å†…è¿™ç§å†™æ³•æ˜¯å¸¸é‡
+//	cout << "ä¸€å‘¨æ€»å…±æœ‰" << Day << "å¤©" << endl;
 //	return 0;
 //} 

@@ -13,7 +13,7 @@ int main()
 	for (auto& i : test.num)i = a++;
 	std::for_each(test.num, test.num + 100, [](int a) {std::cout << a << ","; });
 
-	//µ÷ÓÃlambda±í´ïÊ½¸Ä±ä×÷ÓÃÓòÄÚ±äÁ¿µÄÖµ
+	//è°ƒç”¨lambdaè¡¨è¾¾å¼æ”¹å˜ä½œç”¨åŸŸå†…å˜é‡çš„å€¼
 	[&]()mutable {a = 10; }();
 	std::endl(std::cout);
 	std::cout << a << std::endl;

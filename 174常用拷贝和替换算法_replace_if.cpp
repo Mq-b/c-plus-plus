@@ -1,7 +1,7 @@
 //#include<iostream>
 //using namespace std;
 //#include<vector>
-//#include<algorithm>//o¸êÈğÔõ
+//#include<algorithm>//oæˆˆç‘æ€
 //
 //class MyPrint
 //{
@@ -14,12 +14,12 @@
 //class Great30
 //{
 //public:
-//	bool operator ()(int val)//Î½´Ê
+//	bool operator ()(int val)//è°“è¯
 //	{
 //		return val >= 30;
 //	}
 //};
-////³£ÓÃ¿½±´ºÍÌæ»»Ëã·¨ replace_if
+////å¸¸ç”¨æ‹·è´å’Œæ›¿æ¢ç®—æ³• replace_if
 //void test01()
 //{
 //	vector<int>v;
@@ -31,15 +31,15 @@
 //	v.push_back(30);
 //	
 //
-//	cout << "Ìæ»»Ç°" << endl;
-//	for_each(v.begin(), v.end(), MyPrint());//ÆäÊµÊ¹ÓÃ·Âº¯Êı»òÕßº¯Êı×ö²ÎÊıÃ»ÓĞÇø±ğ£¬¶¼¿ÉÒÔ
+//	cout << "æ›¿æ¢å‰" << endl;
+//	for_each(v.begin(), v.end(), MyPrint());//å…¶å®ä½¿ç”¨ä»¿å‡½æ•°æˆ–è€…å‡½æ•°åšå‚æ•°æ²¡æœ‰åŒºåˆ«ï¼Œéƒ½å¯ä»¥
 //	cout << endl;
-//	//½«´óÓÚµÈÓÚ30 Ìæ»»Îª3000
-//	//replace_ifÓëreplaceµÄÇø±ğ¾ÍÊÇµÚÈı¸ö²ÎÊı£¬Ç°ÕßÊ¹ÓÃÎ½´Ê±íÊ¾Çø¼äµÄÕæ¼Ù£¬ºóÕßÖ»ÄÜÊ¹ÓÃ¾ßÌåÖµ»ò¶ÔÏó
-//	cout << "Ìæ»»ºó" << endl;
+//	//å°†å¤§äºç­‰äº30 æ›¿æ¢ä¸º3000
+//	//replace_ifä¸replaceçš„åŒºåˆ«å°±æ˜¯ç¬¬ä¸‰ä¸ªå‚æ•°ï¼Œå‰è€…ä½¿ç”¨è°“è¯è¡¨ç¤ºåŒºé—´çš„çœŸå‡ï¼Œåè€…åªèƒ½ä½¿ç”¨å…·ä½“å€¼æˆ–å¯¹è±¡
+//	cout << "æ›¿æ¢å" << endl;
 //	replace_if(v.begin(), v.end(),Great30(),3000);
 //
-//	for_each(v.begin(), v.end(), MyPrint());//ÆäÊµÊ¹ÓÃ·Âº¯Êı»òÕßº¯Êı×ö²ÎÊıÃ»ÓĞÇø±ğ£¬¶¼¿ÉÒÔ
+//	for_each(v.begin(), v.end(), MyPrint());//å…¶å®ä½¿ç”¨ä»¿å‡½æ•°æˆ–è€…å‡½æ•°åšå‚æ•°æ²¡æœ‰åŒºåˆ«ï¼Œéƒ½å¯ä»¥
 //}
 //int main()
 //{

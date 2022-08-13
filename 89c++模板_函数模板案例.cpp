@@ -1,12 +1,12 @@
 //#include<iostream>
 //using namespace std;
 //
-////ÊµÏÖÍ¨ÓÃ ¶ÔÊı×é½øĞĞÅÅĞòµÄº¯Êı
-////¹æÔò ´Ó´óµ½Ğ¡
-////Ëã·¨ Ñ¡Ôñ
-////²âÊÔ charÊı×é¡¢intÊı×é
+////å®ç°é€šç”¨ å¯¹æ•°ç»„è¿›è¡Œæ’åºçš„å‡½æ•°
+////è§„åˆ™ ä»å¤§åˆ°å°
+////ç®—æ³• é€‰æ‹©
+////æµ‹è¯• charæ•°ç»„ã€intæ•°ç»„
 //
-////½»»»º¯ÊıÄ£°å
+////äº¤æ¢å‡½æ•°æ¨¡æ¿
 //template<class T>
 //void mySwap(T& a, T& b)
 //{
@@ -15,29 +15,29 @@
 //	b = temp;
 //}
 //
-////ÅÅĞòËã·¨
+////æ’åºç®—æ³•
 //template<class T>
 //void mySort(T arr[], int len)
 //{
 //	for (int i = 0; i < len; i++)
 //	{
-//		int max = i;//ÈÏ¶¨×î´óÖµÏÂ±ê
+//		int max = i;//è®¤å®šæœ€å¤§å€¼ä¸‹æ ‡
 //		for (int j = i + 1; j < len; j++)
 //		{
 //			if (arr[max] < arr[j])
 //			{
-//				max = j;//¸üĞÂ×î´óÖµÏÂ±ê
+//				max = j;//æ›´æ–°æœ€å¤§å€¼ä¸‹æ ‡
 //			}
 //		}
 //		if (max != i)
 //		{
-//			//½»»»maxºÍiµÄÔªËØ
+//			//äº¤æ¢maxå’Œiçš„å…ƒç´ 
 //			mySwap(arr[i], arr[max]);
 //		}
 //	}
 //}
 //
-////Ìá¹©´òÓ¡Êı×éÄ£°å
+////æä¾›æ‰“å°æ•°ç»„æ¨¡æ¿
 //template<class T>
 //void printArray(T arr[], int len)
 //{
@@ -50,18 +50,18 @@
 //
 //void test01()
 //{
-//	//²áÊıcharÊı×é
+//	//å†Œæ•°charæ•°ç»„
 //	char charArr[] = "abcdefg";
-//	mySort(charArr, 7);//ÅÅĞò
-//	printArray(charArr, 7);//Êä³ö
+//	mySort(charArr, 7);//æ’åº
+//	printArray(charArr, 7);//è¾“å‡º
 //}
 //
 //void test02()
 //{
-//	//²âÊÔintÊı×é
+//	//æµ‹è¯•intæ•°ç»„
 //	int intArr[10] = { 0,1,2,3,4,5,6,7,8,9 };
-//	mySort(intArr, 10);//ÅÅĞò
-//	printArray(intArr, 10);//Êä³ö
+//	mySort(intArr, 10);//æ’åº
+//	printArray(intArr, 10);//è¾“å‡º
 //}
 //int main()
 //{

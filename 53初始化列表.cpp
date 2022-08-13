@@ -1,12 +1,12 @@
 //#include<iostream>
 //using namespace std;
 //
-////³õÊ¼»¯ÁĞ±í
+////åˆå§‹åŒ–åˆ—è¡¨
 //class Person
 //{
 //public:
-//	//´«Í³¸³³õÖµ²Ù×÷
-//	Person(int a, int b, int c)//µÚÒ»ÖÖ
+//	//ä¼ ç»Ÿèµ‹åˆå€¼æ“ä½œ
+//	Person(int a, int b, int c)//ç¬¬ä¸€ç§
 //	{
 //		m_A = a;
 //		m_B = b;
@@ -16,8 +16,8 @@
 //	int m_B;
 //	int m_C;
 //
-//	//³õÊ¼»¯ÁĞ±í³õÊ¼ÊôĞÔ
-//	Person(int a,int b,int c) :m_A(a), m_B(b), m_C(c)//µÚ¶şÖÖ
+//	//åˆå§‹åŒ–åˆ—è¡¨åˆå§‹å±æ€§
+//	Person(int a,int b,int c) :m_A(a), m_B(b), m_C(c)//ç¬¬äºŒç§
 //	{
 //
 //	}
@@ -25,8 +25,8 @@
 //
 //void test01()
 //{
-//	//Person p(10, 20, 30);//µ÷ÓÃµÚÒ»ÖÖ
-//	Person p(30,20,10);//µ÷ÓÃµÚ¶şÖÖ
+//	//Person p(10, 20, 30);//è°ƒç”¨ç¬¬ä¸€ç§
+//	Person p(30,20,10);//è°ƒç”¨ç¬¬äºŒç§
 //	cout << "m_A=" << p.m_A << endl;
 //	cout << "m_B=" << p.m_B << endl;;
 //	cout << "m_B=" << p.m_C << endl;

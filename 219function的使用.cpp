@@ -3,13 +3,13 @@
 #include<functional>
 using namespace std;
 
-//ÆÕÍ¨º¯Êı
+//æ™®é€šå‡½æ•°
 void func()
 {
 	cout << __func__ << endl;
 }
 
-//2¡¢ÀàÖĞ¾²Ì¬º¯Êı
+//2ã€ç±»ä¸­é™æ€å‡½æ•°
 class Test
 {
 public:
@@ -19,7 +19,7 @@ public:
 		return a;
 	}
 };
-//3¡¢ÀàÖĞµÄ·Âº¯Êı
+//3ã€ç±»ä¸­çš„ä»¿å‡½æ•°
 class MyFunctor
 {
 public:
@@ -31,13 +31,13 @@ public:
 };
 int main()
 {
-	//1¡¢°ó¶¨ÆÕÍ¨º¯Êı
-	function<void()>f1 = func;//Ïàµ±ÓÚº¯ÊıÖ¸Õë
+	//1ã€ç»‘å®šæ™®é€šå‡½æ•°
+	function<void()>f1 = func;//ç›¸å½“äºå‡½æ•°æŒ‡é’ˆ
 	f1();
-	//2¡¢°ó¶¨ÀàÖĞ¾²Ì¬º¯Êı	ÒªĞ´×÷ÓÃÓò
+	//2ã€ç»‘å®šç±»ä¸­é™æ€å‡½æ•°	è¦å†™ä½œç”¨åŸŸ
 	function<int(int)>f2 = Test::test_func;
 	cout << f2(10) << endl;//Test::test_func(10);
-	//3¡¢°ó¶¨ÀàÖĞµÄ·Âº¯Êı£¬°ó¶¨¶ÔÏó		ÎÒÃÇ°ó¶¨ÄäÃû¶ÔÏó
+	//3ã€ç»‘å®šç±»ä¸­çš„ä»¿å‡½æ•°ï¼Œç»‘å®šå¯¹è±¡		æˆ‘ä»¬ç»‘å®šåŒ¿åå¯¹è±¡
 	function<int(int)>f3 = MyFunctor();
 	cout << f3(20) << endl;
 	return 0;

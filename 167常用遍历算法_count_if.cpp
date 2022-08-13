@@ -2,9 +2,9 @@
 //using namespace std;
 //#include<vector>
 //#include<algorithm>
-////³£ÓÃ²éÕÒËã·¨ count_if
+////å¸¸ç”¨æŸ¥æ‰¾ç®—æ³• count_if
 //
-////Í³¼ÆÄÚÖÃÊı¾İÀàĞÍ
+////ç»Ÿè®¡å†…ç½®æ•°æ®ç±»å‹
 //class Greater20
 //{
 //public:
@@ -23,11 +23,11 @@
 //	v.push_back(40);
 //	v.push_back(20);
 //
-//	int num=count_if(v.begin(), v.end(), Greater20());//ºÍcount²»Ò»Ñù£¬µÃÊ¹ÓÃÎ½´Ê,¶øÇÒcountÊÇ²éÕÒÏàÍ¬µÄÔªËØÊıÁ¿
+//	int num=count_if(v.begin(), v.end(), Greater20());//å’Œcountä¸ä¸€æ ·ï¼Œå¾—ä½¿ç”¨è°“è¯,è€Œä¸”countæ˜¯æŸ¥æ‰¾ç›¸åŒçš„å…ƒç´ æ•°é‡
 //
-//	cout << "´óÓÚ20µÄÔªËØ¸öÊıÎª:" << num << endl;
+//	cout << "å¤§äº20çš„å…ƒç´ ä¸ªæ•°ä¸º:" << num << endl;
 //}
-////Í³¼Æ×Ô¶¨ÒåÊı¾İÀàĞÍ
+////ç»Ÿè®¡è‡ªå®šä¹‰æ•°æ®ç±»å‹
 //class Person
 //{
 //public:
@@ -52,11 +52,11 @@
 //{
 //	vector<Person>v;
 //
-//	Person p1("Áõ±¸", 35);
-//	Person p2("¹ØÓğ", 35);
-//	Person p3("ÕÅ·É", 35);
-//	Person p4("ÕÔÔÆ", 40);
-//	Person p5("²Ü²Ù", 20);
+//	Person p1("åˆ˜å¤‡", 35);
+//	Person p2("å…³ç¾½", 35);
+//	Person p3("å¼ é£", 35);
+//	Person p4("èµµäº‘", 40);
+//	Person p5("æ›¹æ“", 20);
 //
 //	v.push_back(p1);
 //	v.push_back(p2);
@@ -64,9 +64,9 @@
 //	v.push_back(p4);
 //	v.push_back(p5);
 //
-//	//Í³¼Æ ´óÓÚ20ËêµÄÈËÔ±µÄ¸öÊı
+//	//ç»Ÿè®¡ å¤§äº20å²çš„äººå‘˜çš„ä¸ªæ•°
 //	int num = count_if(v.begin(), v.end(), AgeGreater20());
-//	cout << "´óÓÚ20ËêµÄÈËÔ±¸öÊıÎª:" << num << endl;
+//	cout << "å¤§äº20å²çš„äººå‘˜ä¸ªæ•°ä¸º:" << num << endl;
 //}
 //int main()
 //{

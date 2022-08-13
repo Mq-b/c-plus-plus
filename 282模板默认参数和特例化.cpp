@@ -20,5 +20,5 @@ int main() {
 	int a = 10;
 	Test i(110);
 	std::cout << i.getNum() << std::endl;
-	Test<void>()();//ÌØÀı»¯µ÷ÓÃ
+	Test<void>()();//ç‰¹ä¾‹åŒ–è°ƒç”¨
 }

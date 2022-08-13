@@ -1,6 +1,6 @@
 //#include<iostream>
 //using namespace std;
-////¿ÕÖ¸Õëµ÷ÓÃ³ÉÔ±º¯Êı
+////ç©ºæŒ‡é’ˆè°ƒç”¨æˆå‘˜å‡½æ•°
 //
 //class Person
 //{
@@ -11,12 +11,12 @@
 //	}
 //	void showPersonAge()
 //	{
-//		//±¨´íÔ­ÒòÒòÎª´«ÈëµÄÖ¸ÕëÊÇÎªNULL;
-//		if (this == NULL)//·ÀÖ¹³ö´í
+//		//æŠ¥é”™åŸå› å› ä¸ºä¼ å…¥çš„æŒ‡é’ˆæ˜¯ä¸ºNULL;
+//		if (this == NULL)//é˜²æ­¢å‡ºé”™
 //		{
 //			return;
 //		}
-//		cout << "age=" << this->m_Age << endl;//thisÊÇ¿ÕÖ¸Õë
+//		cout << "age=" << this->m_Age << endl;//thisæ˜¯ç©ºæŒ‡é’ˆ
 //	}
 //	int m_Age;
 //};

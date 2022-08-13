@@ -4,20 +4,20 @@ template<typename T>
 auto func(T& a) {
 	std::cout << typeid(a).name() << " ";
 	if (std::is_array<T>::value) {
-		std::cout  << "ÊÇÊý×é" << std::endl;
+		std::cout  << "æ˜¯æ•°ç»„" << std::endl;
 	}
 	else
-		std::cout << "²»ÊÇÊý×é" << std::endl;
+		std::cout << "ä¸æ˜¯æ•°ç»„" << std::endl;
 }
 
 template<typename T>
 auto func2(T& v) {
 	std::cout << typeid(v).name() << " ";
 	if (std::is_const<T>::value) {
-		std::cout << "ÊÇconst" << std::endl;
+		std::cout << "æ˜¯const" << std::endl;
 	}
 	else
-		std::cout << "²»ÊÇconst" << std::endl;
+		std::cout << "ä¸æ˜¯const" << std::endl;
 }
 
 
@@ -29,13 +29,13 @@ int main()
 	std::string const str2;
 	func(a);
 	func(a2);
-	//¶ÔÓÚstringÀà´´½¨µÄ¶ÔÏó£¬typeidÃ»ÓÐ°ì·¨Çø±ðcvÏÞ¶¨·û
+	//å¯¹äºŽstringç±»åˆ›å»ºçš„å¯¹è±¡ï¼Œtypeidæ²¡æœ‰åŠžæ³•åŒºåˆ«cvé™å®šç¬¦
 	func(str);
 	func(str2);
 	std::cout << "----------------------------------------------------------------------------------------------------" << std::endl;
 	func2(a);
 	func2(a2);
-	//ËäÈ»´òÓ¡µÄÀàÐÍ¿´ÆðÀ´Ò»Ñù£¬µ«ÊÇis_const»¹ÊÇÄÜ¹»Çø·ÖÊÇ·ñÎªconst
+	//è™½ç„¶æ‰“å°çš„ç±»åž‹çœ‹èµ·æ¥ä¸€æ ·ï¼Œä½†æ˜¯is_constè¿˜æ˜¯èƒ½å¤ŸåŒºåˆ†æ˜¯å¦ä¸ºconst
 	func2(str);
 	func2(str2);
 	return 0;

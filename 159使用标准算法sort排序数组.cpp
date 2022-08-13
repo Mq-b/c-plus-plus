@@ -1,6 +1,6 @@
 //#include<iostream>
-//#include<algorithm>//提供标准算法
-//#include<functional>//提供内建函数，仿函数
+//#include<algorithm>//鎻愪緵鏍囧噯绠楁硶
+//#include<functional>//鎻愪緵鍐呭缓鍑芥暟锛屼豢鍑芥暟
 //using namespace std;
 //int main()
 //{

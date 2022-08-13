@@ -1,10 +1,10 @@
 //#include<iostream>
 //using namespace std;
-//#include<functional>//�ڽ���������ͷ�ļ�
+//#include<functional>//内建函数对象头文件
 //
-////�ڽ��������� �����º���
+////内建函数对象 算数仿函数
 //
-////negate һԪ�º��� ȡ���º���
+////negate 一元仿函数 取反仿函数
 //void test01()
 //{
 //	negate<int>n;
@@ -12,7 +12,7 @@
 //	cout << n(50) << endl;
 //}
 //
-////plus ��Ԫ�º��� �ӷ�
+////plus 二元仿函数 加法
 //void test02()
 //{
 //	plus<int>p;
@@ -24,6 +24,6 @@
 //	test02();
 //	return 0;
 //}
-////�º����ı������࣬����ĳ�Ա����������()
-////����ģ�壬ʵ������ģ�壬�����õ��Ƿ�װ�õĿ�
-////ʹ���ڽ���������ʱ����Ҫ����ͷ�ļ�
+////仿函数的本质是类，是类的成员函数重载了()
+////加上模板，实际是类模板，这里用的是封装好的库
+////使用内建函数对象时，需要引入头文件

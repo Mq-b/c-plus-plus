@@ -4,9 +4,9 @@
 //#include<algorithm>
 //#include<string>
 //
-////³£ÓÃ²éÕÒËã·¨find_if
+////å¸¸ç”¨æŸ¥æ‰¾ç®—æ³•find_if
 //
-////1¡¢²éÕÒÄÚÖÃÊı¾İÀàĞÍ
+////1ã€æŸ¥æ‰¾å†…ç½®æ•°æ®ç±»å‹
 //class GeraterFive
 //{
 //public:
@@ -22,18 +22,18 @@
 //	{
 //		v.push_back(i);
 //	}
-//	//Ê¹ÓÃauto C++×Ô¶¯ÍÆµ¼£¬²»È»¾ÍÒªĞ´vector<int>::iterator
+//	//ä½¿ç”¨auto C++è‡ªåŠ¨æ¨å¯¼ï¼Œä¸ç„¶å°±è¦å†™vector<int>::iterator
 //	auto it=find_if(v.begin(), v.end(), GeraterFive());
 //	if (it == v.end())
 //	{
-//		cout << "Î´ÕÒµ½" << endl;
+//		cout << "æœªæ‰¾åˆ°" << endl;
 //	}
 //	else
 //	{
-//		cout << "ÕÒµ½´óÓÚ5µÄÊı×ÖÎª" << *it << endl;
+//		cout << "æ‰¾åˆ°å¤§äº5çš„æ•°å­—ä¸º" << *it << endl;
 //	}
 //}
-////2¡¢²éÕÒ×Ô¶¨ÒåÊı¾İÀàĞÍ
+////2ã€æŸ¥æ‰¾è‡ªå®šä¹‰æ•°æ®ç±»å‹
 //class Person
 //{
 //public:
@@ -65,16 +65,16 @@
 //	v.push_back(p2);
 //	v.push_back(p3);
 //	v.push_back(p4);
-//	//ÕÒÄêÁä´óÓÚ20µÄÈË
-//	//Ê¹ÓÃauto C++×Ô¶¯ÍÆµ¼£¬²»È»¾ÍÒªĞ´vector<int>::iterator
+//	//æ‰¾å¹´é¾„å¤§äº20çš„äºº
+//	//ä½¿ç”¨auto C++è‡ªåŠ¨æ¨å¯¼ï¼Œä¸ç„¶å°±è¦å†™vector<int>::iterator
 //	auto it=find_if(v.begin(), v.end(), Greater20());
 //	if (it == v.end())
 //	{
-//		cout << "Ã»ÓĞÕÒµ½" << endl;
+//		cout << "æ²¡æœ‰æ‰¾åˆ°" << endl;
 //	}
 //	else
 //	{
-//		cout << "ÕÒµ½ÁË ĞÕÃû:" << it->m_Name << "ÄêÁä:" << it->m_Age << endl;
+//		cout << "æ‰¾åˆ°äº† å§“å:" << it->m_Name << "å¹´é¾„:" << it->m_Age << endl;
 //	}
 //}
 //int main()

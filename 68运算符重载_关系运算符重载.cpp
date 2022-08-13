@@ -1,6 +1,6 @@
 //#include<iostream>
 //using namespace std;
-////ÖØÔØ¹ØÏµÔËËã·û
+////é‡è½½å…³ç³»è¿ç®—ç¬¦
 //class Person
 //{
 //public:
@@ -10,7 +10,7 @@
 //		m_Age = age;
 //	}
 //
-//	//ÖØÔØ==ºÅ
+//	//é‡è½½==å·
 //	bool operator==(Person& p)
 //	{
 //		if (this->m_Age == p.m_Age && this->m_Name == p.m_Name)
@@ -19,7 +19,7 @@
 //		}
 //		return false;
 //	}
-//	//ÖØÔØ!=ºÅ
+//	//é‡è½½!=å·
 //	bool operator!=(Person& p)
 //	{
 //		if (this->m_Age != p.m_Age || this->m_Name != p.m_Name)
@@ -39,20 +39,20 @@
 //
 //	if (p1 == p2)
 //	{
-//		cout << "p1ºÍp2ÊÇÏàµÈµÄ" << endl;
+//		cout << "p1å’Œp2æ˜¯ç›¸ç­‰çš„" << endl;
 //	}
 //	else
 //	{
-//		cout << "p1ºÍp2ÊÇ²»ÏàµÈµÄ" << endl;
+//		cout << "p1å’Œp2æ˜¯ä¸ç›¸ç­‰çš„" << endl;
 //	}
 //
 //	if (p1 != p2)
 //	{
-//		cout<<"p1ºÍp2ÊÇ²»ÏàµÈµÄ"<<endl;
+//		cout<<"p1å’Œp2æ˜¯ä¸ç›¸ç­‰çš„"<<endl;
 //	}
 //	else
 //	{
-//		cout << "p1ºÍp2ÊÇÏàµÈµÄ" << endl;
+//		cout << "p1å’Œp2æ˜¯ç›¸ç­‰çš„" << endl;
 //	}
 //}
 //int main()

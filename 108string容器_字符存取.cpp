@@ -1,29 +1,29 @@
 //#include<iostream>
 //using namespace std;
 //#include<string>
-////string×Ö·û´æÈ¡
+////stringå­—ç¬¦å­˜å–
 //
 //
 //void test01()
 //{
 //	string str = "hhhhhhh";
-//	//1¡¢Í¨¹ı[]·ÃÎÊµ¥¸ö×Ö·û
+//	//1ã€é€šè¿‡[]è®¿é—®å•ä¸ªå­—ç¬¦
 //	for (int i = 0; i < str.size(); i++)
 //	{
 //		cout << str[i] << " ";
 //	}
 //	cout << endl;
 //
-//	//2¡¢Í¨¹ıat·½Ê½·ÃÎÊµ¥¸ö×Ö·û
+//	//2ã€é€šè¿‡atæ–¹å¼è®¿é—®å•ä¸ªå­—ç¬¦
 //	for (int i = 0; i < str.size(); i++)
 //	{
 //		cout << str.at(i)<<" ";
 //	}
 //	cout << endl;
-//	//ĞŞ¸Äµ¥¸ö×Ö·û
+//	//ä¿®æ”¹å•ä¸ªå­—ç¬¦
 //	str.at(1) = 'x';
 //	cout << str << endl;
-//	//»òÕßÏÂ±ê
+//	//æˆ–è€…ä¸‹æ ‡
 //	str[0] = 'a';
 //	cout << str << endl;
 //}

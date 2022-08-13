@@ -3,7 +3,7 @@
 //#include<vector>
 //#include<algorithm>
 //
-////³£ÓÃÅÅĞòËã·¨ reverse
+////å¸¸ç”¨æ’åºç®—æ³• reverse
 //void myPrint(int val)
 //{
 //	cout << val << " ";
@@ -16,12 +16,12 @@
 //	v.push_back(50);
 //	v.push_back(20);
 //	v.push_back(40);
-//	cout << "·´×ªÇ°" << endl;
+//	cout << "åè½¬å‰" << endl;
 //	for_each(v.begin(), v.end(),myPrint);
 //
 //	cout << endl;
 //
-//	cout << "·´×ªºó" << endl;
+//	cout << "åè½¬å" << endl;
 //	reverse(v.begin(), v.end());
 //	for_each(v.begin(), v.end(), myPrint);
 //
@@ -32,4 +32,4 @@
 //	test01();
 //	return 0;
 //}
-////¾ÍÊÇ·´×ªÈİÆ÷ÄÚµÄÔªËØ
+////å°±æ˜¯åè½¬å®¹å™¨å†…çš„å…ƒç´ 

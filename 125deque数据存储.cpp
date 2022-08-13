@@ -12,22 +12,22 @@
 //	d.push_front(200);
 //	d.push_front(300);
 //
-//	//通过[]方式访问元素
+//	//閫氳繃[]鏂瑰紡璁块棶鍏冪礌
 //	for (int i = 0; i < d.size(); i++)
 //	{
 //		cout << d[i] << " ";
 //	}
 //	cout << endl;
 //
-//	//通过at方式访问元素
+//	//閫氳繃at鏂瑰紡璁块棶鍏冪礌
 //	for (int i = 0; i < d.size(); i++)
 //	{
 //		cout << d.at(i) << " ";
 //	}
 //	cout << endl;
 //
-//	cout << "最后一个元素为:" << d.back() << endl;
-//	cout << "第一个元素为:" << d.front() << endl;
+//	cout << "鏈�鍚庝竴涓厓绱犱负:" << d.back() << endl;
+//	cout << "绗竴涓厓绱犱负:" << d.front() << endl;
 //}
 //int main()
 //{

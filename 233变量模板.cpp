@@ -1,19 +1,19 @@
 #include<iostream>
 #include<string>
-//´ÓC++14 ¿ªÊ¼£¬±äÁ¿Ò²¿ÉÒÔ±»Ä³ÖÖÀàÐÍ²ÎÊý»¯¡£³ÆÎª±äÁ¿Ä£°å¡£
-//ÀýÈç¿ÉÒÔÍ¨¹ýÏÂÃæµÄ´úÂë¶¨Òåpi£¬µ«ÊÇ²ÎÊý»¯ÁËÆäÀàÐÍ£º
+//ä»ŽC++14 å¼€å§‹ï¼Œå˜é‡ä¹Ÿå¯ä»¥è¢«æŸç§ç±»åž‹å‚æ•°åŒ–ã€‚ç§°ä¸ºå˜é‡æ¨¡æ¿ã€‚
+//ä¾‹å¦‚å¯ä»¥é€šè¿‡ä¸‹é¢çš„ä»£ç å®šä¹‰piï¼Œä½†æ˜¯å‚æ•°åŒ–äº†å…¶ç±»åž‹ï¼š
 
-template<typename T=int>//ÎÒÃÇÐ´×÷Ä¬ÈÏint 
-T pi{};//³õÊ¼»¯ÁÐ±í Îª0
-//×¢Òâ£¬ºÍÆäËü¼¸ÖÖÄ£°åÀàËÆ£¬Õâ¸ö¶¨Òå×îºÃ²»Òª³öÏÖÔÚº¯ÊýÄÚ²¿»òÕß¿é×÷ÓÃÓòÄÚ²¿¡£
+template<typename T=int>//æˆ‘ä»¬å†™ä½œé»˜è®¤int 
+T pi{};//åˆå§‹åŒ–åˆ—è¡¨ ä¸º0
+//æ³¨æ„ï¼Œå’Œå…¶å®ƒå‡ ç§æ¨¡æ¿ç±»ä¼¼ï¼Œè¿™ä¸ªå®šä¹‰æœ€å¥½ä¸è¦å‡ºçŽ°åœ¨å‡½æ•°å†…éƒ¨æˆ–è€…å—ä½œç”¨åŸŸå†…éƒ¨ã€‚
 int main()
 {
 	std::cout.precision(16);
-	pi<int> = 20;//pi<>=20;Ð§¹ûÒ»Ñù
+	pi<int> = 20;//pi<>=20;æ•ˆæžœä¸€æ ·
 	std::cout << pi<int> << std::endl; //20
 	pi<double> = 3.14159265358;
 	std::cout << pi<double> << std::endl;//3.14159265358
 	std::cout << pi<float> << std::endl;//0
 	return 0;
 }
-//±äÁ¿Ä£°å²»ÊÇ¾Ö²¿±äÁ¿£¬ÊÇÁíÒ»ÖÖÈ«¾Ö±äÁ¿,mainº¯ÊýÄÚÊÇÊ¹ÓÃ²»ÊÇÊµÀý»¯Ò²²»ÊÇ´´½¨
+//å˜é‡æ¨¡æ¿ä¸æ˜¯å±€éƒ¨å˜é‡ï¼Œæ˜¯å¦ä¸€ç§å…¨å±€å˜é‡,mainå‡½æ•°å†…æ˜¯ä½¿ç”¨ä¸æ˜¯å®žä¾‹åŒ–ä¹Ÿä¸æ˜¯åˆ›å»º

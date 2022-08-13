@@ -3,12 +3,12 @@
 //class Complex
 //{
 //public:
-//	//Ä¬ÈÏ¹¹Ôì
+//	//é»˜è®¤æ„é€ 
 //	Complex() 
 //	{
 //		real = 0; imag = 0; 
 //	}
-//	//ÓĞ²Î¹¹Ôì
+//	//æœ‰å‚æ„é€ 
 //	Complex(double r, double i) 
 //	{
 //		real = r; imag = i;
@@ -16,7 +16,7 @@
 //	operator double() const
 //	{
 //		return real; 
-//	} //ÀàĞÍ×ª»»º¯Êı
+//	} //ç±»å‹è½¬æ¢å‡½æ•°
 //private:
 //	double real;
 //	double imag;
@@ -26,7 +26,7 @@
 //{
 //	Complex c1(3, 4), c2(5, -10), c3;
 //	double d;
-//	d = 2.5 + c1;//ÒªÇó½«Ò»¸ödoubleÊı¾İÓëComplexÀàÊı¾İÏà¼Ó
+//	d = 2.5 + c1;//è¦æ±‚å°†ä¸€ä¸ªdoubleæ•°æ®ä¸Complexç±»æ•°æ®ç›¸åŠ 
 //	cout << d << endl;
 //	return 0;
 //}	

@@ -9,7 +9,7 @@
 //	return 0;
 //}
 
-//ÔªËØÄæÖÃ
+//å…ƒç´ é€†ç½®
 //#include<iostream>
 //using namespace std;
 //
@@ -19,7 +19,7 @@
 //	for (int i = 0; i < 10; i++)cin >> num[i];
 //	int start = 0;
 //	int end = 9;
-//	while (start < end)//ÄæÖÃ
+//	while (start < end)//é€†ç½®
 //	{
 //		int temp = num[start];
 //		num[start] = num[end];

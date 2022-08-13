@@ -2,16 +2,16 @@
 //#include<string>
 //using namespace std;
 //
-////Àà×öÓÑÔª
+////ç±»åšå‹å…ƒ
 //class Building;
 //class GoodGay
 //{
 //public:
 //	GoodGay();
-//	void visit();//²Î¹Ûº¯Êı£¬·ÃÎÊBuildingÖĞµÄÊôĞÔ
+//	void visit();//å‚è§‚å‡½æ•°ï¼Œè®¿é—®Buildingä¸­çš„å±æ€§
 //	~GoodGay()
 //	{
-//			cout << "Îö¹¹º¯Êı" << endl;
+//			cout << "ææ„å‡½æ•°" << endl;
 //			if (building != NULL)
 //			{
 //				delete building;
@@ -23,36 +23,36 @@
 //
 //class Building
 //{
-//	//GoodGayÀàÊÇ±¾À´µÄºÃÅóÓÑ£¬¿ÉÒÔ·ÃÎÊ±¾ÀàË½ÓĞ³ÉÔ±
+//	//GoodGayç±»æ˜¯æœ¬æ¥çš„å¥½æœ‹å‹ï¼Œå¯ä»¥è®¿é—®æœ¬ç±»ç§æœ‰æˆå‘˜
 //	friend class GoodGay;
 //public:
 //	Building();
 //	
-//	string m_SittingRoom;//¿ÍÌü
+//	string m_SittingRoom;//å®¢å…
 //private:
-//	string m_BedRoom;//ÎÔÊÒ
+//	string m_BedRoom;//å§å®¤
 //
 //};
 //
-////ÀàÍâĞ´³ÉÔ±º¯Êı
+////ç±»å¤–å†™æˆå‘˜å‡½æ•°
 //
-//Building::Building()//×÷ÓÃÓò
+//Building::Building()//ä½œç”¨åŸŸ
 //{
-//	m_SittingRoom = "¿ÍÌü";
-//	m_BedRoom = "ÎÔÊÒ";
+//	m_SittingRoom = "å®¢å…";
+//	m_BedRoom = "å§å®¤";
 //}
 //
 //GoodGay::GoodGay()
 //{
-//	//´´½¨Ò»¸ö½¨ÖşÎï¶ÔÏó
+//	//åˆ›å»ºä¸€ä¸ªå»ºç­‘ç‰©å¯¹è±¡
 //	building = new Building;
 //}
 //
 //void GoodGay::visit()
 //{
-//	cout << "ºÃ»ùÓÑÀàÕıÔÚ·ÃÎÊ" << building->m_SittingRoom << endl;
+//	cout << "å¥½åŸºå‹ç±»æ­£åœ¨è®¿é—®" << building->m_SittingRoom << endl;
 //
-//	cout << "ºÃ»ùÓÑÀàÕıÔÚ·ÃÎÊ" << building->m_BedRoom << endl;
+//	cout << "å¥½åŸºå‹ç±»æ­£åœ¨è®¿é—®" << building->m_BedRoom << endl;
 //}
 //
 //void test01()

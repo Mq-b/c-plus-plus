@@ -14,7 +14,7 @@
 //}
 //int main()
 //{
-//	students str1 = { "ÀÏÍõ",18,99 };
+//	students str1 = { "è€ç‹",18,99 };
 //	ave(&str1);
 //	return 0;
 //}

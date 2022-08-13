@@ -16,7 +16,7 @@
 //	{
 //		if (num == m_num[i])
 //		{
-//			cout << num << "µÈÓÚ" << m_num[i] << "ÏÂ±êÊÇ" << i << endl; 
+//			cout << num << "ç­‰äº" << m_num[i] << "ä¸‹æ ‡æ˜¯" << i << endl; 
 //		}
 //	}
 //	return 0;

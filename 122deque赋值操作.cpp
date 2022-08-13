@@ -2,7 +2,7 @@
 //using namespace std;
 //#include<deque>
 //
-////dequeÈİÆ÷¸³Öµ²Ù×÷
+////dequeå®¹å™¨èµ‹å€¼æ“ä½œ
 //
 //void printDepue(const deque<int>& v)
 //{
@@ -21,12 +21,12 @@
 //	}
 //	printDepue(d1);
 //
-//	//operator=¸³Öµ
+//	//operator=èµ‹å€¼
 //	deque<int>d2;
 //	d2 = d1;
 //	printDepue(d2);
 //
-//	//assgin¸³Öµ
+//	//assginèµ‹å€¼
 //	deque<int>d3;
 //	d3.assign(d1.begin(), d1.end());
 //	printDepue(d3);

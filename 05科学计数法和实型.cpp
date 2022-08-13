@@ -3,7 +3,7 @@
 //int main()
 //{
 //	cout << sizeof(short) << endl;
-//	float f1 = 3.1415926f;//Ä¬ÈÏfloat×î¶à±íÊ¾6¸öÓĞĞ§Êı×Ö
+//	float f1 = 3.1415926f;//é»˜è®¤floatæœ€å¤šè¡¨ç¤º6ä¸ªæœ‰æ•ˆæ•°å­—
 //	float f2 = 3e2;//3*10^2
 //	cout << f2 << endl;
 //	cout << sizeof(float) << endl;

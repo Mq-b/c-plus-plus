@@ -4,14 +4,14 @@ int main() {
     FILE* fp = NULL;
     const char* filename = "output.log";
 
-    fp = freopen(filename, "w+", stdout);       //±ê×¼Êä³öÖØ¶¨Ïòµ½ÎÄ¼şoutput.log
+    fp = freopen(filename, "w+", stdout);       //æ ‡å‡†è¾“å‡ºé‡å®šå‘åˆ°æ–‡ä»¶output.log
     if (NULL == fp)
     {
         fprintf(stderr, "error redirecting stdout\n");
         exit(1);
     }
-    system("netstat -ano");//ÏÔÊ¾½ø³Ì
+    system("netstat -ano");//æ˜¾ç¤ºè¿›ç¨‹
     printf("6666666666666666666");
     fclose(fp);
 }
-//²»¹ÜÊÇsystem»¹ÊÇprintfÈ«²¿ÏÔÊ¾µ½ÁËÎÄ¼şÖĞ
+//ä¸ç®¡æ˜¯systemè¿˜æ˜¯printfå…¨éƒ¨æ˜¾ç¤ºåˆ°äº†æ–‡ä»¶ä¸­

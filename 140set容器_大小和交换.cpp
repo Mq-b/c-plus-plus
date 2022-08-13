@@ -2,7 +2,7 @@
 //using namespace std;
 //#include<set>
 //
-////setÈİÆ÷ ´óĞ¡ºÍ½»»»
+////setå®¹å™¨ å¤§å°å’Œäº¤æ¢
 //
 //void printSet(set<int>& s)
 //{
@@ -12,37 +12,37 @@
 //	}
 //	cout << endl;
 //}
-////´óĞ¡
+////å¤§å°
 //void test01()
 //{
 //	set<int>s1;
 //
-//	//²åÈëÊı¾İ
+//	//æ’å…¥æ•°æ®
 //	s1.insert(10);
 //	s1.insert(30);
 //	s1.insert(20);
 //	s1.insert(40);
 //
-//	//´òÓ¡ÈİÆ÷
+//	//æ‰“å°å®¹å™¨
 //	printSet(s1);
 //
-//	//ÅĞ¶ÏÊÇ·ñÎª¿Õ
+//	//åˆ¤æ–­æ˜¯å¦ä¸ºç©º
 //	if (s1.empty())
 //	{
-//		cout << "s1Îª¿Õ" << endl;
+//		cout << "s1ä¸ºç©º" << endl;
 //	}
 //	else
 //	{
-//		cout << "s1²»Îª¿Õ" << endl;
-//		cout << "s1µÄ´óĞ¡Îª:" << s1.size() << endl;
+//		cout << "s1ä¸ä¸ºç©º" << endl;
+//		cout << "s1çš„å¤§å°ä¸º:" << s1.size() << endl;
 //	}
 //}
-////½»»»
+////äº¤æ¢
 //void test02()
 //{
 //	set<int>s1;
 //
-//	//²åÈëÊı¾İ
+//	//æ’å…¥æ•°æ®
 //	s1.insert(10);
 //	s1.insert(30);
 //	s1.insert(20);
@@ -54,11 +54,11 @@
 //	s2.insert(300);
 //	s2.insert(400);
 //
-//	cout << "½»»»Ç°" << endl;
+//	cout << "äº¤æ¢å‰" << endl;
 //	printSet(s1);
 //	printSet(s2);
 //
-//	cout << "½»»»ºó" << endl;
+//	cout << "äº¤æ¢å" << endl;
 //	s1.swap(s2);
 //	printSet(s1);
 //	printSet(s2);

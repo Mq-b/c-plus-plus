@@ -8,13 +8,13 @@
 //	int score;
 //};
 //
-//void ave( const students* p)//¼ÓÈëconstÒ»µ©ÓĞĞŞ¸ÄµÄ²Ù×÷¾Í»á±¨´í
+//void ave( const students* p)//åŠ å…¥constä¸€æ—¦æœ‰ä¿®æ”¹çš„æ“ä½œå°±ä¼šæŠ¥é”™
 //{
 //	cout << p->name << " " << p->age << " " << p->score << endl;
 //}
 //int main()
 //{
-//	students s1 = { "ÀÏÍõ", 18, 99 };
+//	students s1 = { "è€ç‹", 18, 99 };
 //	ave(&s1);
 //	return 0;
 //}

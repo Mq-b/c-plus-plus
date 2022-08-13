@@ -2,44 +2,44 @@
 //#include<string>
 //using namespace std;
 //
-////ÐéÎö¹¹ºÍ´¿Ðéº¯Êý
+////è™šæžæž„å’Œçº¯è™šå‡½æ•°
 //class Animal
 //{
 //public:
 //	Animal()
 //	{
-//		cout << "Animal¹¹Ôìº¯ÊýµÄµ÷ÓÃ" << endl;
+//		cout << "Animalæž„é€ å‡½æ•°çš„è°ƒç”¨" << endl;
 //	}
-//	//ÐéÎö¹¹º¯Êý£¬¸Ä³ÉÐéÎö¹¹¾Í»á×ß×ÓÀàÖÐµÄÎö¹¹º¯Êý
-//	//ÀûÓÃÐéÎö¹¹¿ÉÒÔ½â¾ö	¸¸ÀàÖ¸ÕëÊÍ·Å×ÓÀà¶ÔÏóÊ±²»¸É¾»µÄÎÊÌâ
+//	//è™šæžæž„å‡½æ•°ï¼Œæ”¹æˆè™šæžæž„å°±ä¼šèµ°å­ç±»ä¸­çš„æžæž„å‡½æ•°
+//	//åˆ©ç”¨è™šæžæž„å¯ä»¥è§£å†³	çˆ¶ç±»æŒ‡é’ˆé‡Šæ”¾å­ç±»å¯¹è±¡æ—¶ä¸å¹²å‡€çš„é—®é¢˜
 //	virtual ~Animal()
 //	{
-//		cout << "AnimalÎö¹¹º¯ÊýµÄµ÷ÓÃ" << endl;
+//		cout << "Animalæžæž„å‡½æ•°çš„è°ƒç”¨" << endl;
 //	}
 //
-//	//´¿ÐéÎö¹¹	ÐèÒªÉùÃ÷Ò²ÐèÒªÊµÏÖ
-//	//ÓÐÁË´¿ÐéÎö¹¹Ö®ºó£¬Õâ¸öÀàÒ²ÊôÓÚ³éÏóÀà£¬ÎÞ·¨ÊµÀý»¯¶ÔÏó
+//	//çº¯è™šæžæž„	éœ€è¦å£°æ˜Žä¹Ÿéœ€è¦å®žçŽ°
+//	//æœ‰äº†çº¯è™šæžæž„ä¹‹åŽï¼Œè¿™ä¸ªç±»ä¹Ÿå±žäºŽæŠ½è±¡ç±»ï¼Œæ— æ³•å®žä¾‹åŒ–å¯¹è±¡
 //	virtual ~Animal() = 0;
 //
-//	//´¿Ðéº¯Êý
+//	//çº¯è™šå‡½æ•°
 //	virtual void speak() = 0;
 //};
 //
-//Animal::~Animal()//´¿ÐéÎö¹¹ÐèÒªÓÐ¾ßÌåµÄÊµÏÖ
+//Animal::~Animal()//çº¯è™šæžæž„éœ€è¦æœ‰å…·ä½“çš„å®žçŽ°
 //{
-//	cout << "Anima´¿ÐéÎö¹¹º¯Êý" << endl;
+//	cout << "Animaçº¯è™šæžæž„å‡½æ•°" << endl;
 //}
 //class Cat :public Animal
 //{
 //public:
 //	Cat(string name)
 //	{
-//		cout << "CatµÄ¹¹Ôìº¯Êýµ÷ÓÃ" << endl;
+//		cout << "Catçš„æž„é€ å‡½æ•°è°ƒç”¨" << endl;
 //		m_Name=new string(name);
 //	}
 //	virtual void speak()
 //	{
-//		cout <<*m_Name<< "Ð¡Ã¨ÔÚËµ»°" << endl;
+//		cout <<*m_Name<< "å°çŒ«åœ¨è¯´è¯" << endl;
 //	}
 //	~Cat()
 //	{
@@ -48,7 +48,7 @@
 //			delete m_Name;
 //			m_Name = NULL;
 //		}
-//		cout << "CatµÄÎö¹¹º¯Êýµ÷ÓÃ" << endl;
+//		cout << "Catçš„æžæž„å‡½æ•°è°ƒç”¨" << endl;
 //	}
 //	string* m_Name;
 //};
@@ -57,7 +57,7 @@
 //{
 //	Animal* animal = new Cat("Tom");
 //	animal->speak();
-//	//¸¸ÀàÖ¸ÕëÔÚÎö¹¹µÄÊ±ºò ²»»áµ÷ÓÃ×ÓÀàÖÐÎö¹¹º¯Êý£¬µ¼ÖÂ×ÓÀàÈç¹ûÓÐ¶ÑÇøÊôÐÔ£¬³öÏÖÄÚ´æÐ¹Â©
+//	//çˆ¶ç±»æŒ‡é’ˆåœ¨æžæž„çš„æ—¶å€™ ä¸ä¼šè°ƒç”¨å­ç±»ä¸­æžæž„å‡½æ•°ï¼Œå¯¼è‡´å­ç±»å¦‚æžœæœ‰å †åŒºå±žæ€§ï¼Œå‡ºçŽ°å†…å­˜æ³„æ¼
 //	delete animal;
 //}
 //
@@ -66,11 +66,11 @@
 //	test01();
 //	return 0;
 //}
-/*ÐéÎö¹¹ºÍ´¿ÐéÎö¹¹
-1¡¢¶¼¿ÉÒÔ½â¾ö¸¸ÀàÖ¸ÕëÊÍ·Å×ÓÀà¶ÔÏó
-2¡¢¶¼ÐèÒªÓÐ¾ßÌåµÄº¯ÊýÊµÏÖ
-Çø±ð:
-´¿ÐéÎö¹¹¸ÃÀàÊôÓÚ³éÏóÀà£¬ÎÞ·¨ÊµÀý»¯¶ÔÏó
-ÐéÎö¹¹Óï·¨:virtual ~ÀàÃû(){}
-´¿ÐéÎö¹¹Óï·¨:virtual~ÀàÃû()=0
-´¿ÐéÎö¹¹µÄÊµÏÖÐèÒªÔÚÍâ²¿¼ÓÉÏ×÷ÓÃÓòÊµÏÖ£¬²Î¿¼28ÐÐ*/
+/*è™šæžæž„å’Œçº¯è™šæžæž„
+1ã€éƒ½å¯ä»¥è§£å†³çˆ¶ç±»æŒ‡é’ˆé‡Šæ”¾å­ç±»å¯¹è±¡
+2ã€éƒ½éœ€è¦æœ‰å…·ä½“çš„å‡½æ•°å®žçŽ°
+åŒºåˆ«:
+çº¯è™šæžæž„è¯¥ç±»å±žäºŽæŠ½è±¡ç±»ï¼Œæ— æ³•å®žä¾‹åŒ–å¯¹è±¡
+è™šæžæž„è¯­æ³•:virtual ~ç±»å(){}
+çº¯è™šæžæž„è¯­æ³•:virtual~ç±»å()=0
+çº¯è™šæžæž„çš„å®žçŽ°éœ€è¦åœ¨å¤–éƒ¨åŠ ä¸Šä½œç”¨åŸŸå®žçŽ°ï¼Œå‚è€ƒ28è¡Œ*/

@@ -2,10 +2,10 @@
 //using namespace std;
 //#include<map>
 //
-////mapÈİÆ÷²éÕÒºÍÍ³¼Æ
+////mapå®¹å™¨æŸ¥æ‰¾å’Œç»Ÿè®¡
 //void test01()
 //{
-//	//²éÕÒ
+//	//æŸ¥æ‰¾
 //	map<int, int>m;
 //	m.insert(pair<int, int>(1, 10));
 //	m.insert(pair<int, int>(2, 20));
@@ -15,16 +15,16 @@
 //
 //	if (pos != m.end())
 //	{
-//		cout << "²éµ½ÁËÔªËØkey=" << pos->first << " value=" << pos->second << endl;
+//		cout << "æŸ¥åˆ°äº†å…ƒç´ key=" << pos->first << " value=" << pos->second << endl;
 //	}
 //	else
 //	{
-//		cout << "Î´ÕÒµ½ÔªËØ" << endl;
+//		cout << "æœªæ‰¾åˆ°å…ƒç´ " << endl;
 //	}
 //
-//	//Í³¼Æ
-//	//mapÈİÆ÷²»ÔÊĞí²åÈëÖØ¸´keyÔªËØ,coutÍ³¼Æ¶øÑÔ ½á¹ûÒªÂïÊÇ0ÒªÂïÊÇ1
-//	//mulitmapµÄcountÍ³¼Æ¿ÉÄÜ´óÓÚ1
+//	//ç»Ÿè®¡
+//	//mapå®¹å™¨ä¸å…è®¸æ’å…¥é‡å¤keyå…ƒç´ ,coutç»Ÿè®¡è€Œè¨€ ç»“æœè¦å˜›æ˜¯0è¦å˜›æ˜¯1
+//	//mulitmapçš„countç»Ÿè®¡å¯èƒ½å¤§äº1
 //
 //	int num =  m.count(3);
 //	cout << "num=" << num << endl;//1/0
@@ -34,5 +34,5 @@
 //	test01();
 //	return 0;
 //}
-////²éÕÒfind·µ»ØµÄÊÇµü´úÆ÷
-////Í³¼Æcount¶ÔÓÚmap£¬½á¹ûÎª0
+////æŸ¥æ‰¾findè¿”å›çš„æ˜¯è¿­ä»£å™¨
+////ç»Ÿè®¡countå¯¹äºmapï¼Œç»“æœä¸º0

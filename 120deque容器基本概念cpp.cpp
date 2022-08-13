@@ -1,12 +1,12 @@
 //#include<iostream>
 //using namespace std;
 //#include <deque>
-////deque ¹¹Ôìº¯Êı
-//void printDeque(const deque<int>& d)//constĞŞÊÎÈİÆ÷£¬±ä³ÉÖ»¶Á£¬ÎŞ·¨ĞŞ¸Ä
+////deque æ„é€ å‡½æ•°
+//void printDeque(const deque<int>& d)//constä¿®é¥°å®¹å™¨ï¼Œå˜æˆåªè¯»ï¼Œæ— æ³•ä¿®æ”¹
 //{
-//	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++)//µü´úÆ÷Ò²µÃconst_ĞŞÊÎ
+//	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++)//è¿­ä»£å™¨ä¹Ÿå¾—const_ä¿®é¥°
 //	{
-//		//*it = 100;//ÈİÆ÷Êı¾İÎŞ·¨ĞŞ¸Ä
+//		//*it = 100;//å®¹å™¨æ•°æ®æ— æ³•ä¿®æ”¹
 //		cout << *it << " ";
 //	}
 //	cout << endl;
@@ -24,11 +24,11 @@
 //	deque<int>d2(d1.begin(), d1.end());
 //	printDeque(d2);
 //
-//	deque<int>d3(10, 100);//10¸ö100
+//	deque<int>d3(10, 100);//10ä¸ª100
 //	printDeque(d3);
 //
 //	deque<int>d4(d3);
-//	//d4 = d3;//Ò»¸öÒâË¼
+//	//d4 = d3;//ä¸€ä¸ªæ„æ€
 //	printDeque(d4);
 //}
 //

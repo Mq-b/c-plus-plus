@@ -6,7 +6,7 @@ struct S {
 	T val;
 };
 
-S(const char*)->S<std::string>;   // °ÑS<×Ö·û´®×ÖÃæÁ¿>Ó³ÉäÎªS<std::string>
+S(const char*)->S<std::string>;   // æŠŠS<å­—ç¬¦ä¸²å­—é¢é‡>æ˜ å°„ä¸ºS<std::string>
 
 template<typename T1, typename T2>
 struct Pair3 {
@@ -15,14 +15,14 @@ struct Pair3 {
     Pair3(const T1& x, const T2& y) : first{ x }, second{ y } {
     }
 };
-// Îª¹¹Ôìº¯Êı¶¨ÒåµÄÍÆµ¼Ö¸Òı
+// ä¸ºæ„é€ å‡½æ•°å®šä¹‰çš„æ¨å¯¼æŒ‡å¼•
 template<typename T1,typename T2>
 Pair3(T1, T2)->Pair3<T1, T2>;
 
 template<typename T1,typename T2>
 class Test {
 public:
-    Test(T1 s1, T2 s2) :a(s1), b(s2) {}//Ö»ĞèÒª±£Ö¤¶ÔÓ¦Ä£°åÀàĞÍ¸öÊı½øĞĞ³õÊ¼»¯¼´¿É
+    Test(T1 s1, T2 s2) :a(s1), b(s2) {}//åªéœ€è¦ä¿è¯å¯¹åº”æ¨¡æ¿ç±»å‹ä¸ªæ•°è¿›è¡Œåˆå§‹åŒ–å³å¯
 private:
     T1 a;
     T2 b;
@@ -30,10 +30,10 @@ private:
 };
 
 int main() {
-    //µÃÒæÓÚc++17£¬Ò»Ğ©¼òµ¥µÄÍÆµ¼ÎÒÃÇ²»ÓÃÔÙĞ´Ã÷Ä£°åÀàµÄÀàĞÍ
-	S s("°¢°Í°Í");
+    //å¾—ç›Šäºc++17ï¼Œä¸€äº›ç®€å•çš„æ¨å¯¼æˆ‘ä»¬ä¸ç”¨å†å†™æ˜æ¨¡æ¿ç±»çš„ç±»å‹
+	S s("é˜¿å·´å·´");
 	std::cout << typeid(s.val).name() << std::endl;
-    Pair3 s2(1, "°¢°Í");
+    Pair3 s2(1, "é˜¿å·´");
 
-    Test s3("°¢°Í", 1);//¶¼¿ÉÒÔ×ÔĞĞÍÆµ¼
+    Test s3("é˜¿å·´", 1);//éƒ½å¯ä»¥è‡ªè¡Œæ¨å¯¼
 }

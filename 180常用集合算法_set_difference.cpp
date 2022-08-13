@@ -2,7 +2,7 @@
 //using namespace std;
 //#include<vector>
 //#include<algorithm>
-////³£ÓÃ¼¯ºÏËã·¨ set_difference
+////å¸¸ç”¨é›†åˆç®—æ³• set_difference
 //void Print(int val)
 //{
 //	cout << val << " ";
@@ -16,18 +16,18 @@
 //		v1.push_back(i);
 //		v2.push_back(i + 5);
 //	}
-//	//´´½¨Ä¿±êÈİÆ÷
+//	//åˆ›å»ºç›®æ ‡å®¹å™¨
 //	vector<int>vTarget;
-//	//¸øÄ¿±êÈİÆ÷¿ª±Ù¿Õ¼ä
-//	//Á½¸öÈİÆ÷Ã»ÓĞÒ»µã½»¼¯ È¡Á½¸öÈİÆ÷ÖĞ´óµÄsize×÷ÎªÄ¿±ê¿ª±Ù¿Õ¼ä
+//	//ç»™ç›®æ ‡å®¹å™¨å¼€è¾Ÿç©ºé—´
+//	//ä¸¤ä¸ªå®¹å™¨æ²¡æœ‰ä¸€ç‚¹äº¤é›† å–ä¸¤ä¸ªå®¹å™¨ä¸­å¤§çš„sizeä½œä¸ºç›®æ ‡å¼€è¾Ÿç©ºé—´
 //	vTarget.resize(max(v1.size(),v2.size()));
 //
-//	cout << "v1ºÍv2µÄ²î¼¯Îª:" << endl;
+//	cout << "v1å’Œv2çš„å·®é›†ä¸º:" << endl;
 //	vector<int>::iterator itEnd = set_difference(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget.begin());
 //	for_each(vTarget.begin(), itEnd,Print);
 //	cout << endl;
 //
-//	cout << "v2ºÍv1µÄ²î¼¯Îª:" << endl;//´úÂë¸´ÓÃ
+//	cout << "v2å’Œv1çš„å·®é›†ä¸º:" << endl;//ä»£ç å¤ç”¨
 //	itEnd = set_difference(v2.begin(), v2.end(), v1.begin(), v1.end(), vTarget.begin());
 //	for_each(vTarget.begin(), itEnd, Print);
 //}

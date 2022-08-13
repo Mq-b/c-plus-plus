@@ -10,32 +10,32 @@ decltype(auto) demo() {
 	//assign
 	var2 = L"abc";
 	var1 = L"str1";
-	var2.emplace<int>(1);	//Ô­Î»¹¹Ôì variant ÖĞµÄÖµ
-	std::wcout << L"the var1 = " << std::get<std::wstring>(var1) << std::endl;		//std::get()Ê¹ÓÃÀàĞÍ²éÕÒ
-	std::wcout << L"the var2 = " << std::get<0>(var2) << std::endl;					//std::get()Ê¹ÓÃÏÂ±ê²éÕÒ
+	var2.emplace<int>(1);	//åŸä½æ„é€  variant ä¸­çš„å€¼
+	std::wcout << L"the var1 = " << std::get<std::wstring>(var1) << std::endl;		//std::get()ä½¿ç”¨ç±»å‹æŸ¥æ‰¾
+	std::wcout << L"the var2 = " << std::get<0>(var2) << std::endl;					//std::get()ä½¿ç”¨ä¸‹æ ‡æŸ¥æ‰¾
 
 	//swap
 	std::swap(var1, var2);
 
-	//È·¶¨±äÌåµÄÀàĞÍ
+	//ç¡®å®šå˜ä½“çš„ç±»å‹
 	if (var2.index() == 2) {
-		//ËüÊÇ½ÊÏßĞÍ
+		//å®ƒæ˜¯ç»çº¿å‹
 	}
 	var1 = 100;
-	if (std::holds_alternative<int>(var1)) {	//¼ì²éÄ³¸ö variant ÊÇ·ñµ±Ç°³ÖÓĞÄ³¸ö¸ø¶¨ÀàĞÍ
+	if (std::holds_alternative<int>(var1)) {	//æ£€æŸ¥æŸä¸ª variant æ˜¯å¦å½“å‰æŒæœ‰æŸä¸ªç»™å®šç±»å‹
 		std::wcout << L"var1 is " << typeid(int).name() << std::endl;
 	}
 
-	//Ìá¹©¶Ô¿ÉÓĞ cv ÏŞ¶¨ variant µÄÀàĞÍ±àÒëÊ±ÏÂ±ê·ÃÎÊ£¬½« variant µÄ cv ÏŞ¶¨Óë¿ÉÑ¡ÏîµÄ cv ÏŞ¶¨£¨Èô´æÔÚ£©Ïà½áºÏ
+	//æä¾›å¯¹å¯æœ‰ cv é™å®š variant çš„ç±»å‹ç¼–è¯‘æ—¶ä¸‹æ ‡è®¿é—®ï¼Œå°† variant çš„ cv é™å®šä¸å¯é€‰é¡¹çš„ cv é™å®šï¼ˆè‹¥å­˜åœ¨ï¼‰ç›¸ç»“åˆ
 	std::variant_alternative<2, decltype(var1)>::type val{ L"123" };
-	// »ñÈ¡Öµ
+	// è·å–å€¼
 	var1 = 1;
 	std::wcout << L"var1 = " << std::get<int>(var1) << std::endl;
 
 	var2 = L"2";
 	std::wcout << L"var2 = " << std::get<2>(var2) << std::endl;
 
-	if (auto pV = std::get_if<int>(&var3)) {	//Ö¸Ïò´æ´¢ÓÚ±»Ö¸ÏòµÄ variant ÖĞÖµµÄÖ¸Õë£¬´íÎóÊ±Îª¿ÕÖ¸Õë
+	if (auto pV = std::get_if<int>(&var3)) {	//æŒ‡å‘å­˜å‚¨äºè¢«æŒ‡å‘çš„ variant ä¸­å€¼çš„æŒ‡é’ˆï¼Œé”™è¯¯æ—¶ä¸ºç©ºæŒ‡é’ˆ
 		std::wcout << L"var3 = " << *pV << std::endl;
 	}
 }

@@ -14,45 +14,45 @@
 //{
 //	list<int>L;
 //
-//	//Î²²å
+//	//å°¾æ’
 //	L.push_back(10);
 //	L.push_back(20);
 //	L.push_back(30);
 //	L.push_back(40);
 //
-//	//Í·²å
+//	//å¤´æ’
 //	L.push_front(100);
 //	L.push_front(200);
 //	L.push_front(300);
 //
 //	printList(L);
 //
-//	//Î²É¾
+//	//å°¾åˆ 
 //	L.pop_back();
 //	printList(L);
 //
-//	//Í·É¾
+//	//å¤´åˆ 
 //	L.pop_front();
 //	printList(L);
 //
-//	//insert²åÈë
+//	//insertæ’å…¥
 //	list<int>::iterator it = L.begin();
 //	L.insert(it++, 1000);
 //	printList(L);
 //
-//	//É¾³ı
+//	//åˆ é™¤
 //	it = L.begin();
 //	L.erase(++it);
 //	printList(L);
 //
-//	//ÒÆ³ı
-//	L.push_back(10000);//²åÈë10000
+//	//ç§»é™¤
+//	L.push_back(10000);//æ’å…¥10000
 //	printList(L);
 //
-//	L.remove(10000);//É¾³ıËùÓĞÎª10000µÄÔªËØ
+//	L.remove(10000);//åˆ é™¤æ‰€æœ‰ä¸º10000çš„å…ƒç´ 
 //	printList(L);
 //
-//	//Çå¿Õ
+//	//æ¸…ç©º
 //	L.clear();
 //	printList(L);
 //}

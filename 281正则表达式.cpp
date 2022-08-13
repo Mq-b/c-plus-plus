@@ -3,17 +3,17 @@
 #include<regex>
 
 void search() {
-	//std::regex_search: ËÑËØÕıÔò±í´ïÊ½²ÎÊı, µ«Ëü²»ÒªÇóÕû¸ö×Ö·ûĞòÁĞÍêÈ«Æ¥Åä. 
-	//¶øÇÒËüÖ»½øĞĞµ¥´ÎËÑË÷, ËÑË÷µ½¼´Í£Ö¹¼ÌĞøËÑË÷, ²»½øĞĞÖØ¸´¶à´ÎËÑË÷.
+	//std::regex_search: æœç´ æ­£åˆ™è¡¨è¾¾å¼å‚æ•°, ä½†å®ƒä¸è¦æ±‚æ•´ä¸ªå­—ç¬¦åºåˆ—å®Œå…¨åŒ¹é…. 
+	//è€Œä¸”å®ƒåªè¿›è¡Œå•æ¬¡æœç´¢, æœç´¢åˆ°å³åœæ­¢ç»§ç»­æœç´¢, ä¸è¿›è¡Œé‡å¤å¤šæ¬¡æœç´¢.
 	std::string text = "Date:2017-10-10 ~ 2018-10-15";
 	std::string pattern = "(\\d\\d\\d\\d)";
 	std::regex express(pattern);
 	std::smatch results1;
 	if (std::regex_search(text, results1, express)){
 		for (auto i : results1)
-			std::cout << i.length() << ":" << i.str() << std::endl;//´òÓ¡Æ¥ÅäµÄ×Ö·ûÓë³¤¶È
+			std::cout << i.length() << ":" << i.str() << std::endl;//æ‰“å°åŒ¹é…çš„å­—ç¬¦ä¸é•¿åº¦
 	}
-	std::cout << std::regex_search(text, express) << std::endl;//ÕıÔòÊÇ·ñÆ¥Åä£¬´òÓ¡0»òÕß1
+	std::cout << std::regex_search(text, express) << std::endl;//æ­£åˆ™æ˜¯å¦åŒ¹é…ï¼Œæ‰“å°0æˆ–è€…1
 }
 void extended() {
 	std::string str = "zzxayyzz";
@@ -29,7 +29,7 @@ void extended() {
 void regex_match() {
 	std::string text = "192.168.139.2";
 	std::regex e("\\d + \\.\\d + \\.\\d + \\.\\d");
-	std::cmatch what; //Æ¥ÅäµÄ´ÊÓï¼ìË÷³öÀ´
+	std::cmatch what; //åŒ¹é…çš„è¯è¯­æ£€ç´¢å‡ºæ¥
 	if (regex_match("helloamfinalthinks192.168.139.2AAA", what, e)){
 		for (int i = 0; i != what.size(); i++) {
 			std::cout << what[i].first;
@@ -45,13 +45,13 @@ void regex_iterator()
 	std::regex_iterator<std::string::const_iterator> begin(text.cbegin(), text.cend(), express);
 	for (auto iter = begin; iter != std::sregex_iterator(); iter++)
 	{
-		std::cout << iter->length() << ": " << iter->str(0) << std::endl;//str·½·¨¿ÉÒÔ°Ñ·Ö×éµÄÊı¾İµÃµ½ÖµµÃ×¢Òâ
+		std::cout << iter->length() << ": " << iter->str(0) << std::endl;//stræ–¹æ³•å¯ä»¥æŠŠåˆ†ç»„çš„æ•°æ®å¾—åˆ°å€¼å¾—æ³¨æ„
 	}
 }
 void regex_replace() {
-	std::regex reg("\\d+"); //Êı×Ö
+	std::regex reg("\\d+"); //æ•°å­—
 	std::string str="hello 8848";
-	std::cout << std::regex_replace(str, reg, "±¬Õ¨ÊÖ»ú") << std::endl;
+	std::cout << std::regex_replace(str, reg, "çˆ†ç‚¸æ‰‹æœº") << std::endl;
 }
 int main() {
 	
@@ -67,11 +67,11 @@ int main() {
 	//std::regex_iterator
 	//regex_iterator();
 
-	//regex_replace(Ìæ»»)
+	//regex_replace(æ›¿æ¢)
 	//regex_replace();
 
 	/*
-		std::regex_iteratorºÍstd::regex_replace×ãÒÔÂú×ãÎÒÃÇµÄÈÕ³£Ê¹ÓÃ¡£
-		C++±ê×¼¿âµÄÕıÔòÀàĞ§ÂÊ¹ıµÍ£¬Qt»òboost¶¼ÓĞÆäËû¸ü¼ÓÓÅĞãµÄÀà¡£
+		std::regex_iteratorå’Œstd::regex_replaceè¶³ä»¥æ»¡è¶³æˆ‘ä»¬çš„æ—¥å¸¸ä½¿ç”¨ã€‚
+		C++æ ‡å‡†åº“çš„æ­£åˆ™ç±»æ•ˆç‡è¿‡ä½ï¼ŒQtæˆ–boostéƒ½æœ‰å…¶ä»–æ›´åŠ ä¼˜ç§€çš„ç±»ã€‚
 	*/
 }

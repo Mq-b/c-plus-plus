@@ -1,7 +1,7 @@
 //#pragma once
 //#include<iostream>
 //#include<string>
-////正常来说我们应该在外部实现而不是命名空间内
+////姝ｅ父鏉ヨ鎴戜滑搴旇鍦ㄥ閮ㄥ疄鐜拌�屼笉鏄懡鍚嶇┖闂村唴
 //namespace Person
 //{
 //	class person
@@ -32,7 +32,7 @@
 //	};
 //	void print()
 //	{
-//		std::cout << "哈哈哈哈" << std::endl;
+//		std::cout << "鍝堝搱鍝堝搱" << std::endl;
 //	}
 //}
 //

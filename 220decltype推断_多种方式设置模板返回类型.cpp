@@ -1,4 +1,4 @@
-#include<type_traits>//Ìá¹©Ô­ĞÍ
+#include<type_traits>//æä¾›åŸå‹
 #include <iostream>
 template<typename T1, typename T2>
 std::common_type_t<T1, T2> max(T1 a, T2 b)//c++14
@@ -25,26 +25,26 @@ T3 max4(T1 a, T2 b)
 {
 	return b < a ? a : b;
 }
-template<typename T1, typename T2, typename RT =std::decay_t<decltype(true ? T1() : T2())>>//Ä¬ÈÏÄ£°å²ÎÊı£¬ÆäÊµ¾ÍÊÇc++11ÄÇ¸ö
+template<typename T1, typename T2, typename RT =std::decay_t<decltype(true ? T1() : T2())>>//é»˜è®¤æ¨¡æ¿å‚æ•°ï¼Œå…¶å®å°±æ˜¯c++11é‚£ä¸ª
 RT max5(T1 a, T2 b)
 {
 	return b < a ? a : b;
 }
-template<typename T1, typename T2, typename RT =std::common_type_t<T1, T2>>//Ä¬ÈÏÄ£°å²ÎÊı£¬ÊÇc++14ÀàĞÍİÍÈ¡
+template<typename T1, typename T2, typename RT =std::common_type_t<T1, T2>>//é»˜è®¤æ¨¡æ¿å‚æ•°ï¼Œæ˜¯c++14ç±»å‹èƒå–
 RT max6(T1 a, T2 b)
 {
 	return b < a ? a : b;
 }
 template<typename T1, typename T2>
-decltype(auto) max7(T1 a, T2 b)//decltype(auto)µÄÒâË¼ÊÇÓÒ±ßµÄ¶«Î÷ÀàĞÍ²»decay£¬ÒâË¼¾ÍÊÇ²»ÍË»¯£¬¿ÉÒÔÖ±½ÓÍÆµ¼·µ»ØÒıÓÃ
+decltype(auto) max7(T1 a, T2 b)//decltype(auto)çš„æ„æ€æ˜¯å³è¾¹çš„ä¸œè¥¿ç±»å‹ä¸decayï¼Œæ„æ€å°±æ˜¯ä¸é€€åŒ–ï¼Œå¯ä»¥ç›´æ¥æ¨å¯¼è¿”å›å¼•ç”¨
 {
 	return b < a ? a : b;
 }
-auto max8(auto x, auto y) -> decltype(x < y ? y : x)//c++20µÄÌØĞÔ£¬ÖÚ¶àµÄauto£¬Ö±½Ó²»ĞèÒªÄ£°åÁË
+auto max8(auto x, auto y) -> decltype(x < y ? y : x)//c++20çš„ç‰¹æ€§ï¼Œä¼—å¤šçš„autoï¼Œç›´æ¥ä¸éœ€è¦æ¨¡æ¿äº†
 {
 	return x < y ? y : x;
 }
-auto max9(auto x, auto y) //¶øÇÒÒ²¿ÉÒÔ²»¼ÓÍÆµ¼
+auto max9(auto x, auto y) //è€Œä¸”ä¹Ÿå¯ä»¥ä¸åŠ æ¨å¯¼
 {
 	return x < y ? y : x;
 }
@@ -55,14 +55,14 @@ int main()
 	std::cout << typeid(::max1(10, 10u)).name() << std::endl;
 	std::cout << typeid(::max2(10, 10u)).name() << std::endl;
 	std::cout << typeid(::max3(10, 10u)).name() << std::endl;
-	std::cout << typeid(::max4<int,double,unsigned int>(10, 5.7)).name() << std::endl;//Õâ¸ö×îÂé·³
+	std::cout << typeid(::max4<int,double,unsigned int>(10, 5.7)).name() << std::endl;//è¿™ä¸ªæœ€éº»çƒ¦
 	std::cout << typeid(::max5(10, 10u)).name() << std::endl;
 	std::cout << typeid(::max6(10, 10u)).name() << std::endl;
 	std::cout << typeid(::max7(10, 10u)).name() << std::endl;
 	std::cout << typeid(::max8(10, 10u)).name() << std::endl;
 	std::cout << typeid(::max9(10, 10u)).name() << std::endl;
 
-	//std::max(10, 20);//std¿âÏÂµÄ£¬±ğÖØ¶¨Òå¾ÍºÃ
+	//std::max(10, 20);//stdåº“ä¸‹çš„ï¼Œåˆ«é‡å®šä¹‰å°±å¥½
 	return 0;
 }
-//ÀàĞÍ»áÍË»¯µÄ£¬²»ÓÃµ£ĞÄÀàĞÍÎªÒıÓÃµÄÎÊÌâ
+//ç±»å‹ä¼šé€€åŒ–çš„ï¼Œä¸ç”¨æ‹…å¿ƒç±»å‹ä¸ºå¼•ç”¨çš„é—®é¢˜

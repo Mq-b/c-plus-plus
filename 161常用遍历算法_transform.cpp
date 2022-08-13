@@ -28,10 +28,10 @@
 //		v.push_back(i);
 //	}
 //
-//	vector<int>vTarget;//Ä¿±êÈİÆ÷
-//	vTarget.resize(v.size());//Ä¿±êÈİÆ÷ĞèÒªÌáÇ°¿ª±Ù¿Õ¼ä
+//	vector<int>vTarget;//ç›®æ ‡å®¹å™¨
+//	vTarget.resize(v.size());//ç›®æ ‡å®¹å™¨éœ€è¦æå‰å¼€è¾Ÿç©ºé—´
 //
-//	transform(v.begin(), v.end(), vTarget.begin(), Transform());//°áÔËÆÚ¼äÒ²¿ÉÒÔ×öÔËËã
+//	transform(v.begin(), v.end(), vTarget.begin(), Transform());//æ¬è¿æœŸé—´ä¹Ÿå¯ä»¥åšè¿ç®—
 //
 //	for_each(vTarget.begin(), vTarget.end(), MyPrint());
 //	cout << endl;
@@ -42,4 +42,4 @@
 //	test01();
 //	return 0;
 //}
-//¾ÍÊÇ°ÑÒ»¸öÈİÆ÷°áÔËµ½ÁíÒ»¸öÈİÆ÷
+//å°±æ˜¯æŠŠä¸€ä¸ªå®¹å™¨æ¬è¿åˆ°å¦ä¸€ä¸ªå®¹å™¨

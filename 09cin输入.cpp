@@ -3,19 +3,19 @@
 //
 //int main()
 //{
-//	int a = 0;//ÕûĞÎ
-//	cout << "Çë¸øÕûĞÎ±äÁ¿a¸³Öµ:" << endl;
+//	int a = 0;//æ•´å½¢
+//	cout << "è¯·ç»™æ•´å½¢å˜é‡aèµ‹å€¼:" << endl;
 //	cin >> a;
-//	cout << "ÕûĞÎ±äÁ¿a="<<a<<endl;
+//	cout << "æ•´å½¢å˜é‡a="<<a<<endl;
 //
-//	string str1;//×Ö·û´®
-//	cout << "Çë¸ø×Ö·û´®str1¸³Öµ" << endl;
+//	string str1;//å­—ç¬¦ä¸²
+//	cout << "è¯·ç»™å­—ç¬¦ä¸²str1èµ‹å€¼" << endl;
 //	cin >> str1;
-//	cout << "×Ö·û´®str1=" << str1 << endl;
+//	cout << "å­—ç¬¦ä¸²str1=" << str1 << endl;
 //
-//	bool flag = false;//²¼¶ûÀàĞÍ
-//	cout << "Çë¸ø²¼¶ûÀàĞÍflag¸³Öµ" << endl;
-//	cin >> flag;//·Ç0¼´ÎªÕæ
-//	cout << "²¼¶ûÀàĞÍflag=" << flag << endl;
+//	bool flag = false;//å¸ƒå°”ç±»å‹
+//	cout << "è¯·ç»™å¸ƒå°”ç±»å‹flagèµ‹å€¼" << endl;
+//	cin >> flag;//é0å³ä¸ºçœŸ
+//	cout << "å¸ƒå°”ç±»å‹flag=" << flag << endl;
 //	return 0;
 //}

@@ -4,13 +4,13 @@
 
 int main()
 {
-    std::allocator<int> v1Alloc;//´´½¨¿Õ¼äÅäÖÃÆ÷¶ÔÏóÊ±µÄÀàÐÍ¾ö¶¨ÉêÇë¶ÑÇøÄÚ´æµÄÀàÐÍ
-    auto v1aPtr = v1Alloc.allocate(10);//·ÖÅäÄÚ´æÊýÁ¿
+    std::allocator<int> v1Alloc;//åˆ›å»ºç©ºé—´é…ç½®å™¨å¯¹è±¡æ—¶çš„ç±»åž‹å†³å®šç”³è¯·å †åŒºå†…å­˜çš„ç±»åž‹
+    auto v1aPtr = v1Alloc.allocate(10);//åˆ†é…å†…å­˜æ•°é‡
     for (int i = 0; i < 10; i++) {
         v1aPtr[i] = i;
     }
     std::for_each(v1aPtr, v1aPtr + 10, [](auto a) {std::cout << a << ' '; });
     std::cout << std::endl;
-    v1Alloc.deallocate(v1aPtr, 10);//ÊÍ·Å·ÖÅäµÄÄÚ´æ
+    v1Alloc.deallocate(v1aPtr, 10);//é‡Šæ”¾åˆ†é…çš„å†…å­˜
 
 }

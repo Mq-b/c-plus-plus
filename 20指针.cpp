@@ -11,7 +11,7 @@
 //	cout << &n << endl;
 //	cout <<sizeof(p) << endl;
 //
-//	//*p = 20;//´íÎóĞ´·¨
+//	//*p = 20;//é”™è¯¯å†™æ³•
 //	cout << n << endl;
 //	return 0;
 //}

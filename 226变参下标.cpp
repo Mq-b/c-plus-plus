@@ -2,7 +2,7 @@
 #include<string>
 template<typename...Args>
 auto print(Args&&...args) {
-	(std::cout << ... << args) << std::endl;//创建c++17的折叠表达式函数来对下面这个进行输出
+	(std::cout << ... << args) << std::endl;//鍒涘缓c++17鐨勬姌鍙犺〃杈惧紡鍑芥暟鏉ュ涓嬮潰杩欎釜杩涜杈撳嚭
 
 }
 template<typename C, typename... Idx>
@@ -14,10 +14,10 @@ void printElems2(C const& coll ,Idx... idx)
 template<typename C, typename... Idx>
 void printElems(C const& coll, Idx... idx)
 {
-	((std::cout << coll[idx] << ","), ...);//中间用逗号隔开
+	((std::cout << coll[idx] << ","), ...);//涓棿鐢ㄩ�楀彿闅斿紑
 }
 
-//直接cout输出，不使用外部函数
+//鐩存帴cout杈撳嚭锛屼笉浣跨敤澶栭儴鍑芥暟
 template<typename C, typename... Idx>
 void printElems(C const& coll, Idx... idx)
 {

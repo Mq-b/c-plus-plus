@@ -23,28 +23,28 @@
 //};
 //void test01()
 //{
-//	//arr¾ÍÊÇarray<int,10>µÄ±ğÃû
+//	//arrå°±æ˜¯array<int,10>çš„åˆ«å
 //	using arr = std::array<int, 10>;
 //	arr num{0,1,2,3,4,5,6,7,8,9};
 //	for (int i : num)std::cout << i << " ";
 //	std::cout << typeid(num).name() << std::endl;
 //
-//	//ÕâÊÇc++Ìá¹©µÄ±ğÃû·½Ê½,Ò²¿ÉÒÔÊ¹ÓÃc·ç¸ñµÄtypedef
+//	//è¿™æ˜¯c++æä¾›çš„åˆ«åæ–¹å¼,ä¹Ÿå¯ä»¥ä½¿ç”¨cé£æ ¼çš„typedef
 //	typedef std::array<int, 10>i;
 //	std::cout << typeid(i).name() << std::endl;
 //}
 //
 //void test02()
 //{
-//	//p¾ÍÊÇÕâ¸öÄ£°åµÄ±ğÃû,ÒÑ¾­Ğ´ºÃÁËÄ£°å²ÎÊı£¬ËùÒÔ¿ÉÒÔÖ±½Ó°Ñpµ±ÀàĞÍÃûÊ¹ÓÃ¼´¿É
+//	//på°±æ˜¯è¿™ä¸ªæ¨¡æ¿çš„åˆ«å,å·²ç»å†™å¥½äº†æ¨¡æ¿å‚æ•°ï¼Œæ‰€ä»¥å¯ä»¥ç›´æ¥æŠŠpå½“ç±»å‹åä½¿ç”¨å³å¯
 //	using p = Person<std::string,int>;
-//	p person("ÀëÆ×", 12);
+//	p person("ç¦»è°±", 12);
 //	person.show();
 //}
 //int main()
 //{
 //	//test01();
-//	//Ê¹ÓÃÄ£°åusingÌá¹©±ğÃû
+//	//ä½¿ç”¨æ¨¡æ¿usingæä¾›åˆ«å
 //	test02();
 //	return 0;
 //}

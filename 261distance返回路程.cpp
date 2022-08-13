@@ -1,4 +1,4 @@
-#include<iterator>//Ìá¹©std::distance ¾àÀë
+#include<iterator>//æä¾›std::distance è·ç¦»
 #include<vector>
 #include<iostream>
 int main() {

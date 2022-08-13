@@ -2,12 +2,12 @@
 //using namespace std;
 //#include<string>
 //
-//#include"99.1person.cpp"//µÚÒ»ÖÖ½â¾ö°ì·¨
+//#include"99.1person.cpp"//ç¬¬ä¸€ç§è§£å†³åŠæ³•
 //
-////µÚ¶şÖÖ½â¾ö°ì·¨£¬½«ÎÒÃÇµÄ.hºÍ.cppÖĞµÄÄÚÈİĞ´ÔÚÒ»Æğ£¬½«ºó×ºÃû¸ÄÎª.hppÎÄ¼ş
+////ç¬¬äºŒç§è§£å†³åŠæ³•ï¼Œå°†æˆ‘ä»¬çš„.hå’Œ.cppä¸­çš„å†…å®¹å†™åœ¨ä¸€èµ·ï¼Œå°†åç¼€åæ”¹ä¸º.hppæ–‡ä»¶
 //#include"person.hpp"
 //
-////ÀàÄ£°å·ÖÎÄ¼ş±àĞ´ÎÊÌâÒÔ¼°½â¾ö
+////ç±»æ¨¡æ¿åˆ†æ–‡ä»¶ç¼–å†™é—®é¢˜ä»¥åŠè§£å†³
 //
 ////template<class T1,class T2>
 ////class Person
@@ -32,12 +32,12 @@
 ////template<class T1, class T2>
 ////void Person<T1,T2>::showPerson()
 ////{
-////	cout << "ĞÕÃû:" << this->m_Name << "ÄêÁä:" << this->m_Age << endl;
+////	cout << "å§“å:" << this->m_Name << "å¹´é¾„:" << this->m_Age << endl;
 ////}
 //
 //void test01()
 //{
-//	Person<string, int>p("Éµ×Ó", 18);
+//	Person<string, int>p("å‚»å­", 18);
 //	p.showPerson();
 //}
 //int main()
@@ -45,4 +45,4 @@
 //	test01();
 //	return 0;
 //}
-////ÒÑ¾­°ÑÀàºÍÊµÏÖĞ´ÔÚhppÎÄ¼ş£¬×¢ÊÍµôµÄ²»ÓÃ»Ö¸´
+////å·²ç»æŠŠç±»å’Œå®ç°å†™åœ¨hppæ–‡ä»¶ï¼Œæ³¨é‡Šæ‰çš„ä¸ç”¨æ¢å¤

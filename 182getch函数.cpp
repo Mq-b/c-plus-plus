@@ -5,16 +5,16 @@
 //void test01()
 //{
 //	char ch = 0;
-//	//²»»ØÏÔº¯Êı£¬´ÓÊäÈëÁ÷ÖĞ»ñÈ¡Êı¾İ
+//	//ä¸å›æ˜¾å‡½æ•°ï¼Œä»è¾“å…¥æµä¸­è·å–æ•°æ®
 //	while (ch = getch())
 //	{
 //		if (ch == '0')break;
 //		else 
 //		{ 
-//			std::cout <<"¹ş¹ş" << std::endl;
+//			std::cout <<"å“ˆå“ˆ" << std::endl;
 //		}
 //	}
-//	std::cout << "ÍË³ö" << std::endl;
+//	std::cout << "é€€å‡º" << std::endl;
 //}
 //
 //void test02()
@@ -27,8 +27,8 @@
 //	std::cout << typeid(5ull).name() << std::endl;
 //	std::cout << typeid(5ll).name() << std::endl;
 //	std::cout << typeid(5).name() << std::endl;
-//	//²âÊÔÊı¾İµÄÀàĞÍ
-//	//Ö±½ÓÔ½½ç¶ÁÈ¡
+//	//æµ‹è¯•æ•°æ®çš„ç±»å‹
+//	//ç›´æ¥è¶Šç•Œè¯»å–
 //	int a[2][2]{ 1,2,3,4 };
 //	std::cout << a[0][3] << std::endl;
 //}

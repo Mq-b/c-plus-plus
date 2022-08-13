@@ -9,12 +9,12 @@ int main()
     std::vector<std::string> names{ "A1", "Beth", "Carol", "Dan", "Eve","Fred", "George", "Harry", "Iain", "Joe" };
     std::unordered_set<std::string> more_names{ "Jean", "John" };
     size_t max_length{ 4 };
-    std::copy_if(std::begin(names), std::end(names), std::inserter(more_names, std::begin(more_names)), [=](const std::string& s) { return s.length() <= max_length; });//Ã¿Ò»Ïî¶¼ÒªÅÐ¶Ï³¤¶ÈÊÇ·ñ´óÓÚµÈÓÚ4£¬Âú×ãÌõ¼þ²Å»á¿½±´
-    /*ÒòÎª×÷ÎªµÚ 4 ¸ö²ÎÊýµÄ lambda ±í´ïÊ½ËùÌí¼ÓµÄÌõ¼þ£¬ÕâÀïµÄ copy_if() ²Ù×÷Ö»»á¸´ÖÆ names ÖÐµÄ 4 ¸ö×Ö·û´®»ò¸üÉÙ¡£Ä¿µÄÈÝÆ÷ÊÇÒ»¸ö unordered_set ÈÝÆ÷ more_names£¬ËüÒÑ¾­°ü
-    º¬Á½¸öº¬ÓÐ 4 ¸ö×Ö·ûµÄÃû³Æ¡£ºÍÇ°ÃæµÄÕÂ½ÚÒ»Ñù£¬insert_itemtor »á½«ÔªËØÌí¼Óµ½ÏÞ¶¨µÄ¹ØÁªÈÝÆ÷ÖÐ¡£Èç¹ûÏëÒªÕ¹Ê¾ËüÊÇÈçºÎ¹¤×÷µÄ£¬¿ÉÒÔÓÃ copy() Ëã·¨ÁÐ³ö more_names µÄÄÚÈÝ*/
+    std::copy_if(std::begin(names), std::end(names), std::inserter(more_names, std::begin(more_names)), [=](const std::string& s) { return s.length() <= max_length; });//æ¯ä¸€é¡¹éƒ½è¦åˆ¤æ–­é•¿åº¦æ˜¯å¦å¤§äºŽç­‰äºŽ4ï¼Œæ»¡è¶³æ¡ä»¶æ‰ä¼šæ‹·è´
+    /*å› ä¸ºä½œä¸ºç¬¬ 4 ä¸ªå‚æ•°çš„ lambda è¡¨è¾¾å¼æ‰€æ·»åŠ çš„æ¡ä»¶ï¼Œè¿™é‡Œçš„ copy_if() æ“ä½œåªä¼šå¤åˆ¶ names ä¸­çš„ 4 ä¸ªå­—ç¬¦ä¸²æˆ–æ›´å°‘ã€‚ç›®çš„å®¹å™¨æ˜¯ä¸€ä¸ª unordered_set å®¹å™¨ more_namesï¼Œå®ƒå·²ç»åŒ…
+    å«ä¸¤ä¸ªå«æœ‰ 4 ä¸ªå­—ç¬¦çš„åç§°ã€‚å’Œå‰é¢çš„ç« èŠ‚ä¸€æ ·ï¼Œinsert_itemtor ä¼šå°†å…ƒç´ æ·»åŠ åˆ°é™å®šçš„å…³è”å®¹å™¨ä¸­ã€‚å¦‚æžœæƒ³è¦å±•ç¤ºå®ƒæ˜¯å¦‚ä½•å·¥ä½œçš„ï¼Œå¯ä»¥ç”¨ copy() ç®—æ³•åˆ—å‡º more_names çš„å†…å®¹*/
     std::copy(std::begin(more_names), std::end(more_names), std::ostream_iterator <std::string>{std::cout, " "});
     std::cout << std::endl;
 
-    //µ±È»Ò²¿ÉÒÔÊ¹ÓÃÁ÷µü´úÆ÷£¬´òÓ¡lambdaÎªÕæµÄ
+    //å½“ç„¶ä¹Ÿå¯ä»¥ä½¿ç”¨æµè¿­ä»£å™¨ï¼Œæ‰“å°lambdaä¸ºçœŸçš„
     std::copy_if(std::begin(names), std::end(names), std::ostream_iterator< std::string> {std::cout, " "}, [max_length](const std::string& s) { return s.length() > max_length; });
 }

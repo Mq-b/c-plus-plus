@@ -6,7 +6,7 @@ namespace SS {
 		void test1(){ std::cout << "not inline\n"; }
 	}
 
-	inline  namespace ssss {//inline将ssss命名空间内的函数直接导出到了SS
+	inline  namespace ssss {//inline灏唖sss鍛藉悕绌洪棿鍐呯殑鍑芥暟鐩存帴瀵煎嚭鍒颁簡SS
 		void test1() { std::cout << "inline\n"; }
 	}
 }

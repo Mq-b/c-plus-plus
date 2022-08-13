@@ -12,7 +12,7 @@
 //	ofs.close();
 //
 //	std::ifstream ifs;
-//	//读取也可以默认打开方式
+//	//璇诲彇涔熷彲浠ラ粯璁ゆ墦寮�鏂瑰紡
 //	ifs.open(name);
 //	std::string str2;
 //	while (ifs >> str2)
@@ -23,7 +23,7 @@
 //}
 //int main()
 //{
-//	//按照输入创建顺便写入
+//	//鎸夌収杈撳叆鍒涘缓椤轰究鍐欏叆
 //	test01();
 //	return 0;
 //}

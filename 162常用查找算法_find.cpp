@@ -3,10 +3,10 @@
 //#include<vector>
 //#include<algorithm>
 //#include<string>
-////³£ÓÃ²éÕÒËã·¨
+////å¸¸ç”¨æŸ¥æ‰¾ç®—æ³•
 ////find
 //
-////²éÕÒ ÄÚÖÃÊı¾İÀàĞÍ
+////æŸ¥æ‰¾ å†…ç½®æ•°æ®ç±»å‹
 //void test01()
 //{
 //	vector<int>v;
@@ -15,15 +15,15 @@
 //		v.push_back(i);
 //	}
 //
-//	//ÈİÆ÷ÖĞÊÇ·ñÓĞ5Õâ¸öÔªËØ
-//	vector<int>::iterator it=find(v.begin(), v.end(), 5);//²éÕÒËã·¨·µ»ØÒ»¸öµü´úÆ÷
+//	//å®¹å™¨ä¸­æ˜¯å¦æœ‰5è¿™ä¸ªå…ƒç´ 
+//	vector<int>::iterator it=find(v.begin(), v.end(), 5);//æŸ¥æ‰¾ç®—æ³•è¿”å›ä¸€ä¸ªè¿­ä»£å™¨
 //	if (it == v.end())
 //	{
-//		cout << "Ã»ÓĞÕÒµ½" << endl;
+//		cout << "æ²¡æœ‰æ‰¾åˆ°" << endl;
 //	}
 //	else
 //	{
-//		cout << "ÕÒµ½:" << *it << endl;
+//		cout << "æ‰¾åˆ°:" << *it << endl;
 //	}
 //}
 //
@@ -35,7 +35,7 @@
 //		this->m_Name = name;
 //		this->m_Age = age;
 //	}
-//	//×Ô¶¨ÒåÊı¾İÀàĞÍ²éÕÒĞèÒªÖØÔØ==,µ×²ãµÄfindÖªµÀÈçºÎ¶Ô±ÈpersonÊı¾İÀàĞÍ
+//	//è‡ªå®šä¹‰æ•°æ®ç±»å‹æŸ¥æ‰¾éœ€è¦é‡è½½==,åº•å±‚çš„findçŸ¥é“å¦‚ä½•å¯¹æ¯”personæ•°æ®ç±»å‹
 //	bool operator==(const Person& p)
 //	{
 //		if (this->m_Age == p.m_Age && this->m_Name == p.m_Name)
@@ -54,27 +54,27 @@
 //void test02()
 //{
 //	vector<Person>v;
-//	//´´½¨Êı¾İ
+//	//åˆ›å»ºæ•°æ®
 //	Person p1("aaa", 10);
 //	Person p2("bbb", 20);
 //	Person p3("ccc", 30);
 //	Person p4("ddd", 40);
-//	//·ÅÈëµ½ÈİÆ÷ÖĞ
+//	//æ”¾å…¥åˆ°å®¹å™¨ä¸­
 //	v.push_back(p1);
 //	v.push_back(p2);
 //	v.push_back(p3);
 //	v.push_back(p4);
 //
-//	Person pp("bbb", 20);//×ö²éÕÒ
+//	Person pp("bbb", 20);//åšæŸ¥æ‰¾
 //
-//	vector<Person>::iterator it=find(v.begin(), v.end(), pp);//²éÕÒËã·¨·µ»ØÒ»¸öµü´úÆ÷
+//	vector<Person>::iterator it=find(v.begin(), v.end(), pp);//æŸ¥æ‰¾ç®—æ³•è¿”å›ä¸€ä¸ªè¿­ä»£å™¨
 //	if (it == v.end())
 //	{
-//		cout << "Ã»ÓĞÕÒµ½" << endl;
+//		cout << "æ²¡æœ‰æ‰¾åˆ°" << endl;
 //	}
 //	else
 //	{
-//		cout << "ÕÒµ½ÔªËØ ĞÕÃû:" << it->m_Name << "ÄêÁä:" << it->m_Age << endl;
+//		cout << "æ‰¾åˆ°å…ƒç´  å§“å:" << it->m_Name << "å¹´é¾„:" << it->m_Age << endl;
 //	}
 //}
 //int main()
@@ -83,4 +83,4 @@
 //	test02();
 //	return 0;
 //}
-////ÀûÓÃfind¿ÉÒÔÔÚÈİÆ÷ÖĞÕÒ³öÖ¸¶¨µÄÔªËØ£¬·µ»ØÖµÊÇµü´úÆ÷
+////åˆ©ç”¨findå¯ä»¥åœ¨å®¹å™¨ä¸­æ‰¾å‡ºæŒ‡å®šçš„å…ƒç´ ï¼Œè¿”å›å€¼æ˜¯è¿­ä»£å™¨

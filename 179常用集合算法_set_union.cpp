@@ -2,7 +2,7 @@
 //using namespace std;
 //#include<vector>
 //#include<algorithm>
-////³£ÓÃµÄ¼¯ºÏËã·¨ set_union ²¢¼¯
+////å¸¸ç”¨çš„é›†åˆç®—æ³• set_union å¹¶é›†
 //void myPrint(int val)
 //{
 //	cout << val << " ";
@@ -18,8 +18,8 @@
 //		v2.push_back(i + 5);
 //	}
 //	vector<int>vTarget;
-//	//Ä¿±êÈİÆ÷ÌáÇ°¿ª±Ù¿Õ¼ä
-//	//×îÌØÊâÇé¿ö Á½¸öÈİÆ÷Ã»ÓĞ½»¼¯£¬²¢¼¯¾ÍÊÇÁ½¸öÈİÆ÷sizeÏà¼Ó
+//	//ç›®æ ‡å®¹å™¨æå‰å¼€è¾Ÿç©ºé—´
+//	//æœ€ç‰¹æ®Šæƒ…å†µ ä¸¤ä¸ªå®¹å™¨æ²¡æœ‰äº¤é›†ï¼Œå¹¶é›†å°±æ˜¯ä¸¤ä¸ªå®¹å™¨sizeç›¸åŠ 
 //	vTarget.resize(v1.size()+v2.size());
 //
 //	vector<int>::iterator vEnd = set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget.begin());
@@ -32,4 +32,4 @@
 //	test01();
 //	return 0;
 //}
-////set_union·µ»ØÖµÊÇ²¢¼¯ÖĞ×îºóÒ»¸öÔªËØµÄÎ»ÖÃ
+////set_unionè¿”å›å€¼æ˜¯å¹¶é›†ä¸­æœ€åä¸€ä¸ªå…ƒç´ çš„ä½ç½®

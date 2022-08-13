@@ -3,7 +3,7 @@
 //#include<vector>
 //#include<algorithm>
 //
-////³£ÓÃµÄ¿½±´ºÍÌæ»»Ëã·¨ replace
+////å¸¸ç”¨çš„æ‹·è´å’Œæ›¿æ¢ç®—æ³• replace
 //class MyPrint
 //{
 //public:
@@ -22,14 +22,14 @@
 //	v.push_back(20);
 //	v.push_back(10);
 //
-//	cout << "Ìæ»»Ç°" << endl;
+//	cout << "æ›¿æ¢å‰" << endl;
 //	for_each(v.begin(), v.end(), MyPrint());
 //	cout << endl;
-//	cout << "Ìæ»»ºó" << endl;
+//	cout << "æ›¿æ¢å" << endl;
 //
-//	//½«20Ìæ»»Îª200
-//	replace(v.begin(), v.end(), 20, 200);//ËÄ¸ö²ÎÊı£¬²»Éµ¶¼¿´µÄ¶®
-//	//°ÑËùÓĞÖµÎª20µÄÔªËØÌæ»»Îª200
+//	//å°†20æ›¿æ¢ä¸º200
+//	replace(v.begin(), v.end(), 20, 200);//å››ä¸ªå‚æ•°ï¼Œä¸å‚»éƒ½çœ‹çš„æ‡‚
+//	//æŠŠæ‰€æœ‰å€¼ä¸º20çš„å…ƒç´ æ›¿æ¢ä¸º200
 //	for_each(v.begin(), v.end(), MyPrint());
 //
 //}
@@ -40,7 +40,7 @@
 //	return 0;
 //}
 
-////×Ô¶¨ÒåÊı¾İÀàĞÍ
+////è‡ªå®šä¹‰æ•°æ®ç±»å‹
 //#include<iostream>
 //using namespace std;
 //#include<string>
@@ -58,11 +58,11 @@
 //	}
 //	string m_Name;
 //	int m_Age;
-//	bool operator==(const Person& val)//¶şÔªÎ½´Ê
+//	bool operator==(const Person& val)//äºŒå…ƒè°“è¯
 //	{
 //		return this->m_Age == val.m_Age;
 //	}
-//	void operator=(const Person& p)//ÖØÔØ=
+//	void operator=(const Person& p)//é‡è½½=
 //	{
 //		this->m_Age = p.m_Age;
 //	}
@@ -72,7 +72,7 @@
 //public:
 //	void operator()(const Person& p)
 //	{
-//		cout << "ĞÕÃû:" << p.m_Name << " Ñ§ºÅ:" << p.m_Age << endl;
+//		cout << "å§“å:" << p.m_Name << " å­¦å·:" << p.m_Age << endl;
 //	}
 //};
 //void test01()
@@ -89,12 +89,12 @@
 //	n.push_back(p3);
 //	n.push_back(p4);
 //
-//	cout << "ĞŞ¸ÄÇ°" << endl;
-//	for_each(n.begin(), n.end(), Print());//·Âº¯Êı
+//	cout << "ä¿®æ”¹å‰" << endl;
+//	for_each(n.begin(), n.end(), Print());//ä»¿å‡½æ•°
 //
-//	cout << "ĞŞ¸Äºó" << endl;
+//	cout << "ä¿®æ”¹å" << endl;
 //	replace(n.begin(), n.end(), p4, p5);
-//	for_each(n.begin(), n.end(), Print());//·Âº¯Êı
+//	for_each(n.begin(), n.end(), Print());//ä»¿å‡½æ•°
 //}
 //int main()
 //{

@@ -1,31 +1,31 @@
 //#include<iostream>
 //using namespace std;
 //#include<string>
-////1¡¢²éÕÒ
+////1ã€æŸ¥æ‰¾
 //void test01()
 //{
 //	string str1 = "abcdefg";
-//	int a=str1.find("fg");//²éÕÒ
+//	int a=str1.find("fg");//æŸ¥æ‰¾
 //	if (a == -1)
 //	{
-//		cout << "Î´ÕÒµ½×Ö·û´®" << endl;
+//		cout << "æœªæ‰¾åˆ°å­—ç¬¦ä¸²" << endl;
 //	}
 //	else
 //	{
-//		cout << "ÕÒµ½×Ö·û´®=" << a << endl;
+//		cout << "æ‰¾åˆ°å­—ç¬¦ä¸²=" << a << endl;
 //	}
 //
-//	//rfindºÍfindµÄÇø±ğ
-//	//rfindÊÇ´ÓÓÒÍù×ó²é£¬findÊÇ´Ó×óÍùÓÒ²é
+//	//rfindå’Œfindçš„åŒºåˆ«
+//	//rfindæ˜¯ä»å³å¾€å·¦æŸ¥ï¼Œfindæ˜¯ä»å·¦å¾€å³æŸ¥
 //
 //}
 //
-////2¡¢Ìæ»»
+////2ã€æ›¿æ¢
 //void test02()
 //{
 //	string str1 = "abcdefg";
 //
-//	//´Ó1ºÅÎ»ÖÃÆğÈı¸ö×Ö·ûÌæ»»Îª1111
+//	//ä»1å·ä½ç½®èµ·ä¸‰ä¸ªå­—ç¬¦æ›¿æ¢ä¸º1111
 //	str1.replace(1, 3, "1111");
 //
 //	cout << str1 << endl;

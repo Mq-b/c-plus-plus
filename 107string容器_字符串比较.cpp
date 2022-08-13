@@ -1,7 +1,7 @@
 //#include<iostream>
 //using namespace std;
 //
-////×Ö·û´®±È½Ï
+////å­—ç¬¦ä¸²æ¯”è¾ƒ
 //
 //void test01()
 //{
@@ -10,15 +10,15 @@
 //
 //	if (str1.compare(str2) == 0)
 //	{
-//		cout << "str1µÈÓÚstr2" << endl;
+//		cout << "str1ç­‰äºŽstr2" << endl;
 //	}
 //	else if (str1.compare(str2) > 0)
 //	{
-//		cout << "str1´óÓÚstr2" << endl;
+//		cout << "str1å¤§äºŽstr2" << endl;
 //	}
 //	else
 //	{
-//		cout << "str1Ð¡ÓÚstr2" << endl;
+//		cout << "str1å°äºŽstr2" << endl;
 //	}
 //}
 //
@@ -27,4 +27,4 @@
 //	test01();
 //	return 0;
 //}
-////×Ö·û´®µÄ±È½ÏÃ»Ê²Ã´ÒâÒå£¬Ò»°ãÊÇÅÐ¶ÏÊÇ·ñÏàµÈ£¬ÖÐÎÄ
+////å­—ç¬¦ä¸²çš„æ¯”è¾ƒæ²¡ä»€ä¹ˆæ„ä¹‰ï¼Œä¸€èˆ¬æ˜¯åˆ¤æ–­æ˜¯å¦ç›¸ç­‰ï¼Œä¸­æ–‡

@@ -1,25 +1,25 @@
 //#include<iostream>
 //using namespace std;
-//#include<fstream>//Í·ÎÄ¼ş°üº¬
-////ÎÄ±¾ÎÄ¼ş Ğ´ÎÄ¼ş
+//#include<fstream>//å¤´æ–‡ä»¶åŒ…å«
+////æ–‡æœ¬æ–‡ä»¶ å†™æ–‡ä»¶
 //
 //int main()
 //{
-//	//1¡¢°üº¬Í·ÎÄ¼ş
-//	//2¡¢´´½¨Á÷¶ÔÏó
+//	//1ã€åŒ…å«å¤´æ–‡ä»¶
+//	//2ã€åˆ›å»ºæµå¯¹è±¡
 //	ofstream ofs;
 //
-//	//3¡¢Ö¸¶¨´ò¿ª·½Ê½
-//	ofs.open("ÎÄ¼ş.txt", ios::out);
-//	//4¡¢Ğ´ÄÚÈİ
-//	ofs<< "ĞÕÃû:ÕÅÈı" << endl;
-//	ofs<< "ĞÔ±ğ:ÄĞ" << endl;
-//	ofs<< "ÄêÁä:18" << endl;
-//	//5¡¢¹Ø±ÕÎÄ¼ş
+//	//3ã€æŒ‡å®šæ‰“å¼€æ–¹å¼
+//	ofs.open("æ–‡ä»¶.txt", ios::out);
+//	//4ã€å†™å†…å®¹
+//	ofs<< "å§“å:å¼ ä¸‰" << endl;
+//	ofs<< "æ€§åˆ«:ç”·" << endl;
+//	ofs<< "å¹´é¾„:18" << endl;
+//	//5ã€å…³é—­æ–‡ä»¶
 //	ofs.close();
 //	return 0;
 //}
-//±ß¶Á±ßĞ´
+//è¾¹è¯»è¾¹å†™
 //#include<iostream>
 //using namespace std;
 //#include<fstream>
@@ -27,22 +27,22 @@
 //int main()
 //{
 //	ifstream ifs;
-//	ifs.open("ÎÄ¼ş.txt", ios::in);
+//	ifs.open("æ–‡ä»¶.txt", ios::in);
 //	if (ifs.is_open() == NULL)
 //	{
-//		cout << "´ò¿ªÊ§°Ü" << endl;
+//		cout << "æ‰“å¼€å¤±è´¥" << endl;
 //		return 0;
 //	}
 //	ofstream ofs;
-//	ofs.open("ÎÄ¼ş2.txt", ios::out);
+//	ofs.open("æ–‡ä»¶2.txt", ios::out);
 //	char ch[1024] = { 0 };
-//	while (ifs >> ch)//±ß¶ÁÈ¡Êı¾İ±ßĞ´ÈëÊı¾İ
+//	while (ifs >> ch)//è¾¹è¯»å–æ•°æ®è¾¹å†™å…¥æ•°æ®
 //	{
 //		cout << ch << endl;
 //		ofs << ch << endl;
 //	}
 //
-//	ifs.close();//¹Ø±Õ¶ÁÈ¡ÎÄ¼ş
-//	ofs.close();//¹Ø±ÕĞ´ÈëÎÄ¼ş
+//	ifs.close();//å…³é—­è¯»å–æ–‡ä»¶
+//	ofs.close();//å…³é—­å†™å…¥æ–‡ä»¶
 //	return 0;
 //}

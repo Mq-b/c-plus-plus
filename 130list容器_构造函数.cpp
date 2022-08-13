@@ -2,7 +2,7 @@
 //using namespace std;
 //#include<list>
 //
-////listÈİÆ÷¹¹Ôìº¯Êı
+////listå®¹å™¨æ„é€ å‡½æ•°
 //void printList(const list<int>& L)
 //{
 //	for (list<int>::const_iterator it = L.begin(); it != L.end(); it++)
@@ -14,23 +14,23 @@
 //
 //void test01()
 //{
-//	//´´½¨listÈİÆ÷
-//	list<int>L1;//Ä¬ÈÏ¹¹Ôì
+//	//åˆ›å»ºlistå®¹å™¨
+//	list<int>L1;//é»˜è®¤æ„é€ 
 //
-//	//Ìí¼ÓÊı¾İ
+//	//æ·»åŠ æ•°æ®
 //	L1.push_back(10);
 //	L1.push_back(20);
 //	L1.push_back(30);
 //	L1.push_back(40);
 //
-//	//±éÀúÈİÆ÷
+//	//éå†å®¹å™¨
 //	printList(L1);
 //
-//	//Çø¼ä·½Ê½¹¹Ôì
+//	//åŒºé—´æ–¹å¼æ„é€ 
 //	list<int>L2(L1.begin(), L1.end());
 //	printList(L2);
 //
-//	//¿½±´¹¹Ôì
+//	//æ‹·è´æ„é€ 
 //	list<int>L3(L2);
 //	printList(L3);
 //

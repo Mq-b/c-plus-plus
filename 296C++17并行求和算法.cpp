@@ -5,14 +5,14 @@
 
 void printSum(size_t num)
 {
-	// ÓÃÊı×ÖĞòÁĞ1 2 3 4´´½¨coll£º
+	// ç”¨æ•°å­—åºåˆ—1 2 3 4åˆ›å»ºcollï¼š
 	std::vector<size_t> coll;
 	coll.reserve(num * 4);
 	for (long i = 0; i < num; ++i) {
 		coll.insert(coll.end(), { 1, 2, 3, 4 });
 	}
 
-	auto sum = std::reduce(std::execution::par, coll.begin(), coll.end(), 0L);//µÚÒ»¸ö¶îÍâ²ÎÊı±íÊ¾²¢ĞĞ
+	auto sum = std::reduce(std::execution::par, coll.begin(), coll.end(), 0L);//ç¬¬ä¸€ä¸ªé¢å¤–å‚æ•°è¡¨ç¤ºå¹¶è¡Œ
 	std::cout << "reduce():     " << sum << '\n';
 }
 

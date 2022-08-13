@@ -1,7 +1,7 @@
 //#include<iostream>
 //using namespace std;
 //#include<string>
-////Ä£°å¶ÔÏó×öº¯Êı²ÎÊı
+////æ¨¡æ¿å¯¹è±¡åšå‡½æ•°å‚æ•°
 //
 //template <class T1,class T2>
 //class Person
@@ -15,12 +15,12 @@
 //
 //	void showPerson()
 //	{
-//		cout << "ĞÕÃû:" << this->m_Name <<" " << "ÄêÁä:" << this->m_Age << endl;
+//		cout << "å§“å:" << this->m_Name <<" " << "å¹´é¾„:" << this->m_Age << endl;
 //	}
 //	T1 m_Name;
 //	T2 m_Age;
 //};
-////1¡¢Ö¸¶¨´«ÈëÀàĞÍ
+////1ã€æŒ‡å®šä¼ å…¥ç±»å‹
 //void printPerson1(Person<string, int>&p)
 //{
 //	p.showPerson();
@@ -28,37 +28,37 @@
 //
 //void test01()
 //{
-//	Person<string, int>p("ËïÎò¿Õ", 100);
-//	printPerson1(p);//µÈ¼ÛÓÚp.showPerson();
+//	Person<string, int>p("å­™æ‚Ÿç©º", 100);
+//	printPerson1(p);//ç­‰ä»·äºp.showPerson();
 //}
 //
-////2¡¢²ÎÊıÄ£°å»¯
+////2ã€å‚æ•°æ¨¡æ¿åŒ–
 //template <class T1, class T2>
 //void printPerson2(Person<T1,T2>&p)
 //{
 //	p.showPerson();
-//	cout << "T1µÄÀàĞÍÊÇ:" << typeid(T1).name() << endl;
-//	cout << "T2µÄÀàĞÍÊÇ:" << typeid(T2).name() << endl;
+//	cout << "T1çš„ç±»å‹æ˜¯:" << typeid(T1).name() << endl;
+//	cout << "T2çš„ç±»å‹æ˜¯:" << typeid(T2).name() << endl;
 //}
 //
 //void test02()
 //{
-//	Person<string, int>p("Öí°Ë½ä", 100);
+//	Person<string, int>p("çŒªå…«æˆ’", 100);
 //	printPerson2(p);
 //}
 //
-////3¡¢Õû¸öÀàÄ£°å»¯
+////3ã€æ•´ä¸ªç±»æ¨¡æ¿åŒ–
 //
 //template<class T>
 //void printPerson3(T &p)
 //{
 //	p.showPerson();
-//	cout << "TµÄÊı¾İÀàĞÍÎª:" << typeid(p).name();
+//	cout << "Tçš„æ•°æ®ç±»å‹ä¸º:" << typeid(p).name();
 //}
 //
 //void test03()
 //{
-//	Person<string, int>p("ÌÆÉ®", 30);
+//	Person<string, int>p("å”åƒ§", 30);
 //	printPerson3(p);
 //}
 //int main()

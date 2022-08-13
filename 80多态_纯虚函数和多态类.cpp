@@ -1,24 +1,24 @@
 //#include<iostream>
 //using namespace std;
 //
-////´¿Ðéº¯ÊýºÍ³éÏóÀà
+////çº¯è™šå‡½æ•°å’ŒæŠ½è±¡ç±»
 //class Base
 //{
 //public: 
-//	//´¿Ðéº¯Êý
-//	//Ö»ÒªÓÐÒ»¸ö´¿Ðéº¯Êý£¬Õâ¸öÀà³ÆÎª³éÏóÀà
-//	//³éÏóÀàÌØµã
-//	//1¡¢ÎÞ·¨ÊµÀý»¯¶ÔÏó
-//	//2¡¢³éÏóÀàµÄ×ÓÀà±ØÐëÒªÖØÐ´¸¸ÀàÖÐ´¿Ðéº¯Êý£¬·ñÔòÒ²ÊôÓÚ³éÏóÀà
+//	//çº¯è™šå‡½æ•°
+//	//åªè¦æœ‰ä¸€ä¸ªçº¯è™šå‡½æ•°ï¼Œè¿™ä¸ªç±»ç§°ä¸ºæŠ½è±¡ç±»
+//	//æŠ½è±¡ç±»ç‰¹ç‚¹
+//	//1ã€æ— æ³•å®žä¾‹åŒ–å¯¹è±¡
+//	//2ã€æŠ½è±¡ç±»çš„å­ç±»å¿…é¡»è¦é‡å†™çˆ¶ç±»ä¸­çº¯è™šå‡½æ•°ï¼Œå¦åˆ™ä¹Ÿå±žäºŽæŠ½è±¡ç±»
 //	virtual void func() = 0;
 //};
 //
 //class Son : public Base
 //{
 //public:
-//	virtual void func()//×ÓÀàµÄvirtual¹Ø¼ü×Ö¿ÉÒÔÊ¡ÂÔ
+//	virtual void func()//å­ç±»çš„virtualå…³é”®å­—å¯ä»¥çœç•¥
 //	{
-//		cout << "func()º¯Êýµ÷ÓÃ" << endl;
+//		cout << "func()å‡½æ•°è°ƒç”¨" << endl;
 //	}
 //};
 //
@@ -27,7 +27,7 @@
 //public:
 //	virtual void func()
 //	{
-//		cout << "func()º¯Êýµ÷ÓÃ,AonÖÐ" << endl;
+//		cout << "func()å‡½æ•°è°ƒç”¨,Aonä¸­" << endl;
 //	}
 //};
 //
@@ -37,22 +37,22 @@
 //}
 //void test01()
 //{
-//	//Base b;//³éÏóÀàÊÇÎÞ·¨ÊµÀý»¯¶ÔÏó
+//	//Base b;//æŠ½è±¡ç±»æ˜¯æ— æ³•å®žä¾‹åŒ–å¯¹è±¡
 //	//new Base;
-//	Son s;//×ÓÀà±ØÐëÒªÖØÐ´¸¸ÀàÖÐ´¿Ðéº¯Êý£¬·ñÔòÎÞ·¨ÊµÀý»¯¶ÔÏó
+//	Son s;//å­ç±»å¿…é¡»è¦é‡å†™çˆ¶ç±»ä¸­çº¯è™šå‡½æ•°ï¼Œå¦åˆ™æ— æ³•å®žä¾‹åŒ–å¯¹è±¡
 //
-//	Base* base = new Son;//Ö¸ÕëÊ¹ÓÃ¶àÌ¬
+//	Base* base = new Son;//æŒ‡é’ˆä½¿ç”¨å¤šæ€
 //	base->func();
 //	delete base;
 //
 //	Aon a;
-//	ave(a);//ÒýÓÃÊ¹ÓÃ¶àÌ¬
+//	ave(a);//å¼•ç”¨ä½¿ç”¨å¤šæ€
 //}
 //int main()
 //{
 //	test01();
 //	return 0;
 //}
-/*°üº¬´¿Ðéº¯ÊýµÄÀà³ÆÎª³éÏóÀà£¨Abstract Class£©¡£ Ö®ËùÒÔËµËü³éÏó£¬ÊÇÒòÎªËüÎÞ·¨ÊµÀý»¯£¬
-Ò²¾ÍÊÇÎÞ·¨´´½¨¶ÔÏó¡£ Ô­ÒòºÜÃ÷ÏÔ£¬´¿Ðéº¯ÊýÃ»ÓÐº¯ÊýÌå£¬²»ÊÇÍêÕûµÄº¯Êý£¬ÎÞ·¨µ÷ÓÃ£¬
-Ò²ÎÞ·¨ÎªÆä·ÖÅäÄÚ´æ¿Õ¼ä¡£*/
+/*åŒ…å«çº¯è™šå‡½æ•°çš„ç±»ç§°ä¸ºæŠ½è±¡ç±»ï¼ˆAbstract Classï¼‰ã€‚ ä¹‹æ‰€ä»¥è¯´å®ƒæŠ½è±¡ï¼Œæ˜¯å› ä¸ºå®ƒæ— æ³•å®žä¾‹åŒ–ï¼Œ
+ä¹Ÿå°±æ˜¯æ— æ³•åˆ›å»ºå¯¹è±¡ã€‚ åŽŸå› å¾ˆæ˜Žæ˜¾ï¼Œçº¯è™šå‡½æ•°æ²¡æœ‰å‡½æ•°ä½“ï¼Œä¸æ˜¯å®Œæ•´çš„å‡½æ•°ï¼Œæ— æ³•è°ƒç”¨ï¼Œ
+ä¹Ÿæ— æ³•ä¸ºå…¶åˆ†é…å†…å­˜ç©ºé—´ã€‚*/

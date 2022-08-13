@@ -2,14 +2,14 @@
 //using namespace std;
 //#include<vector>
 //#include<algorithm>
-////³£ÓÃ±éÀúËã·¨for_each
+////å¸¸ç”¨éå†ç®—æ³•for_each
 //
-////ÆÕÍ¨º¯Êı
+////æ™®é€šå‡½æ•°
 //void print01(int val)
 //{
 //	cout << val << " ";
 //}
-////·Âº¯Êı
+////ä»¿å‡½æ•°
 //class print02
 //{
 //public:
@@ -26,10 +26,10 @@
 //		v.push_back(i);
 //	}
 //
-//	for_each(v.begin(), v.end(), print01);//ÆÕÍ¨º¯ÊıÖ»ĞèÒªº¯ÊıÃû
+//	for_each(v.begin(), v.end(), print01);//æ™®é€šå‡½æ•°åªéœ€è¦å‡½æ•°å
 //	cout << endl;
 //
-//	for_each(v.begin(), v.end(), print02());//·Âº¯ÊıĞèÒª()
+//	for_each(v.begin(), v.end(), print02());//ä»¿å‡½æ•°éœ€è¦()
 //	cout << endl;
 //}
 //int main()
@@ -37,4 +37,4 @@
 //	test01();
 //	return 0;
 //}
-////for_eachÔÚÊµ¼Ê¿ª·¢ÖĞÊÇ×î³£ÓÃ±éÀúËã·¨£¬ĞèÒªÊìÁ·ÕÆÎÕ
+////for_eachåœ¨å®é™…å¼€å‘ä¸­æ˜¯æœ€å¸¸ç”¨éå†ç®—æ³•ï¼Œéœ€è¦ç†Ÿç»ƒæŒæ¡

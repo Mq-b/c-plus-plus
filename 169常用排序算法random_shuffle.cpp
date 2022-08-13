@@ -9,16 +9,16 @@
 //	cout << val << " ";
 //}
 //
-////³£ÓÃÅÅÐòËã·¨ random_shuffle
+////å¸¸ç”¨æŽ’åºç®—æ³• random_shuffle
 //void test01()
 //{
-//	srand((unsigned int)time(NULL));//Ìá¹©ÕæËæ»ú
+//	srand((unsigned int)time(NULL));//æä¾›çœŸéšæœº
 //	vector<int>v;
 //	for (int i = 0; i < 10; i++)
 //	{
 //		v.push_back(i);
 //	}
-//	//ÀûÓÃÏ´ÅÆ Ëã·¨ ´òÂÒÅÅÐò
+//	//åˆ©ç”¨æ´—ç‰Œ ç®—æ³• æ‰“ä¹±æŽ’åº
 //	random_shuffle(v.begin(), v.end());
 //
 //	for_each(v.begin(), v.end(),myPrint);
@@ -29,4 +29,4 @@
 //	test01();
 //	return 0;
 //}
-//random_shuffle Ï´ÅÆËã·¨±È½ÏÊµÓÃ£¬Ê¹ÓÃÊ±¼ÇµÃ¼ÓËæ»úÊýÖÖ×Ó
+//random_shuffle æ´—ç‰Œç®—æ³•æ¯”è¾ƒå®žç”¨ï¼Œä½¿ç”¨æ—¶è®°å¾—åŠ éšæœºæ•°ç§å­

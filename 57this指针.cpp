@@ -5,31 +5,31 @@
 //public:
 //	Person(int m_age)
 //	{
-//		//thisÖ¸ÕëÖ¸ÏòµÄÊÇ±»µ÷ÓÃµÄ³ÉÔ±º¯ÊıËùÊôµÄ¶ÔÏó
-//		this->Age = m_age;//(*this).m_Age = age;Ò²ĞĞ
+//		//thisæŒ‡é’ˆæŒ‡å‘çš„æ˜¯è¢«è°ƒç”¨çš„æˆå‘˜å‡½æ•°æ‰€å±çš„å¯¹è±¡
+//		this->Age = m_age;//(*this).m_Age = age;ä¹Ÿè¡Œ
 //	}
 //	Person& personAddAge(Person &p)
 //	{
 //		this->Age += p.Age;
-//		//thisÖ¸Ïòp2µÄÖ¸Õë£¬¶ø*thisÖ¸ÏòµÄ¾ÍÊÇp2Õâ¸ö¶ÔÏóµÄ±¾Ìå
+//		//thisæŒ‡å‘p2çš„æŒ‡é’ˆï¼Œè€Œ*thisæŒ‡å‘çš„å°±æ˜¯p2è¿™ä¸ªå¯¹è±¡çš„æœ¬ä½“
 //
-//		return *this;//*thisÖ¸Ïò±¾Ìå
+//		return *this;//*thisæŒ‡å‘æœ¬ä½“
 //	}
 //	int Age;
 //};
-////1.½â¾öÃû³Æ³åÍ»
+////1.è§£å†³åç§°å†²çª
 //void test01()
 //{
 //	Person p1(10);
 //
 //	Person p2(10);
-//	//Á´Ê½±à³ÌË¼Ïë
+//	//é“¾å¼ç¼–ç¨‹æ€æƒ³
 //	p2.personAddAge(p1).personAddAge(p1).personAddAge(p1).personAddAge(p1);
-//	cout << "p1µÄÄêÁäÎª:" << p1.Age << endl;
+//	cout << "p1çš„å¹´é¾„ä¸º:" << p1.Age << endl;
 //
-//	cout << "p2µÄÄêÁäÎª:" << p2.Age << endl;
+//	cout << "p2çš„å¹´é¾„ä¸º:" << p2.Age << endl;
 //}
-////2.·µ»Ø¶ÔÏó±¾ÉíÓÃ*this
+////2.è¿”å›å¯¹è±¡æœ¬èº«ç”¨*this
 //int main()
 //{
 //	test01();

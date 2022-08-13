@@ -1,35 +1,35 @@
 //#include<iostream>
 //using namespace std;
-////¹¹Ôìº¯ÊýµÄµ÷ÓÃ¹æÔò
-////1.´´½¨Ò»¸öÀà£¬c++±àÒëÆ÷»á¸øÃ¿¸öÀà¶¼Ìí¼ÓÖÁÉÙÈý¸öº¯Êý
-////Ä¬ÈÏ¹¹Ôì£¨¿ÕÊµÏÖ£©
-////Îö¹¹º¯Êý£¨¿ÕÊµÏÖ£©
-////¿½±´¹¹Ôì£¨Öµ¿½±´£©
+////æž„é€ å‡½æ•°çš„è°ƒç”¨è§„åˆ™
+////1.åˆ›å»ºä¸€ä¸ªç±»ï¼Œc++ç¼–è¯‘å™¨ä¼šç»™æ¯ä¸ªç±»éƒ½æ·»åŠ è‡³å°‘ä¸‰ä¸ªå‡½æ•°
+////é»˜è®¤æž„é€ ï¼ˆç©ºå®žçŽ°ï¼‰
+////æžæž„å‡½æ•°ï¼ˆç©ºå®žçŽ°ï¼‰
+////æ‹·è´æž„é€ ï¼ˆå€¼æ‹·è´ï¼‰
 //
-////2.Èç¹ûÎÒÃÇÐ´ÁËÓÐ²Î¹¹Ôìº¯Êý£¬±àÒëÆ÷²»ÔÙÌá¹©Ä¬ÈÏ¹¹Ôì£¬ÒÀ¾ÉÌá¹©¿½±´¹¹Ôì
-////Èç¹ûÎÒÃÇÐ´ÁË¿½±´¹¹Ôìº¯Êý£¬±àÒëÆ÷¾Í²»ÔÙÌá¹©ÆäËûµÄÆÕÍ¨¹¹Ôìº¯Êý
+////2.å¦‚æžœæˆ‘ä»¬å†™äº†æœ‰å‚æž„é€ å‡½æ•°ï¼Œç¼–è¯‘å™¨ä¸å†æä¾›é»˜è®¤æž„é€ ï¼Œä¾æ—§æä¾›æ‹·è´æž„é€ 
+////å¦‚æžœæˆ‘ä»¬å†™äº†æ‹·è´æž„é€ å‡½æ•°ï¼Œç¼–è¯‘å™¨å°±ä¸å†æä¾›å…¶ä»–çš„æ™®é€šæž„é€ å‡½æ•°
 //
-////×Ü½á ÎÒÐ´ÓÐ²Î¹¹Ôìº¯Êý£¬±àÒëÆ÷²»Ìá¹©Ä¬ÈÏ¹¹Ôìº¯Êý£»ÎÒÐ´¿½±´¹¹Ôìº¯Êý£¬±àÒëÆ÷²»Ìá¹©Ê£ÏÂÁ½¸ö
+////æ€»ç»“ æˆ‘å†™æœ‰å‚æž„é€ å‡½æ•°ï¼Œç¼–è¯‘å™¨ä¸æä¾›é»˜è®¤æž„é€ å‡½æ•°ï¼›æˆ‘å†™æ‹·è´æž„é€ å‡½æ•°ï¼Œç¼–è¯‘å™¨ä¸æä¾›å‰©ä¸‹ä¸¤ä¸ª
 //class Person
 //{
 //
 //public:
 //	/*Person()
 //	{
-//		cout << "PersonµÄÄ¬ÈÏ¹¹Ôìº¯Êýµ÷ÓÃ" << endl;
+//		cout << "Personçš„é»˜è®¤æž„é€ å‡½æ•°è°ƒç”¨" << endl;
 //	}*/
 //	Person(int age)
 //	{
 //		m_Age = age;
-//		cout << "PersonµÄÓÐ²Î¹¹Ôìº¯Êýµ÷ÓÃ" << endl;
+//		cout << "Personçš„æœ‰å‚æž„é€ å‡½æ•°è°ƒç”¨" << endl;
 //	}
 //	~Person()
 //	{
-//		cout << "PersonµÄ¹¹Îöº¯Êýµ÷ÓÃ" << endl;
+//		cout << "Personçš„æž„æžå‡½æ•°è°ƒç”¨" << endl;
 //	}
 //	/*Person(const Person& p)
 //	{
-//		cout << "PersonµÄ¿½±´¹¹Ôìº¯Êýµ÷ÓÃ" << endl;
+//		cout << "Personçš„æ‹·è´æž„é€ å‡½æ•°è°ƒç”¨" << endl;
 //		m_Age = p.m_Age;
 //	}*/
 //	int m_Age;
@@ -40,14 +40,14 @@
 ////	p.m_Age = 18;
 ////	Person p2(p);
 ////
-////	cout << "p2µÄÄêÁäÎª:" << p2.m_Age << endl;
+////	cout << "p2çš„å¹´é¾„ä¸º:" << p2.m_Age << endl;
 ////}
 //
 //void test02()
 //{
 //	Person p(18);
 //	Person p2(p);
-//	cout << "p2µÄÄêÁäÎª:" << p2.m_Age << endl;
+//	cout << "p2çš„å¹´é¾„ä¸º:" << p2.m_Age << endl;
 //}
 //int main()
 //{

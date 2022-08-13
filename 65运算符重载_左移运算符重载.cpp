@@ -1,19 +1,19 @@
 //#include<iostream>
 //using namespace std;
-////×óÒÆÔËËã·ûÖØÔØ
+////å·¦ç§»è¿ç®—ç¬¦é‡è½½
 //
 //class Person
 //{
-//	friend ostream& operator<<(ostream& cout, Person& p);//È«¾Öº¯Êı·ÃÎÊÀàÄÚË½ÓĞ£¬friend¼ÓÉÏº¯ÊıÉùÃ÷
+//	friend ostream& operator<<(ostream& cout, Person& p);//å…¨å±€å‡½æ•°è®¿é—®ç±»å†…ç§æœ‰ï¼ŒfriendåŠ ä¸Šå‡½æ•°å£°æ˜
 //public:
-//	Person(int a, int b)//¹¹ÔìÄãº¯Êı
+//	Person(int a, int b)//æ„é€ ä½ å‡½æ•°
 //	{
 //		m_A = a;
 //		m_B = b;
 //	}
 //private:
-//	//ÀûÓÃ³ÉÔ±º¯ÊıÖØÔØ×óÒÆÔËËã·û	p.operator<<(cout) ¼ò»¯°æ±¾p<<cout
-//	//²»»áÀûÓÃ³ÉÔ±º¯ÊıÖØÔØ<<ÔËËã·û£¬ÒòÎªÎŞ·¨ÊµÏÖcoutÔÚ×ó²à
+//	//åˆ©ç”¨æˆå‘˜å‡½æ•°é‡è½½å·¦ç§»è¿ç®—ç¬¦	p.operator<<(cout) ç®€åŒ–ç‰ˆæœ¬p<<cout
+//	//ä¸ä¼šåˆ©ç”¨æˆå‘˜å‡½æ•°é‡è½½<<è¿ç®—ç¬¦ï¼Œå› ä¸ºæ— æ³•å®ç°coutåœ¨å·¦ä¾§
 //	void operator<<(Person& p)
 //	{
 //	}
@@ -21,14 +21,14 @@
 //	int m_B;
 //};
 //
-////Ö»ÄÜÀûÓÃÈ«¾Öº¯ÊıÖØÔØ×óÒÆÔËËã·û
-////void operator<<(ostream& cout, Person& p)//±¾ÖÊoperator<<(cout,p)	¼ò»¯cout<<p
+////åªèƒ½åˆ©ç”¨å…¨å±€å‡½æ•°é‡è½½å·¦ç§»è¿ç®—ç¬¦
+////void operator<<(ostream& cout, Person& p)//æœ¬è´¨operator<<(cout,p)	ç®€åŒ–cout<<p
 ////{
 ////	cout << "m_A=" << p.m_A << " m_B=" << p.m_B << endl;
 ////}
 //
-////coutÊÇ×ó²Ù×÷ÊıËùÒÔÒ»¸ö²ÎÊıÊÇostream& £¬ÓÒ²Ù×÷ÊıÊÇÄãĞèÒª´òÓ¡µÄÀàÊı¾İ³ÉÔ±
-//ostream & operator<<(ostream& cout, Person& p)//±¾ÖÊoperator<<(cout,p)	¼ò»¯cout<<p
+////coutæ˜¯å·¦æ“ä½œæ•°æ‰€ä»¥ä¸€ä¸ªå‚æ•°æ˜¯ostream& ï¼Œå³æ“ä½œæ•°æ˜¯ä½ éœ€è¦æ‰“å°çš„ç±»æ•°æ®æˆå‘˜
+//ostream & operator<<(ostream& cout, Person& p)//æœ¬è´¨operator<<(cout,p)	ç®€åŒ–cout<<p
 //{
 //	cout << "m_A=" << p.m_A << " m_B=" << p.m_B << endl;
 //	return cout;

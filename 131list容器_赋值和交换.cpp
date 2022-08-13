@@ -2,7 +2,7 @@
 //using namespace std;
 //#include<list>
 //
-////listÈİÆ÷¸³ÖµÓë½»»»
+////listå®¹å™¨èµ‹å€¼ä¸äº¤æ¢
 //void printList(const list<int>& L)
 //{
 //	for (list<int>::const_iterator it = L.begin(); it != L.end(); it++)
@@ -11,7 +11,7 @@
 //	}
 //	cout << endl;
 //}
-////¸³Öµ
+////èµ‹å€¼
 //void test01()
 //{
 //	list<int>L1;
@@ -24,7 +24,7 @@
 //	printList(L1);
 //
 //	list<int>L2;
-//	L2 = L1;//operator= ¸³Öµ
+//	L2 = L1;//operator= èµ‹å€¼
 //	printList(L2);
 //
 //	list<int>L3;
@@ -36,7 +36,7 @@
 //	printList(L4);
 //}
 //
-////½»»»
+////äº¤æ¢
 //void test02()
 //{
 //	list<int>L1;
@@ -48,11 +48,11 @@
 //	list<int>L2;
 //	L2.assign(10, 100);
 //
-//	cout << "½»»»Ç°:" << endl;
+//	cout << "äº¤æ¢å‰:" << endl;
 //	printList(L1);
 //	printList(L2);
 //	L1.swap(L2);
-//	cout << "½»»»ºó:" << endl;
+//	cout << "äº¤æ¢å:" << endl;
 //	printList(L1);
 //	printList(L2);
 //

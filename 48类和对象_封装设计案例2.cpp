@@ -3,28 +3,28 @@
 ////#include"class.h"
 //using namespace std;
 //
-////µãºÍÔ²¹ØÏµ°¸Àı
+////ç‚¹å’Œåœ†å…³ç³»æ¡ˆä¾‹
 //
-////µãÀà
+////ç‚¹ç±»
 //class Point
 //{
 //public:
-//	//ÉèÖÃx
+//	//è®¾ç½®x
 //	void setX(int x)
 //	{
 //		m_x = x;
 //	}
-//	//»ñÈ¡x
+//	//è·å–x
 //	int getX()
 //	{
 //		return m_x;
 //	}
-//	//ÉèÖÃy
+//	//è®¾ç½®y
 //	void setY(int y)
 //	{
 //		m_y = y;
 //	}
-//	//»ñÈ¡y
+//	//è·å–y
 //	int getY()
 //	{
 //		return m_y;
@@ -34,61 +34,61 @@
 //	int m_y;
 //};
 //
-////Ô²Àà
+////åœ†ç±»
 //class Circle
 //{
 //public:
-//	//ÉèÖÃ°ë¾¶
+//	//è®¾ç½®åŠå¾„
 //	void setR(int r)
 //	{
 //		m_R = r;
 //	}
-//	//»ñÈ¡°ë¾¶
+//	//è·å–åŠå¾„
 //	int getR()
 //	{
 //		return m_R;
 //	}
-//	//ÉèÖÃÔ²ĞÄ
+//	//è®¾ç½®åœ†å¿ƒ
 //	void setCenter(Point center)
 //	{
 //		m_Center = center;
 //	}
-//	//»ñÈ¡Ô²ĞÄ
+//	//è·å–åœ†å¿ƒ
 //	Point getCenter()
 //	{
 //		return m_Center;
 //	}
 //private:
-//	int m_R;//°ë¾¶
+//	int m_R;//åŠå¾„
 //
-//	//ÔÚÀà¿ÉÒÔÈÃÁíÒ»¸öÀà×÷Îª±¾À´ÖĞµÄ³ÉÔ±
-//	Point m_Center;//Ô²ĞÄ
+//	//åœ¨ç±»å¯ä»¥è®©å¦ä¸€ä¸ªç±»ä½œä¸ºæœ¬æ¥ä¸­çš„æˆå‘˜
+//	Point m_Center;//åœ†å¿ƒ
 //};
 //
-////ÅĞ¶ÏµãºÍÔ²¹ØÏµ
+////åˆ¤æ–­ç‚¹å’Œåœ†å…³ç³»
 //void isinCircle(Circle& c, Point& p)
 //{
-//	//¼ÆËãÁ½µãÖ®¼äµÄ¾àÀë£¬Æ½·½
+//	//è®¡ç®—ä¸¤ç‚¹ä¹‹é—´çš„è·ç¦»ï¼Œå¹³æ–¹
 //	int distance= pow((c.getCenter().getX() - p.getX()), 2) + pow((c.getCenter().getX() - p.getX()), 2);
-//	//¼ÆËã°ë¾¶µÄÆ½·½
+//	//è®¡ç®—åŠå¾„çš„å¹³æ–¹
 //	int rDistance = pow((c.getR()), 2);
-//	if (distance == rDistance)cout << "µãÔÚÔ²ÉÏ" << endl;
-//	else if (distance > rDistance)cout << "µãÔÚÔ²Íâ" << endl;
-//	else cout << "µãÔÚÔ²ÄÚ" << endl;
+//	if (distance == rDistance)cout << "ç‚¹åœ¨åœ†ä¸Š" << endl;
+//	else if (distance > rDistance)cout << "ç‚¹åœ¨åœ†å¤–" << endl;
+//	else cout << "ç‚¹åœ¨åœ†å†…" << endl;
 //}
 //int main()
 //{
 //	Circle c;
-//	c.setR(10);//°ë¾¶
+//	c.setR(10);//åŠå¾„
 //	Point center;
 //	center.setX(10);
 //	center.setY(10);
-//	c.setCenter(center);//¸øÔ²ĞÄ¸³ÖµxÖáºÍyÖá
-//	//´´½¨µã
+//	c.setCenter(center);//ç»™åœ†å¿ƒèµ‹å€¼xè½´å’Œyè½´
+//	//åˆ›å»ºç‚¹
 //	Point p;
 //	p.setX(10);
 //	p.setY(10);
-//	//ÅĞ¶Ï¹ØÏµ
+//	//åˆ¤æ–­å…³ç³»
 //	isinCircle(c, p);
 //	return 0;
 //}

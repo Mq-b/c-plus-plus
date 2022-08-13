@@ -1,30 +1,30 @@
 //#include<iostream>
 //using namespace std;
 //
-////³éÏó²»Í¬Áã¼şÀà
-////³éÏóCPUÀà
+////æŠ½è±¡ä¸åŒé›¶ä»¶ç±»
+////æŠ½è±¡CPUç±»
 //class CPU
 //{
 //public:
-//	//³éÏóµÄ¼ÆËãº¯Êı
+//	//æŠ½è±¡çš„è®¡ç®—å‡½æ•°
 //	virtual void calculate() = 0;
 //};
-////³éÏóÏÔ¿¨Àà
+////æŠ½è±¡æ˜¾å¡ç±»
 //class VideoCard
 //{
 //public:
-//	//³éÏóµÄÏÔÊ¾º¯Êı
+//	//æŠ½è±¡çš„æ˜¾ç¤ºå‡½æ•°
 //	virtual void display() = 0;
 //};
-////³éÏóÄÚ´æÌõÀà
+////æŠ½è±¡å†…å­˜æ¡ç±»
 //class Memory
 //{
 //public:
-//	//³éÏóµÄ´æ´¢º¯Êı
+//	//æŠ½è±¡çš„å­˜å‚¨å‡½æ•°
 //	virtual void calculate() = 0;
 //};
 //
-////µçÄÔÀà
+////ç”µè„‘ç±»
 //class Computer
 //{
 //public:
@@ -35,22 +35,22 @@
 //		m_mem = mem;
 //	}
 //
-//	//Ìá¹©Îö¹¹º¯Êı£¬ÊÍ·ÅµçÄÔÁã¼ş
+//	//æä¾›ææ„å‡½æ•°ï¼Œé‡Šæ”¾ç”µè„‘é›¶ä»¶
 //	~Computer()
 //	{
-//		//ÊÍ·ÅCPU
+//		//é‡Šæ”¾CPU
 //		if (m_cpu != NULL)
 //		{
 //			delete m_cpu;
 //			m_cpu = NULL;
 //		}
-//		//ÊÍ·ÅÏÔ¿¨
+//		//é‡Šæ”¾æ˜¾å¡
 //		if (m_vc != NULL)
 //		{
 //			delete m_vc;
 //			m_vc = NULL;
 //		}
-//		//ÊÍ·ÅÄÚ´æÌõ
+//		//é‡Šæ”¾å†…å­˜æ¡
 //		if (m_mem != NULL)
 //		{
 //			delete m_mem;
@@ -58,7 +58,7 @@
 //		}
 //	 }
 //
-//	//Ìá¹©¹¤×÷º¯Êı
+//	//æä¾›å·¥ä½œå‡½æ•°
 //	void word()
 //	{
 //		m_cpu->calculate();
@@ -68,37 +68,37 @@
 //		m_mem->calculate();
 //	}
 //private:
-//	CPU* m_cpu;//cpuµÄÁã¼şÖ¸Õë
-//	VideoCard* m_vc;//ÏÔ¿¨Áã¼şÖ¸Õë
-//	Memory* m_mem;//ÄÚ´æÌõÁã¼şÖ¸Õë
+//	CPU* m_cpu;//cpuçš„é›¶ä»¶æŒ‡é’ˆ
+//	VideoCard* m_vc;//æ˜¾å¡é›¶ä»¶æŒ‡é’ˆ
+//	Memory* m_mem;//å†…å­˜æ¡é›¶ä»¶æŒ‡é’ˆ
 //};
 //
-////¾ßÌå³§ÉÌ
-////intel³§ÉÌ
+////å…·ä½“å‚å•†
+////intelå‚å•†
 //class intelCPU :public CPU
 //{
 //public:
-//	virtual void calculate()//×ÓÀàÖØĞ´¸¸Àà
+//	virtual void calculate()//å­ç±»é‡å†™çˆ¶ç±»
 //	{
-//		cout << "IntelµÄCPU¿ªÊ¼¼ÆËãÁË£¡" << endl;
+//		cout << "Intelçš„CPUå¼€å§‹è®¡ç®—äº†ï¼" << endl;
 //	}
 //};
 //
 //class intelVoideoCard :public VideoCard
 //{
 //public:
-//	virtual void display()//×ÓÀàÖØĞ´¸¸Àà
+//	virtual void display()//å­ç±»é‡å†™çˆ¶ç±»
 //	{
-//		cout << "IntelµÄÏÔ¿¨¿ªÊ¼ÏÔÊ¾ÁË£¡" << endl;
+//		cout << "Intelçš„æ˜¾å¡å¼€å§‹æ˜¾ç¤ºäº†ï¼" << endl;
 //	}
 //};
 //
 //class intelMemory :public Memory
 //{
 //public:
-//	virtual void calculate()//×ÓÀàÖØĞ´¸¸Àà
+//	virtual void calculate()//å­ç±»é‡å†™çˆ¶ç±»
 //	{
-//		cout << "IntelµÄÄÚ´æÌõ¿ªÊ¼´æ´¢ÁË£¡" << endl;
+//		cout << "Intelçš„å†…å­˜æ¡å¼€å§‹å­˜å‚¨äº†ï¼" << endl;
 //	}
 //};
 //
@@ -106,45 +106,45 @@
 //class LenovoCPU :public CPU
 //{
 //public:
-//	virtual void calculate()//×ÓÀàÖØĞ´¸¸Àà
+//	virtual void calculate()//å­ç±»é‡å†™çˆ¶ç±»
 //	{
-//		cout << "LenovoµÄCPU¿ªÊ¼¼ÆËãÁË£¡" << endl;
+//		cout << "Lenovoçš„CPUå¼€å§‹è®¡ç®—äº†ï¼" << endl;
 //	}
 //};
 //
 //class LenovoVoideoCard :public VideoCard
 //{
 //public:
-//	virtual void display()//×ÓÀàÖØĞ´¸¸Àà
+//	virtual void display()//å­ç±»é‡å†™çˆ¶ç±»
 //	{
-//		cout << "LenovoµÄÏÔ¿¨¿ªÊ¼ÏÔÊ¾ÁË£¡" << endl;
+//		cout << "Lenovoçš„æ˜¾å¡å¼€å§‹æ˜¾ç¤ºäº†ï¼" << endl;
 //	}
 //};
 //
 //class LenovoMemory :public Memory
 //{
 //public:
-//	virtual void calculate()//×ÓÀàÖØĞ´¸¸Àà
+//	virtual void calculate()//å­ç±»é‡å†™çˆ¶ç±»
 //	{
-//		cout << "LenovoµÄÄÚ´æÌõ¿ªÊ¼´æ´¢ÁË£¡" << endl;
+//		cout << "Lenovoçš„å†…å­˜æ¡å¼€å§‹å­˜å‚¨äº†ï¼" << endl;
 //	}
 //};
 //
 //void test01()
 //{
-//	//µÚÒ»Ì¨µçÄÔµÄÁã¼ş
+//	//ç¬¬ä¸€å°ç”µè„‘çš„é›¶ä»¶
 //	CPU* intelcpu = new intelCPU;
 //	VideoCard* intelCard = new intelVoideoCard;
 //	Memory* intelMem = new intelMemory;
 //
-//	//´´½¨µÚÒ»Ì¨µçÄÔ
+//	//åˆ›å»ºç¬¬ä¸€å°ç”µè„‘
 //	Computer* computer = new Computer(intelcpu, intelCard, intelMem);
 //	computer->word();
 //	delete computer;
 //
 //	cout<<"------------------------------------"<<endl;
-//	cout << "µÚ¶şÌ¨µçÄÔ¿ªÊ¼¹¤×÷" << endl;
-//	//´´½¨µÚ¶şÌ¨µçÄÔ
+//	cout << "ç¬¬äºŒå°ç”µè„‘å¼€å§‹å·¥ä½œ" << endl;
+//	//åˆ›å»ºç¬¬äºŒå°ç”µè„‘
 //	Computer* computer2 = new Computer(new LenovoCPU, new LenovoVoideoCard, new LenovoMemory);
 //	computer2->word();
 //	delete computer2;

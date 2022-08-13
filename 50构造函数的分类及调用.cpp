@@ -1,33 +1,33 @@
 //#include<iostream>
 //using namespace std;
 //
-////¹¹Ôìº¯ÊýµÄ·ÖÀà¼°µ÷ÓÃ
-////·ÖÀà
-////	°´ÕÕ²ÎÊý·ÖÀàÎÞ²Î¹¹Ôì£¨Ä¬ÈÏ¹¹Ôìº¯Êý£©ºÍÓÐ²Î¹¹Ôì
-////	°´ÕÕÀàÐÍ·ÖÀà	ÆÕÍ¨¹¹Ôì	¿½±´¹¹Ôì
+////æž„é€ å‡½æ•°çš„åˆ†ç±»åŠè°ƒç”¨
+////åˆ†ç±»
+////	æŒ‰ç…§å‚æ•°åˆ†ç±»æ— å‚æž„é€ ï¼ˆé»˜è®¤æž„é€ å‡½æ•°ï¼‰å’Œæœ‰å‚æž„é€ 
+////	æŒ‰ç…§ç±»åž‹åˆ†ç±»	æ™®é€šæž„é€ 	æ‹·è´æž„é€ 
 //class Person
 //{
-//	//¹¹Ôìº¯Êý
+//	//æž„é€ å‡½æ•°
 //public:
 //	Person()
 //	{
-//		cout << "PersonµÄÎÞ²Î¹¹Ôìº¯Êýµ÷ÓÃ"<< endl;
+//		cout << "Personçš„æ— å‚æž„é€ å‡½æ•°è°ƒç”¨"<< endl;
 //	}
 //	Person(int a)
 //	{
 //		age = a;
-//		cout << "PersonµÄÓÐ²Î¹¹Ôìº¯Êýµ÷ÓÃ" << endl;
+//		cout << "Personçš„æœ‰å‚æž„é€ å‡½æ•°è°ƒç”¨" << endl;
 //	}
 //	~Person()
 //	{
-//		cout << "PersonµÄÎö¹¹º¯Êýµ÷ÓÃ" << endl;
+//		cout << "Personçš„æžæž„å‡½æ•°è°ƒç”¨" << endl;
 //	}
 //
-//	//¿½±´¹¹Ôìº¯Êý
+//	//æ‹·è´æž„é€ å‡½æ•°
 //	Person(const Person &p)
 //	{
-//		//½«´«ÈëµÄÈËÉíÉÏµÄËùÓÐµÄÊôÐÔ¿½±´µ½ÎÒÉíÉÏ
-//		cout << "¿½±´¹¹Ôìº¯Êýµ÷ÓÃ" << endl;
+//		//å°†ä¼ å…¥çš„äººèº«ä¸Šçš„æ‰€æœ‰çš„å±žæ€§æ‹·è´åˆ°æˆ‘èº«ä¸Š
+//		cout << "æ‹·è´æž„é€ å‡½æ•°è°ƒç”¨" << endl;
 //		age = p.age;
 //	}
 //	int age;
@@ -35,31 +35,31 @@
 //
 //void test01()
 //{
-//	////1.À¨ºÅ·¨
-//	//Person p1;//Ä¬ÈÏ¹¹Ôìº¯Êýµ÷ÓÃ
-//	//Person p2(10);//ÓÐ²Î¹¹Ôìº¯Êý
+//	////1.æ‹¬å·æ³•
+//	//Person p1;//é»˜è®¤æž„é€ å‡½æ•°è°ƒç”¨
+//	//Person p2(10);//æœ‰å‚æž„é€ å‡½æ•°
 //	//Person p3(p2);
 //
-//	//×¢ÒâÊÂÏî
-//	//µ÷ÓÃÄ¬ÈÏ¹¹Ôìº¯ÊýµÄÊ±ºò²»Òª¼Ó()
-//	//ÒòÎªÏÂÃæÕâÐÐ´úÂë£¬±àÒëÆ÷»áÈÏÎªÊÇÒ»¸öº¯ÊýµÄº¯ÊýÉùÃ÷£¬²»»áÈÏÎªÔÚ´´½¨¶ÔÏó
-//	//Person p1()//²»ÒªÕâÑùÐ´
+//	//æ³¨æ„äº‹é¡¹
+//	//è°ƒç”¨é»˜è®¤æž„é€ å‡½æ•°çš„æ—¶å€™ä¸è¦åŠ ()
+//	//å› ä¸ºä¸‹é¢è¿™è¡Œä»£ç ï¼Œç¼–è¯‘å™¨ä¼šè®¤ä¸ºæ˜¯ä¸€ä¸ªå‡½æ•°çš„å‡½æ•°å£°æ˜Žï¼Œä¸ä¼šè®¤ä¸ºåœ¨åˆ›å»ºå¯¹è±¡
+//	//Person p1()//ä¸è¦è¿™æ ·å†™
 //
-//	/*cout << "p2µÄÄêÁäÎª:" <<p2.age<< endl;
-//	cout << "p3µÄÄêÁäÎª:" << p3.age << endl;*/
-//	//ÏÔÊ¾·¨
+//	/*cout << "p2çš„å¹´é¾„ä¸º:" <<p2.age<< endl;
+//	cout << "p3çš„å¹´é¾„ä¸º:" << p3.age << endl;*/
+//	//æ˜¾ç¤ºæ³•
 //	//Person p1;
-//	//Person p2 = Person(10);//ÓÐ²Î¹¹Ôì
-//	//Person p3 = Person(p2);//¿½±´¹¹Ôì
-//	//Person(10);//ÄäÃû¶ÔÏó£¬ÌØµã£¬µ±Ç°ÐÐ½áÊøºó£¬ÏµÍ³»áÁ¢¼´»ØÊÕµôÄäÃû¶ÔÏó
+//	//Person p2 = Person(10);//æœ‰å‚æž„é€ 
+//	//Person p3 = Person(p2);//æ‹·è´æž„é€ 
+//	//Person(10);//åŒ¿åå¯¹è±¡ï¼Œç‰¹ç‚¹ï¼Œå½“å‰è¡Œç»“æŸåŽï¼Œç³»ç»Ÿä¼šç«‹å³å›žæ”¶æŽ‰åŒ¿åå¯¹è±¡
 //
-//	//×¢ÒâÊÂÏî¶þ
-//	// ²»ÒªÀûÓÃ¿½±´¹¹Ôìº¯Êý£¬³õÊ¼»¯ÄäÃû¶ÔÏó£¬±àÒëÆ÷»áÈÏÎªPerson£¨p3£©==Person p3;¶ÔÏóÉùÃ÷
+//	//æ³¨æ„äº‹é¡¹äºŒ
+//	// ä¸è¦åˆ©ç”¨æ‹·è´æž„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–åŒ¿åå¯¹è±¡ï¼Œç¼–è¯‘å™¨ä¼šè®¤ä¸ºPersonï¼ˆp3ï¼‰==Person p3;å¯¹è±¡å£°æ˜Ž
 //	// Person(p3)
 //	
-//	//ÒþÊ½×ª»»·¨
-//	Person p4 = 10;//Ïàµ±ÓÚÐ´ÁËPerson p4=person(10);	ÓÐ²Î¹¹Ôì
-//	Person p5 = p4;//¿½±´¹¹Ôì
+//	//éšå¼è½¬æ¢æ³•
+//	Person p4 = 10;//ç›¸å½“äºŽå†™äº†Person p4=person(10);	æœ‰å‚æž„é€ 
+//	Person p5 = p4;//æ‹·è´æž„é€ 
 //}
 //int main()
 //{

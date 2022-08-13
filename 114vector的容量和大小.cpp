@@ -10,7 +10,7 @@
 //	}
 //	cout << endl;
 //}
-////veector���ݺʹ�С
+////veector的容和大小
 //void test01()
 //{
 //	vector<int>v1;
@@ -20,28 +20,28 @@
 //	}
 //	printVector(v1);
 //
-//	if (v1.empty())//Ϊ�� ��������Ϊ�գ�emptp�ж��Ƿ�Ϊ��
+//	if (v1.empty())//为真 代表容器为空，emptp判断是否为空
 //	{
-//		cout << "v1Ϊ��" << endl;
+//		cout << "v1为空" << endl;
 //	}
 //	else
 //	{
-//		cout << "v1��Ϊ��" << endl;
-//		cout << "v1������Ϊ:" << v1.capacity() << endl;//capacity������������
-//		cout << "v1�Ĵ�СΪ:" << v1.size() << endl;//size����Ԫ�ظ���
+//		cout << "v1不为空" << endl;
+//		cout << "v1的容量为:" << v1.capacity() << endl;//capacity返回容器容量
+//		cout << "v1的大小为:" << v1.size() << endl;//size返回元素个数
 //	}
 //
-//	//resize����ָ����С
+//	//resize重新指定大小
 //	v1.resize(15);
-//	printVector(v1);//�������ָ���ı�ԭ�������ˣ�Ĭ��0���
+//	printVector(v1);//如果重新指定的比原来更长了，默认0填充
 //
-//	v1.resize(10);//��С���10
+//	v1.resize(10);//大小变回10
 //
-//	v1.resize(15, 100);//���ذ汾��ָ����100��䣬������Ĭ��0
+//	v1.resize(15, 100);//重载版本，指定用100填充，而不是默认0
 //	printVector(v1);
 //
 //	v1.resize(5);
-//	printVector(v1);//���ָ���ı�ԭ���̣���������ɾ����
+//	printVector(v1);//如果指定的比原来短，超出部分删除掉
 //}
 //int main()
 //{

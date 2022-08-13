@@ -1,7 +1,7 @@
 //#include<iostream>
 //using namespace std;
 //#include<map>
-////mapÈİÆ÷  ²åÈëºÍÉ¾³ı
+////mapå®¹å™¨  æ’å…¥å’Œåˆ é™¤
 //
 //void printMap(map<int, int>& m)
 //{
@@ -16,37 +16,37 @@
 //{
 //	map<int, int>m;
 //
-//	//²åÈë
-//	//µÚÒ»ÖÖ
+//	//æ’å…¥
+//	//ç¬¬ä¸€ç§
 //	m.insert(pair<int, int>(1, 10));
 //
-//	//µÚ¶şÖÖ
+//	//ç¬¬äºŒç§
 //	m.insert(make_pair(2, 20));
 //
-//	//µÚÈıÖÖ
+//	//ç¬¬ä¸‰ç§
 //	m.insert(map<int, int>::value_type(3, 30));
 //
-//	//µÚËÄÖÖ
+//	//ç¬¬å››ç§
 //	m[4] = 40;
-//	//[]²»½¨Òé²åÈë,ÓÃÍ¾ÊÇ¿ÉÒÔÀûÓÃkey·ÃÎÊvalue
-//	cout << m[5] << endl;//Ã»ÓĞkey5£¬»á´´½¨Ò»¸ö£¬valueÎª0
+//	//[]ä¸å»ºè®®æ’å…¥,ç”¨é€”æ˜¯å¯ä»¥åˆ©ç”¨keyè®¿é—®value
+//	cout << m[5] << endl;//æ²¡æœ‰key5ï¼Œä¼šåˆ›å»ºä¸€ä¸ªï¼Œvalueä¸º0
 //
-//	//ÓÃ[]Ö±½ÓÊä³ö
+//	//ç”¨[]ç›´æ¥è¾“å‡º
 //	cout << m[4] << endl;
 //
 //	printMap(m);
 //
-//	//É¾³ı
+//	//åˆ é™¤
 //	m.erase(m.begin());
 //	printMap(m);
 //
-//	m.erase(3);//°´ÕÕkeyÉ¾³ı
+//	m.erase(3);//æŒ‰ç…§keyåˆ é™¤
 //	printMap(m);
 //
-//	m.erase(m.begin(), m.end());//°´ÕÕÇø¼äÉ¾³ı,µÈ¼ÛÓÚÇå¿Õ
+//	m.erase(m.begin(), m.end());//æŒ‰ç…§åŒºé—´åˆ é™¤,ç­‰ä»·äºæ¸…ç©º
 //	printMap(m);
 //
-//	m.clear();//Çå¿Õ
+//	m.clear();//æ¸…ç©º
 //	printMap(m);
 //
 //

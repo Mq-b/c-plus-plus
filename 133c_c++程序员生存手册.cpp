@@ -1,64 +1,64 @@
-////114Ãæ¶¯Ì¬ÄÚ´æµÄ´«µİ
+////114é¢åŠ¨æ€å†…å­˜çš„ä¼ é€’
 //#include<iostream>
 //using namespace std;
-//void arr(int** a, int num)//½â¾ö·½Ê½1cµÄÊ¹ÓÃÖ¸ÏòÖ¸ÕëµÄÖ¸Õë
+//void arr(int** a, int num)//è§£å†³æ–¹å¼1cçš„ä½¿ç”¨æŒ‡å‘æŒ‡é’ˆçš„æŒ‡é’ˆ
 //{
 //	*a = new int[num];
 //}
-//void arr2(int*& a, int num)//½â¾ö·½·¨2Ê¹ÓÃÒıÓÃ&
+//void arr2(int*& a, int num)//è§£å†³æ–¹æ³•2ä½¿ç”¨å¼•ç”¨&
 //{
 //	a = new int[10];
 //}
 //int main()
 //{
 //	int* p = NULL;
-//	arr(&p, 10);//ÉêÇëÄÚ´æ
+//	arr(&p, 10);//ç”³è¯·å†…å­˜
 //	for (int i = 0; i < 10; i++)
 //	{
-//		p[i] = i*10;//Ñ­»·¸³Öµ
+//		p[i] = i*10;//å¾ªç¯èµ‹å€¼
 //	}
-//	for (int i = 0; i < 10; i++)cout << p[i] << " " ;//Êä³ö
+//	for (int i = 0; i < 10; i++)cout << p[i] << " " ;//è¾“å‡º
 //	cout << endl;
 //
 //	int* q = NULL;
 //	arr2(q, 10);
 //	for (int i = 0; i < 10; i++)
 //	{
-//		p[i] = i * 5;//Ñ­»·¸³Öµ
+//		p[i] = i * 5;//å¾ªç¯èµ‹å€¼
 //	}
-//	for (int i = 0; i < 10; i++)cout << p[i] << " " ;//Êä³ö
+//	for (int i = 0; i < 10; i++)cout << p[i] << " " ;//è¾“å‡º
 //	delete[] p;
 //	delete[] q;
 //	return 0;
 //}
-////ÊéÉÏµÄĞ´·¨Êµ¼ÊÊÇÖµ´«µİ
-////c++ÍÆ¼öÊ¹ÓÃÒıÓÃ»á·½±ãºÜ¶à
+////ä¹¦ä¸Šçš„å†™æ³•å®é™…æ˜¯å€¼ä¼ é€’
+////c++æ¨èä½¿ç”¨å¼•ç”¨ä¼šæ–¹ä¾¿å¾ˆå¤š
 
-////122Ãæ×Ö·û´®
+////122é¢å­—ç¬¦ä¸²
 //#include<iostream>
 //using namespace std;
 //void arr(char* av)
 //{
 //	if (av == NULL)
 //	{
-//		cout << "¿Õ" << endl;
+//		cout << "ç©º" << endl;
 //		return;
 //	}
 //	else
 //	{
-//		cout << "ÄãºÃ" << endl;
+//		cout << "ä½ å¥½" << endl;
 //	}
 //}
 //int main()
 //{
-//	char str[10] = { 0 };//strÊÇÖ¸ÏòÕ»ÇøÒ»¿é´óĞ¡Îª10¸öintµÄÁ¬ĞøÄÚ´æ
-//	char* av = NULL;//avÖ¸Ïò¿Õ
-//	arr(str);//ËùÒÔÊä³öÄãºÃ
-//	arr(av);//Êä³ö¿Õ 
+//	char str[10] = { 0 };//stræ˜¯æŒ‡å‘æ ˆåŒºä¸€å—å¤§å°ä¸º10ä¸ªintçš„è¿ç»­å†…å­˜
+//	char* av = NULL;//avæŒ‡å‘ç©º
+//	arr(str);//æ‰€ä»¥è¾“å‡ºä½ å¥½
+//	arr(av);//è¾“å‡ºç©º 
 //	return 0;
 //}
 
-//122Ãæ£¬ÊÖĞ´int×ª×Ö·û´®º¯Êı
+//122é¢ï¼Œæ‰‹å†™intè½¬å­—ç¬¦ä¸²å‡½æ•°
 //#include<iostream>
 //using namespace std;
 //void int_str(char* str, int num)
@@ -68,7 +68,7 @@
 //	int i = 0;
 //	if (str == NULL)
 //	{
-//		cout << "¿Õ";
+//		cout << "ç©º";
 //		return;
 //	}
 //	while (temp)
@@ -95,9 +95,9 @@
 //int main()
 //{
 //	int i = 0;
-//	cout << "ÄãÏëÊäÈë×Ö·û´®ÈİÁ¿";
+//	cout << "ä½ æƒ³è¾“å…¥å­—ç¬¦ä¸²å®¹é‡";
 //	cin >> i;
-//	char *str=new char[i+1];//ÎÒÃÇÕâÀïÉÔÎ¢ÍêÉÆÒ»ÏÂ£¬×Ô¶¨Òå¶àÉÙÎ»Êı
+//	char *str=new char[i+1];//æˆ‘ä»¬è¿™é‡Œç¨å¾®å®Œå–„ä¸€ä¸‹ï¼Œè‡ªå®šä¹‰å¤šå°‘ä½æ•°
 //	int num;
 //	cin >> num;
 //	int_str(str, num);
@@ -105,7 +105,7 @@
 //	delete[] str;
 //	return 0;
 //}
-//Ê¹ÓÃ¿âº¯ÊıµÄ·½Ê½
+//ä½¿ç”¨åº“å‡½æ•°çš„æ–¹å¼
 //#include<iostream>
 //using namespace std;
 //
@@ -114,14 +114,14 @@
 //    int number1 = 123456;
 //    int number2 = -123456;
 //    char string[16] = { 0 };
-//    itoa(number1, string, 10);//Ê¹ÓÃ¿âº¯Êı½øĞĞµÄ×ª»»
-//    printf("Êı×Ö£º%d ×ª»»ºóµÄ×Ö·û´®Îª£º%s\n", number1, string);
+//    itoa(number1, string, 10);//ä½¿ç”¨åº“å‡½æ•°è¿›è¡Œçš„è½¬æ¢
+//    printf("æ•°å­—ï¼š%d è½¬æ¢åçš„å­—ç¬¦ä¸²ä¸ºï¼š%s\n", number1, string);
 //    itoa(number2, string, 10);
-//    printf("Êı×Ö£º%d ×ª»»ºóµÄ×Ö·û´®Îª£º%s\n", number2, string);
+//    printf("æ•°å­—ï¼š%d è½¬æ¢åçš„å­—ç¬¦ä¸²ä¸ºï¼š%s\n", number2, string);
 //    return 0;
 //}
 
-//124½«×Ö·û´®×ªÎªÊı×Ö
+//124å°†å­—ç¬¦ä¸²è½¬ä¸ºæ•°å­—
 //#include<iostream>
 //using namespace std;
 //int str_int(const char* str)
@@ -130,7 +130,7 @@
 //	int temp = 0;
 //	while (*str2!=NULL)
 //	{
-//		if (*str2 == '-')//Îª¸ººÅ¾ÍÌø¹ı
+//		if (*str2 == '-')//ä¸ºè´Ÿå·å°±è·³è¿‡
 //		{
 //			str2++;
 //		}
@@ -141,7 +141,7 @@
 //		temp = temp * 10 + ( * str2 - '0');
 //		str2++;
 //	}
-//	if (*str == '-')//Èç¹ûµÚÒ»¸ö·ûºÅÎª-,ÄÇÃ´¾Í×ª³É¸ºÊı
+//	if (*str == '-')//å¦‚æœç¬¬ä¸€ä¸ªç¬¦å·ä¸º-,é‚£ä¹ˆå°±è½¬æˆè´Ÿæ•°
 //	{
 //		return temp = -temp;
 //	}
@@ -151,12 +151,12 @@
 //int main()
 //{
 //	char str[15];
-//	cin >> str;//ÊäÈë¸³Öµ
+//	cin >> str;//è¾“å…¥èµ‹å€¼
 //	int num = str_int(str);
 //	cout << num << endl;
 //}
 
-////126×Ô¼ºÊµÏÖstrcpyº¯Êı
+////126è‡ªå·±å®ç°strcpyå‡½æ•°
 //#include<iostream>
 //using namespace std;
 //char* My_Strcpy(char* str, const char* p)
@@ -165,7 +165,7 @@
 //	while (*str_++ = *p++);
 //	return str;
 //}
-//int get_strlen(const char* str)//²»Ê¹ÓÃstrlen¶øÊÇÊ¹ÓÃ×Ô¼ºĞ´µÄº¯Êı£¬¶¼Ò»Ñù
+//int get_strlen(const char* str)//ä¸ä½¿ç”¨strlenè€Œæ˜¯ä½¿ç”¨è‡ªå·±å†™çš„å‡½æ•°ï¼Œéƒ½ä¸€æ ·
 //{
 //	int i = 0;
 //	while (*str++)
@@ -179,20 +179,20 @@
 //	char ch[10] = "abcdef";
 //	char ch2[10];
 //	int num=get_strlen(My_Strcpy(ch2, ch));
-//	cout << num << endl;//Êä³ö³¤¶È
-//	cout << ch2 << endl;//Êä³ö×Ö·û´®
+//	cout << num << endl;//è¾“å‡ºé•¿åº¦
+//	cout << ch2 << endl;//è¾“å‡ºå­—ç¬¦ä¸²
 //}
-////strcpyº¯ÊıÊ¹ÓÃchar*×÷Îª·µ»ØÖµÊÇÎªÁËÁ´Ê½±í´ïÊ½£¬³ÌĞò¼ò½àÃ÷ÁË
+////strcpyå‡½æ•°ä½¿ç”¨char*ä½œä¸ºè¿”å›å€¼æ˜¯ä¸ºäº†é“¾å¼è¡¨è¾¾å¼ï¼Œç¨‹åºç®€æ´æ˜äº†
 
-//128ÃæÊÖĞ´ÊµÏÖmemcpyº¯Êı
+//128é¢æ‰‹å†™å®ç°memcpyå‡½æ•°
 //#include<iostream>
-//#include<cassert>//Ìá¹©assert¶ÏÑÔº¯Êı
+//#include<cassert>//æä¾›assertæ–­è¨€å‡½æ•°
 //using namespace std;
 //void* My_Memstry(void* str, const void* str2,size_t num)
 //{
-//	assert(str != NULL && str2 != NULL&&num>0);//¶ÏÑÔº¯ÊıÅĞ¶Ï£¬À¨ºÅÄÚÎªÕæ¾Í¼ÌĞøÖ´ĞĞ£¬Îª¼Ù¾Í½áÊø³ÌĞò
-//	char* str_ = (char*)str;//±£ÁôÔ­Ê¼µØÖ·,Í¬Ê±Ç¿×ª
-//	const char* str2_ = (char*)str2;//±£ÁôÔ­Ê¼µØÖ·
+//	assert(str != NULL && str2 != NULL&&num>0);//æ–­è¨€å‡½æ•°åˆ¤æ–­ï¼Œæ‹¬å·å†…ä¸ºçœŸå°±ç»§ç»­æ‰§è¡Œï¼Œä¸ºå‡å°±ç»“æŸç¨‹åº
+//	char* str_ = (char*)str;//ä¿ç•™åŸå§‹åœ°å€,åŒæ—¶å¼ºè½¬
+//	const char* str2_ = (char*)str2;//ä¿ç•™åŸå§‹åœ°å€
 //	while (num--)
 //	{
 //		*str_++ = *str2_++;
@@ -204,23 +204,23 @@
 //	char ch1[10];
 //	char ch2[10] = "abcdefg";
 //	char *ch3=NULL;
-//	ch3=(char*)My_Memstry(ch1, ch2, 3);//·µ»ØÖµÒ²µÃÇ¿×ª
+//	ch3=(char*)My_Memstry(ch1, ch2, 3);//è¿”å›å€¼ä¹Ÿå¾—å¼ºè½¬
 //	cout << ch3 << endl << ch1 << endl;
 //	return 0;
 //}
 
-////133Ãæ ÊÖ¶¯ÊµÏÖstrstrº¯Êı
+////133é¢ æ‰‹åŠ¨å®ç°strstrå‡½æ•°
 //#include<iostream>
 //using namespace std;
 //const char* my_Strstr(const char* str1, const char* str2)
 //{
 //	const char* str1_ = str1;
-//	const char* str2_ = str2;//ÏÈ¸´ÖÆÒ»·İ
-//	if (str1_ == NULL || str2_ == NULL)//È·±£ÊÇÓĞĞ§×Ö·û´®
+//	const char* str2_ = str2;//å…ˆå¤åˆ¶ä¸€ä»½
+//	if (str1_ == NULL || str2_ == NULL)//ç¡®ä¿æ˜¯æœ‰æ•ˆå­—ç¬¦ä¸²
 //	{
 //		return str1;
 //	}
-//	while (*str1)//ÍâÑ­»·±éÀústr1
+//	while (*str1)//å¤–å¾ªç¯éå†str1
 //	{
 //		str1_ = str1;
 //		str2_ = str2;
@@ -238,15 +238,15 @@
 //}
 //int main()
 //{
-//	const char a[20] = "aa¹ş¹ş¹şbb¹ş";
-//	const char b[10] = "¹ş¹ş";
+//	const char a[20] = "aaå“ˆå“ˆå“ˆbbå“ˆ";
+//	const char b[10] = "å“ˆå“ˆ";
 //
-//	const char *p=my_Strstr(a, b);//µ÷ÓÃº¯Êı
+//	const char *p=my_Strstr(a, b);//è°ƒç”¨å‡½æ•°
 //	cout << p << endl;
 //	return 0;
 //}
 
-////137±à³ÌÊµÏÖstrcmpº¯Êı
+////137ç¼–ç¨‹å®ç°strcmpå‡½æ•°
 //#include<iostream>
 //using namespace std;
 //#include<cassert>
@@ -254,7 +254,7 @@
 //
 //int my_Strcmp(const char* str1, const char* str2)
 //{
-//	//¶ÏÑÔº¯Êı ÎªÕæ¾Í¼ÌĞøÖ´ĞĞ
+//	//æ–­è¨€å‡½æ•° ä¸ºçœŸå°±ç»§ç»­æ‰§è¡Œ
 //	assert(!(str1 == NULL && str2 == NULL));
 //	int num = 0;
 //    while ((*str1 != '\0') && (*str1 == *str2))
@@ -268,18 +268,18 @@
 //
 //int main()
 //{
-//    const char a[]{ "¹ş¹ş¹ş" };
-//    const char b[]{ "¹ş¹ş¹ş" };
+//    const char a[]{ "å“ˆå“ˆå“ˆ" };
+//    const char b[]{ "å“ˆå“ˆå“ˆ" };
 //
 //    int i=my_Strcmp(a, b);
 //    cout << i << endl;
-//    //¿âº¯Êı×ö²ÎÕÕ
+//    //åº“å‡½æ•°åšå‚ç…§
 //    int v = strcmp(a, b);
 //    cout << v << endl;
 //	return 0;
 //}
 
-////141°Ñ10½øÖÆÕıÕûÊıÊıÓÃ¶ş½øÖÆ·½Ê½Êä³ö
+////141æŠŠ10è¿›åˆ¶æ­£æ•´æ•°æ•°ç”¨äºŒè¿›åˆ¶æ–¹å¼è¾“å‡º
 //#include<iostream>
 //using namespace std;
 //void base(int num)
@@ -294,7 +294,7 @@
 //		v++;
 //		num /= 2;
 //	}
-//	//µ¹ĞòÊä³öÒ²¾ÍÊÇ´ÓÓÒÍù×óµÄ¿´£¬¼õ1ÒòÎªv×îºó¶à¼ÓÒ»
+//	//å€’åºè¾“å‡ºä¹Ÿå°±æ˜¯ä»å³å¾€å·¦çš„çœ‹ï¼Œå‡1å› ä¸ºvæœ€åå¤šåŠ ä¸€
 //	for (int i = v - 1; i >= 0; i--)
 //		cout << ave[i];
 //}
@@ -304,7 +304,7 @@
 //	return 0;
 //}
 
-//2½øÖÆ×ª10½øÖÆ£¬cÓïÑÔĞ´·¨
+//2è¿›åˆ¶è½¬10è¿›åˆ¶ï¼Œcè¯­è¨€å†™æ³•
 //#include<stdio.h>
 //#include<math.h>
 //int func(int n[], int i) {

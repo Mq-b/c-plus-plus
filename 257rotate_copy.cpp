@@ -2,8 +2,8 @@
 #include<algorithm>
 #include<string>
 #include<vector>
-/*rotate_copy() Ëã·¨»áÔÚÐÂÐòÁÐÖÐÉú³ÉÒ»¸öÐòÁÐµÄÐý×ª¸±±¾£¬²¢±£³ÖÔ­ÐòÁÐ²»±ä¡£rotate_copy() µÄÇ° 3 ¸ö²ÎÊýºÍ copy() ÊÇÏàÍ¬µÄ£»µÚ 4 ¸ö²ÎÊýÊÇÒ»¸öÊä³öµü´úÆ÷£¬
-ËüÖ¸ÏòÄ¿µÄÐòÁÐµÄµÚÒ»¸öÔªËØ¡£Õâ¸öËã·¨»á·µ»ØÒ»¸öÄ¿µÄÐòÁÐµÄÊä³öµü´úÆ÷£¬ËüÖ¸Ïò×îºóÒ»¸ö±»¸´ÖÆÔªËØµÄÏÂÒ»¸öÎ»ÖÃ¡£ÀýÈç£º*/
+/*rotate_copy() ç®—æ³•ä¼šåœ¨æ–°åºåˆ—ä¸­ç”Ÿæˆä¸€ä¸ªåºåˆ—çš„æ—‹è½¬å‰¯æœ¬ï¼Œå¹¶ä¿æŒåŽŸåºåˆ—ä¸å˜ã€‚rotate_copy() çš„å‰ 3 ä¸ªå‚æ•°å’Œ copy() æ˜¯ç›¸åŒçš„ï¼›ç¬¬ 4 ä¸ªå‚æ•°æ˜¯ä¸€ä¸ªè¾“å‡ºè¿­ä»£å™¨ï¼Œ
+å®ƒæŒ‡å‘ç›®çš„åºåˆ—çš„ç¬¬ä¸€ä¸ªå…ƒç´ ã€‚è¿™ä¸ªç®—æ³•ä¼šè¿”å›žä¸€ä¸ªç›®çš„åºåˆ—çš„è¾“å‡ºè¿­ä»£å™¨ï¼Œå®ƒæŒ‡å‘æœ€åŽä¸€ä¸ªè¢«å¤åˆ¶å…ƒç´ çš„ä¸‹ä¸€ä¸ªä½ç½®ã€‚ä¾‹å¦‚ï¼š*/
 int main() {
     std::vector<std::string> words{ "one", "two", "three", "four", "five","six", "seven", "eight", "nine","ten" };
     auto start = std::find(std::begin(words), std::end(words), "two");

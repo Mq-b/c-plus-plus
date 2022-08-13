@@ -1,9 +1,9 @@
 //#include<iostream>
 //using namespace std;
 //#include<vector>
-//#include<algorithm>//ÏµÍ³Ìá¹©±ê×¼Ëã·¨
+//#include<algorithm>//ç³»ç»Ÿæä¾›æ ‡å‡†ç®—æ³•
 //
-////¶şÔªÎ½´Ê
+////äºŒå…ƒè°“è¯
 //class MyCompare
 //{
 //public:
@@ -28,7 +28,7 @@
 //	}
 //	cout << endl;
 //
-//	//Ä¬ÈÏÉıĞò£¬¿ÉÒÔÊ¹ÓÃº¯Êı¶ÔÏó¸Ä±äËã·¨²ßÂÔÎª ½µ(´Ó´óµ½Ğ¡)
+//	//é»˜è®¤å‡åºï¼Œå¯ä»¥ä½¿ç”¨å‡½æ•°å¯¹è±¡æ”¹å˜ç®—æ³•ç­–ç•¥ä¸º é™(ä»å¤§åˆ°å°)
 //	cout << "-------------------------" << endl;
 //	sort(v.begin(), v.end(), MyCompare());
 //	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)

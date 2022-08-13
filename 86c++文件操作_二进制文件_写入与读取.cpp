@@ -1,6 +1,6 @@
 //#include<iostream>
 //using namespace std;
-//#include<fstream>//°üº¬Í·ÎÄ¼ş
+//#include<fstream>//åŒ…å«å¤´æ–‡ä»¶
 //class Person
 //{
 //public:
@@ -9,26 +9,26 @@
 //};
 //void test01()
 //{
-//	//Ğ´ÎÄ¼şÓÃofstream¶¨ÒåÁ÷¶ÔÏó£¬¶ÁÎÄ¼şÓÃifstream¶¨ÒåÁ÷¶ÔÏó
-//	ifstream ifs2;//ºÍĞ´ÈëµÄ¶¨Òå²»Ò»Ñù
-//	ifs2.open("ÎÄ¼ş.txt", ios::in | ios::binary);
+//	//å†™æ–‡ä»¶ç”¨ofstreamå®šä¹‰æµå¯¹è±¡ï¼Œè¯»æ–‡ä»¶ç”¨ifstreamå®šä¹‰æµå¯¹è±¡
+//	ifstream ifs2;//å’Œå†™å…¥çš„å®šä¹‰ä¸ä¸€æ ·
+//	ifs2.open("æ–‡ä»¶.txt", ios::in | ios::binary);
 //	if (!ifs2.is_open())
 //	{
-//		cout << "ÎÄ¼ş´ò¿ªÊ§°Ü" << endl;
+//		cout << "æ–‡ä»¶æ‰“å¼€å¤±è´¥" << endl;
 //		return ;
 //	}
 //	Person p2;
 //	ifs2.read((char*)&p2, sizeof(Person));
-//	cout << "ĞÕÃû=" << p2.m_Name << "ÄêÁä=" << p2.m_Age << endl;
+//	cout << "å§“å=" << p2.m_Name << "å¹´é¾„=" << p2.m_Age << endl;
 //	ifs2.close();
 //}
 //
 //int main()
 //{
-//	ofstream ofs("ÎÄ¼ş.txt", ios::out | ios::binary);//´´½¨Á÷¶ÔÏóµÄÍ¬Ê±´ò¿ªÎÄ¼ş
-//	Person p= { "ÕÅÈı", 18 };
-//	ofs.write((const char*)&p, sizeof(Person));//¶ş½øÖÆĞ´Èë
+//	ofstream ofs("æ–‡ä»¶.txt", ios::out | ios::binary);//åˆ›å»ºæµå¯¹è±¡çš„åŒæ—¶æ‰“å¼€æ–‡ä»¶
+//	Person p= { "å¼ ä¸‰", 18 };
+//	ofs.write((const char*)&p, sizeof(Person));//äºŒè¿›åˆ¶å†™å…¥
 //	ofs.close();
-//	test01();//¶ÁÈ¡Êä³öº¯Êı
+//	test01();//è¯»å–è¾“å‡ºå‡½æ•°
 //	return 0; 
 //}

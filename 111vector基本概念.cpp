@@ -1,7 +1,7 @@
 //#include<iostream>
 //using namespace std;
 //#include<vector>
-////vectorÈİÆ÷µÄ¹¹Ôì
+////vectorå®¹å™¨çš„æ„é€ 
 //
 //void printVector(vector<int>&v)
 //{
@@ -21,15 +21,15 @@
 //	}
 //	printVector(v1);
 //
-//	//Í¨¹ıÇø¼ä·½Ê½½øĞĞ¹¹Ôì
-//	vector<int>v2(v1.begin(), v1.end());//µÚÒ»¸öµ½endµÄÇø¼ä£¬°üÀ¨µÚÒ»¸ö£¬²»°üÀ¨end
+//	//é€šè¿‡åŒºé—´æ–¹å¼è¿›è¡Œæ„é€ 
+//	vector<int>v2(v1.begin(), v1.end());//ç¬¬ä¸€ä¸ªåˆ°endçš„åŒºé—´ï¼ŒåŒ…æ‹¬ç¬¬ä¸€ä¸ªï¼Œä¸åŒ…æ‹¬end
 //	printVector(v2);
 //
-//	//n¸öelem·½Ê½¹¹Ôì
-//	vector<int>v3(10, 100);//10¸ö100
+//	//nä¸ªelemæ–¹å¼æ„é€ 
+//	vector<int>v3(10, 100);//10ä¸ª100
 //	printVector(v3);
 //
-//	//¿½±´¹¹Ôì
+//	//æ‹·è´æ„é€ 
 //	vector<int>v4(v3);
 //	printVector(v4);
 //

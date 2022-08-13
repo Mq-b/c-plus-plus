@@ -9,7 +9,7 @@ struct test {
 };
 
 test ave() {
-    return test{ 56,"¿ÉÅÂ" };
+    return test{ 56,"å¯æ€•" };
 }
 
 void test01()
@@ -27,7 +27,7 @@ void test04()
     char str[100]{ 0 };
     int i = 0;
         ch=std::cin.get();
-        //ÅĞ¶ÏcinÊÇ·ñ¼ì²âµ½EOF£¬Èç¹û¼ì²âµ½¾ÍÊÇtrue¾Í½áÊøÊäÈëºÍÊä³ö
+        //åˆ¤æ–­cinæ˜¯å¦æ£€æµ‹åˆ°EOFï¼Œå¦‚æœæ£€æµ‹åˆ°å°±æ˜¯trueå°±ç»“æŸè¾“å…¥å’Œè¾“å‡º
         while (std::cin.fail() == false)
         {
             str[i++] = ch;

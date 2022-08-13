@@ -5,7 +5,7 @@ void print(T const& firstArg, Types const&...args)
 {
 	std::cout << firstArg << std::endl;
 	if constexpr (sizeof...(args) > 0) {
-		print(args...); //´úÂë½öÔÚÒÔÏÂÇé¿öÏÂ¿ÉÓÃ...£¨args£©>0 £¨×Ô C++17 Æð£©
+		print(args...); //ä»£ç ä»…åœ¨ä»¥ä¸‹æƒ…å†µä¸‹å¯ç”¨...ï¼ˆargsï¼‰>0 ï¼ˆè‡ª C++17 èµ·ï¼‰
 	}
 }
 int main()

@@ -1,45 +1,45 @@
 //#include<iostream>
 //#include<string>
 //using namespace std;
-////Àà¶ÔÏó×÷ÎªÀà³ÉÔ±
-////ÊÖ»úÀà
+////ç±»å¯¹è±¡ä½œä¸ºç±»æˆå‘˜
+////æ‰‹æœºç±»
 //class Phone
 //{
 //public:
 //	Phone(string Pname)
 //	{
-//		cout << "Phone¹¹Ôìº¯Êıµ÷ÓÃ" << endl;
+//		cout << "Phoneæ„é€ å‡½æ•°è°ƒç”¨" << endl;
 //		m_Pname= Pname;
 //	}
 //	~Phone()
 //	{
-//		cout << "PhoneµÄÎö¹¹º¯Êıµ÷ÓÃ" << endl;
+//		cout << "Phoneçš„ææ„å‡½æ•°è°ƒç”¨" << endl;
 //	}
-//	//ÊÖ»úÃû³Æ
+//	//æ‰‹æœºåç§°
 //	string m_Pname;
 //};
 //
-////ÈËÀà
+////äººç±»
 //class Person {
 //public:
-//	//Phone m_Phone=pName    ÒşÊ½×ª»»·¨
-//	Person(string name, string pName) :m_Name(name), m_Phone(pName)//³õÊ¼»¯ÁĞ±í
+//	//Phone m_Phone=pName    éšå¼è½¬æ¢æ³•
+//	Person(string name, string pName) :m_Name(name), m_Phone(pName)//åˆå§‹åŒ–åˆ—è¡¨
 //	{
-//		cout << "Person¹¹Ôìº¯Êıµ÷ÓÃ" << endl;
+//		cout << "Personæ„é€ å‡½æ•°è°ƒç”¨" << endl;
 //	}
 //	~Person()
 //	{
-//		cout << "PersonµÄÎö¹¹º¯Êıµ÷ÓÃ" << endl;
+//		cout << "Personçš„ææ„å‡½æ•°è°ƒç”¨" << endl;
 //	}
 //	string m_Name;
 //	Phone m_Phone;
 //};
-////µ±ÆäËûµÄÀà×÷Îª±¾Àà³ÉÔ±£¬¹¹ÔìµÄÊ±ºòÏÈ¹¹ÔìÀà¶ÔÏó£¬ÔÙ¹¹Ôì×ÔÉí£¬Îö¹¹Ë³ĞòÓë¹¹ÔìË³ĞòÏà·´
-////Õ»£¬ÏÈÈëºó³ö£¬ºóÈëÏÈ³ö
+////å½“å…¶ä»–çš„ç±»ä½œä¸ºæœ¬ç±»æˆå‘˜ï¼Œæ„é€ çš„æ—¶å€™å…ˆæ„é€ ç±»å¯¹è±¡ï¼Œå†æ„é€ è‡ªèº«ï¼Œææ„é¡ºåºä¸æ„é€ é¡ºåºç›¸å
+////æ ˆï¼Œå…ˆå…¥åå‡ºï¼Œåå…¥å…ˆå‡º
 //void test01()
 //{
-//	Person p("ÕÅÈı", "Æ»¹û13Ô¶·åÀ¶1tb");
-//	cout << p.m_Name << "ÄÃ×Å" << p.m_Phone.m_Pname << endl;
+//	Person p("å¼ ä¸‰", "è‹¹æœ13è¿œå³°è“1tb");
+//	cout << p.m_Name << "æ‹¿ç€" << p.m_Phone.m_Pname << endl;
 //}
 //int main()
 //{

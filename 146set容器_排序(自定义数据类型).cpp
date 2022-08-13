@@ -2,7 +2,7 @@
 //using namespace std;
 //#include<set>
 //#include<string>
-////setÈİÆ÷ÅÅĞò£¬´æ·Å×Ô¶¨ÒåÊı¾İÀàĞÍ
+////setå®¹å™¨æ’åºï¼Œå­˜æ”¾è‡ªå®šä¹‰æ•°æ®ç±»å‹
 //class Person
 //{
 //public:
@@ -19,20 +19,20 @@
 //public:
 //	bool operator()(const Person& p1, const Person& p2)const
 //	{
-//		//°´ÕÕÄêÁä ½µĞò
-//		return p1.m_Age > p2.m_Age;//´óÎªÕæ£¬´Ó´óµ½Ğ¡
+//		//æŒ‰ç…§å¹´é¾„ é™åº
+//		return p1.m_Age > p2.m_Age;//å¤§ä¸ºçœŸï¼Œä»å¤§åˆ°å°
 //	}
 //};
 //void test01()
 //{
-//	//×Ô¶¨ÒåÊı¾İÀàĞÍ,¶¼»áÖ¸¶¨ÅÅĞò¹æÔò£¬Èç¹û²»Ö¸¶¨ÅÅĞò¹æÔò£¬ÎŞ·¨²åÈë
+//	//è‡ªå®šä¹‰æ•°æ®ç±»å‹,éƒ½ä¼šæŒ‡å®šæ’åºè§„åˆ™ï¼Œå¦‚æœä¸æŒ‡å®šæ’åºè§„åˆ™ï¼Œæ— æ³•æ’å…¥
 //	set<Person,comparePerson>s;
 //
-//	//´´½¨Person¶ÔÏó
-//	Person p1("Áõ±¸", 24);
-//	Person p2("¹ØÓğ", 28);
-//	Person p3("ÕÅ·É", 25);
-//	Person p4("ÕÔÔÆ", 21);
+//	//åˆ›å»ºPersonå¯¹è±¡
+//	Person p1("åˆ˜å¤‡", 24);
+//	Person p2("å…³ç¾½", 28);
+//	Person p3("å¼ é£", 25);
+//	Person p4("èµµäº‘", 21);
 //
 //	s.insert(p1);
 //	s.insert(p2);
@@ -41,7 +41,7 @@
 //
 //	for (set<Person,comparePerson>::iterator it = s.begin(); it != s.end(); it++)
 //	{
-//		cout << "ĞÕÃû£º" << it->m_Name << "ÄêÁä£º" << it->m_Age << endl;
+//		cout << "å§“åï¼š" << it->m_Name << "å¹´é¾„ï¼š" << it->m_Age << endl;
 //	}
 //}
 //
@@ -50,4 +50,4 @@
 //	test01();
 //	return 0;
 //}
-//·Âº¯Êı×îºóµÃ¼Óconst
+//ä»¿å‡½æ•°æœ€åå¾—åŠ const

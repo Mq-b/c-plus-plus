@@ -1,7 +1,7 @@
-#include<ppl.h>//Ìá¹©Í·ÎÄ¼ş
+#include<ppl.h>//æä¾›å¤´æ–‡ä»¶
 #include<iostream>
 #include<array>
-using namespace concurrency;//²¢·¢Ëã·¨¶¼ÔÚ´ËÃüÃû¿Õ¼ä
+using namespace concurrency;//å¹¶å‘ç®—æ³•éƒ½åœ¨æ­¤å‘½åç©ºé—´
 
 int main() {
 	

@@ -1,15 +1,15 @@
-/* ÔÚÅÉÉúÀàÖÐ£¬ÖØÐ´ (override) ¼Ì³Ð×Ô»ùÀà³ÉÔ±º¯ÊýµÄÊµÏÖ (implementation) Ê±£¬ÒªÂú×ãÈçÏÂÌõ¼þ£º
-  Ò»Ðé£º»ùÀàÖÐ£¬³ÉÔ±º¯ÊýÉùÃ÷ÎªÐéÄâµÄ (virtual)
-  ¶þÈÝ£º»ùÀàºÍÅÉÉúÀàÖÐ£¬³ÉÔ±º¯ÊýµÄ·µ»ØÀàÐÍºÍÒì³£¹æ¸ñ (exception specification) ±ØÐë¼æÈÝ
-  ËÄÍ¬£º»ùÀàºÍÅÉÉúÀàÖÐ£¬³ÉÔ±º¯ÊýÃû¡¢ÐÎ²ÎÀàÐÍ¡¢³£Á¿ÊôÐÔ (constness) ºÍ ÒýÓÃÏÞ¶¨·û (reference qualifier) ±ØÐëÍêÈ«ÏàÍ¬
-  Èç´Ë¶àµÄÏÞÖÆÌõ¼þ£¬µ¼ÖÂÁËÐéº¯ÊýÖØÐ´ÈçÉÏÊö´úÂë£¬¼«ÈÝÒ×ÒòÎªÒ»¸ö²»Ð¡ÐÄ¶ø³ö´í
-  C++11 ÖÐµÄ override ¹Ø¼ü×Ö£¬¿ÉÒÔÏÔÊ½µÄÔÚÅÉÉúÀàÖÐÉùÃ÷£¬ÄÄÐ©³ÉÔ±º¯ÊýÐèÒª±»ÖØÐ´£¬Èç¹ûÃ»±»ÖØÐ´£¬Ôò±àÒëÆ÷»á±¨´í¡£ */
+/* åœ¨æ´¾ç”Ÿç±»ä¸­ï¼Œé‡å†™ (override) ç»§æ‰¿è‡ªåŸºç±»æˆå‘˜å‡½æ•°çš„å®žçŽ° (implementation) æ—¶ï¼Œè¦æ»¡è¶³å¦‚ä¸‹æ¡ä»¶ï¼š
+  ä¸€è™šï¼šåŸºç±»ä¸­ï¼Œæˆå‘˜å‡½æ•°å£°æ˜Žä¸ºè™šæ‹Ÿçš„ (virtual)
+  äºŒå®¹ï¼šåŸºç±»å’Œæ´¾ç”Ÿç±»ä¸­ï¼Œæˆå‘˜å‡½æ•°çš„è¿”å›žç±»åž‹å’Œå¼‚å¸¸è§„æ ¼ (exception specification) å¿…é¡»å…¼å®¹
+  å››åŒï¼šåŸºç±»å’Œæ´¾ç”Ÿç±»ä¸­ï¼Œæˆå‘˜å‡½æ•°åã€å½¢å‚ç±»åž‹ã€å¸¸é‡å±žæ€§ (constness) å’Œ å¼•ç”¨é™å®šç¬¦ (reference qualifier) å¿…é¡»å®Œå…¨ç›¸åŒ
+  å¦‚æ­¤å¤šçš„é™åˆ¶æ¡ä»¶ï¼Œå¯¼è‡´äº†è™šå‡½æ•°é‡å†™å¦‚ä¸Šè¿°ä»£ç ï¼Œæžå®¹æ˜“å› ä¸ºä¸€ä¸ªä¸å°å¿ƒè€Œå‡ºé”™
+  C++11 ä¸­çš„ override å…³é”®å­—ï¼Œå¯ä»¥æ˜¾å¼çš„åœ¨æ´¾ç”Ÿç±»ä¸­å£°æ˜Žï¼Œå“ªäº›æˆå‘˜å‡½æ•°éœ€è¦è¢«é‡å†™ï¼Œå¦‚æžœæ²¡è¢«é‡å†™ï¼Œåˆ™ç¼–è¯‘å™¨ä¼šæŠ¥é”™ã€‚ */
 
-/*ÔÚÅÉÉúÀàÖÐ£¬ÖØÐ´ (override) ¼Ì³Ð×Ô»ùÀà³ÉÔ±º¯ÊýµÄÊµÏÖ (implementation) Ê±£¬ÒªÂú×ãÈçÏÂÌõ¼þ£º
-  Ò»Ðé£º»ùÀàÖÐ£¬³ÉÔ±º¯ÊýÉùÃ÷ÎªÐéÄâµÄ (virtual)
-  ¶þÈÝ£º»ùÀàºÍÅÉÉúÀàÖÐ£¬³ÉÔ±º¯ÊýµÄ·µ»ØÀàÐÍºÍÒì³£¹æ¸ñ (exception specification) ±ØÐë¼æÈÝ
-  ËÄÍ¬£º»ùÀàºÍÅÉÉúÀàÖÐ£¬³ÉÔ±º¯ÊýÃû¡¢ÐÎ²ÎÀàÐÍ¡¢³£Á¿ÊôÐÔ (constness) ºÍ ÒýÓÃÏÞ¶¨·û (reference qualifier) ±ØÐëÍêÈ«ÏàÍ¬
-  Èç´Ë¶àµÄÏÞÖÆÌõ¼þ£¬µ¼ÖÂÁËÐéº¯ÊýÖØÐ´ÈçÉÏÊö´úÂë£¬¼«ÈÝÒ×ÒòÎªÒ»¸ö²»Ð¡ÐÄ¶ø³ö´í
-  C++11 ÖÐµÄ override ¹Ø¼ü×Ö£¬¿ÉÒÔÏÔÊ½µÄÔÚÅÉÉúÀàÖÐÉùÃ÷£¬ÄÄÐ©³ÉÔ±º¯ÊýÐèÒª±»ÖØÐ´£¬Èç¹ûÃ»±»ÖØÐ´£¬Ôò±àÒëÆ÷»á±¨´í¡£ */
+/*åœ¨æ´¾ç”Ÿç±»ä¸­ï¼Œé‡å†™ (override) ç»§æ‰¿è‡ªåŸºç±»æˆå‘˜å‡½æ•°çš„å®žçŽ° (implementation) æ—¶ï¼Œè¦æ»¡è¶³å¦‚ä¸‹æ¡ä»¶ï¼š
+  ä¸€è™šï¼šåŸºç±»ä¸­ï¼Œæˆå‘˜å‡½æ•°å£°æ˜Žä¸ºè™šæ‹Ÿçš„ (virtual)
+  äºŒå®¹ï¼šåŸºç±»å’Œæ´¾ç”Ÿç±»ä¸­ï¼Œæˆå‘˜å‡½æ•°çš„è¿”å›žç±»åž‹å’Œå¼‚å¸¸è§„æ ¼ (exception specification) å¿…é¡»å…¼å®¹
+  å››åŒï¼šåŸºç±»å’Œæ´¾ç”Ÿç±»ä¸­ï¼Œæˆå‘˜å‡½æ•°åã€å½¢å‚ç±»åž‹ã€å¸¸é‡å±žæ€§ (constness) å’Œ å¼•ç”¨é™å®šç¬¦ (reference qualifier) å¿…é¡»å®Œå…¨ç›¸åŒ
+  å¦‚æ­¤å¤šçš„é™åˆ¶æ¡ä»¶ï¼Œå¯¼è‡´äº†è™šå‡½æ•°é‡å†™å¦‚ä¸Šè¿°ä»£ç ï¼Œæžå®¹æ˜“å› ä¸ºä¸€ä¸ªä¸å°å¿ƒè€Œå‡ºé”™
+  C++11 ä¸­çš„ override å…³é”®å­—ï¼Œå¯ä»¥æ˜¾å¼çš„åœ¨æ´¾ç”Ÿç±»ä¸­å£°æ˜Žï¼Œå“ªäº›æˆå‘˜å‡½æ•°éœ€è¦è¢«é‡å†™ï¼Œå¦‚æžœæ²¡è¢«é‡å†™ï¼Œåˆ™ç¼–è¯‘å™¨ä¼šæŠ¥é”™ã€‚ */
 
-//¼òµ¥µÄËµ¾ÍÊÇÔÚÅÉÉúÀàµÄÖØÐ´»ùÀàµÄº¯ÊýµÄ³ÉÔ±º¯ÊýÉÏ¼ÓÉÏoverride
+//ç®€å•çš„è¯´å°±æ˜¯åœ¨æ´¾ç”Ÿç±»çš„é‡å†™åŸºç±»çš„å‡½æ•°çš„æˆå‘˜å‡½æ•°ä¸ŠåŠ ä¸Šoverride

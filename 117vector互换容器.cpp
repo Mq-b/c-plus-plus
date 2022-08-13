@@ -2,9 +2,9 @@
 //using namespace std;
 //#include<vector>
 //
-////ÈÝÆ÷»¥»»
+////å®¹å™¨äº’æ¢
 //
-////1¡¢»ù±¾Ê¹ÓÃ
+////1ã€åŸºæœ¬ä½¿ç”¨
 //void printVector(vector<int>& v)
 //{
 //	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
@@ -20,7 +20,7 @@
 //	{
 //		v1.push_back(i);
 //	}
-//	cout << "½»»»Ç°" << endl;
+//	cout << "äº¤æ¢å‰" << endl;
 //	printVector(v1);
 //
 //	vector<int>v2;
@@ -30,15 +30,15 @@
 //	}
 //	printVector(v2);
 //
-//	cout << "½»»»ºó" << endl;
+//	cout << "äº¤æ¢åŽ" << endl;
 //	v1.swap(v2);
-//	//swap(v1, v2);//Ò²¿ÉÒÔÊ¹ÓÃÕâÖÖÐ´·¨
+//	//swap(v1, v2);//ä¹Ÿå¯ä»¥ä½¿ç”¨è¿™ç§å†™æ³•
 //	printVector(v1);
 //	printVector(v2);
 //}
 //
-////2¡¢Êµ¼ÊÓÃÍ¾
-////ÇÉÓÃswap¿ÉÒÔÊÕËõÄÚ´æ¿Õ¼ä
+////2ã€å®žé™…ç”¨é€”
+////å·§ç”¨swapå¯ä»¥æ”¶ç¼©å†…å­˜ç©ºé—´
 //void test02()
 //{
 //	vector<int>v;
@@ -46,22 +46,22 @@
 //	{ 
 //		v.push_back(i);
 //	}
-//	cout << "vµÄÈÝÁ¿Îª:" << v.capacity() << endl;
-//	cout << "vµÄ´óÐ¡Îª:" << v.size() << endl;
+//	cout << "vçš„å®¹é‡ä¸º:" << v.capacity() << endl;
+//	cout << "vçš„å¤§å°ä¸º:" << v.size() << endl;
 //
-//	v.resize(3);//ÖØÐÂÖ¸¶¨´óÐ¡
-//	//Ö¸¶¨´óÐ¡²»»á¸Ä±äÈÝÆ÷µÄÈÝÁ¿
-//	cout << "vµÄÈÝÁ¿Îª:" << v.capacity() << endl;
-//	cout << "vµÄ´óÐ¡Îª:" << v.size() << endl;
+//	v.resize(3);//é‡æ–°æŒ‡å®šå¤§å°
+//	//æŒ‡å®šå¤§å°ä¸ä¼šæ”¹å˜å®¹å™¨çš„å®¹é‡
+//	cout << "vçš„å®¹é‡ä¸º:" << v.capacity() << endl;
+//	cout << "vçš„å¤§å°ä¸º:" << v.size() << endl;
 //
-//	//ÇÉÓÃswapÊÕËõÄÚ´æ
+//	//å·§ç”¨swapæ”¶ç¼©å†…å­˜
 //	vector<int>(v).swap(v);
-//	//vetor<int>(v)Êµ¼ÊÊÇÒ»¸öÄäÃû¶ÔÏó³õÊ¼»¯ÎªvµÄ´óÐ¡¾ÍÊÇ3£¬ÄäÃû¶ÔÏóÖ¸ÏòµÄ¾ÍÊÇÕâ¿éÄÚ´æ
-//	//.swap(v)¾ÍÊÇÄäÃû¶ÔÏóºÍ¶ÔÏóv½øÐÐ½»»»£¬vÖ¸ÏòÄäÃû¶ÔÏóµÄÄÚ´æ£¬ÄäÃû¶ÔÏóÖ¸ÏòvµÄÄÚ´æ
-//	//Óï¾ä½áÊøºó£¬ÄäÃû¶ÔÏóÁ¬Í¬ÄÚ´æ¾Í±»ÏµÍ³Ïú»Ù
-//	//ÄäÃû¶ÔÏóµÄÌØµãÊÇ£¬µ±Ç°ÐÐÖ´ÐÐÍê£¬ÏµÍ³¾Í»ØÊÕµô
-//	cout << "vµÄÈÝÁ¿Îª:" << v.capacity() << endl;
-//	cout << "vµÄ´óÐ¡Îª:" << v.size() << endl;
+//	//vetor<int>(v)å®žé™…æ˜¯ä¸€ä¸ªåŒ¿åå¯¹è±¡åˆå§‹åŒ–ä¸ºvçš„å¤§å°å°±æ˜¯3ï¼ŒåŒ¿åå¯¹è±¡æŒ‡å‘çš„å°±æ˜¯è¿™å—å†…å­˜
+//	//.swap(v)å°±æ˜¯åŒ¿åå¯¹è±¡å’Œå¯¹è±¡vè¿›è¡Œäº¤æ¢ï¼ŒvæŒ‡å‘åŒ¿åå¯¹è±¡çš„å†…å­˜ï¼ŒåŒ¿åå¯¹è±¡æŒ‡å‘vçš„å†…å­˜
+//	//è¯­å¥ç»“æŸåŽï¼ŒåŒ¿åå¯¹è±¡è¿žåŒå†…å­˜å°±è¢«ç³»ç»Ÿé”€æ¯
+//	//åŒ¿åå¯¹è±¡çš„ç‰¹ç‚¹æ˜¯ï¼Œå½“å‰è¡Œæ‰§è¡Œå®Œï¼Œç³»ç»Ÿå°±å›žæ”¶æŽ‰
+//	cout << "vçš„å®¹é‡ä¸º:" << v.capacity() << endl;
+//	cout << "vçš„å¤§å°ä¸º:" << v.size() << endl;
 //}
 //
 //int main()

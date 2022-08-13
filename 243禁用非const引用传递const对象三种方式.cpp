@@ -22,11 +22,11 @@ int main()
 {
 	int const a{ 0 };
 	int b{ 0 };
-	//outR(a);	//使用静态断言产生编译错误
+	//outR(a);	//浣跨敤闈欐�佹柇瑷�浜х敓缂栬瘧閿欒
 	outR(b);
-	//outR2(a);	//使用endle_if_t禁用模板
+	//outR2(a);	//浣跨敤endle_if_t绂佺敤妯℃澘
 	outR2(b);
-	//outR3(a);	//使用concepts 来禁用该模板
+	//outR3(a);	//浣跨敤concepts 鏉ョ鐢ㄨ妯℃澘
 	outR3(b);
 	return 0;
 }

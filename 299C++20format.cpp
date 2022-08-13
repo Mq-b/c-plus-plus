@@ -2,19 +2,19 @@
 #include<string>
 #include<format>
 int main() {
-	auto a = std::format("ĞÕÃû:{} ÄêÁä:{} Éí¸ß:{}", "Éµ×Ó", 123, 51.2);//×Ö·û´®Æ´½Ó
+	auto a = std::format("å§“å:{} å¹´é¾„:{} èº«é«˜:{}", "å‚»å­", 123, 51.2);//å­—ç¬¦ä¸²æ‹¼æ¥
 	std::cout << a << std::endl;
 
 	std::string s{ std::format("1 {}",12.1) };
 	std::cout << s << std::endl;
 
 	char c = 120;
-	auto s0 = std::format("{:6}", 42);    // s0 µÄÖµÎª "    42"
-	auto s1 = std::format("{:6}", 'x');   // s1 µÄÖµÎª "x     "
-	auto s2 = std::format("{:*<6}", 'x'); // s2 µÄÖµÎª "x*****"
-	auto s3 = std::format("{:*>6}", 'x'); // s3 µÄÖµÎª "*****x"
-	auto s4 = std::format("{:*^6}", 'x'); // s4 µÄÖµÎª "**x***"
-	auto s5 = std::format("{:6d}", c);    // s5 µÄÖµÎª "   120"
-	auto s6 = std::format("{:6}", true);  // s6 µÄÖµÎª "true  "
+	auto s0 = std::format("{:6}", 42);    // s0 çš„å€¼ä¸º "    42"
+	auto s1 = std::format("{:6}", 'x');   // s1 çš„å€¼ä¸º "x     "
+	auto s2 = std::format("{:*<6}", 'x'); // s2 çš„å€¼ä¸º "x*****"
+	auto s3 = std::format("{:*>6}", 'x'); // s3 çš„å€¼ä¸º "*****x"
+	auto s4 = std::format("{:*^6}", 'x'); // s4 çš„å€¼ä¸º "**x***"
+	auto s5 = std::format("{:6d}", c);    // s5 çš„å€¼ä¸º "   120"
+	auto s6 = std::format("{:6}", true);  // s6 çš„å€¼ä¸º "true  "
 
 }

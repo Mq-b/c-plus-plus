@@ -4,5 +4,5 @@
 int main() {
     unsigned int n = std::jthread::hardware_concurrency();
     std::cout << n << " concurrent threads are supported.\n";
-    //jthreadºÍthreadµÄÇø±ğÖ÷ÒªÊÇÎö¹¹£¬²»ÓÃjoin»òÕßthreadÁË£¬µ«ÕâĞèÒª¿ªÏúËùÒÔ¾ÍÖØĞÂĞ´ÁË¸öjthreadÀà
+    //jthreadå’Œthreadçš„åŒºåˆ«ä¸»è¦æ˜¯ææ„ï¼Œä¸ç”¨joinæˆ–è€…threadäº†ï¼Œä½†è¿™éœ€è¦å¼€é”€æ‰€ä»¥å°±é‡æ–°å†™äº†ä¸ªjthreadç±»
 }

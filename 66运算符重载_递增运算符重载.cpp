@@ -1,8 +1,8 @@
 //#include<iostream>
 //using namespace std;
-////ÖØÔØµİÔöÔËËã·û
+////é‡è½½é€’å¢è¿ç®—ç¬¦
 //
-////×Ô¶¨ÒåÕûĞÎ
+////è‡ªå®šä¹‰æ•´å½¢
 //class Myinteger
 //{
 //	friend ostream& operator<<(ostream&, Myinteger myint);
@@ -13,36 +13,36 @@
 //	{
 //		m_Num = 0;
 //	}
-//	//ÖØÔØ++ÔËËã·û
+//	//é‡è½½++è¿ç®—ç¬¦
 //
-//	//ÖØÔØÇ°ÖÃ++ÔËËã·û
-//	Myinteger& operator++()//·µ»ØÒıÓÃÊÇÎªÁËÒ»Ö±¶ÔÒ»¸öÊı¾İ½øĞĞ²Ù×÷
+//	//é‡è½½å‰ç½®++è¿ç®—ç¬¦
+//	Myinteger& operator++()//è¿”å›å¼•ç”¨æ˜¯ä¸ºäº†ä¸€ç›´å¯¹ä¸€ä¸ªæ•°æ®è¿›è¡Œæ“ä½œ
 //	{
-//		//ÏÈ×ÔÔö
+//		//å…ˆè‡ªå¢
 //		m_Num++;
-//		//·µ»Ø×ÔÉí
+//		//è¿”å›è‡ªèº«
 //		return *this;
 //	}
-//	//ÖØÔØºóÖÃ++ÔËËã·û
-//	Myinteger operator++(int)//int´ú±íÕ¼Î»²ÎÊı£¬¿ÉÒÔÇø·ÖÇ°ÖÃºÍºóÖÃ
+//	//é‡è½½åç½®++è¿ç®—ç¬¦
+//	Myinteger operator++(int)//intä»£è¡¨å ä½å‚æ•°ï¼Œå¯ä»¥åŒºåˆ†å‰ç½®å’Œåç½®
 //	{
-//		//ÏÈ ¼ÇÂ¼µ±Ê±½á¹û
+//		//å…ˆ è®°å½•å½“æ—¶ç»“æœ
 //		Myinteger temp = *this;
-//		//ºó µİÔö
+//		//å é€’å¢
 //		m_Num++;
-//		//×îºó½²¼ÇÂ¼µÄ½á¹û×ö·µ»Ø
+//		//æœ€åè®²è®°å½•çš„ç»“æœåšè¿”å›
 //		return temp;
 //	}
 //private:
 //	int m_Num;
 //};
-////ÖØÔØ×óÒÆÔËËã·û
+////é‡è½½å·¦ç§»è¿ç®—ç¬¦
 //ostream& operator<<(ostream&, Myinteger myint)
 //{
 //	cout << myint.m_Num;
 //	return cout;
 //}
-////void test01()//Ç°ÖÃ
+////void test01()//å‰ç½®
 ////{
 ////	Myinteger myint;
 ////	myint.m_Num = 20;
@@ -50,7 +50,7 @@
 ////	cout << ++(++myint)<< endl;
 ////}
 //
-//void test02()//ºóÖÃ
+//void test02()//åç½®
 //{
 //	Myinteger myint;
 //	cout<<myint++<< endl;

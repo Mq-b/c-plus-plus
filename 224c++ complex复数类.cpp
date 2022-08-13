@@ -1,5 +1,5 @@
 #include<iostream>
-#include<complex>//Ìá¹©¸´ÊıÀàÔ­ĞÍ
+#include<complex>//æä¾›å¤æ•°ç±»åŸå‹
 
 using namespace std;
 void test1()
@@ -26,11 +26,11 @@ int main()
 	cout << z1 << endl;
 	cout << z2 << endl;
 	z.real(22);
-	z.imag(33);//ĞŞ¸ÄzµÄÊµ²¿ºÍĞé²¿µÄÖµ
+	z.imag(33);//ä¿®æ”¹zçš„å®éƒ¨å’Œè™šéƒ¨çš„å€¼
 	cout << z << endl;
 
 	complex<double>a, b, c;
-	cout << "ÇëÊäÈëÈı¸ö¸´Êı£º";
+	cout << "è¯·è¾“å…¥ä¸‰ä¸ªå¤æ•°ï¼š";
 	cin >> a >> b >> c;
 	cout << "a=" << a << endl;
 	cout << "b=" << b << endl;

@@ -8,7 +8,7 @@ public:
 
 template<typename T>
 int myMax = MyClass<T>::max;
-//ÕâÒâÎ¶×Å¶ÔÓÚÒ»¸ö±ê×¼¿âµÄÀà£º
+//è¿™æ„å‘³ç€å¯¹äºä¸€ä¸ªæ ‡å‡†åº“çš„ç±»ï¼š
 namespace std {
 	template<typename T>
 	class numeric_limits {
@@ -18,21 +18,21 @@ namespace std {
 		
 	};
 }
-//¿ÉÒÔ¶¨Òå£º
+//å¯ä»¥å®šä¹‰ï¼š
 template<typename T>
 constexpr bool isSigned = std::numeric_limits<T>::is_signed;
-//ÕâÑù¾Í¿ÉÒÔÓÃ£º
+//è¿™æ ·å°±å¯ä»¥ç”¨ï¼š
 //isSigned<char>;
-//´úÌæ£º
+//ä»£æ›¿ï¼š
 //std::numeric_limits<char>::is_signed;
 
 int main()
 {
 
-	//Ó¦ÓÃ¹¤³ÌÊ¦¾Í¿ÉÒÔÊ¹ÓÃÏÂÃæÕâÑùµÄ´úÂë£º
+	//åº”ç”¨å·¥ç¨‹å¸ˆå°±å¯ä»¥ä½¿ç”¨ä¸‹é¢è¿™æ ·çš„ä»£ç ï¼š
 	auto i = myMax<std::string>;
 	std::cout << i << std::endl;
-	//¶ø²»ÊÇ£º
+	//è€Œä¸æ˜¯ï¼š
 	//auto i = MyClass<std::string>::max;
 	//std::cout << i << std::endl;
 	return 0;

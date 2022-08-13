@@ -1,7 +1,7 @@
 //#include<iostream>
 //using namespace std;
 //
-////�̳��еĶ���ģ��
+////继承中的对象模型
 //class Base
 //{
 //public:
@@ -18,9 +18,9 @@
 //
 //void test01()
 //{
-//	//���������еķǾ�̬��Ա���Զ��ᱻ����̳���ȥ
+//	//父类中所有的非静态成员属性都会被子类继承下去
 //	
-//	//������˽�г�Ա�����Ǳ��������������ˣ�����Ƿ��ʲ���������ȸ���Ǳ��̳���ȥ��
+//	//父类中私有成员属性是被编译器给隐蔽了，因此是访问不到，但是雀氏是被继承下去了
 //	cout << "sizeof Son" << sizeof(Son) << endl;//16
 //}
 //int main()
@@ -28,6 +28,6 @@
 //	test01();
 //	return 0;
 //}
-////���ÿ�����Ա������ʾ���߲鿴����ģ��
-//// cd����·����
-////cl /d1 reportSingleClassLayout���� "�ļ���"//
+////利用开发人员命令提示工具查看对象模型
+//// cd具体路径下
+////cl /d1 reportSingleClassLayout类名 "文件名"//

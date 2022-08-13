@@ -2,12 +2,12 @@
 //using namespace std;
 //#include<vector>
 //
-////vectorÈİÆ÷Ô¤Áô¿Õ¼ä
+////vectorå®¹å™¨é¢„ç•™ç©ºé—´
 //void test01()
 //{
 //	vector<int>v;
-//	v.reserve(100000);//ÌáÇ°Ô¤Áô¿Õ¼ä
-//	int num = 0;//Í³¼Æ¿ª±Ù´ÎÊı
+//	v.reserve(100000);//æå‰é¢„ç•™ç©ºé—´
+//	int num = 0;//ç»Ÿè®¡å¼€è¾Ÿæ¬¡æ•°
 //	int* p = NULL;
 //	for (int i = 0; i < 100000; i++)
 //	{

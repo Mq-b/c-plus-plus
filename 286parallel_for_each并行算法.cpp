@@ -2,7 +2,7 @@
 #include<ppl.h>
 using namespace concurrency;
 
-class auto_timer {				//¼ÆÊ±Æ÷
+class auto_timer {				//è®¡æ—¶å™¨
 	std::chrono::system_clock::time_point start;
 public:
 	// start record when entering scope
@@ -18,7 +18,7 @@ public:
 };
 
 void test1() {
-	std::vector<std::vector<int>>V(10, std::vector<int>());//´´½¨1000¸övector
+	std::vector<std::vector<int>>V(10, std::vector<int>());//åˆ›å»º1000ä¸ªvector
 	concurrency::parallel_for_each(V.begin(), V.end(), [](auto& i) {
 		_sleep(1000);
 		});
@@ -37,8 +37,8 @@ int main() {
 	}
 
 	{
-		auto_timer timer("¶ÔÕÕfor_each");
+		auto_timer timer("å¯¹ç…§for_each");
 		test2();
 	}
 }
-//Õâ¸ö²¢ÐÐËã·¨ÓÃÁËºÍÃ»ÓÃÒ»Ñù
+//è¿™ä¸ªå¹¶è¡Œç®—æ³•ç”¨äº†å’Œæ²¡ç”¨ä¸€æ ·

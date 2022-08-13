@@ -1,22 +1,22 @@
 #include <iostream>
 #include <filesystem>
-//ËùÓĞµÄ·½·¨¶¼±»·ÅÈëstd::filesystem::ÃüÃû¿Õ¼ä£¬µ«ÊÇÒıÈëfilesystemÍ·ÎÄ¼ş£¬ÃüÃû¿Õ¼äÒ²±»ÒıÈë
+//æ‰€æœ‰çš„æ–¹æ³•éƒ½è¢«æ”¾å…¥std::filesystem::å‘½åç©ºé—´ï¼Œä½†æ˜¯å¼•å…¥filesystemå¤´æ–‡ä»¶ï¼Œå‘½åç©ºé—´ä¹Ÿè¢«å¼•å…¥
 
 int main(int argc, char* argv[])
 {
-	std::filesystem::path p{ "D:/×ÔÓÃ/vsµÄc++/c++2022_1_19/c++2022_1_19.vcxproj.filters" };   // p´ú±íÒ»¸öÎÄ¼şÏµÍ³Â·¾¶£¨¿ÉÄÜ²»´æÔÚ£©
-	if (is_regular_file(p)) { //Èç¹ûpÊÇÎÄ¼ş
-		std::cout << p << " size is " << file_size(p) << " bytes\n";//file_size·½·¨´òÓ¡ÎÄ¼ş´óĞ¡£¬µ¥Î»byte
+	std::filesystem::path p{ "D:/è‡ªç”¨/vsçš„c++/c++2022_1_19/c++2022_1_19.vcxproj.filters" };   // pä»£è¡¨ä¸€ä¸ªæ–‡ä»¶ç³»ç»Ÿè·¯å¾„ï¼ˆå¯èƒ½ä¸å­˜åœ¨ï¼‰
+	if (is_regular_file(p)) { //å¦‚æœpæ˜¯æ–‡ä»¶
+		std::cout << p << " size is " << file_size(p) << " bytes\n";//file_sizeæ–¹æ³•æ‰“å°æ–‡ä»¶å¤§å°ï¼Œå•ä½byte
 	}
-	else if (is_directory(p)) {//Èç¹ûpÊÇÄ¿Â¼
-		for (const auto& e : std::filesystem::directory_iterator{ p }) {//directory_iterator·½·¨»á»ñÈ¡µ±Ç°Ä¿Â¼ËùÓĞÎÄ¼ş
-			std::cout << "  " << e.path() << '\n';//È«²¿´òÓ¡
+	else if (is_directory(p)) {//å¦‚æœpæ˜¯ç›®å½•
+		for (const auto& e : std::filesystem::directory_iterator{ p }) {//directory_iteratoræ–¹æ³•ä¼šè·å–å½“å‰ç›®å½•æ‰€æœ‰æ–‡ä»¶
+			std::cout << "  " << e.path() << '\n';//å…¨éƒ¨æ‰“å°
 		}
 	}
-	else if (exists(p)) {//ÅĞ¶ÏpÊÇ·ñ´æÔÚ
-		std::cout << p << " ÊÇÒ»¸öÌØÊâÎÄ¼ş\n";
+	else if (exists(p)) {//åˆ¤æ–­pæ˜¯å¦å­˜åœ¨
+		std::cout << p << " æ˜¯ä¸€ä¸ªç‰¹æ®Šæ–‡ä»¶\n";
 	}
 	else {
-		std::cout << "path " << p << " ²»´æÔÚ\n";
+		std::cout << "path " << p << " ä¸å­˜åœ¨\n";
 	}
 }

@@ -9,8 +9,8 @@
 //};
 //int main()
 //{
-//	students s1 = { "ÕÅÈı",18,99 };
-//	students* p = &s1;//½á¹¹ÌåÖ¸Õë
+//	students s1 = { "å¼ ä¸‰",18,99 };
+//	students* p = &s1;//ç»“æ„ä½“æŒ‡é’ˆ
 //	cout << p->name << " " << p->age << " " << p->score << endl;
 //	return 0;
 //}

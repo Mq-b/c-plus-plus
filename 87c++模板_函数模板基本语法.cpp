@@ -1,9 +1,9 @@
 //#include<iostream>
 //using namespace std;
 //
-////º¯ÊýÄ£°å
+////å‡½æ•°æ¨¡æ¿
 //
-////Á½¸öÕûÐÎ½»»»º¯Êý
+////ä¸¤ä¸ªæ•´å½¢äº¤æ¢å‡½æ•°
 //void swapInt(int& a, int& b)
 //{
 //	int temp = a;
@@ -11,7 +11,7 @@
 //	b = temp;
 //}
 //
-////½»»»Á½¸ö¸¡µãÐÍº¯Êý
+////äº¤æ¢ä¸¤ä¸ªæµ®ç‚¹åž‹å‡½æ•°
 //
 //void swapDouble(double& a, double& b)
 //{
@@ -20,8 +20,8 @@
 //	b = temp;
 //}
 //
-////º¯ÊýÄ£°å,¹Ø¼ü×ÖtemplateÀïÃæÐ´classÒ²ÊÇÒ»ÑùµÄ
-//template<typename T>//ÉùÃ÷Ò»¸öÄ£°å£¬¸æËß±àÒëÆ÷ºóÃæµÄ´úÂëÖÐ½ô¸ú×ÅµÄ²»Òª±¨´í£¬TÊÇÒ»¸öÍ¨ÓÃÊý¾ÝÀàÐÍ
+////å‡½æ•°æ¨¡æ¿,å…³é”®å­—templateé‡Œé¢å†™classä¹Ÿæ˜¯ä¸€æ ·çš„
+//template<typename T>//å£°æ˜Žä¸€ä¸ªæ¨¡æ¿ï¼Œå‘Šè¯‰ç¼–è¯‘å™¨åŽé¢çš„ä»£ç ä¸­ç´§è·Ÿç€çš„ä¸è¦æŠ¥é”™ï¼ŒTæ˜¯ä¸€ä¸ªé€šç”¨æ•°æ®ç±»åž‹
 //void mySwap(T& a, T& b)
 //{
 //	T temp = a;
@@ -36,13 +36,13 @@
 //
 //	//swapInt(a, b);
 //
-//	//ÀûÓÃº¯ÊýÄ£°å½»»»
-//	//Á½ÖÖ·½Ê½Ê¹ÓÃº¯ÊýÄ£°å
+//	//åˆ©ç”¨å‡½æ•°æ¨¡æ¿äº¤æ¢
+//	//ä¸¤ç§æ–¹å¼ä½¿ç”¨å‡½æ•°æ¨¡æ¿
 //	
-//	//1¡¢×Ô¶¯ÀàÐÍÍÆµ¼
+//	//1ã€è‡ªåŠ¨ç±»åž‹æŽ¨å¯¼
 //	// mySwap(a, b);
 //	
-//	//2¡¢ÏÔÊ¾Ö¸¶¨ÀàÐÍ
+//	//2ã€æ˜¾ç¤ºæŒ‡å®šç±»åž‹
 //	mySwap<int>(a, b);
 //
 //	cout << "a=" << a << endl;

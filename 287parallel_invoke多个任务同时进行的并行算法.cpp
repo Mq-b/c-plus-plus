@@ -3,7 +3,7 @@
 #include<thread>
 using namespace concurrency;
 int main() {
-	//ÎÒÃÇ¿ÉÒÔÔÚparallel_invokeÀïÃæÔËĞĞ¶à¸öÈÎÎñ£¬Ã¿Ò»¸öÈÎÎñ¶¼»á¿ªÆôÒ»¸öÏß³Ì
+	//æˆ‘ä»¬å¯ä»¥åœ¨parallel_invokeé‡Œé¢è¿è¡Œå¤šä¸ªä»»åŠ¡ï¼Œæ¯ä¸€ä¸ªä»»åŠ¡éƒ½ä¼šå¼€å¯ä¸€ä¸ªçº¿ç¨‹
 	concurrency::parallel_invoke(
 		[] {_sleep(1000); std::cout << std::this_thread::get_id() << std::endl; },
 		[] {_sleep(1000); std::cout << std::this_thread::get_id() << std::endl; },

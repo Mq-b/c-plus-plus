@@ -1,7 +1,7 @@
 //#include<iostream>
 //using namespace std;
 //#include<deque>
-//#include<algorithm>//±ê×¼Ëã·¨Í·ÎÄ¼ş
+//#include<algorithm>//æ ‡å‡†ç®—æ³•å¤´æ–‡ä»¶
 //void printDeque(const deque<int>&v)
 //{
 //	for (deque<int>::const_iterator it = v.begin(); it != v.end(); it++)
@@ -23,10 +23,10 @@
 //
 //	printDeque(d);
 //
-//	//ÅÅĞò	Ä¬ÈÏ´ÓĞ¡µ½´ó ÉıĞò
-//	//¶ÔÓÚÖ§³ÖËæ»ú·ÃÎÊµÄµü´úÆ÷µÄÈİÆ÷£¬¶¼¿ÉÒÔÀûÓÃsortËã·¨Ö±½Ó½øĞĞÅÅĞò
+//	//æ’åº	é»˜è®¤ä»å°åˆ°å¤§ å‡åº
+//	//å¯¹äºæ”¯æŒéšæœºè®¿é—®çš„è¿­ä»£å™¨çš„å®¹å™¨ï¼Œéƒ½å¯ä»¥åˆ©ç”¨sortç®—æ³•ç›´æ¥è¿›è¡Œæ’åº
 //	sort(d.begin(), d.end());
-//	cout << "ÅÅĞòºó" << endl;
+//	cout << "æ’åºå" << endl;
 //	printDeque(d);
 //}
 //
@@ -36,4 +36,4 @@
 //	string a;
 //	return 0;
 //}
-////sortÅÅĞòËã·¨·Ç³£ÊµÓÃ
+////sortæ’åºç®—æ³•éå¸¸å®ç”¨

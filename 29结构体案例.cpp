@@ -33,7 +33,7 @@
 //{
 //	for (int i = 0; i < num; i++)
 //	{
-//		cout << "ÀÏÊ¦:" << p[i].name << endl;
+//		cout << "è€å¸ˆ:" << p[i].name << endl;
 //		for (int j = 0; j < 5; j++)
 //		{
 //			cout << p[i].stu[j].name <<"\t" << p[i].stu[j].score<<endl;
@@ -42,7 +42,7 @@
 //}
 //int main()
 //{
-//	srand((unsigned int)time(NULL));//Ëæ»úÊýÖÖ×Ó
+//	srand((unsigned int)time(NULL));//éšæœºæ•°ç§å­
 //	teacher s1[3];
 //	int num = sizeof(s1) / sizeof(s1[0]);
 //	dat(s1, num);

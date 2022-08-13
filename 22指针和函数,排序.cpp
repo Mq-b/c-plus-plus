@@ -1,13 +1,13 @@
 //#include<iostream>
 //using namespace std;
-//void swap01(int a, int b)//Ã»É¶ÓÃµÄº¯Êı
+//void swap01(int a, int b)//æ²¡å•¥ç”¨çš„å‡½æ•°
 //{
 //	int temp = a;
 //	a = b;
 //	b = temp;
 //}
 //
-//void swap02(int* p, int* p2)//½»»»,µØÖ·´«µİ
+//void swap02(int* p, int* p2)//äº¤æ¢,åœ°å€ä¼ é€’
 //{
 //	int temp = *p;
 //	*p = *p2;
@@ -23,12 +23,12 @@
 //}
 
 //#include<iostream>
-//#include"HS.h"//µ¼ÈëÍ·ÎÄ¼ş
+//#include"HS.h"//å¯¼å…¥å¤´æ–‡ä»¶
 //using namespace std;
 //int main()
 //{
 //	int num[10];
 //	for (int i = 0; i < 10; i++)cin >> num[i];
-//	sort(num, 10);//ÅÅĞò
+//	sort(num, 10);//æ’åº
 //	for (int i = 0; i < 10; i++)cout<< num[i]<<endl;
 //}

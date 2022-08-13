@@ -1,8 +1,8 @@
 #include<iostream>
 #include<string>
-#include<functional>//Í·ÎÄ¼şÌá¹©Ô­ĞÍ
+#include<functional>//å¤´æ–‡ä»¶æä¾›åŸå‹
 using namespace std;
-using namespace std::placeholders;//ÒıÈëÃüÃû¿Õ¼ä¼õÉÙ´úÂëÁ¿
+using namespace std::placeholders;//å¼•å…¥å‘½åç©ºé—´å‡å°‘ä»£ç é‡
 class Test
 {
 public:
@@ -16,7 +16,7 @@ int main()
 {
 	Test obj;
 
-	//°ó¶¨³ÉÔ±º¯Êı
+	//ç»‘å®šæˆå‘˜å‡½æ•°
 	function<void(int, int)>f1 = bind(&Test::func, &obj, _1, _2);
 	f1(11, 22);
 

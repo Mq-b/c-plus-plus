@@ -7,7 +7,7 @@ int main() {
     std::vector<std::string> words{ "one", "two", "three", "four", "five","six", "seven", "eight" };
     auto iter = std::rotate(std::begin(words), std::begin(words) + 3, std::end(words));
     std::copy(std::begin(words), std::end(words), std::ostream_iterator<std::string> {std::cout, " "});
-    //Èı¸ö²ÎÊı·Ö±ğÊÇ¿ªÊ¼Î»ÖÃ£¬È»ºóµ½×Ô¼ºĞèÒªµÄÎ»ÖÃ£¬È»ºó½áÊøÎ»ÖÃ£¬±ÈÈç¿ªÊ¼ÊÇ1£¬ĞèÒªµÄÎ»ÖÃÊÇ3£¬½áÊøµÄÎ»ÖÃÊÇ5£¬ÄÇÃ´¾Í»á°Ñ1 2 3 ·Åµ½5ºóÃæ£¬ÈçÏÂËùÊ¾4 5 6 7 8 9 10 1 2 3
+    //ä¸‰ä¸ªå‚æ•°åˆ†åˆ«æ˜¯å¼€å§‹ä½ç½®ï¼Œç„¶ååˆ°è‡ªå·±éœ€è¦çš„ä½ç½®ï¼Œç„¶åç»“æŸä½ç½®ï¼Œæ¯”å¦‚å¼€å§‹æ˜¯1ï¼Œéœ€è¦çš„ä½ç½®æ˜¯3ï¼Œç»“æŸçš„ä½ç½®æ˜¯5ï¼Œé‚£ä¹ˆå°±ä¼šæŠŠ1 2 3 æ”¾åˆ°5åé¢ï¼Œå¦‚ä¸‹æ‰€ç¤º4 5 6 7 8 9 10 1 2 3
     std::vector<int>n{ 1,2,3,4,5,6,7,8,9,10 };
     std::rotate(n.begin(), n.begin() + 3, n.end());
     std::copy(std::begin(n), std::end(n), std::ostream_iterator<int> {std::cout, " "});
