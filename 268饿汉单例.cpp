@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 class Test {
 public:
 	int num;

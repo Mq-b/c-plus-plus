@@ -1,6 +1,6 @@
-#include<iostream>
+﻿#include<iostream>
 /*
-std::enable_if ����˼�壬��������ʱ������Ч����Ϊѡ�����͵�С���ߣ���㷺��Ӧ���� C++ ��ģ��Ԫ��̣�meta programming����
+std::enable_if 顾名思义，满足条件时类型有效。作为选择类型的小工具，其广泛的应用在 C++ 的模板元编程（meta programming）中
 */
 
 template <typename T,typename A>

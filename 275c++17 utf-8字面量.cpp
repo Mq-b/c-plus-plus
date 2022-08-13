@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 
 int main()
 {
@@ -21,8 +21,8 @@ int main()
 	
 }
 /*
-u8ÓÃÓÚµ¥×Ö½ÚUS-ASCIIºÍUTF-8±àÂë
-uÓÃÓÚÁ½×Ö½ÚµÄUTF-16±àÂë
-UÓÃÓÚËÄ×Ö½ÚµÄUTF-32±àÂë
-LÓÃÓÚÃ»ÓÐÃ÷È·±àÂëµÄ¿í×Ö·û£¬¿ÉÄÜÊÇÁ½¸ö»òÕßËÄ¸ö×Ö½Ú
+u8ç”¨äºŽå•å­—èŠ‚US-ASCIIå’ŒUTF-8ç¼–ç 
+uç”¨äºŽä¸¤å­—èŠ‚çš„UTF-16ç¼–ç 
+Uç”¨äºŽå››å­—èŠ‚çš„UTF-32ç¼–ç 
+Lç”¨äºŽæ²¡æœ‰æ˜Žç¡®ç¼–ç çš„å®½å­—ç¬¦ï¼Œå¯èƒ½æ˜¯ä¸¤ä¸ªæˆ–è€…å››ä¸ªå­—èŠ‚
 */

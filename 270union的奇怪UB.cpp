@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 union Test {
 	int a;
 	double b;

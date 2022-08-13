@@ -1,25 +1,25 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<vector>
 
 class Test {
 public:
 	void* operator new(size_t size)
 	{
-		std::cout << "ÖØÔØoperator new" << std::endl;
+		std::cout << "é‡è½½operator new" << std::endl;
 		return malloc(size);
 	}
 	void operator delete(void* _Block)
 	{
-		std::cout << "ÖØÔØoperator delete" << std::endl;
+		std::cout << "é‡è½½operator delete" << std::endl;
 		free(_Block);
 	}
 	friend void* operator new[](size_t size) 
 	{
 		void* p = nullptr;
-		std::cout << "ÖØÔØoperator new[]" << std::endl;
+		std::cout << "é‡è½½operator new[]" << std::endl;
 		p = malloc(size);
 		if (p == nullptr) {
-			throw std::bad_alloc();//Òì³£´¦Àí
+			throw std::bad_alloc();//å¼‚å¸¸å¤„ç†
 		}
 		return p;
 	}
@@ -36,11 +36,11 @@ int main()
 	::std::cout << test->m_a << ' ' << test->m_b << std::endl ;
 	delete test;
 	
-	int* p = new int[ 1024*1024*500 ];//Å×³öÒì³£
+	int* p = new int[ 1024*1024*500 ];//æŠ›å‡ºå¼‚å¸¸
 }
 /*https://zhuanlan.zhihu.com/p/354046948
 * /
-/*newÊÇÒ»¸ö¹Ø¼ü×Ö£¬ºÍsizeofÒ»Ñù£¬ÎÒÃÇÎÞ·¨ÐÞ¸ÄÆä¾ßÌå¹¦ÄÜ¡£newÖ÷Òª×öÈý¼þÊÂ£º·ÖÅä¿Õ¼ä¡¢³õÊ¼»¯¶ÔÏó¡¢·µ»ØÖ¸Õë¡£µ÷ÓÃoperator new·ÖÅä¿Õ¼ä¡£
-operator newÊÇÒ»¸ö²Ù×÷·û£¬ºÍ + - ²Ù×÷·ûÒ»Ñù£¬×÷ÓÃÊÇ·ÖÅä¿Õ¼ä¡£ÎÒÃÇ¿ÉÒÔÖØÐ´ËüÃÇ£¬ÐÞ¸Ä·ÖÅä¿Õ¼äµÄ·½Ê½¡£*/
-/*operator new·µ»ØÖµ±ØÐëÊÇvoid*¡£µÚÒ»¸ö²ÎÊý±ØÐëÊÇsize_t£¬»¹¿É¼ÓÆäËü²ÎÊý*/
-/*ÔÚÀàÖÐµÄoperator newÄ¬ÈÏ¾ÍÊÇstatic¡£ËùÒÔ¼Óstatic¿ÉÒÔ£¬²»¼ÓÒ²ÊÇÈ«¾Ö£¬¿ÉÒÔÕý³£Ê¹ÓÃ¡£*/
+/*newæ˜¯ä¸€ä¸ªå…³é”®å­—ï¼Œå’Œsizeofä¸€æ ·ï¼Œæˆ‘ä»¬æ— æ³•ä¿®æ”¹å…¶å…·ä½“åŠŸèƒ½ã€‚newä¸»è¦åšä¸‰ä»¶äº‹ï¼šåˆ†é…ç©ºé—´ã€åˆå§‹åŒ–å¯¹è±¡ã€è¿”å›žæŒ‡é’ˆã€‚è°ƒç”¨operator newåˆ†é…ç©ºé—´ã€‚
+operator newæ˜¯ä¸€ä¸ªæ“ä½œç¬¦ï¼Œå’Œ + - æ“ä½œç¬¦ä¸€æ ·ï¼Œä½œç”¨æ˜¯åˆ†é…ç©ºé—´ã€‚æˆ‘ä»¬å¯ä»¥é‡å†™å®ƒä»¬ï¼Œä¿®æ”¹åˆ†é…ç©ºé—´çš„æ–¹å¼ã€‚*/
+/*operator newè¿”å›žå€¼å¿…é¡»æ˜¯void*ã€‚ç¬¬ä¸€ä¸ªå‚æ•°å¿…é¡»æ˜¯size_tï¼Œè¿˜å¯åŠ å…¶å®ƒå‚æ•°*/
+/*åœ¨ç±»ä¸­çš„operator newé»˜è®¤å°±æ˜¯staticã€‚æ‰€ä»¥åŠ staticå¯ä»¥ï¼Œä¸åŠ ä¹Ÿæ˜¯å…¨å±€ï¼Œå¯ä»¥æ­£å¸¸ä½¿ç”¨ã€‚*/

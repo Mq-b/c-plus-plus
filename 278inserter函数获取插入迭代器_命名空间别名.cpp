@@ -1,13 +1,13 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<vector>
-namespace stdr = std::ranges;//ÃüÃû¿Õ¼ä¸³Öµ
-//µÈÓÚÊÇ°Ñstd::ranges±ä³ÉÁËstdr
+namespace stdr = std::ranges;//å‘½åç©ºé—´èµ‹å€¼
+//ç­‰äºæ˜¯æŠŠstd::rangeså˜æˆäº†stdr
 int main()
 {
 	std::vector<int>V{ 1,2,3 };
-	auto it = std::inserter(V, V.begin() + 2);//»ñÈ¡²åÈëµü´úÆ÷
-	*it = 100;//²åÈëµü´úÆ÷¿É±»¸³Öµ²»¿É±»´òÓ¡
+	auto it = std::inserter(V, V.begin() + 2);//è·å–æ’å…¥è¿­ä»£å™¨
+	*it = 100;//æ’å…¥è¿­ä»£å™¨å¯è¢«èµ‹å€¼ä¸å¯è¢«æ‰“å°
 	std::copy(V.begin(), V.end(), std::ostream_iterator<int>{std::cout, " "});
 	std::endl(std::cout);
-	stdr::copy(V, std::ostream_iterator<int>{std::cout, " "});//ÕâÑùĞ´·¨Òª·½±ãºÜ¶à£¬Ïà±ÈÇ°ÕßÉÙÁËÒ»¸ö²ÎÊı
+	stdr::copy(V, std::ostream_iterator<int>{std::cout, " "});//è¿™æ ·å†™æ³•è¦æ–¹ä¾¿å¾ˆå¤šï¼Œç›¸æ¯”å‰è€…å°‘äº†ä¸€ä¸ªå‚æ•°
 }
