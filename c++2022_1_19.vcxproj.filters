@@ -1041,6 +1041,9 @@
     <ClCompile Include="340静态嵌套类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="341C++20span跨度类.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">

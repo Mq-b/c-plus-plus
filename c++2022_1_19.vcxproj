@@ -711,6 +711,7 @@
     <ClCompile Include="340静态嵌套类.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="341C++20span跨度类.cpp" />
     <ClCompile Include="34引用.cpp" />
     <ClCompile Include="35引用做函数参数.cpp" />
     <ClCompile Include="36引用做函数返回值.cpp" />
@@ -730,7 +731,9 @@
     <ClCompile Include="50构造函数的分类及调用.cpp" />
     <ClCompile Include="51构造函数的调用规则.cpp" />
     <ClCompile Include="52深拷贝与浅拷贝.cpp" />
-    <ClCompile Include="53初始化列表.cpp" />
+    <ClCompile Include="53初始化列表.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="54类对象作为类成员源.cpp" />
     <ClCompile Include="55静态成员函数.cpp" />
     <ClCompile Include="56c++对象模型和this指针.cpp" />
@@ -749,7 +752,9 @@
     <ClCompile Include="69运算符重载_函数调用运算符重载.cpp" />
     <ClCompile Include="70继承的基本语法.cpp" />
     <ClCompile Include="71继承方式.cpp" />
-    <ClCompile Include="72继承中的对象模型.cpp" />
+    <ClCompile Include="72继承中的对象模型.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="73继承的构造和析构顺序.cpp" />
     <ClCompile Include="74继承同名成员处理方式.cpp" />
     <ClCompile Include="75继承中同名静态成员处理.cpp" />
@@ -757,10 +762,16 @@
     <ClCompile Include="77菱形继承.cpp" />
     <ClCompile Include="78多态_基本语法.cpp" />
     <ClCompile Include="79多态_案例1_计算器实现.cpp" />
-    <ClCompile Include="80多态_纯虚函数和多态类.cpp" />
+    <ClCompile Include="80多态_纯虚函数和多态类.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="81多态_案例2_制作饮品.cpp" />
-    <ClCompile Include="82多态_虚析构和纯虚析构.cpp" />
-    <ClCompile Include="83多态_案例3_电脑组装.cpp" />
+    <ClCompile Include="82多态_虚析构和纯虚析构.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="83多态_案例3_电脑组装.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="84c++文件操作_写文件.cpp" />
     <ClCompile Include="85c++文件操作_读文件.cpp" />
     <ClCompile Include="86c++文件操作_二进制文件_写入与读取.cpp" />
