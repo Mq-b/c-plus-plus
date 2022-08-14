@@ -5,9 +5,9 @@
 void test(const std::string_view& s)
 {
     if (std::equal(s.begin(), s.begin() + s.size() / 2, s.rbegin())) 
-        std::cout << s << " ÊÇ»ØÎÄ´®" << std::endl;
+        std::cout << s << "æ˜¯å›žæ–‡ä¸²" << std::endl;
     else 
-        std::cout << s << " ²»ÊÇ»ØÎÄ´®" << std::endl;
+        std::cout << s << "ä¸æ˜¯å›žæ–‡ä¸²" << std::endl;
 }
 int main()
 {

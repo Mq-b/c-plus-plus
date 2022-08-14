@@ -18,7 +18,5 @@ int main() {
 	print<int>(v);
 	print<int>(n);
 	print<std::string>(s);
-	//spanµäÐÍÊµÏÖÖ»±£ÓÐÁ½¸ö³ÉÔ±£ºÖ¸Ïò T µÄÖ¸ÕëºÍ´óÐ¡¡£
-	//view¶ÔÏó£¬²»ÓµÓÐËùÓÐÈ¨£¬¿½±´Çá
-	//°ÑÆðÊ¼µØÖ·ºÍ³¤¶È°ü×°ÔÚÒ»Æð£¬±ÜÃâÒÅÂ©¡£
+	//æ­¤ç±»åªæ˜¯view å¼€é”€æ›´å°ï¼Œå®ƒåªä¿å­˜æ•°æ®çš„å¼€å§‹ä½ç½®å’Œé•¿åº¦
 }
