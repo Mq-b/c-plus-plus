@@ -16,7 +16,7 @@ bool operator==(const CityRecord& lhs, const CityRecord& rhs) {
 bool operator<(const CityRecord& a, const CityRecord& b) {
 	return a.Population > b.Population;
 }
-//如果想在哈希map使用自定义的数据类型必须自定义特例化注入，可以看330
+//如果想在哈希map使用自定义的数据类型必须自定义特例化注入(指定如何散列该类型)，可以看330
 namespace std {
 	template<>
 	struct hash<CityRecord>

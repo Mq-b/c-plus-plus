@@ -1050,6 +1050,9 @@
     <ClCompile Include="343unordered_map.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="344C++17optional.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
