@@ -47,3 +47,5 @@ int main() {
 
 	https://stackoverflow.com/questions/2196995/is-there-any-advantage-of-using-map-over-unordered-map-in-case-of-trivial-keys
 */
+
+//再强调一下，这个哈希值的生成，C++标准没有规定使用什么算法，这是库实现的事情，也就是可以说是编译器厂商实现
