@@ -727,6 +727,7 @@
     <ClCompile Include="345function返回函数指针保留状态的问题.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="346Windows下用getenv获取环境变量分割字符串.cpp" />
     <ClCompile Include="34引用.cpp" />
     <ClCompile Include="35引用做函数参数.cpp" />
     <ClCompile Include="36引用做函数返回值.cpp" />

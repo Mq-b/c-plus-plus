@@ -1056,6 +1056,9 @@
     <ClCompile Include="345function返回函数指针保留状态的问题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="346Windows下用getenv获取环境变量分割字符串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
