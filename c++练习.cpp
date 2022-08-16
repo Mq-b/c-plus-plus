@@ -3459,3 +3459,12 @@ int main()
 //int main() {
 //	const char* str = "ABCDEFG";
 //	fwrite(str, 1, 8, stdout);
+#include<stdio.h>
+union T {
+	int a;
+	double b;
+};
+int main() {
+	union T c={10};
+	printf("%d\n", c.a);
+}

@@ -81,3 +81,12 @@ int main() {
 //聚合初始化只能对直接的值初始化，不能有显性的函数等 聚合体一定能聚合初始化 能聚合初始化的一定是聚合体
 
 //我们常说的聚合体和聚合类是指一个东西，只是聚合类不包括数组，聚合类型和聚合体在文档是近义词
+
+//强调一点，在C语言中union不是聚合类型，
+
+/*
+	Note that aggregate type does not include union type because an object with union type can only contain one member at a time.
+	C++union能是聚合类型, 应该是有激活成员这个概念导致的
+	c的union就没有激活成员这个概念, 所有成员的生命周期是相同的
+	聚合类型：数组类型和结构体类型
+*/
