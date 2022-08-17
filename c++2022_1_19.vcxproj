@@ -736,7 +736,9 @@
     <ClCompile Include="348std的问题.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="349ratio.cpp" />
+    <ClCompile Include="349ratio精确的有理分数.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="34引用.cpp" />
     <ClCompile Include="35引用做函数参数.cpp" />
     <ClCompile Include="36引用做函数返回值.cpp" />

@@ -1065,7 +1065,7 @@
     <ClCompile Include="348std的问题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="349ratio.cpp">
+    <ClCompile Include="349ratio精确的有理分数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

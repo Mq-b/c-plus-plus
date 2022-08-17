@@ -33,6 +33,12 @@ template<typename T, typename = std::enable_if_t<(sizeof(T) > 4)>>
 void foo() {
 	std::cout << "first" << std::endl;
 }
+
+template<typename T, typename = std::enable_if_t<std::is_integral_v<T>>>//最平常的写法
+void func(T i) {
+	std::cout << typeid(i).name() << std::endl;
+}
+
 //如果sizeof(T) > 4，它会被展开成：
 //template<typename T, typename = void>
 //void foo() {
