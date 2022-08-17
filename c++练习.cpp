@@ -3457,5 +3457,7 @@ int main()
 //}
 //#include<iostream>
 //int main() {
-//	const char* str = "ABCDEFG";
-//	fwrite(str, 1, 8, stdout);
+//	char s[10];
+//	fread(s, 1, 10, stdin);
+//	fwrite(s, 1, 10, stdout);
+//}
