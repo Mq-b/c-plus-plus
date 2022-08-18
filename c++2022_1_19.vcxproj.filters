@@ -1071,6 +1071,9 @@
     <ClCompile Include="350signal标准库与信号安全.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="351type_info.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
