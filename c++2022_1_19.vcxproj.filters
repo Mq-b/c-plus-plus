@@ -1074,6 +1074,9 @@
     <ClCompile Include="351type_info.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="352type_index.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
