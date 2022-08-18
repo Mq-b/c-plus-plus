@@ -30,5 +30,7 @@ int main() {
 
 	 提供一个权威性的 https://en.wikipedia.org/wiki/Name_mangling
 	*/
-	std::cout << typeid(int).raw_name() << std::endl;
+
+	//值完全一样，这个std::type_info是无法单独创造的，typeid运算符属于开洞了，返回的是const type_info&，如果类型相同，那么它返回的是同一个对象的const&
+	std::cout << &typeid(int(0)) << "," << &typeid(int(100)) << std::endl;
 } 
