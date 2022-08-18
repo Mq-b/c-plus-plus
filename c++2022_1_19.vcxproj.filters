@@ -1077,6 +1077,9 @@
     <ClCompile Include="352type_index.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="353alignof 运算符获取对齐字节数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
