@@ -855,9 +855,6 @@
     <ClCompile Include="278inserter函数获取插入迭代器_命名空间别名.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="279传递成员函数或成员变量作为参数_invoke.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="280枚举做函数参数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -1081,6 +1078,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="354C++17copy_file复制文件内容和其他方法的使用.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="279传递成员函数或成员变量作为参数C++17invoke.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="355C++20requires关键字.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
