@@ -1080,6 +1080,9 @@
     <ClCompile Include="353alignof 运算符获取对齐字节数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="354C++17copy_file复制文件内容和其他方法的使用.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
