@@ -773,6 +773,9 @@
     <ClCompile Include="358C++14二进制字面量及输出.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="359C++20consteval关键字与constexpr的区别.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="35引用做函数参数.cpp" />
     <ClCompile Include="36引用做函数返回值.cpp" />
     <ClCompile Include="37常量引用.cpp" />
