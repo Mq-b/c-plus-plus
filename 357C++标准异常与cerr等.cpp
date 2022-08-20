@@ -1,6 +1,6 @@
 #include<iostream>
 #include<exception>
-int f()noexcept(false) {
+void f()noexcept(false) {
 	try
 	{
 		throw std::runtime_error("6666");
