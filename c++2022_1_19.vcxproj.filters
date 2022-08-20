@@ -1092,6 +1092,9 @@
     <ClCompile Include="357C++标准异常与cerr等.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="358C++14二进制字面量及输出.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
