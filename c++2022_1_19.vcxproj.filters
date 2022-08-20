@@ -1086,6 +1086,9 @@
     <ClCompile Include="355C++20requires关键字.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="356C++20信号量.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
