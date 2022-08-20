@@ -38,7 +38,7 @@ int main()
     X x;
 
     int n = static_cast<int>(x);   // OK：设 n 为 7 这里其实写不写强转都可以，static_cast<int>会调用转换函数
-    int c = int(x);                //Ok: n为7，其实和上面是一个意思,一般写成上面这样就行
+    int c = (int)x;                //Ok: n为7，其实和上面是一个意思,一般写成上面这样就行
     int m = x;                     // OK：设 m 为 7 X类型的x隐式转换为int
 
     int* p = static_cast<int*>(x); // OK：设 p 为空

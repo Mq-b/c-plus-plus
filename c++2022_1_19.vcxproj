@@ -278,7 +278,7 @@
     <ClCompile Include="18二维数组案例.cpp" />
     <ClCompile Include="190explicit关键字.cpp" />
     <ClCompile Include="191c++自定义转换函数.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="192算法库接收函数与仿函数的实例.cpp" />
     <ClCompile Include="193valarray类.cpp" />
@@ -299,8 +299,12 @@
     </ClCompile>
     <ClCompile Include="204Lambda函数.cpp" />
     <ClCompile Include="205可变参数模板.cpp" />
-    <ClCompile Include="206partition算法forward_list容器.cpp" />
-    <ClCompile Include="207中缀表达式转换成后缀表达式.cpp" />
+    <ClCompile Include="206partition算法forward_list容器.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="207中缀表达式转换成后缀表达式.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="208变长模板和可变参数个数.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
