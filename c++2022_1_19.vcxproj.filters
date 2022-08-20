@@ -1089,6 +1089,9 @@
     <ClCompile Include="356C++20信号量.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="357C++标准异常与cerr等.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">

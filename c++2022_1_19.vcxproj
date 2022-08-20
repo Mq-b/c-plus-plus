@@ -761,6 +761,9 @@
     <ClCompile Include="356C++20信号量.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="357C++标准异常与cerr等.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="35引用做函数参数.cpp" />
     <ClCompile Include="36引用做函数返回值.cpp" />
     <ClCompile Include="37常量引用.cpp" />
