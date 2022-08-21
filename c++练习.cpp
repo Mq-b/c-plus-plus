@@ -3455,9 +3455,3 @@ int main()
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
 //}
-//#include<iostream>
-//int main() {
-//	char s[10];
-//	fread(s, 1, 10, stdin);
-//	fwrite(s, 1, 10, stdout);
-//}

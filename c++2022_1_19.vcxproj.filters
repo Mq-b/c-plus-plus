@@ -1101,6 +1101,12 @@
     <ClCompile Include="360lower_bound算法，返回范围中不小于第三个参数的第一个位置.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="361C++17systemfile_copy拷贝任意格式文件.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="362手写二进制拷贝任意文件.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
