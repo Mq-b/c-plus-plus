@@ -783,7 +783,12 @@
     <ClCompile Include="361C++17systemfile_copy拷贝任意格式文件.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="362手写二进制拷贝任意文件.cpp" />
+    <ClCompile Include="362手写二进制拷贝任意文件.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="363C++14exchange交换.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="36引用做函数返回值.cpp" />
     <ClCompile Include="37常量引用.cpp" />
     <ClCompile Include="38函数的默认参数.cpp" />
