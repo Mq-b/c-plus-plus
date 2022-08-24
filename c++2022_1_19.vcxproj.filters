@@ -1107,7 +1107,10 @@
     <ClCompile Include="362手写二进制拷贝任意文件.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="363C++14exchange交换.cpp">
+    <ClCompile Include="363C++14exchange替换.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="364有引用限定符的成员函数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

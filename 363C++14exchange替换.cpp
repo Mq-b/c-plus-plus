@@ -20,7 +20,6 @@ int main()
     std::cout << "\n\n";
 
     void (*fun)();
-
     // 模板形参的默认值亦使得能以通常函数为第二参数。
     // 下方表达式等价于 std::exchange(fun, static_cast<void(*)()>(f))
     std::exchange(fun, f);
