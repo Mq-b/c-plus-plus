@@ -789,7 +789,10 @@
     <ClCompile Include="363C++14exchange替换.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="364有引用限定符的成员函数.cpp" />
+    <ClCompile Include="364有引用限定符的成员函数.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="365C++20constinit.cpp" />
     <ClCompile Include="36引用做函数返回值.cpp" />
     <ClCompile Include="37常量引用.cpp" />
     <ClCompile Include="38函数的默认参数.cpp" />
