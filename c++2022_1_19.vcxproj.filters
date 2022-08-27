@@ -1119,6 +1119,9 @@
     <ClCompile Include="366const做函数重载.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="367remove_reference将任何引用转换为原始类型.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
