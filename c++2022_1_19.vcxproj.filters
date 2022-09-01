@@ -1128,6 +1128,9 @@
     <ClCompile Include="369不求值表达式介绍.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="370使用约束requires判断类型是否为多态类型.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
