@@ -804,6 +804,7 @@
     <ClCompile Include="368weak_ptr智能指针.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="369不求值表达式介绍.cpp" />
     <ClCompile Include="36引用做函数返回值.cpp" />
     <ClCompile Include="37常量引用.cpp" />
     <ClCompile Include="38函数的默认参数.cpp" />
