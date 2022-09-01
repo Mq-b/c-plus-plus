@@ -1122,6 +1122,9 @@
     <ClCompile Include="367remove_reference将任何引用转换为原始类型.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="368weak_ptr智能指针.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HS.h">
