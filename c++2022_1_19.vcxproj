@@ -808,7 +808,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="36引用做函数返回值.cpp" />
-    <ClCompile Include="370使用约束requires判断类型是否为多态类型.cpp" />
+    <ClCompile Include="370使用约束requires判断类型是否为多态类型.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="37常量引用.cpp" />
     <ClCompile Include="38函数的默认参数.cpp" />
     <ClCompile Include="39函数占位参数.cpp" />

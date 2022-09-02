@@ -10,4 +10,7 @@ inline constexpr bool is_polymorphic_v =
 int main() {
 	auto a = is_polymorphic_v<std::exception>;
 	auto b = is_polymorphic_v<std::vector<int>>;
+
+	auto  c = std::is_polymorphic_v<std::exception>;
+	auto  d = std::is_polymorphic_v<std::vector<int>>;
 }
