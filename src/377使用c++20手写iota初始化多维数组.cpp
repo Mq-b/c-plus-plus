@@ -23,6 +23,7 @@ constexpr void iota(Range& r, ValueType value)noexcept {
 	};
 	iota_iter(iota_iter, r, value);
 }
+
 int main() {
 	int arrays[10][10][10][10];
 	::iota(arrays, 0);
