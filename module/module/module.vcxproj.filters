@@ -15,10 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
+    <ClCompile Include="src\main.ixx">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\Module.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="library.ixx">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
