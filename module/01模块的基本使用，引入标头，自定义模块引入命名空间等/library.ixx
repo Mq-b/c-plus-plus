@@ -15,7 +15,7 @@ export namespace My{
 					std::ranges::range<SubRange> &&
 					!std::is_convertible_v<SubRange, ValueType>
 					) {
-					self(self, i, value);t
+					self(self, i, value);
 				}
 				else {
 					i = value;
