@@ -24,5 +24,14 @@
     <ClCompile Include="imp1.ixx">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="total.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mylib2.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="imp2.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

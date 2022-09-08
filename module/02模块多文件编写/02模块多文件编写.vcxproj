@@ -131,8 +131,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="imp1.ixx" />
+    <ClCompile Include="imp2.ixx" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mylib.ixx" />
+    <ClCompile Include="mylib2.ixx" />
+    <ClCompile Include="total.ixx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

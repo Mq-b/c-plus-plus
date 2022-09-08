@@ -7,3 +7,7 @@ namespace mylib {
 		std::cout << e << std::endl;
 	}
 }
+void print()
+{
+	puts("888888");
+}
