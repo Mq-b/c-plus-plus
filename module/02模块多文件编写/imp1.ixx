@@ -6,6 +6,16 @@ namespace mylib {
 	void println(auto e) {
 		std::cout << e << std::endl;
 	}
+
+	template<class T>
+	class Test {
+		T value;
+	public:
+		Test(T v) :value{ v } {}
+		T getValue() {
+			return this->value;
+		}
+	};
 }
 void print()
 {
