@@ -4,7 +4,7 @@
 /*类 type_info 保有一个类型的实现指定信息，包括类型的名称和比较二个类型相等的方法或相对顺序。这是 typeid 运算符所返回的类。
 
 type_info 既不满足可复制构造 (CopyConstructible) 也不满足可复制赋值 (CopyAssignable) 。*/
-
+void test(int){}
 int main() {
 	using a = decltype(typeid(int(10)));//a是const type_info&
 
@@ -17,6 +17,7 @@ int main() {
 	//最基本的使用就不用说了
 	std::cout << typeid(int).name() << std::endl;
 
+	std::cout << typeid(test).raw_name() << std::endl;
 	//这个是编译器扩展，标准库是没有的，打印的是经过Name Mangling处理后的符号
 	/*那么这个Name Mangling是什么呢 ?
 	* 
