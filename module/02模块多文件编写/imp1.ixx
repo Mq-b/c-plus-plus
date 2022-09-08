@@ -11,8 +11,8 @@ namespace mylib {
 	class Test {
 		T value;
 	public:
-		Test(T v) :value{ v } {}
-		T getValue() {
+		constexpr Test(T v) :value{ v } {}
+		constexpr T getValue()noexcept {
 			return this->value;
 		}
 	};
