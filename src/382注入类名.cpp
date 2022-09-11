@@ -20,3 +20,6 @@ struct C : public B
 };
 //注入类名是在类的作用域内该类自身的名字
 //类定义的时候 类作用域可以使用该类的名字
+
+//顺带说一句，模板类同样有效
+//https://zh.cppreference.com/w/cpp/language/injected-class-name
