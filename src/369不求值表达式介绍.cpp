@@ -7,8 +7,3 @@ requires 表达式也是不求值表达式。(C++20 起)
 
 当应用于多态类型的表达式时，typeid表达式的值除了虚表查找会涉及运行时开销，其他事件typeid都在编译时解决
 */
-#include<iostream>
-int main() {
-	std::size_t n = sizeof(std::cout << 42);
-	std::cout << n << std::endl;
-}
