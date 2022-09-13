@@ -2841,6 +2841,7 @@
 //	std::cout << "小=" << num[0] << "大=" << num[19] << "平均=" << aver / 20.0 << std::endl;
 //	return 0;
 //}
+#include <functional>
 #/*include<iostream>
 #include<vector>
 #include<set>
