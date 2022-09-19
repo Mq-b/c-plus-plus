@@ -12,6 +12,6 @@ T inc(T a)
 int main(int argc, const char* argv[])
 {
 	int a = 0;
-	std::cout << inc(a) << std::endl;
+	std::cout << int(a) << std::endl;
 	return 0;
 }
