@@ -27,3 +27,5 @@ int main() {
 //但是如果使用cout，它又能隐式转换了，比如16行这个，如果你使用的是gcc，那么19和21行的显式转换都不需要加，可以隐式转换
 
 //注意:转换函数模板不允许具有推导的返回值类型
+
+//用户定义转换函数中有这方面的介绍: https://zh.cppreference.com/w/cpp/language/cast_operator
