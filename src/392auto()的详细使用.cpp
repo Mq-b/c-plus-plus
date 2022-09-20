@@ -21,7 +21,8 @@ int main() {
 	std::cout << int(r4) + 10 << std::endl;
 }
 //在new的时候，可以auto，比如new auto(1),也就是new一个int
-//约束这个事情，比如std::integral，这些都是c++20的concept,它要求的是返回值类型必须是int
+//概念这个事情，比如std::integral，这些都是c++20的concept,它要求的是返回值类型必须是int；auto()与类型约束(就是概念)相结合，在new的文档有介绍
+//  https://zh.cppreference.com/w/cpp/language/new
 
 //operator std::integral auto(),std::integral要求返回值类型是int。另外msvc是有bug的，明明没有用explicit修饰，它不会进行隐式转换，必须显式的，
 //但是如果使用cout，它又能隐式转换了，比如16行这个，如果你使用的是gcc，那么19和21行的显式转换都不需要加，可以隐式转换
