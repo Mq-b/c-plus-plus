@@ -11,6 +11,7 @@ int main() {
 	auto q = new std::integral auto(1);         // OK: q 是一个 int*
 	//auto q = new std::floating_point auto(true) // 错误：不满足类型约束
 	auto r = new std::pair(10, true); // OK: r 是一个 std::pair<int, bool>*
+	auto(x) { new std::integral auto(1) };
 
 	auto r2 = new auto(X{});
 	std::cout << *r2 << std::endl;
