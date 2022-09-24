@@ -6,11 +6,11 @@ project ("Test1")#项目名称
 message("Hello Word")#cmake的输出，到输出窗口
 
 # 将源代码添加到此项目的可执行文件,下面的文件有多少决定项目生成会运行多少个源文件
-add_executable (Test1 "src/c++练习.ixx" "src/402协程co_yield03.cpp")
+add_executable (Test1 "src/c++练习.ixx"  )
 #include_directories(CMakeProject01)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)#如果cmake的版本大于3.12 也就是cmake自己支持让编译器启用 c++20，cmake低于3.12是无法支持c++20
-  set_property(TARGET Test1 PROPERTY CXX_STANDARD 23)#设置Hello可执行文件c++版本为20
+  set_property(TARGET Test1 PROPERTY CXX_STANDARD 20)#设置Hello可执行文件c++版本为20
   message("20")#打印
 endif()
 
