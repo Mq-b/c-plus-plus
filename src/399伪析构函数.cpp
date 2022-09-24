@@ -1,4 +1,3 @@
-//}
 #include<iostream>
 
 void call() {
@@ -6,19 +5,19 @@ void call() {
 struct T {
 	~T() { std::cout << "析构"; };
 };
-export int main()noexcept
+int main()noexcept
 {
 	//(&call).~decltype(&call)();
 	int x = 10;
 	(&x).~decltype(&x)();
 	T c;
 	(&c).~decltype(&c)();
-	std::cout << x;//伪析构函数不会破坏对象
+	std::cout << x << std::endl;;//伪析构函数不会破坏对象
 
 	typedef int t;
 	t a = 42;
 	a.t::~t();//我们还可以使用这种语法进行调用伪析构函数
-	std::cout << a; //42
+	std::cout << a; //42,如果是gcc，那么它的结果就是未定义的
 }
 /*
 伪析构函数调用，作为对普通析构函数的调用，不会结束它所应用的对象的生命周期，如同普通类直接调用析构函数不会有什么影响
