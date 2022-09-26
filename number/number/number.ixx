@@ -7,7 +7,7 @@ import<vector>;
 import<initializer_list>;
 import<string>;
 import<limits>;
-#include<format>//纯属为了少爆点红
+import<format>;
 import<algorithm>;
 
 export namespace mylib {
@@ -28,17 +28,15 @@ export namespace mylib {
 
 		Number(T v) :_value{ v } {}
 
-		Number() = default;
+		constexpr Number()noexcept {}
 
-		Number(Number&& v) = default;
+		Number(Number&& v)noexcept {
+			this->_value = v.GetValue();
+		}
 
 		Number(const Number& v) = default;
 
 		~Number() = default;
-
-		/*operator T()const noexcept {
-			return this->_value;
-		}*/
 
 		Number operator +(const Number& v)const {
 			auto max = std::max(this->_value, v._value);
@@ -50,12 +48,61 @@ export namespace mylib {
 			}
 		}
 
+		Number operator +(const T v)const {
+			auto max = std::max(this->_value, v);
+			if (this->_value + v < max) {
+				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nnumerical overflow error.",
+					this->_value, v, typeid(T).name(), std::numeric_limits<T>::max()));
+			}
+			else {
+				return Number(this->_value + v);
+			}
+		}
+
+		template<typename T2>
+		Number<T>& operator =(Number<T2>& v)noexcept {
+			this->_value = v.GetValue();
+			puts("复制复制");
+			return *this;
+		}
+
+		template<typename T2>
+		Number<T>& operator =(Number<T2>&& v)noexcept {
+			this->_value = v.GetValue();
+			puts("移动赋值");
+			return *this;
+		}
+
+		void operator+=(const Number& v) {
+			auto max = std::max(this->_value, v._value);
+			if (this->_value + v._value < max) {
+				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
+					this->_value, v._value, typeid(T).name(), std::numeric_limits<T>::max()));
+			}
+			else {
+				this->_value += v._value;
+			}
+		}
+
+		Number& operator++()
+		{
+			this->_value++;
+			return *this;
+		}
+
+		Number operator++(int)
+		{
+			auto old = *this; 
+			operator++();  
+			return old;    
+		}
+
 		T GetValue() {
 			return this->_value;
 		}
 
 	private:
-		T _value;
+		T _value{};
 	};
 
 	//Custom "number" literal
@@ -89,4 +136,15 @@ export namespace mylib {
 		return Number(lit);
 	};
 
+	//Output operator overloading
+	template<number T>
+	std::ostream& operator<<(std::ostream& out, Number<T>& v)noexcept {
+		out << v.GetValue();
+		return out;
+	}
+	template<number T>
+	std::ostream& operator<<(std::ostream& out, Number<T>&& v)noexcept {
+		out << v.GetValue();
+		return out;
+	}
 }
