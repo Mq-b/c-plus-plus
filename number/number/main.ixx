@@ -26,7 +26,14 @@ int main() {
 	std::cout << c << std::endl;
 	std::cout << ++c << std::endl;
 	//Number<int*> c3(NULL );
-	c2 = c;
+	const Number n{ 10 };
+	Number n2{ 10 };
+	c2 = n;
+	c2 = n2;
 	c2 = 10_num;
+	c = c = c2;
+	c2 = std::move(c);
 	std::cout << c2 << std::endl;
+	auto c3 = &c2;
+	std::cout << *c3 << std::endl;
 }

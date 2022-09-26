@@ -1,6 +1,5 @@
 export module number;
 
-
 import<concepts>;
 import<exception>;
 import<vector>;
@@ -28,13 +27,13 @@ export namespace mylib {
 
 		Number(T v) :_value{ v } {}
 
-		constexpr Number()noexcept {}
+		explicit constexpr Number()noexcept = default;
 
-		Number(Number&& v)noexcept {
+		constexpr Number(Number&& v)noexcept {
 			this->_value = v.GetValue();
 		}
 
-		Number(const Number& v) = default;
+		constexpr Number(const Number& v)noexcept = default;
 
 		~Number() = default;
 
@@ -48,7 +47,7 @@ export namespace mylib {
 			}
 		}
 
-		Number operator +(const T v)const {
+		constexpr Number operator +(const T v)const {
 			auto max = std::max(this->_value, v);
 			if (this->_value + v < max) {
 				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nnumerical overflow error.",
@@ -60,16 +59,16 @@ export namespace mylib {
 		}
 
 		template<typename T2>
-		Number<T>& operator =(Number<T2>& v)noexcept {
+		constexpr Number<T>& operator =(const Number<T2>& v)noexcept {
 			this->_value = v.GetValue();
-			puts("复制复制");
 			return *this;
 		}
 
+		constexpr Number& operator=(const Number& v)noexcept = default;
+
 		template<typename T2>
-		Number<T>& operator =(Number<T2>&& v)noexcept {
+		constexpr Number<T>& operator =(Number<T2>&& v)noexcept {
 			this->_value = v.GetValue();
-			puts("移动赋值");
 			return *this;
 		}
 
@@ -84,54 +83,62 @@ export namespace mylib {
 			}
 		}
 
-		Number& operator++()
+		constexpr Number& operator++()noexcept
 		{
 			this->_value++;
 			return *this;
 		}
 
-		Number operator++(int)
+		constexpr Number operator++(int)noexcept
 		{
 			auto old = *this; 
 			operator++();  
 			return old;    
 		}
 
-		T GetValue() {
-			return this->_value;
+		constexpr Number* operator&()noexcept {
+			return this;
 		}
 
+		constexpr Number& operator-()noexcept {
+
+		}
+
+		constexpr T GetValue()noexcept {
+			return this->_value;
+		}
+		
 	private:
 		T _value{};
 	};
 
 	//Custom "number" literal
-	auto operator "" _num(unsigned long long int lit)->decltype(Number(lit))
+	auto operator "" _num(unsigned long long int lit)noexcept ->decltype(Number(lit))
 	{
 		return Number(lit);
 	};
 
-	auto operator "" _num(long double lit)->decltype(Number(lit))
+	auto operator "" _num(long double lit)noexcept ->decltype(Number(lit))
 	{
 		return Number(lit);
 	};
 
-	auto operator "" _num(char lit)->decltype(Number(lit))
+	auto operator "" _num(char lit)noexcept ->decltype(Number(lit))
 	{
 		return Number(lit);
 	};
 
-	auto operator "" _num(wchar_t lit)->decltype(Number(lit))
+	auto operator "" _num(wchar_t lit)noexcept->decltype(Number(lit))
 	{
 		return Number(lit);
 	};
 
-	auto operator "" _num(char16_t lit)->decltype(Number(lit))
+	auto operator "" _num(char16_t lit)noexcept ->decltype(Number(lit))
 	{
 		return Number(lit);
 	};
 
-	auto operator "" _num(char32_t lit)->decltype(Number(lit))
+	auto operator "" _num(char32_t lit)noexcept ->decltype(Number(lit))
 	{
 		return Number(lit);
 	};
