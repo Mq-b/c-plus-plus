@@ -8,6 +8,7 @@ import<string>;
 import<limits>;
 import<format>;
 import<algorithm>;
+import<cmath>;
 
 export namespace myNum {
 
@@ -59,9 +60,9 @@ export namespace myNum {
 
 		constexpr Number operator++(int)noexcept
 		{
-			auto old = *this; 
-			operator++();  
-			return old;    
+			auto old = *this;
+			operator++();
+			return old;
 		}
 
 		constexpr Number& operator--()noexcept
@@ -127,23 +128,45 @@ export namespace myNum {
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator -(const T2 v)const noexcept {
-			return Number(this->_value - v);
+		[[nodiscard]] constexpr Number<T> operator *(Number<T2>&& v)const {
+			std::size_t max{};
+			std::numeric_limits<T>::max() > std::numeric_limits<T2>::max() ?
+				max = std::max(this->_value, T(v.GetValue())) : max = std::max(T2(this->_value), v.GetValue());
+			if (std::fabs(T(this->_value * v.GetValue())) < max) {
+				throw NumOverflow(std::format("{} * {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
+					this->_value, v.GetValue(), typeid(T).name(), std::numeric_limits<T>::max()));
+			}
+			else {
+				return Number(this->_value * v.GetValue());
+			}
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator *(const Number<T2>& v)const noexcept {
-			return Number(this->_value * v.GetValue());
+		[[nodiscard]] constexpr Number<T> operator *(const Number<T2>& v)const {
+			std::size_t max{};
+			std::numeric_limits<T>::max() > std::numeric_limits<T2>::max() ?
+				max = std::max(this->_value, T(v.GetValue())) : max = std::max(T2(this->_value), v.GetValue());
+			if (std::fabs(T(this->_value * v.GetValue())) < max) {
+				throw NumOverflow(std::format("{} * {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
+					this->_value, v.GetValue(), typeid(T).name(), std::numeric_limits<T>::max()));
+			}
+			else {
+				return Number(this->_value * v.GetValue());
+			}
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator *(Number<T2>&& v)const noexcept {
-			return Number(this->_value * v.GetValue());
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator *(const T2 v)const noexcept {
-			return Number(this->_value * v);
+		[[nodiscard]] constexpr Number<T> operator *(const T2 v)const {
+			std::size_t max{};
+			std::numeric_limits<T>::max() > std::numeric_limits<T2>::max() ?
+				max = std::max(this->_value, T(v)) : max = std::max(T2(this->_value), v);
+			if (std::fabs(T(this->_value * v)) < max) {
+				throw NumOverflow(std::format("{} * {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
+					this->_value, v, typeid(T).name(), std::numeric_limits<T>::max()));
+			}
+			else {
+				return Number(this->_value * v);
+			}
 		}
 
 		template<typename T2>

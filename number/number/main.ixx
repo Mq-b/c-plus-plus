@@ -12,8 +12,8 @@ int main() {
 	try
 	{
 		//std::cout << (1_num + std::numeric_limits<std::size_t>::max()).GetValue() << std::endl;
-		auto t = 1_num;
-		t += Number(std::numeric_limits<std::size_t>::max());//两行代码都会抛出异常
+		//auto t = 1_num;
+		//t += Number(std::numeric_limits<std::size_t>::max());//两行代码都会抛出异常
 	}
 	catch (const std::exception&e)
 	{
@@ -106,6 +106,7 @@ int main() {
 	std::cout << (97_num <= 100_num) << std::endl;
 
 	std::cout << (97_num <= 97_num) << std::endl;
-	/*std::cout << c5 - c6 << std::endl;
-	std::cout << c5 + c6 << std::endl;*/
+
+	//std::cout << c6 * 100 << std::endl;
+	auto ret = c6 * 100;
 }
