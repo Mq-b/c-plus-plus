@@ -19,9 +19,7 @@ export namespace myNum {
 
 	//Specifies that constraints can only be integer and floating point
 	template < class T >
-	concept number = std::is_integral_v<T> || std::is_floating_point_v<T>;
-
-	using uint64 = unsigned long long;
+	concept number = std::is_arithmetic_v<T>;
 
 	template<number T>
 	class Number {
@@ -40,8 +38,10 @@ export namespace myNum {
 		~Number() = default;
 
 		template<typename T2>
-		Number operator +(Number<T2>& v)const {
-			auto max = std::max(this->_value, T(v.GetValue()));
+		[[nodiscard]] constexpr Number operator +(Number<T2>& v)const {
+			std::size_t max{};
+			std::numeric_limits<T>::max() > std::numeric_limits<T2>::max()? 
+				max = std::max(this->_value, T(v.GetValue())) : max = std::max(T2(this->_value), v.GetValue());
 			if (this->_value + v.GetValue() < max) {
 				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
 					this->_value, v.GetValue(), typeid(T).name(), std::numeric_limits<T>::max()));
@@ -50,7 +50,7 @@ export namespace myNum {
 			}
 		}
 
-		constexpr Number operator +(const T v)const {
+		[[nodiscard]] constexpr Number operator +(const T v)const {
 			auto max = std::max(this->_value, v);
 			if (this->_value + v < max) {
 				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nnumerical overflow error.",
@@ -75,17 +75,6 @@ export namespace myNum {
 			return *this;
 		}
 
-		void operator+=(const Number& v) {
-			auto max = std::max(this->_value, v._value);
-			if (this->_value + v._value < max) {
-				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
-					this->_value, v._value, typeid(T).name(), std::numeric_limits<T>::max()));
-			}
-			else {
-				this->_value += v._value;
-			}
-		}
-
 		constexpr Number& operator++()noexcept
 		{
 			this->_value++;
@@ -99,20 +88,57 @@ export namespace myNum {
 			return old;    
 		}
 
+		constexpr Number& operator--()noexcept
+		{
+			this->_value--;
+			return *this;
+		}
+
+		constexpr Number operator--(int)noexcept
+		{
+			auto old = *this;
+			operator--();
+			return old;
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr Number<T> operator -(const Number<T2>& v)const noexcept {
+			return Number(this->_value - v.GetValue());
+		}
+
+		template<typename T2>
+		constexpr void operator+=(Number<T2>& v) {
+			auto max = std::max(this->_value, T(v));
+			if (this->_value + v.GetValue() < max) {
+				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
+					this->_value, v.GetValue(), typeid(T).name(), std::numeric_limits<T>::max()));
+			}
+			else {
+				this->_value + v.GetValue();
+			}
+		}
+
+		template<typename T2>
+		constexpr void operator+=(Number<T2>&& v) {
+			auto max = std::max(this->_value, T(v));
+			if (this->_value + v.GetValue() < max) {
+				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
+					this->_value, v.GetValue(), typeid(T).name(), std::numeric_limits<T>::max()));
+			}
+			else {
+				this->_value + v.GetValue();
+			}
+		}
+
+		explicit constexpr operator T()const noexcept {
+			return this->_value;
+		}
+
 		constexpr Number* operator&()noexcept {
 			return this;
 		}
 
-		template<typename T2>
-		Number<T> operator -(Number<T2>& v)const {
-				return Number(this->_value - v.GetValue());
-		}
-
-		explicit constexpr operator T()noexcept {
-			return this->_value;
-		}
-
-		T GetValue()noexcept {
+		[[nodiscard]] constexpr T GetValue()const noexcept {
 			return this->_value;
 		}
 		
@@ -163,6 +189,9 @@ export namespace myNum {
 		return out;
 	}
 
+	using uint64 = unsigned long long;
 	using Int = Number<uint64>;
 	using Char = Number<char>;
+	using Schar = Number<signed char>;
+	using Uchar = Number<unsigned char>;
 }

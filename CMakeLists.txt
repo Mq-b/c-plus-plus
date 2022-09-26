@@ -6,7 +6,7 @@ project ("Test1")#项目名称
 message("Hello Word")#cmake的输出，到输出窗口
 
 # 将源代码添加到此项目的可执行文件,下面的文件有多少决定项目生成会运行多少个源文件
-add_executable (Test1 "src/c++练习.ixx"  )
+add_executable (Test1 "src/c++练习.ixx" "src/366const做函数重载.cpp" )
 #include_directories(CMakeProject01)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)#如果cmake的版本大于3.12 也就是cmake自己支持让编译器启用 c++20，cmake低于3.12是无法支持c++20
