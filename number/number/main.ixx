@@ -66,7 +66,23 @@ int main() {
 	std::cout << c5 / 100 << std::endl;
 	std::cout << c5 / 100_num << std::endl;
 
-	c5 = 1_num;
+	c5 = 25_num;
+	std::cout << c5 % c2 << std::endl;
+	std::cout << c5 % c6 << std::endl;
+	std::cout << c5 % 6_num << std::endl;
+	std::cout << c5 % 6 << std::endl;
+
+	std::cout << (c5 ^ 6) << std::endl;
+
+	std::cout << (c5 & 1) << std::endl;
+
+	std::cout << (c5 | 1) << std::endl;
+
+	std::cout << ~10_num << std::endl;
+
+	std::cout << !0_num << std::endl;
+
+	std::cout << !1_num << std::endl;
 	/*std::cout << c5 - c6 << std::endl;
 	std::cout << c5 + c6 << std::endl;*/
 }
