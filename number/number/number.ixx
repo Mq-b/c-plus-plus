@@ -229,7 +229,95 @@ export namespace myNum {
 			return !bool(*this);
 		}
 
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator ==(const Number<T2>& v)const noexcept {
+			return this->_value == v.GetValue();
+		}
 
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator ==(Number<T2>&& v)const noexcept {
+			return this->_value == v.GetValue();
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator ==(const T2& v)const noexcept {
+			return this->_value == v;
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator !=(const Number<T2>& v)const noexcept {
+			return !this->operator==(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator !=(Number<T2>&& v)const noexcept {
+			return !this->operator==(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator !=(const T2& v)const noexcept {
+			return !this->operator==(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator <(const Number<T2>& v)const noexcept {
+			return this->_value < v.GetValue();
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator <(Number<T2>&& v)const noexcept {
+			return this->_value < v.GetValue();
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator <(const T2 v)const noexcept {
+			return this->_value < v;
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator >(const Number<T2>& v)const noexcept {
+			return !this->operator<(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator >(Number<T2>&& v)const noexcept {
+			return !this->operator<(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator >(const T2 v)const noexcept {
+			return !this->operator<(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator <=(const Number<T2>& v)const noexcept {
+			return this->operator<(v) || this->operator==(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator <=(Number<T2>&& v)const noexcept {
+			return this->operator<(v) || this->operator==(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator <=(const T2 v)const noexcept {
+			return this->operator<(v) || this->operator==(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator >=(const Number<T2>& v)const noexcept {
+			return this->operator>(v) || this->operator==(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator >=(Number<T2>&& v)const noexcept {
+			return this->operator>(v) || this->operator==(v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr bool operator >=(const T2 v)const noexcept {
+			return this->operator>(v) || this->operator==(v);
+		}
 
 		template<typename T2>
 		constexpr void operator+=(const Number<T2>& v)noexcept {
@@ -281,7 +369,6 @@ export namespace myNum {
 		[[nodiscard]] constexpr T GetValue()const noexcept {
 			return this->_value;
 		}
-		
 	private:
 		T _value{};
 	};

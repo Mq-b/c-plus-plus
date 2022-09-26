@@ -83,6 +83,29 @@ int main() {
 	std::cout << !0_num << std::endl;
 
 	std::cout << !1_num << std::endl;
+
+	c6 = 'a';
+	std::cout << (c6 == c5) << std::endl;
+
+	std::cout << (97_num == c6) << std::endl;
+
+	std::cout << (97_num == 97) << std::endl;
+
+	std::cout << (97_num != 10.5) << std::endl;
+
+	std::cout << (97_num != 97_num) << std::endl;
+
+	std::cout << (97_num < 100_num) << std::endl;
+
+	std::cout << (100_num < 97_num) << std::endl;
+
+	std::cout << (97_num > 100_num) << std::endl;
+
+	std::cout << (100_num > 97_num) << std::endl;
+
+	std::cout << (97_num <= 100_num) << std::endl;
+
+	std::cout << (97_num <= 97_num) << std::endl;
 	/*std::cout << c5 - c6 << std::endl;
 	std::cout << c5 + c6 << std::endl;*/
 }
