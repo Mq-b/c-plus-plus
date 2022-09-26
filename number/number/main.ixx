@@ -2,7 +2,7 @@ import number;
 
 import<iostream>;
 import<limits>;
-using namespace mylib;
+using namespace myNum;
 using namespace std::literals;
 
 int main() {
@@ -36,4 +36,13 @@ int main() {
 	std::cout << c2 << std::endl;
 	auto c3 = &c2;
 	std::cout << *c3 << std::endl;
+
+	std::cout << int(c2) << std::endl;
+
+	puts("--------------------------------------------------------------");
+
+	Number c5{ 10 };
+	Number c6{ 'a'};
+	std::cout << c6 -c5 - c5 << std::endl;
+	std::cout << c6 + c5 + c5;
 }

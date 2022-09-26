@@ -9,7 +9,7 @@ import<limits>;
 import<format>;
 import<algorithm>;
 
-export namespace mylib {
+export namespace myNum {
 
 	//Custom numeric overflow exception
 	struct NumOverflow :std::exception
@@ -21,13 +21,15 @@ export namespace mylib {
 	template < class T >
 	concept number = std::is_integral_v<T> || std::is_floating_point_v<T>;
 
+	using uint64 = unsigned long long;
+
 	template<number T>
 	class Number {
 	public:
 
 		Number(T v) :_value{ v } {}
 
-		explicit constexpr Number()noexcept = default;
+		constexpr Number()noexcept = default;
 
 		constexpr Number(Number&& v)noexcept {
 			this->_value = v.GetValue();
@@ -37,13 +39,14 @@ export namespace mylib {
 
 		~Number() = default;
 
-		Number operator +(const Number& v)const {
-			auto max = std::max(this->_value, v._value);
-			if (this->_value + v._value < max) {
+		template<typename T2>
+		Number operator +(Number<T2>& v)const {
+			auto max = std::max(this->_value, T(v.GetValue()));
+			if (this->_value + v.GetValue() < max) {
 				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
-					this->_value, v._value, typeid(T).name(), std::numeric_limits<T>::max()));
+					this->_value, v.GetValue(), typeid(T).name(), std::numeric_limits<T>::max()));
 			}else {
-				return Number(this->_value + v._value);
+				return Number(this->_value + v.GetValue());
 			}
 		}
 
@@ -100,11 +103,16 @@ export namespace mylib {
 			return this;
 		}
 
-		constexpr Number& operator-()noexcept {
-
+		template<typename T2>
+		Number<T> operator -(Number<T2>& v)const {
+				return Number(this->_value - v.GetValue());
 		}
 
-		constexpr T GetValue()noexcept {
+		explicit constexpr operator T()noexcept {
+			return this->_value;
+		}
+
+		T GetValue()noexcept {
 			return this->_value;
 		}
 		
@@ -154,4 +162,7 @@ export namespace mylib {
 		out << v.GetValue();
 		return out;
 	}
+
+	using Int = Number<uint64>;
+	using Char = Number<char>;
 }
