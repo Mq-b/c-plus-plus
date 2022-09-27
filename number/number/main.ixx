@@ -137,4 +137,34 @@ int main() {
 	
 	Number c9{ 1u };
 	//-c9;
+
+	std::cout << (c9 << 3) << std::endl;
+
+	std::cout << (c9 >> 3) << std::endl;
+
+	Number c10{ 1 };
+
+	std::cout << int((c10 <=> c10)._Value) << std::endl;
+
+	std::cout << int((c10 <=> c8)._Value) << std::endl;
+
+	std::cout << int((c8 <=> c10)._Value) << std::endl;
+
+	std::cout << int((c9 <=> c8)._Value) << std::endl;
+
+	std::cout << int((c9 <=> 1u)._Value) << std::endl;
+
+	std::cout << int((c10 <=> 2)._Value) << std::endl;
+
+	std::cout << int((2 <=> c10)._Value) << std::endl;
+	
+	std::cout << c10.to_string() << std::endl;
+
+	std::cout << Number<int>::max << std::endl;
+
+	auto c11 = myNum::min(1_num, 2_num, 3_num, 4_num);
+	std::cout << c11 << std::endl;
+
+	std::cout << myNum::max(1_num, 2_num, 3_num, 4_num) << std::endl;
+
 }

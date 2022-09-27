@@ -10,6 +10,7 @@ import<format>;
 import<algorithm>;
 import<cmath>;
 import<type_traits>;
+import<typeinfo>;
 
 export namespace myNum {
 
@@ -26,6 +27,10 @@ export namespace myNum {
 	template<number T>
 	class Number {
 	public:
+
+		constexpr static T max = std::numeric_limits<T>::max();
+
+		constexpr static T min = std::numeric_limits<T>::min();
 
 		constexpr Number(T v)noexcept :_value{ v } {}
 
@@ -154,14 +159,14 @@ export namespace myNum {
 		}
 
 		template<typename T2>
-		[[nodiscard]]  Number<std::common_type_t<T, T2>> operator /(const Number<T2>& v)const noexcept {
+		[[nodiscard]]  Number<std::common_type_t<T, T2>> operator /(const Number<T2>& v)const {
 			if (v.GetValue() == -1) 
 				throw NumOverflow("Division with a denominator of -1 will result in overflow");
 			return Number<std::common_type_t<T, T2>>(this->_value / v.GetValue());
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator /(const T2 v)const noexcept {
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator /(const T2 v)const {
 			if (v == -1)
 				throw NumOverflow("Division with a denominator of -1 will result in overflow");
 			return Number<std::common_type_t<T, T2>>(this->_value / v);
@@ -205,6 +210,26 @@ export namespace myNum {
 		template<typename T2>
 		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator |(const Number<T2>& v)const noexcept {
 			return Number<std::common_type_t<T, T2>>(this->_value | v.GetValue());
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator <<(const T2 v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value << v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator <<(const Number<T2>& v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value << v.GetValue());
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator >>(const T2 v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value >> v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator >>(const Number<T2>& v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value >> v.GetValue());
 		}
 
 		[[nodiscard]] constexpr Number<T> operator ~()const noexcept {
@@ -330,9 +355,19 @@ export namespace myNum {
 			return static_cast<bool>(this->_value);
 		}
 
+		template<typename T>
+		auto operator<=>(const T& v)const noexcept {
+			return this->_value <=> v;
+		}
+
 		[[nodiscard]] constexpr T GetValue()const noexcept {
 			return this->_value;
 		}
+
+		[[nodiscard]] constexpr std::string to_string()const noexcept {
+			return std::format("Number<{}>::_value is {}", typeid(T).name(), this->_value);
+		}
+
 	private:
 		T _value{};
 	};
@@ -378,6 +413,21 @@ export namespace myNum {
 	std::ostream& operator<<(std::ostream& out, Number<T>&& v)noexcept {
 		out << v.GetValue();
 		return out;
+	}
+
+	template<typename T,typename T2>
+	auto operator<=>(const Number<T>& v1, const Number<T2>& v2)noexcept {
+		return v1.GetValue() <=> v2.GetValue();
+	}
+
+	template<typename...Ts>
+	auto min(Ts&&... xs) {
+		return std::min({ std::forward<Ts>(xs)... }, std::less<>());
+	}
+
+	template<typename...Ts>
+	auto max(Ts&&... xs) {
+		return std::max({ std::forward<Ts>(xs)... }, std::less<>());
 	}
 
 	using uint64 = unsigned long long;

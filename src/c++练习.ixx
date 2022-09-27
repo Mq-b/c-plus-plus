@@ -3457,6 +3457,6 @@ int main()
 //	std::cout << a << ' ' << b << std::endl;
 #include<iostream>
 int main() {
-	auto c = -1U;
-	std::cout << c;
+	const auto c = -1U;
+	std::cout << typeid(c).name();
 }
