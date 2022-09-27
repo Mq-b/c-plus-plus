@@ -107,12 +107,26 @@ export namespace myNum {
 
 		template<typename T2>
 		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator -(const Number<T2>& v)const noexcept {
-			return Number<std::common_type_t<T, T2>>(this->_value - v.GetValue());
+			using Type = std::common_type_t<T, T2>;
+			if constexpr (std::is_signed_v<Type>) {
+				operator-();
+				return Number<Type>(this->_value + (-v.GetValue()));
+			}
+			else {
+				return Number<Type>(this->_value -v.GetValue());
+			}
 		}
 
 		template<typename T2>
 		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator -(const T2 v)const noexcept {
-			return Number<std::common_type_t<T, T2>>(this->_value - v);
+			using Type = std::common_type_t<T, T2>;
+			if constexpr (std::is_signed_v<Type>) {
+				operator-();
+				return Number<Type>(this->_value + (-v));
+			}
+			else {
+				return Number<Type>(this->_value - v);
+			}
 		}
 
 		template<typename T2>
@@ -140,12 +154,16 @@ export namespace myNum {
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator /(const Number<T2>& v)const noexcept {
+		[[nodiscard]]  Number<std::common_type_t<T, T2>> operator /(const Number<T2>& v)const noexcept {
+			if (v.GetValue() == -1) 
+				throw NumOverflow("Division with a denominator of -1 will result in overflow");
 			return Number<std::common_type_t<T, T2>>(this->_value / v.GetValue());
 		}
 
 		template<typename T2>
 		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator /(const T2 v)const noexcept {
+			if (v == -1)
+				throw NumOverflow("Division with a denominator of -1 will result in overflow");
 			return Number<std::common_type_t<T, T2>>(this->_value / v);
 		}
 
@@ -195,6 +213,14 @@ export namespace myNum {
 
 		[[nodiscard]] constexpr bool operator !()const noexcept {
 			return !bool(*this);
+		}
+
+		
+		[[nodiscard]] constexpr Number operator -()const noexcept  {
+			static_assert(std::is_signed_v<T>,"Unsigned Number cannot call unary operator -");
+			if (this->_value == std::numeric_limits<T>::min())
+				throw NumOverflow("operator - Overflow");
+			return Number( - this->_value);
 		}
 
 		template<typename T2>

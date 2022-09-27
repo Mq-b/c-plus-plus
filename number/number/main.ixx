@@ -45,7 +45,7 @@ int main() {
 
 	Number c5{ 10 };
 	Number c6{ 'a'};
-
+	
 	std::cout << c6 - c5 << std::endl;
 	std::cout << c6 - 1_num << std::endl;
 	std::cout << c6 + c5 << std::endl;
@@ -123,6 +123,18 @@ int main() {
 	}
 
 	Number c7{ -1 };
-	Number c8{ -1 };
-	auto ret3 = c7 + c8;
+	Number c8{ -5 };
+	//auto ret3 = c7 + c8;
+	try
+	{
+		//auto c8=c7 / 0;
+	}
+	catch (const std::exception&e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << -c7 << std::endl;
+	
+	Number c9{ 1u };
+	//-c9;
 }

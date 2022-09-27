@@ -3456,11 +3456,7 @@ int main()
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
 #include<iostream>
-struct T {
-	int n = 5;
-	int f() { return n; }
-};
 int main() {
-	T t;
-	std::cout << -t.f();
+	auto c = -1U;
+	std::cout << c;
 }
