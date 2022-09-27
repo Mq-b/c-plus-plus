@@ -9,6 +9,7 @@ import<limits>;
 import<format>;
 import<algorithm>;
 import<cmath>;
+import<type_traits>;
 
 export namespace myNum {
 
@@ -79,169 +80,113 @@ export namespace myNum {
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number operator +(const Number<T2>& v)const {
-			std::size_t max{};
-			std::numeric_limits<T>::max() > std::numeric_limits<T2>::max() ?
-				max = std::max(this->_value, T(v.GetValue())) : max = std::max(T2(this->_value), v.GetValue());
-			if (this->_value + v.GetValue() < max) {
-				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
-					this->_value, v.GetValue(), typeid(T).name(), std::numeric_limits<T>::max()));
-			}
-			else {
-				return Number(this->_value + v.GetValue());
-			}
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr Number operator +(Number<T2>&& v)const {
-			std::size_t max{};
-			std::numeric_limits<T>::max() > std::numeric_limits<T2>::max() ?
-				max = std::max(this->_value, T(v.GetValue())) : max = std::max(T2(this->_value), v.GetValue());
-			if (this->_value + v.GetValue() < max) {
-				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
-					this->_value, v.GetValue(), typeid(T).name(), std::numeric_limits<T>::max()));
-			}
-			else {
-				return Number(this->_value + v.GetValue());
-			}
-		}
-
-		[[nodiscard]] constexpr Number operator +(const T v)const {
-			auto max = std::max(this->_value, v);
-			if (this->_value + v < max) {
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator +(const Number<T2>& v)const {
+			using Type = std::common_type_t<T, T2>;
+			auto max = std::max(static_cast<Type>(this->_value), static_cast<Type>(v.GetValue()));
+			if (std::fabs(this->_value + v.GetValue()) < std::fabs(max)) {
 				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nnumerical overflow error.",
-					this->_value, v, typeid(T).name(), std::numeric_limits<T>::max()));
+					this->_value, v.GetValue(), typeid(Type).name(), std::numeric_limits<Type>::max()));
 			}
 			else {
-				return Number(this->_value + v);
+				return Number<Type>(this->_value + v.GetValue());
 			}
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator -(const Number<T2>& v)const noexcept {
-			return Number(this->_value - v.GetValue());
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator +(const T2 v)const {
+			using Type = std::common_type_t<T, T2>;
+			auto max = std::max(static_cast<Type>(this->_value), static_cast<Type>(v));
+			if (std::fabs(this->_value) + std::fabs(v) < max) {
+				throw NumOverflow(std::format("{} + {} is greater than the maximum value of type {} {}.\nnumerical overflow error.",
+					this->_value, v, typeid(Type).name(), std::numeric_limits<Type>::max()));
+			}
+			else {
+				return Number<Type>(this->_value + v);
+			}
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator -(Number<T2>&& v)const noexcept {
-			return Number(this->_value - v.GetValue());
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator -(const Number<T2>& v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value - v.GetValue());
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator *(Number<T2>&& v)const {
-			std::size_t max{};
-			std::numeric_limits<T>::max() > std::numeric_limits<T2>::max() ?
-				max = std::max(this->_value, T(v.GetValue())) : max = std::max(T2(this->_value), v.GetValue());
-			if (std::fabs(T(this->_value * v.GetValue())) < max) {
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator -(const T2 v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value - v);
+		}
+
+		template<typename T2>
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator *(const Number<T2>& v)const {
+			int64_t max = this->_value * v.GetValue();
+			if (this->_value!=0 && max / this->_value!=v.GetValue()) {
 				throw NumOverflow(std::format("{} * {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
 					this->_value, v.GetValue(), typeid(T).name(), std::numeric_limits<T>::max()));
 			}
 			else {
-				return Number(this->_value * v.GetValue());
+				return Number<std::common_type_t<T, T2>>(this->_value * v.GetValue());
 			}
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator *(const Number<T2>& v)const {
-			std::size_t max{};
-			std::numeric_limits<T>::max() > std::numeric_limits<T2>::max() ?
-				max = std::max(this->_value, T(v.GetValue())) : max = std::max(T2(this->_value), v.GetValue());
-			if (std::fabs(T(this->_value * v.GetValue())) < max) {
-				throw NumOverflow(std::format("{} * {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
-					this->_value, v.GetValue(), typeid(T).name(), std::numeric_limits<T>::max()));
-			}
-			else {
-				return Number(this->_value * v.GetValue());
-			}
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator *(const T2 v)const {
-			std::size_t max{};
-			std::numeric_limits<T>::max() > std::numeric_limits<T2>::max() ?
-				max = std::max(this->_value, T(v)) : max = std::max(T2(this->_value), v);
-			if (std::fabs(T(this->_value * v)) < max) {
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator *(const T2 v)const {
+			int64_t max = this->_value * v;
+			if (this->_value != 0 && max / this->_value != v) {
 				throw NumOverflow(std::format("{} * {} is greater than the maximum value of type {} {}.\nNumerical overflow error.",
 					this->_value, v, typeid(T).name(), std::numeric_limits<T>::max()));
 			}
 			else {
-				return Number(this->_value * v);
+				return Number<std::common_type_t<T, T2>>(this->_value * v);
 			}
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator /(const Number<T2>& v)const noexcept {
-			return Number(this->_value / v.GetValue());
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator /(const Number<T2>& v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value / v.GetValue());
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator /(Number<T2>&& v)const noexcept {
-			return Number(this->_value / v.GetValue());
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator /(const T2 v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value / v);
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator /(const T2 v)const noexcept {
-			return Number(this->_value / v);
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator %(const Number<T2>& v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value % v.GetValue());
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator %(const Number<T2>& v)const noexcept {
-			return Number(this->_value % v.GetValue());
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator %(const T2 v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value % v);
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator %(Number<T2>&& v)const noexcept {
-			return Number(this->_value % v.GetValue());
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator ^(const Number<T2>& v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value ^ v.GetValue());
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator %(const T2 v)const noexcept {
-			return Number(this->_value % v);
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator ^(const T2 v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value ^ v);
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator ^(const Number<T2>& v)const noexcept {
-			return Number(this->_value ^ v.GetValue());
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator &(const T2 v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value & v);
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator ^(Number<T2>&& v)const noexcept {
-			return Number(this->_value ^ v.GetValue());
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator &(const Number<T2>& v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value & v.GetValue());
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator ^(const T2 v)const noexcept {
-			return Number(this->_value ^ v);
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator |(const T2 v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value | v);
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator &(const T2 v)const noexcept {
-			return Number(this->_value & v);
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator &(const Number<T2>& v)const noexcept {
-			return Number(this->_value & v.GetValue());
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator &(Number<T2>&& v)const noexcept {
-			return Number(this->_value & v.GetValue());
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator |(const T2 v)const noexcept {
-			return Number(this->_value | v);
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator |(const Number<T2>& v)const noexcept {
-			return Number(this->_value | v.GetValue());
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr Number<T> operator |(Number<T2>&& v)const noexcept {
-			return Number(this->_value | v.GetValue());
+		[[nodiscard]] constexpr Number<std::common_type_t<T, T2>> operator |(const Number<T2>& v)const noexcept {
+			return Number<std::common_type_t<T, T2>>(this->_value | v.GetValue());
 		}
 
 		[[nodiscard]] constexpr Number<T> operator ~()const noexcept {
@@ -258,22 +203,12 @@ export namespace myNum {
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr bool operator ==(Number<T2>&& v)const noexcept {
-			return this->_value == v.GetValue();
-		}
-
-		template<typename T2>
 		[[nodiscard]] constexpr bool operator ==(const T2& v)const noexcept {
 			return this->_value == v;
 		}
 
 		template<typename T2>
 		[[nodiscard]] constexpr bool operator !=(const Number<T2>& v)const noexcept {
-			return !this->operator==(v);
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr bool operator !=(Number<T2>&& v)const noexcept {
 			return !this->operator==(v);
 		}
 
@@ -288,22 +223,12 @@ export namespace myNum {
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr bool operator <(Number<T2>&& v)const noexcept {
-			return this->_value < v.GetValue();
-		}
-
-		template<typename T2>
 		[[nodiscard]] constexpr bool operator <(const T2 v)const noexcept {
 			return this->_value < v;
 		}
 
 		template<typename T2>
 		[[nodiscard]] constexpr bool operator >(const Number<T2>& v)const noexcept {
-			return !this->operator<(v);
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr bool operator >(Number<T2>&& v)const noexcept {
 			return !this->operator<(v);
 		}
 
@@ -318,22 +243,12 @@ export namespace myNum {
 		}
 
 		template<typename T2>
-		[[nodiscard]] constexpr bool operator <=(Number<T2>&& v)const noexcept {
-			return this->operator<(v) || this->operator==(v);
-		}
-
-		template<typename T2>
 		[[nodiscard]] constexpr bool operator <=(const T2 v)const noexcept {
 			return this->operator<(v) || this->operator==(v);
 		}
 
 		template<typename T2>
 		[[nodiscard]] constexpr bool operator >=(const Number<T2>& v)const noexcept {
-			return this->operator>(v) || this->operator==(v);
-		}
-
-		template<typename T2>
-		[[nodiscard]] constexpr bool operator >=(Number<T2>&& v)const noexcept {
 			return this->operator>(v) || this->operator==(v);
 		}
 

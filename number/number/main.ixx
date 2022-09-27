@@ -11,7 +11,7 @@ int main() {
 	std::cout << typeid(1_num).name() << std::endl;
 	try
 	{
-		//std::cout << (1_num + std::numeric_limits<std::size_t>::max()).GetValue() << std::endl;
+		std::cout << (1_num + std::numeric_limits<std::size_t>::max()).GetValue() << std::endl;
 		//auto t = 1_num;
 		//t += Number(std::numeric_limits<std::size_t>::max());//两行代码都会抛出异常
 	}
@@ -60,8 +60,8 @@ int main() {
 	c5 -= 1_num;
 	std::cout << c5 << std::endl;
 
-	std::cout << c5 * 100 << std::endl;
-	std::cout << c5 * 100_num << std::endl;
+	//std::cout << c5 * 100 << std::endl;
+	//std::cout << c5 * 100_num << std::endl;
 	c5 = 100;
 	std::cout << c5 / 100 << std::endl;
 	std::cout << c5 / 100_num << std::endl;
@@ -108,5 +108,21 @@ int main() {
 	std::cout << (97_num <= 97_num) << std::endl;
 
 	//std::cout << c6 * 100 << std::endl;
-	auto ret = c6 * 100;
+	//auto ret = c6 * 100;
+
+	auto ret2 = 1.0_num * c6 * 2;
+	std::cout << ret2 << std::endl;
+	try
+	{
+		auto ret3 = 1_num * c6 * std::numeric_limits<std::size_t>::max();
+		std::cout << ret3 << std::endl;
+	}
+	catch (const std::exception&e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	Number c7{ -1 };
+	Number c8{ -1 };
+	auto ret3 = c7 + c8;
 }

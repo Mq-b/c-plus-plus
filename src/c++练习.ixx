@@ -3455,3 +3455,12 @@ int main()
 //	int a = 1, b = 2;
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
+#include<iostream>
+struct T {
+	int n = 5;
+	int f() { return n; }
+};
+int main() {
+	T t;
+	std::cout << -t.f();
+}
