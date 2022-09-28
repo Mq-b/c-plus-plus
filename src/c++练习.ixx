@@ -3455,8 +3455,3 @@ int main()
 //	int a = 1, b = 2;
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
-#include<iostream>
-int main() {
-	const auto c = -1U;
-	std::cout << typeid(c).name();
-}
