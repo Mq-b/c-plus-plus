@@ -55,7 +55,6 @@ int main() {
 		std::cout << std::quoted(s.first_name) << ' ' << std::quoted(s.last_name) << '\n';
 
 	std::cout << "int哈希值 = " << std::hash<int>{}(10) << std::endl;
-
 	/*std::quoted的作用只是单纯的给字符串加引号而已，不用在意*/
 	std::string ss("就这??");
 	std::cout << std::quoted(ss) << std::endl;	//"就这??"
