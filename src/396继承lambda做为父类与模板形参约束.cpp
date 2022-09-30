@@ -19,4 +19,10 @@ int main() {
 	int n = 10;
 	auto r = foo([&n] {n += 1; std::cout << n; });
 	r();
+
+	auto c = []<std::integral T>(T n) { std::cout << n << std::endl; };
+	void(*p)(char) = c;//这里调用了转换函数
+	c('6');
+	p(128);
+	p(48);
 }
