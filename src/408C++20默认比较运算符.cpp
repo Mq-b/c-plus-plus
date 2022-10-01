@@ -4,6 +4,7 @@ struct Test {
 	bool operator==(const Test&) const = default;
 	bool operator!=(const Test&) const = default;
 	bool operator>(const Test&v1)const = default;
+	bool operator<(const Test&v1)const = default;
 	auto operator<=>(const Test&) const = default;
 	friend bool operator<(const Test& v1,const Test& v2) = default;
 
