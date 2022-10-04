@@ -3,7 +3,7 @@
 
 template<class ...Args, class T>
 T ExecuteFunc(const std::function<T(Args...)>& f, Args&& ...args) {
-	return (T)f(args...);
+	return f(args...);
 }
 int t(int, int) { return 10; }
 void n(int) {  }
