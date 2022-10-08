@@ -23,4 +23,15 @@ int main()
     ptr->print();
     std::cout << ptr << ' ' << &storage << std::endl;
     std::destroy_at(ptr);
+
+    //原理也就是下面这种
+    char s[4]{};
+    auto p = ::new(reinterpret_cast<void*>(s))int(10);
+    std::cout << *p << std::endl;
+    std::cout << p << '\t' << &s << std::endl;
 }
+/*
+::(可选) new (布置参数) ( 类型 ) 初始化器(可选)
+::(可选) new (布置参数) new类型 初始化器(可选)
+" (类型) "和" new类型 "的区别只是new类型不能包含括号
+*/
