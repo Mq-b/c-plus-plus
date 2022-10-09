@@ -8,7 +8,7 @@ using namespace std::literals::chrono_literals;
 std::mutex MyMutex;
 extern thread_local std::atomic n(0);
 
-struct X {//声明，用来引入X的静态数据成员
+struct X {//本翻译单元的定义，用来引入X的静态数据成员
 	static int value;
 };
 
