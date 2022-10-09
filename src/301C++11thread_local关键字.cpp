@@ -38,4 +38,5 @@ int main() {
 
 总结来说就是，我们需要在当前翻译单元再次定义X类，但是不需要定义静态数据成员，它已经在static_data_member.cpp文件定义了，它是外部链接的，我们使用X::value的时候自然就能找到
 这跟你写extern int i;没什么大区别
+文档说明:https://zh.cppreference.com/w/cpp/language/definition
 */
