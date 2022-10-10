@@ -5,6 +5,9 @@ int main()
 {
 	xlnt::workbook wb;
 	xlnt::worksheet ws = wb.active_sheet();
+
+	//设置工作表名称
+	ws.title("data");
 	//赋值为数值
 	ws.cell("A1").value(0.5);
 	//设置单位格格式，设为百分比形式

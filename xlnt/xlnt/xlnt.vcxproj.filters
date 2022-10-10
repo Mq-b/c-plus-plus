@@ -18,7 +18,10 @@
     <ClCompile Include="01读xlsx文件并存入vector.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="02写xlsx.cpp">
+    <ClCompile Include="02写xlsx创建_设置格式.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="03vector批量写入xlsx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
