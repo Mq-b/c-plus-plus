@@ -22,9 +22,13 @@ int main(){
 	wsOut.title("data");
 	for (int fOut = 0; fOut < wholeWorksheet.size(); fOut++){
 		for (int fIn = 0; fIn < wholeWorksheet.at(fOut).size(); fIn++){
+			std::string cell = xlnt::cell_reference(fIn + 1, fOut + 1).to_string();
 			// 给单元格赋值。特别注意：工作表中的单元格下标是从1开始，而vector中的元素下标是从0开始
-			wsOut.cell(xlnt::cell_reference(fIn + 1, fOut + 1)).value(wholeWorksheet[fOut][fIn]);
+			wsOut.cell(cell).value(std::stoi(wholeWorksheet[fOut][fIn]));
+			//将单元格格式设置为数字.00格式
+			wsOut.cell(cell).number_format(xlnt::number_format::number_00());
 		}
 	}
 	wbOut.save("test_save.xlsx");
 }
+//需要注意，如果设置单元格value的时候使用的是string，那么不管再设置什么格式都是无效的，都只是文本格式
