@@ -12,3 +12,4 @@ int main() {
 	std::cout << S::f() << std::endl;
 	std::cout << X::value << std::endl;
 }
+// 参考: https://zh.cppreference.com/w/cpp/language/storage_duration
