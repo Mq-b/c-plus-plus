@@ -24,5 +24,8 @@
     <ClCompile Include="03vector批量写入xlsx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="03创建多个工作表打开写入.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
