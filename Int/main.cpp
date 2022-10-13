@@ -1,4 +1,5 @@
 #include"Int.hpp"
+
 using namespace mylib::literal;
 int main() {
 	mylib::Int<int> i(10);
@@ -24,5 +25,6 @@ int main() {
 	
 	mylib::Int<int>b(15);
 	i.swap(b);
+
 	std::cout << i << ' ' << b << std::endl;
 }

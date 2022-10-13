@@ -88,13 +88,13 @@ namespace mylib {
 	inline constexpr Int<Type>::Int(Type&& v)noexcept {
 		this->m_value = v;
 	}
-
+	
 	template<std::integral Type>
 	inline constexpr Int<Type>::Int(const Int& v) noexcept
 	{
 		this->m_value = v.m_value;
 	}
-
+	
 	template<std::integral T>
 	std::ostream& operator<<(std::ostream& out, const Int<T>& v) noexcept {
 		out << v.m_value;
