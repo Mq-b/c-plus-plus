@@ -15,4 +15,14 @@ int main() {
 
 	std::cout << i.toType<char>() + 'a' << std::endl;
 
+	auto i2(i);
+
+	mylib::uInt64 i3;
+	std::cout << i3 << std::endl;
+
+	std::cout << 1234_int << std::endl;
+	
+	mylib::Int<int>b(15);
+	i.swap(b);
+	std::cout << i << ' ' << b << std::endl;
 }
