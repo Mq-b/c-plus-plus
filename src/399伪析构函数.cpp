@@ -26,3 +26,13 @@ int main()noexcept
 标准规定：析构函数用于销毁其类类型的对象。
 https://stackoverflow.com/questions/24000710/pseudo-destructor-call-does-not-destroy-an-object
 */
+
+//拜伪析构函数调用所赐，所有标量类型都满足可析构 (Destructible) 的要求，而数组类型和引用类型则不满足。
+
+/*
+E1.E2
+当 E1 是标量类型而 E2 是一个 ~ 之后跟着代表（移除 cv 限定后）相同类型的类型名或 decltype 说明符，可选地有限定时，它的结果是一种特殊的纯右值，它只能用作函数调用运算符的左操作数，
+而不能用于其他目的。所构成的函数调用表达式被称为伪析构函数调用（pseudo destructor call）。它不接受任何实参，返回 void ，求值 E1 后结束它的结果对象的生存期。这是唯一使 operator. 
+的左操作数具有非类类型的情形。允许进行伪析构函数调用，使得编写代码时无须了解某个给定类型是否存在析构函数成为可能。
+https://zh.cppreference.com/w/cpp/language/operator_member_access#.E5.86.85.E5.BB.BA.E7.9A.84.E6.88.90.E5.91.98.E8.AE.BF.E9.97.AE.E8.BF.90.E7.AE.97.E7.AC.A6
+*/
