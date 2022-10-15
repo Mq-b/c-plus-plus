@@ -338,6 +338,7 @@ export namespace myNum {
 		constexpr void operator-=(const Number<T2>& v)noexcept {
 			this->_value -= v.GetValue();
 		}
+
 		template<typename T2>
 		constexpr void operator-=(Number<T2>&& v)noexcept {
 			this->_value -= v.GetValue();

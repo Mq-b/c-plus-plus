@@ -15,7 +15,9 @@ namespace mylib {
 	template<std::integral Type>
 	class Int{
 	public:
+		constexpr static Type max = std::numeric_limits<Type>::max();
 
+		constexpr static Type min = std::numeric_limits<Type>::min();
 		/// <summary>
 		/// The friend function overload operator is used to print private data members.
 		/// </summary>

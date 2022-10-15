@@ -27,4 +27,8 @@ int main() {
 	i.swap(b);
 
 	std::cout << i << ' ' << b << std::endl;
+
+	std::cout << mylib::uInt64::max << std::endl;
+
+	std::cout << mylib::uInt64::min << std::endl;
 }
