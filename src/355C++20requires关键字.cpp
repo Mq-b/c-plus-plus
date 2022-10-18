@@ -55,7 +55,7 @@ int main() {
 	);
 	
 
-	//2.requires clause
+	//2.requires clause( requires 子句)
 	//C++对关键字充分榨取价值，往往一个关键字在多个场合使用。此处使用的是需求从句场合。用于限定模板函数的类型参数。
 	//基本原理是，requires 之后一个常量表达式，当此表达式为true时，模板函数被选用。requires true恒成立，相当于对T没有限制。clause表达式可以使用的操作数为：1）基本表达式
 
