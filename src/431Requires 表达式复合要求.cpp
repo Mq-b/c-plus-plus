@@ -17,3 +17,8 @@ concept C2 = requires(T x)
     // 并且 它的结果必须可以转换为 T
     {x * 1} -> std::convertible_to<T>;
 };
+/*
+{ 表达式 } noexcept(可选) 返回类型要求(可选) ;		
+返回类型要求	-	-> 类型约束
+https://zh.cppreference.com/w/cpp/language/constraints#.E5.A4.8D.E5.90.88.E8.A6.81.E6.B1.82
+*/
