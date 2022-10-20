@@ -3455,3 +3455,7 @@ int main()
 //	int a = 1, b = 2;
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
+#include<array>
+int main() {
+	std::array<int, 10>n;
+}
