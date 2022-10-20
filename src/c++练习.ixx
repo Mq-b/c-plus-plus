@@ -3455,3 +3455,10 @@ int main()
 //	int a = 1, b = 2;
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
+#include<iostream>
+#include<vector>
+
+int main() {
+	std::vector<int>a{ 1,2,3,4,5 };
+	std::allocator_traits<std::allocator<int>>::difference_type;
+}
