@@ -42,4 +42,16 @@ int main() {
 
 	auto& ret = mylib::get<1>(arr);
 	std::cout << ret << std::endl;
+
+	int array[]{ 1,2,3,4,5,6,7,8,9,10 };
+
+	auto arrr = mylib::to_array<int>(array);
+	for (auto i : arrr)
+		std::cout << i << ' ';
+
+	//auto arrr2 = mylib::to_array<int>({ 1,2,3,4,5,6,7,8,9,10 });
+
+	auto c = std::to_array<int>({ 1,2,3,4,5,6,7,8,9,10 });
+
+	mylib::array c{ 1,2,3,4,5,6 };
 }

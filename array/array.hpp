@@ -156,8 +156,12 @@ namespace mylib {
 	template <class T, std::size_t N>
 	constexpr mylib::array<std::remove_cv_t<T>, N> to_array(T(&a)[N])
 	{
-		return detail::to_array_impl(a, std::make_index_sequence<N>{});
+		return to_array_impl(a, std::make_index_sequence<N>{});
 	}
+
+	template<typename Tp, typename... Up>
+	array(Tp, Up...)->array<std::enable_if_t<(std::is_same_v<Tp, Up>&& ...), Tp>, 1 + sizeof...(Up)>;
+
 }
 
 #endif // __ARRAY_HPP__
