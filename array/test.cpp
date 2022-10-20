@@ -48,10 +48,17 @@ int main() {
 	auto arrr = mylib::to_array<int>(array);
 	for (auto i : arrr)
 		std::cout << i << ' ';
+	std::cout << '\n';
 
-	//auto arrr2 = mylib::to_array<int>({ 1,2,3,4,5,6,7,8,9,10 });
+	auto arrr2 = mylib::to_array<int>({ 1,2,3,4,5,6,7,8,9,10 });
 
-	auto c = std::to_array<int>({ 1,2,3,4,5,6,7,8,9,10 });
+	for (auto i : arrr2) {
+		std::cout << i << ' ';
+	}
+	std::cout << '\n';
 
 	mylib::array c{ 1,2,3,4,5,6 };
+	for (auto i : c)
+		std::cout << i << ' ';
+	std::cout << '\n';
 }

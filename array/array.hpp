@@ -143,20 +143,27 @@ namespace mylib {
 		Ty _elems[Size];
 	};
 
-	template<size_t N,typename Ty>
+	template<std::size_t N,typename Ty>
 	decltype(auto) get(const Ty& a) {
 		return a[N];
 	}
 
 	template <class T, std::size_t N, std::size_t... I>
-	constexpr mylib::array<std::remove_cv_t<T>, N>to_array_impl(T(&a)[N], std::index_sequence<I...>)
+	constexpr mylib::array<std::remove_cv_t<T>, N>
+		to_array_impl(T(&& a)[N], std::index_sequence<I...>)
 	{
-		return { {a[I]...} };
+		return { {std::move(a[I])...} };
 	}
+
 	template <class T, std::size_t N>
-	constexpr mylib::array<std::remove_cv_t<T>, N> to_array(T(&a)[N])
+	constexpr mylib::array<std::remove_cv_t<T>, N> to_array(T(&& a)[N])
 	{
-		return to_array_impl(a, std::make_index_sequence<N>{});
+		return to_array_impl(std::move(a), std::make_index_sequence<N>{});
+	}
+
+	template<typename T,std::size_t N>
+	constexpr mylib::array<std::remove_cv_t<T>, N>to_array(T(&a)[N]) {
+		return to_array_impl(std::move(a), std::make_index_sequence<N>{});
 	}
 
 	template<typename Tp, typename... Up>
