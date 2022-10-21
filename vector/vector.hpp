@@ -96,6 +96,11 @@ namespace mylib {
 		}
 		vector(const vector& rhs) :_size{ rhs._size }, _capacity{ 0 }, _ptr{ nullptr } {
 			reserve(rhs.capacity());
+			std::copy(rhs.cbegin(), rhs.cend(), begin());
+		}
+
+		constexpr vector(size_type count, value_type value) : _size{ 0 }, _capacity{ 0 }, _ptr{ nullptr } {
+			assign(count, value);
 		}
 
 		constexpr ~vector() {
@@ -103,16 +108,31 @@ namespace mylib {
 		}
 
 		constexpr vector& operator=(const vector& other) {
-
+			reserve(other.capacity());
+			_size = other.size();
+			std::copy(other.cbegin(), other.cend(), begin());
+			return *this;
 		}
 
 		constexpr vector& operator=(vector&& other) {
+			reserve(other.capacity());
+			_size = other.size();
+			std::copy(other.begin(), other.end(), begin());
+			return *this;
+		}
 
+		template<typename T>
+		constexpr vector& operator=(std::initializer_list<T> ilist) {
+			reserve(ilist.size());
+			_size = ilist.size();
+			std::copy(ilist.begin(), ilist.end(), begin());
+			return *this;
 		}
 
 		template<typename T>
 		constexpr void assign(size_type count, const T& value) {
 			reserve(count);
+			_size = count;
 			std::fill(begin(), begin() + count, value);
 		}
 
@@ -120,12 +140,14 @@ namespace mylib {
 		constexpr void assign(InputIt first, InputIt last) {
 			ptrdiff_t di = std::distance(first, last);
 			reserve(di);
+			_size = di;
 			std::copy(first, last, begin());
 		}
 
 		template<typename T>
 		constexpr void assign(std::initializer_list<T> ilist) {
 			reserve(ilist.size());
+			_size = ilist.size();
 			std::copy(ilist.begin(), ilist.end(), begin());
 		}
 

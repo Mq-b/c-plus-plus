@@ -33,4 +33,31 @@ int main() {
 	std::cout << *v2.data() << std::endl;
 
 	std::cout << v2.front() << ' ' << v2.back() << ' ' << v3.front() << ' ' << v3.back() << '\n';
+
+	mylib::vector<int>v4(v);
+	std::cout << v4.size() << ' ' << v4.capacity() << '\n';
+	std::cout << v[0] << std::endl;
+	for (auto i : v4)
+		std::cout << i << ' ';
+	std::cout << '\n';
+
+	mylib::vector<int>v5(8, 66);
+	for (auto i : v5)
+		std::cout << i << " ";
+	std::cout << '\n';
+
+	v4 = v5;
+	for (auto i : v4)
+		std::cout << i << " ";
+	std::cout << '\n';
+
+	v4 = std::move(v5);
+	for (auto i : v4)
+		std::cout << i << " ";
+	std::cout << '\n';
+
+	v4 = { 1,11,111,111,2,22,222 };
+	for (auto i : v4)
+		std::cout << i << " ";
+	std::cout << '\n';
 }
