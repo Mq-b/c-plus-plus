@@ -3458,7 +3458,40 @@ int main()
 #include<iostream>
 #include<vector>
 
+constexpr void f() {
+	int a = 5;
+	int* p = new int[a];
+}
+
 int main() {
 	std::vector<int>a{ 1,2,3,4,5 };
-	std::allocator_traits<std::allocator<int>>::difference_type;
+	//a.reserve(100);
+	std::cout << a.capacity() <<' '<<a.size() << std::endl;
+	//a.resize(999);
+	std::cout << a.capacity() << ' ' << a.size() << std::endl;
+	std::cout << *(a.end() - 1) << std::endl;
+	a.assign(10, 1);
+	std::cout << a.capacity() << ' ' << a.size() << std::endl;
+
+	const std::vector c{ 1 };
+	
+	a.at(5) = 10;
+	for (auto i : a) {
+		std::cout << i << ' ';
+	}
+	std::cout << '\n';
+	auto i =std::distance(a.begin(), a.end());
+	a.reserve(20);
+	std::cout << a.capacity() << ' ' << a.size() << std::endl;
+	a[15] = 100;
+	std::cout << a[15] << std::endl;
+	std::cout << a.max_size() << std::endl;
+	a.data();
+	a.resize(100);
+	a.reserve(200);
+	std::cout << a.back() << '\n';
+	std::cout << a.capacity() << std::endl;
+
+	std::vector<int>c2(16);
+	std::cout << c2.size() << ' ' << c2.capacity() << '\n';
 }
