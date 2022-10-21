@@ -60,4 +60,8 @@ int main() {
 	for (auto i : v4)
 		std::cout << i << " ";
 	std::cout << '\n';
+
+	mylib::vector<int>v6;
+	v6.push_back(10);
+	std::cout << v6[0] << ' ' << v6.size() << ' ' << v6.capacity() << '\n';
 }

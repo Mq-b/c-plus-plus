@@ -151,46 +151,46 @@ namespace mylib {
 			std::copy(ilist.begin(), ilist.end(), begin());
 		}
 
-		constexpr allocator_type get_allocator() const noexcept {
+		[[nodiscard]] constexpr allocator_type get_allocator() const noexcept {
 			return _allocator;
 		}
 
-		constexpr reference at(size_type pos) {
+		[[nodiscard]] constexpr reference at(size_type pos) {
 			return !(pos < _size) ? throw std::out_of_range : _ptr[pos];
 		}
-		constexpr const_reference at(size_type pos) const {
+		[[nodiscard]] constexpr const_reference at(size_type pos) const {
 			return !(pos < _size) ? throw std::out_of_range("out_of_range") : _ptr[pos];
 		}
 
-		constexpr reference operator[](size_type pos) {
+		[[nodiscard]] constexpr reference operator[](size_type pos) {
 			return _ptr[pos];
 		}
 
-		constexpr const_reference operator[](size_type pos) const {
+		[[nodiscard]] constexpr const_reference operator[](size_type pos) const {
 			return _ptr[pos];
 		}
 
-		constexpr reference front() {
+		[[nodiscard]] constexpr reference front() {
 			return _ptr[0];
 		}
 
-		constexpr const_reference front() const {
+		[[nodiscard]] constexpr const_reference front() const {
 			return _ptr[0];
 		}
 
-		constexpr const_reference back() const {
+		[[nodiscard]] constexpr const_reference back() const {
 			return _ptr[_size - 1];
 		}
 
-		constexpr reference back() {
+		[[nodiscard]] constexpr reference back() {
 			return _ptr[_size - 1];
 		}
 
-		constexpr pointer data() noexcept {
+		[[nodiscard]] constexpr pointer data() noexcept {
 			return _ptr;
 		}
 
-		constexpr const_pointer data()const noexcept {
+		[[nodiscard]] constexpr const_pointer data()const noexcept {
 			return _ptr;
 		}
 
@@ -230,15 +230,15 @@ namespace mylib {
 			return begin() == end();
 		}
 
-		constexpr size_type size() const noexcept {
+		[[nodiscard]] constexpr size_type size() const noexcept {
 			return _size;
 		}
 
-		constexpr size_type max_size() const noexcept {
+		[[nodiscard]] constexpr size_type max_size() const noexcept {
 			return std::numeric_limits<difference_type>::max();
 		}
 
-		constexpr size_type capacity() const noexcept {
+		[[nodiscard]] constexpr size_type capacity() const noexcept {
 			return _capacity;
 		}
 
@@ -258,6 +258,66 @@ namespace mylib {
 
 		}
 
+		constexpr void clear() noexcept {
+			_size = 0;
+		}
+
+		template<typename T>
+		constexpr iterator insert(const_iterator pos, const T& value) {
+			if (pos == end()) {
+				push_back(value);
+			}
+
+		}
+
+		template<typename T>
+		constexpr iterator insert(const_iterator pos, T&& value) {
+
+		}
+
+		template<typename T>
+		constexpr iterator	insert(const_iterator pos, size_type count, const T& value) {
+
+		}
+
+		template< class InputIt >
+		constexpr iterator insert(const_iterator pos, InputIt first, InputIt last) {
+
+		}
+
+		template<typename T>
+		constexpr iterator insert(const_iterator pos,std::initializer_list<T> ilist) {
+
+		}
+
+		template<typename T>
+		constexpr void push_back(const T& value) {
+			if (size() + 1 <= capacity()) {
+				_ptr[size()] = value;
+			}else {
+				reserve(capacity() * 1.5 + 1);
+				_ptr[size()] = value;
+			}
+			_size += 1;
+		}
+
+		template<typename T>
+		constexpr void push_back(T&& value) {
+			if (size() + 1 <= capacity()) {
+				_ptr[size()] = value;
+			}
+			else {
+				reserve(capacity() * 1.5 + 1);
+				_ptr[size()] = value;
+			}
+			_size += 1;
+		}
+
+		template< class... Args >
+		constexpr reference emplace_back(Args&&... args) {
+
+		}
+
 	private:
 		pointer _ptr;
 		size_type _size;
@@ -266,4 +326,4 @@ namespace mylib {
 	};
 
 }
-#endif // !__VECTOR_HPP
+#endif // !__VECTOR_HPP__

@@ -3473,6 +3473,12 @@ int main() {
 	a.assign(10, 1);
 	std::cout << a.capacity() << ' ' << a.size() << std::endl;
 	a.assign(2, 1);
+	a.front();
+	a[0];
+	std::vector<int>b{ 1 };
+	a = b;
+	a.clear();
 	std::cout << a.capacity() << ' ' << a.size() << std::endl;
-
+	a[9] = 100;
+	std::cout << a[9] << std::endl;
 }
