@@ -42,14 +42,14 @@ int main() {
 
 	std::cout << v2.front() << ' ' << v2.back() << ' ' << v3.front() << ' ' << v3.back() << '\n';
 
-	mylib::vector<int>v4(v);
+	mylib::vector v4(v);
 	std::cout << v4.size() << ' ' << v4.capacity() << '\n';
 	std::cout << v[0] << std::endl;
 	for (auto i : v4)
 		std::cout << i << ' ';
 	std::cout << '\n';
 
-	mylib::vector<int>v5(8, 66);
+	mylib::vector v5(8, 66);
 	for (auto i : v5)
 		std::cout << i << " ";
 	std::cout << '\n';
@@ -122,4 +122,8 @@ int main() {
 	mylib::vector v9{ 1,2,3,4,5,6,7,8,9,10 };
 	std::cout << v9.size() << ' ' << v9.capacity() << '\n';
 	print(v9);
+
+	mylib::vector v10(v9.begin(), v9.begin() + 5);
+	print(v10);
+	std::cout << v10.size() << ' ' << v10.capacity() << '\n';
 }

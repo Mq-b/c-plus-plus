@@ -3460,16 +3460,12 @@ int main()
 #include<string>
 #include<fmt/core.h>
 
+struct X {
+	int a, b, c;
+	void f(){}
+};
+
 int main() {
-	std::vector<int>v{ 1,2,3 };
-	std::vector<int>v2{ 1,2,3 };
-	v2.resize(100);
-	fmt::print("{} {} \n", v2.size(), v2.capacity());
-	printf("%p \n", v.data());
-	printf("%p \n", v2.data());
-	v.swap(v2);
-	fmt::print("{} {} \n", v2.size(), v2.capacity());
-	fmt::print("{} {} \n", v.size(), v.capacity());
-	printf("%p \n", v.data());
-	printf("%p \n", v2.data());
+	std::vector v{ 1,2,3,4 };
+	std::vector v2(v.begin(), v.begin() + 3);
 }

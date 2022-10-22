@@ -107,8 +107,9 @@ namespace mylib {
 		using reverse_iterator			= std::reverse_iterator<iterator>;
 		using const_reverse_iterator	= std::reverse_iterator<const_iterator>;
 
+		constexpr vector() noexcept(noexcept(Alloc())) :_size{ 0 }, _capacity{ 0 }, _ptr{ nullptr } {}
 
-		explicit vector(size_t init_size = 0) :_size{ init_size }, _capacity{ 0 }, _ptr{ nullptr } {
+		explicit vector(size_t init_size ) :_size{ init_size }, _capacity{ 0 }, _ptr{ nullptr } {
 			reserve(init_size);
 		}
 		vector(const vector& rhs) :_size{ rhs._size }, _capacity{ 0 }, _ptr{ nullptr } {
@@ -118,6 +119,14 @@ namespace mylib {
 
 		constexpr vector(size_type count, value_type value) : _size{ 0 }, _capacity{ 0 }, _ptr{ nullptr } {
 			assign(count, value);
+		}
+
+		template< class InputIt, std::enable_if_t<std::_Is_iterator_v<InputIt>, int> = 0>
+		constexpr vector(InputIt first, InputIt last) : _size{ 0 }, _capacity{ 0 }, _ptr{ nullptr } {
+			difference_type dis = std::distance(first, last);
+			reserve(dis);
+			std::copy(first, last ,begin());
+			_size = dis;
 		}
 
 		constexpr vector(std::initializer_list<size_type> init) : _size(init.size()), _capacity{ 0 }, _ptr{ nullptr } {
@@ -434,5 +443,7 @@ namespace mylib {
 	template<typename Ty>
 	vector(std::initializer_list<Ty>)->vector<Ty>;
 
+	template<typename InputIt>
+	vector(InputIt first, InputIt last)->vector<typename std::iterator_traits<InputIt>::value_type>;
 }
 #endif // !__VECTOR_HPP__
