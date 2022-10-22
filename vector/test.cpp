@@ -64,4 +64,12 @@ int main() {
 	mylib::vector<int>v6;
 	v6.push_back(10);
 	std::cout << v6[0] << ' ' << v6.size() << ' ' << v6.capacity() << '\n';
+	v6.emplace_back(6);
+	std::cout << v6[1] << ' ' << v6.size() << ' ' << v6.capacity() << '\n';
+
+	mylib::vector<std::string>v7;
+	std::string str{ "66" };
+	v7.push_back("66");
+	std::cout << v7[0] << ' ' << v7.size() << ' ' << v7.capacity() << '\n';
+
 }

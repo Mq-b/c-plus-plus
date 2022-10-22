@@ -3457,28 +3457,12 @@ int main()
 //	std::cout << a << ' ' << b << std::endl;
 #include<iostream>
 #include<vector>
+#include<string>
 
-constexpr void f() {
-	int a = 5;
-	int* p = new int[a];
-}
+struct X {
+	X() { puts(__func__); }
+};
 
 int main() {
-	std::vector<int>a{ 1,2,3,4,5 };
-	//a.reserve(100);
-	std::cout << a.capacity() <<' '<<a.size() << std::endl;
-	//a.resize(999);
-	std::cout << a.capacity() << ' ' << a.size() << std::endl;
-	std::cout << *(a.end() - 1) << std::endl;
-	a.assign(10, 1);
-	std::cout << a.capacity() << ' ' << a.size() << std::endl;
-	a.assign(2, 1);
-	a.front();
-	a[0];
-	std::vector<int>b{ 1 };
-	a = b;
-	a.clear();
-	std::cout << a.capacity() << ' ' << a.size() << std::endl;
-	a[9] = 100;
-	std::cout << a[9] << std::endl;
+	auto p = new X[10];
 }

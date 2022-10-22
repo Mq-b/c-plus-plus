@@ -10,6 +10,7 @@
 #include<numeric>
 #include<execution>
 #include<limits>
+#include<iostream>
 
 namespace mylib {
 
@@ -255,7 +256,7 @@ namespace mylib {
 		}
 
 		constexpr void shrink_to_fit() {
-
+			_capacity = _size;
 		}
 
 		constexpr void clear() noexcept {
@@ -264,15 +265,12 @@ namespace mylib {
 
 		template<typename T>
 		constexpr iterator insert(const_iterator pos, const T& value) {
-			if (pos == end()) {
-				push_back(value);
-			}
-
+			emplace(pos, std::move(value));
 		}
 
 		template<typename T>
 		constexpr iterator insert(const_iterator pos, T&& value) {
-
+			emplace(pos, value);
 		}
 
 		template<typename T>
@@ -290,8 +288,7 @@ namespace mylib {
 
 		}
 
-		template<typename T>
-		constexpr void push_back(const T& value) {
+		constexpr void push_back(const value_type& value) {
 			if (size() + 1 <= capacity()) {
 				_ptr[size()] = value;
 			}else {
@@ -301,8 +298,7 @@ namespace mylib {
 			_size += 1;
 		}
 
-		template<typename T>
-		constexpr void push_back(T&& value) {
+		constexpr void push_back(value_type&& value) {
 			if (size() + 1 <= capacity()) {
 				_ptr[size()] = value;
 			}
@@ -314,8 +310,14 @@ namespace mylib {
 		}
 
 		template< class... Args >
-		constexpr reference emplace_back(Args&&... args) {
+		constexpr iterator emplace(const_iterator pos, Args&&... args) {
 
+		}
+
+		template< class... Args >
+		constexpr reference emplace_back(Args&&... args) {
+			push_back(std::forward<Args>(args)...);
+			return _ptr[_size];
 		}
 
 	private:
