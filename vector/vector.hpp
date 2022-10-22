@@ -120,6 +120,11 @@ namespace mylib {
 			assign(count, value);
 		}
 
+		constexpr vector(std::initializer_list<size_type> init) : _size(init.size()), _capacity{ 0 }, _ptr{ nullptr } {
+			reserve(init.size());
+			std::copy(init.begin(), init.end(), begin());
+		}
+
 		constexpr ~vector() {
 			_allocator.deallocate(_ptr, _capacity);
 		}
@@ -282,28 +287,52 @@ namespace mylib {
 
 		template<typename T>
 		constexpr iterator insert(const_iterator pos, const T& value) {
-			emplace(pos, std::move(value));
+			auto p = emplace(pos, std::move(value));
+			return p;
 		}
 
 		template<typename T>
 		constexpr iterator insert(const_iterator pos, T&& value) {
-			decltype(auto) p = emplace(pos, std::forward<T>(value));
+			auto p = emplace(pos, std::forward<T>(value));
 			return p;
 		}
 
 		template<typename T>
 		constexpr iterator	insert(const_iterator pos, size_type count, const T& value) {
+			if (count == 0) {
+				return pos;
+			}
+			std::ptrdiff_t dis = std::distance(cbegin(), pos);
+			reserve(capacity() * 1.5 + count);
 
+			std::copy(cbegin() + dis, cend(), cbegin() + dis + count);
+
+			std::fill(_ptr + dis, _ptr + dis + count, value);
+
+			_size += count;
+			return { _ptr + dis };
 		}
 
 		template< class InputIt >
 		constexpr iterator insert(const_iterator pos, InputIt first, InputIt last) {
+			if (std::distance(first, last) == 0) {
+				return pos;
+			}
+			std::ptrdiff_t dis = std::distance(cbegin(), pos);
+			std::ptrdiff_t count = std::distance(first, last);
+			reserve(capacity() * 1.5 + count);
 
+			std::copy(cbegin() + dis, cend(), cbegin() + dis + count);
+
+			std::copy(first, last, cbegin() + dis);
+
+			_size += count;
+			return { _ptr + dis };
 		}
 
 		template<typename T>
 		constexpr iterator insert(const_iterator pos,std::initializer_list<T> ilist) {
-
+			return insert(pos, ilist.begin(), ilist.end());
 		}
 
 		constexpr void push_back(const value_type& value) {
@@ -329,12 +358,11 @@ namespace mylib {
 		template< class... Args >
 		constexpr iterator emplace(const_iterator pos, Args&&... args) {
 			std::ptrdiff_t dis = cend() - pos - 1;
-			std::clog << dis << '\n';
 			if (dis == size()) {
 				emplace_back(std::forward<Args>(args)...);
 				return begin() + size();
 			}
-			dis = pos - cbegin();
+			dis = std::distance(cbegin(), pos);
 			reserve(capacity() * 1.5 + 1);
 			
 			std::copy(cbegin() + dis, cend(), cbegin() + dis + 1);
@@ -346,11 +374,21 @@ namespace mylib {
 		}
 
 		constexpr iterator erase(const_iterator pos) {
-
+			std::ptrdiff_t dis = std::distance(cbegin(), pos);
+			std::copy(cbegin() + dis + 1 , cend(), cbegin() + dis);
+			_size -= 1;
+			return { _ptr + dis };
 		}
 
 		constexpr iterator erase(const_iterator first, const_iterator last) {
-
+			std::ptrdiff_t dis = std::distance(cbegin(), first);
+			std::ptrdiff_t count = std::distance(first, last);
+			if (count == 0) {
+				return last;
+			}
+			std::copy(cbegin() + dis + count, cend(), cbegin() + dis);
+			_size -= count;
+			return { _ptr + dis };
 		}
 
 		template< class... Args >
@@ -370,7 +408,13 @@ namespace mylib {
 
 		constexpr void resize(size_type count, const value_type& value) {
 			resize(count);
-			std::fill(end()-count, end(), value);;
+			std::fill(end() - count, end(), value);;
+		}
+
+		constexpr void swap(vector& other) noexcept {
+			std::swap(_size, other._size);
+			std::swap(_capacity, other._capacity);
+			std::swap(_ptr, other._ptr);
 		}
 
 	private:
@@ -386,6 +430,9 @@ namespace mylib {
 		size_type _capacity;
 		allocator_type _allocator;
 	};
+
+	template<typename Ty>
+	vector(std::initializer_list<Ty>)->vector<Ty>;
 
 }
 #endif // !__VECTOR_HPP__

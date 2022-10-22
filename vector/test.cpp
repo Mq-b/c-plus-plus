@@ -94,7 +94,32 @@ int main() {
 
 	v7.emplace(v7.cend(), std::string("78"));
 	v7.emplace(v7.begin(), std::string("*****"));
-	v7.insert(v7.begin(), std::string("*66*"));
+	v7.insert(v7.begin(), "*66*");
 	std::cout << v7[0] <<' '<<v7[1] << ' ' << v7.size() << ' ' << v7.capacity() << '\n';
+	v7.insert(v7.end(), 10, "哈");
+	print(v7);
 
+	int array2[]{ 1,2,3,4,5 };
+	v6.insert(v6.begin() + 2, std::begin(array2), std::end(array2));
+	print(v6);
+
+	v6.insert(v6.end(), { 9,9,9,9,9,9,9 });
+	print(v6);
+	v6.erase(v6.begin());
+	print(v6);
+	std::cout << v6.size() << ' ' << v6.capacity() << '\n';
+	v6.erase(v6.begin(), v6.begin() + 6);
+	print(v6);
+	std::cout << v6.size() << ' ' << v6.capacity() << '\n';
+
+	mylib::vector<int>v8;
+	v8.swap(v6);
+
+	std::cout << v8.size() << ' ' << v8.capacity() << '\n';
+	std::cout << v6.size() << ' ' << v6.capacity() << '\n';
+	print(v8);
+
+	mylib::vector v9{ 1,2,3,4,5,6,7,8,9,10 };
+	std::cout << v9.size() << ' ' << v9.capacity() << '\n';
+	print(v9);
 }

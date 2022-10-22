@@ -3462,11 +3462,14 @@ int main()
 
 int main() {
 	std::vector<int>v{ 1,2,3 };
-	std::cout << v.size() << " " << v.capacity() << '\n';
-	v.resize(10);
-	std::cout << v.size() << " " << v.capacity() << '\n';
-	v.resize(20,100);
-	std::cout << v.size() << " " << v.capacity() << '\n';
-	std::cout << v[2] << std::endl;
-	std::cout << v[19] << std::endl;
+	std::vector<int>v2{ 1,2,3 };
+	v2.resize(100);
+	fmt::print("{} {} \n", v2.size(), v2.capacity());
+	printf("%p \n", v.data());
+	printf("%p \n", v2.data());
+	v.swap(v2);
+	fmt::print("{} {} \n", v2.size(), v2.capacity());
+	fmt::print("{} {} \n", v.size(), v.capacity());
+	printf("%p \n", v.data());
+	printf("%p \n", v2.data());
 }
