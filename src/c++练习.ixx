@@ -3458,11 +3458,15 @@ int main()
 #include<iostream>
 #include<vector>
 #include<string>
-
-struct X {
-	X() { puts(__func__); }
-};
+#include<fmt/core.h>
 
 int main() {
-	auto p = new X[10];
+	std::vector<int>v{ 1,2,3 };
+	std::cout << v.size() << " " << v.capacity() << '\n';
+	v.resize(10);
+	std::cout << v.size() << " " << v.capacity() << '\n';
+	v.resize(20,100);
+	std::cout << v.size() << " " << v.capacity() << '\n';
+	std::cout << v[2] << std::endl;
+	std::cout << v[19] << std::endl;
 }

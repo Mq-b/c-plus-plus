@@ -1,6 +1,14 @@
 #include"vector.hpp"
 #include<iostream>
 #include<string>
+#include<span>
+
+template<typename T>
+void print(T sp) {
+	for (auto i : sp)
+		std::cout << i << ' ';
+	std::cout << '\n';
+}
 
 int main() {
 	mylib::vector<int> v;
@@ -69,9 +77,24 @@ int main() {
 
 	mylib::vector<std::string>v7;
 	std::string str{ "66" };
+
 	v7.push_back("77");
 	v7.push_back("傻子");
 	v7.push_back(str);
+	v7.push_back(std::string("无趣"));
 	std::cout << v7[2] << ' ' << v7.size() << ' ' << v7.capacity() << '\n';
+	v7.pop_back();
+	v7.push_back("有趣");
+	print(v7);
+
+	v7.resize(10,"*");
+	std::cout << v7[9] << ' ' << v7.size() << ' ' << v7.capacity() << '\n';
+
+	std::cout << std::distance(v7.cbegin(), v7.cend()) << std::endl;
+
+	v7.emplace(v7.cend(), std::string("78"));
+	v7.emplace(v7.begin(), std::string("*****"));
+	v7.insert(v7.begin(), std::string("*66*"));
+	std::cout << v7[0] <<' '<<v7[1] << ' ' << v7.size() << ' ' << v7.capacity() << '\n';
 
 }

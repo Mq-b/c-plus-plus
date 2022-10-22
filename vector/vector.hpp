@@ -62,12 +62,28 @@ namespace mylib {
 			return tmp;
 		}
 
-		[[nodiscard]] friend constexpr bool operator==(const _vector_iterator& v1, const _vector_iterator& v2) {
+		[[nodiscard]] constexpr void operator+=(size_t n) {
+			_ptr += n;
+		}
+
+		[[nodiscard]] constexpr void operator-=(size_t n) {
+			_ptr -= n;
+		}
+
+		[[nodiscard]] constexpr reference operator[](size_t n) {
+			return _ptr[n];
+		}
+
+		friend constexpr bool operator==(const _vector_iterator& v1, const _vector_iterator& v2) {
 			return v1._ptr == v2._ptr;
 		}
 
-		[[nodiscard]] friend constexpr bool operator!=(const _vector_iterator& v1, const _vector_iterator& v2) {
+		friend constexpr bool operator!=(const _vector_iterator& v1, const _vector_iterator& v2) {
 			return !(v1 == v2);
+		}
+
+		friend constexpr size_t operator-(const _vector_iterator& v1, const _vector_iterator& v2) {
+			return v1._ptr - v2._ptr;
 		}
 
 		pointer _ptr = nullptr;
@@ -271,7 +287,8 @@ namespace mylib {
 
 		template<typename T>
 		constexpr iterator insert(const_iterator pos, T&& value) {
-			emplace(pos, value);
+			decltype(auto) p = emplace(pos, std::forward<T>(value));
+			return p;
 		}
 
 		template<typename T>
@@ -311,6 +328,28 @@ namespace mylib {
 
 		template< class... Args >
 		constexpr iterator emplace(const_iterator pos, Args&&... args) {
+			std::ptrdiff_t dis = cend() - pos - 1;
+			std::clog << dis << '\n';
+			if (dis == size()) {
+				emplace_back(std::forward<Args>(args)...);
+				return begin() + size();
+			}
+			dis = pos - cbegin();
+			reserve(capacity() * 1.5 + 1);
+			
+			std::copy(cbegin() + dis, cend(), cbegin() + dis + 1);
+			
+			_ptr[dis] = { std::forward<Args>(args)... };
+
+			_size += 1;
+			return { _ptr + dis };
+		}
+
+		constexpr iterator erase(const_iterator pos) {
+
+		}
+
+		constexpr iterator erase(const_iterator first, const_iterator last) {
 
 		}
 
@@ -318,6 +357,20 @@ namespace mylib {
 		constexpr reference emplace_back(Args&&... args) {
 			push_back(std::forward<Args>(args)...);
 			return _ptr[_size];
+		}
+
+		constexpr void pop_back() {
+			_size--;
+		}
+
+		constexpr void resize(size_type count) {
+			reserve(count);
+			_size = count;
+		}
+
+		constexpr void resize(size_type count, const value_type& value) {
+			resize(count);
+			std::fill(end()-count, end(), value);;
 		}
 
 	private:
