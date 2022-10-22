@@ -5,6 +5,7 @@
 #include<iterator>
 
 namespace mylib {
+
 	template<typename T, typename Ty>
 	auto address(const Ty& v) {
 		return  const_cast<T*>(std::data(v));
@@ -48,13 +49,13 @@ namespace mylib {
 
 		constexpr span_iterator operator+(size_t n)noexcept {
 			span_iterator tmp{ *this };
-			++tmp;
+			tmp._ptr += n;
 			return tmp;
 		}
 
 		constexpr span_iterator operator-(size_t n)noexcept {
 			span_iterator tmp{ *this };
-			--tmp;
+			tmp._ptr -= n;
 			return tmp;
 		}
 
@@ -164,5 +165,6 @@ namespace mylib {
 		pointer _ptr;
 		std::size_t _size;
 	};
+
 }
 #endif // __SPAN_HPP
