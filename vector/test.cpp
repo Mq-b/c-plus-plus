@@ -69,7 +69,9 @@ int main() {
 
 	mylib::vector<std::string>v7;
 	std::string str{ "66" };
-	v7.push_back("66");
-	std::cout << v7[0] << ' ' << v7.size() << ' ' << v7.capacity() << '\n';
+	v7.push_back("77");
+	v7.push_back("傻子");
+	v7.push_back(str);
+	std::cout << v7[2] << ' ' << v7.size() << ' ' << v7.capacity() << '\n';
 
 }

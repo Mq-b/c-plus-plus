@@ -248,6 +248,7 @@ namespace mylib {
 				return;
 			pointer tmp = _ptr;
 			_ptr = _allocator.allocate(new_cap);
+			_init_construct(new_cap);
 			if (_ptr != nullptr && tmp != nullptr) {
 				std::copy(tmp, tmp + size(), _ptr);
 				_allocator.deallocate(tmp, _capacity);
@@ -290,21 +291,20 @@ namespace mylib {
 
 		constexpr void push_back(const value_type& value) {
 			if (size() + 1 <= capacity()) {
-				_ptr[size()] = value;
+				_ptr[size()] = std::move(value);
 			}else {
 				reserve(capacity() * 1.5 + 1);
-				_ptr[size()] = value;
+				_ptr[size()] = std::move(value);
 			}
 			_size += 1;
 		}
 
 		constexpr void push_back(value_type&& value) {
 			if (size() + 1 <= capacity()) {
-				_ptr[size()] = value;
-			}
-			else {
+				_ptr[size()] = std::move(value);
+			}else {
 				reserve(capacity() * 1.5 + 1);
-				_ptr[size()] = value;
+				_ptr[size()] = std::move(value);
 			}
 			_size += 1;
 		}
@@ -321,6 +321,13 @@ namespace mylib {
 		}
 
 	private:
+
+		constexpr void _init_construct(size_type n) {
+			for (size_t i = 0; i < n; i++) {
+				::new(&_ptr[i]) value_type;
+			}
+		}
+
 		pointer _ptr;
 		size_type _size;
 		size_type _capacity;
