@@ -3455,18 +3455,3 @@ int main()
 //	int a = 1, b = 2;
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
-#include<iostream>
-#include<vector>
-#include<string>
-#include<fmt/core.h>
-
-struct X {
-	int a, b, c;
-	void f(){}
-};
-
-int main() {
-	std::vector v{ 1,2,3,4 };
-	std::vector v2(v.begin(), v.begin() + 3);
-	v <=> v2;
-}
