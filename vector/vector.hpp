@@ -482,7 +482,17 @@ namespace mylib {
 
 	template< class T, class Alloc, class U >
 	constexpr typename mylib::vector<T, Alloc>::size_type erase(mylib::vector<T, Alloc>& c, const U& value) {
-
+		auto it = std::remove(c.begin(), c.end(), value);
+		auto r = std::distance(it, c.end());
+		c.erase(it, c.end());
+		return r;
+	}
+	template< class T, class Alloc, class Pred >
+	constexpr typename mylib::vector<T, Alloc>::size_type erase_if(mylib::vector<T, Alloc>& c, Pred pred) {
+		auto it = std::remove_if(c.begin(), c.end(), pred);
+		auto r = std::distance(it, c.end());
+		c.erase(it, c.end());
+		return r;
 	}
 
 	template<typename Ty>

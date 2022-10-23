@@ -134,4 +134,10 @@ int main() {
 
 	mylib::swap(v10, v9);
 	std::cout << int((v10 <=> v9)._Value) << std::endl;
+
+	print(v10);
+	mylib::erase(v10, 10);
+	print(v10);
+	mylib::erase_if(v10, [](auto i) {return i == 5; });
+	print(v10);
 }
