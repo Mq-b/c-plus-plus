@@ -11,6 +11,7 @@
 #include<execution>
 #include<limits>
 #include<iostream>
+#include<ranges>
 
 namespace mylib {
 
@@ -78,8 +79,16 @@ namespace mylib {
 			return v1._ptr == v2._ptr;
 		}
 
-		friend constexpr bool operator!=(const _vector_iterator& v1, const _vector_iterator& v2) {
-			return !(v1 == v2);
+		friend constexpr bool operator<=>(const _vector_iterator& v1, const _vector_iterator& v2) {
+			if (v1._ptr > v2._ptr) {
+				return 1;
+			}
+			else if (v1._ptr < v2._ptr) {
+				return -1;
+			}
+			else {
+				return 0;
+			}
 		}
 
 		friend constexpr size_t operator-(const _vector_iterator& v1, const _vector_iterator& v2) {
@@ -440,10 +449,47 @@ namespace mylib {
 		allocator_type _allocator;
 	};
 
+	template< class T, class Alloc >
+	constexpr bool operator==(const mylib::vector<T, Alloc>& lhs, const mylib::vector<T, Alloc>& rhs) {
+		auto ret = std::equal(lhs.cbegin(), lhs.cend(), rhs.cbegin());
+		if (ret && lhs.size() == rhs.size()) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	template< class T, class Alloc >
+	constexpr auto operator<=>(const mylib::vector<T, Alloc>& lhs, const mylib::vector<T, Alloc>& rhs) {
+		if (lhs.size() < rhs.size()) {
+			return std::partial_ordering::less;
+		}
+		else if (lhs.size() > rhs.size()) {
+			return std::partial_ordering::greater;
+		}else {
+			if (std::lexicographical_compare(lhs.cbegin(),lhs.cend(), rhs.cbegin(),rhs.cend()) == true) {
+				return std::partial_ordering::less;
+			}else {
+				return std::partial_ordering::greater;
+			}
+		}
+	}
+
+	template< class T, class Alloc >
+	constexpr void swap(mylib::vector<T, Alloc>& lhs, mylib::vector<T, Alloc>& rhs) noexcept {
+		lhs.swap(rhs);
+	}
+
+	template< class T, class Alloc, class U >
+	constexpr typename mylib::vector<T, Alloc>::size_type erase(mylib::vector<T, Alloc>& c, const U& value) {
+
+	}
+
 	template<typename Ty>
 	vector(std::initializer_list<Ty>)->vector<Ty>;
 
 	template<typename InputIt>
 	vector(InputIt first, InputIt last)->vector<typename std::iterator_traits<InputIt>::value_type>;
+
 }
 #endif // !__VECTOR_HPP__

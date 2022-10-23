@@ -3468,4 +3468,5 @@ struct X {
 int main() {
 	std::vector v{ 1,2,3,4 };
 	std::vector v2(v.begin(), v.begin() + 3);
+	v <=> v2;
 }

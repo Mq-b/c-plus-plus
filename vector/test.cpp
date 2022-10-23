@@ -126,4 +126,12 @@ int main() {
 	mylib::vector v10(v9.begin(), v9.begin() + 5);
 	print(v10);
 	std::cout << v10.size() << ' ' << v10.capacity() << '\n';
+
+	std::cout << (v10 == v9) << ' ' << (v10 != v9) << '\n';
+	std::cout << (v10 > v9) << ' ' << (v10 < v9) << '\n';
+	std::cout << (v10 >= v9) << ' ' << (v10 <= v9) << '\n';
+	std::cout << int((v10 <=> v9)._Value) << std::endl;
+
+	mylib::swap(v10, v9);
+	std::cout << int((v10 <=> v9)._Value) << std::endl;
 }
