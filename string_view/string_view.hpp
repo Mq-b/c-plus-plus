@@ -412,9 +412,9 @@ namespace mylib {
         size_type m_size;
     };
     
-	using string_view = mylib::basic_string_view<char>;
-	using wstring_view = mylib::basic_string_view<wchar_t>;
-	using u8string_view = mylib::basic_string_view<char8_t>;
+	using string_view    = mylib::basic_string_view<char>;
+	using wstring_view   = mylib::basic_string_view<wchar_t>;
+	using u8string_view  = mylib::basic_string_view<char8_t>;
 	using u16string_view = mylib::basic_string_view<char16_t>;
 	using u32string_view = mylib::basic_string_view<char32_t>;
 
