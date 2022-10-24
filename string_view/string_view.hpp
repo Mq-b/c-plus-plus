@@ -285,7 +285,7 @@ namespace mylib {
 		}
 
 		constexpr size_type find(basic_string_view v, size_type pos = 0) const noexcept {
-			return std::search(begin(), end(), v.begin(), v.end()) - begin();
+			return std::search(begin() + pos , end(), v.begin(), v.end()) - begin();
 		}
 
 		constexpr size_type find(Elem ch, size_type pos = 0) const noexcept {
@@ -301,7 +301,7 @@ namespace mylib {
 		}
 		
 		constexpr size_type rfind(basic_string_view v, size_type pos = 0) const noexcept {
-			return std::find_end(begin(), end(), v.begin(), v.end()) - begin();
+			return std::find_end(begin() + pos, end(), v.begin(), v.end()) - begin();
 		}
 
 		constexpr size_type rfind(Elem ch, size_type pos = 0) const noexcept {
@@ -338,14 +338,15 @@ namespace mylib {
 			return find_first_of(basic_string_view(s), pos);
 		}
 
-		constexpr size_type find_last_of(basic_string_view v, size_type pos = npos) const noexcept {//bug！！！！！！！！！！
-			for (auto i = v.end(); i != v.begin(); i--) {
-				auto t = std::find(begin() + pos, end(), *i);
+		constexpr size_type find_last_of(basic_string_view v, size_type pos = npos) const noexcept {
+			size_type ret{};
+			for (const auto& i : v) {
+				auto t = std::find(begin() + pos, end(), i);
 				if (t != end()) {
-					return t - begin();
+					ret = t - begin();
 				}
 			}
-			return pos;
+			return ret != 0 ? ret : pos;
 		}
 		
 		constexpr size_type find_last_of(Elem c, size_type pos = npos) const noexcept {
@@ -361,7 +362,13 @@ namespace mylib {
 		}
 
 		constexpr size_type find_first_not_of(basic_string_view v, size_type pos = 0) const noexcept {
-			return 6;//bug!!!!!!!!!!!!!!!!
+			for (const auto& i : v) {
+				auto t = std::find(begin() + pos , end(), i);
+				if (t == end()) {
+					return  t - begin();
+				}
+			}
+			return npos;
 		}
 
 		constexpr size_type find_first_not_of(Elem c, size_type pos = 0) const noexcept {
@@ -376,17 +383,49 @@ namespace mylib {
 			return find_first_not_of(basic_string_view(s), pos);
 		}
 
+		constexpr size_type find_last_not_of(basic_string_view v, size_type pos = npos) const noexcept {
+			size_type ret{};
+			for (const auto& i : v) {
+				auto t = std::find(begin() + pos , end(), i);
+				if (t == end()) {
+					ret =  t - begin();
+				}
+			}
+			return ret != 0 ? ret : pos;
+		}
+		
+		constexpr size_type find_last_not_of(Elem c, size_type pos = npos) const noexcept {
+			return find_last_not_of(basic_string_view(std::addressof(c), 1), pos);
+		}
+		
+		constexpr size_type find_last_not_of(const Elem* s, size_type pos, size_type count) const {
+			return find_last_not_of(basic_string_view(s, count), pos);
+		}
+		
+		constexpr size_type find_last_not_of(const Elem* s, size_type pos = npos) const {
+			return find_last_not_of(basic_string_view(s), pos);
+		}
+		
     private:
 		
-	
-
         const_pointer m_data;
         size_type m_size;
     };
     
+	using string_view = mylib::basic_string_view<char>;
+	using wstring_view = mylib::basic_string_view<wchar_t>;
+	using u8string_view = mylib::basic_string_view<char8_t>;
+	using u16string_view = mylib::basic_string_view<char16_t>;
+	using u32string_view = mylib::basic_string_view<char32_t>;
+
 	template< class CharT, class Traits >
 	constexpr bool operator==(mylib::basic_string_view<CharT, Traits> lhs,mylib::basic_string_view<CharT, Traits> rhs) noexcept {
 		return lhs.size() == rhs.size() && std::equal(lhs.begin(), lhs.end(), rhs.begin());
+	}
+
+	template< class CharT, class Traits >
+	constexpr auto operator<=>(mylib::basic_string_view<CharT, Traits> lhs, mylib::basic_string_view<CharT, Traits> rhs) noexcept {
+		return lhs.compare(rhs);
 	}
 
 	template<typename T>
@@ -397,7 +436,26 @@ namespace mylib {
 		return out;
 	}
 
-    using string_view = mylib::basic_string_view<char>;
+	constexpr string_view operator "" _sv(const char* str, std::size_t len) noexcept {
+		return { str,len };
+	}		  
+			  
+	constexpr u8string_view operator "" _sv(const char8_t* str, std::size_t len) noexcept {
+		return { str,len };
+	}		  
+			  
+	constexpr u16string_view operator "" _sv(const char16_t* str, std::size_t len) noexcept {
+		return { str,len };
+	}		  
+			  
+	constexpr u32string_view operator "" _sv(const char32_t* str, std::size_t len) noexcept {
+		return { str,len };
+	}		  
+			  
+	constexpr wstring_view operator "" _sv(const wchar_t* str, std::size_t len) noexcept {
+		return { str,len };
+	}
+
 }
 
 #endif

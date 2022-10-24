@@ -37,11 +37,15 @@ int main() {
 	std::cout << s5.find("45") << ' ' << s5.find('1') <<' ' << s5.find("56") << '\n';
 	std::cout << s5.rfind('1') << '\n';
 
-	string_view s6("abcd");
+	std::string_view s6("abcd");
 	//std::cout << s.find("12346c") << '\n';
 	std::cout << s6.find_first_of("cdef") << '\n';
 	std::cout << s6.find_last_of("cdef") << '\n';
 	std::cout << s6.find_last_of("1") << '\n';
-	std::cout << s6.find_first_not_of("abc") << '\n';
+	std::cout << s6.find_first_not_of("bbc") << '\n';
+	std::cout << s6.find_last_not_of("bbc") << '\n';
 	
+	std::cout << "离谱a"_sv.size() << '\n';
+
+	std::cout << ("abcd"_sv <=> "ggggggg"_sv) << '\n';
 }
