@@ -456,6 +456,9 @@ namespace mylib {
 		return { str,len };
 	}
 
+	template<class It, class End>
+	basic_string_view(It, End)->basic_string_view<std::iter_value_t<It>>;
+
 }
 
 #endif

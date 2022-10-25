@@ -1,4 +1,5 @@
 ﻿#include"string_view.hpp"
+#include<array>
 using namespace mylib;
 using namespace std::literals;
 
@@ -48,4 +49,10 @@ int main() {
 	std::cout << "离谱a"_sv.size() << '\n';
 
 	std::cout << ("abcd"_sv <=> "ggggggg"_sv) << '\n';
+
+
+	std::array a1{ 'n', 'u', 'c', 'l', 'e', 'o', 'n', 's', ':', '\n' };
+	basic_string_view s1(a1.cbegin(), a1.cend()); // 推导： CharT -> char
+	static_assert(std::is_same_v<decltype(s1)::value_type, char>);
+	std::cout << s1;
 }

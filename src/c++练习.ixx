@@ -3455,16 +3455,3 @@ int main()
 //	int a = 1, b = 2;
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
-#include<iostream>
-#include<string_view>
-#include<string>
-
-int main() {
-	std::string str{ "abcd" };
-	std::string_view s(str);
-	//std::cout << s.find("12346c") << '\n';
-	std::cout << s.find_first_not_of("cabc") << '\n';
-	std::cout << s.find_last_not_of("bbc") << '\n';
-	std::cout << s.find_last_of("cdef") << '\n';
-	std::cout << s.find_last_of("g") << '\n';
-}
