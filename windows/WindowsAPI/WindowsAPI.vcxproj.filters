@@ -21,5 +21,13 @@
     <ClCompile Include="02文件大小.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="03设置文件尾.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="1.txt">
+      <Filter>资源文件</Filter>
+    </Text>
   </ItemGroup>
 </Project>

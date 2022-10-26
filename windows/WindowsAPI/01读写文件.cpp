@@ -1,7 +1,7 @@
 #include<Windows.h>
 #include<iostream>
 
-int main01() {
+int main() {
 	const char* str = "66666好啊好好";
 	HANDLE hFile = CreateFile(L"1.txt", GENERIC_READ | GENERIC_WRITE, NULL, NULL, OPEN_ALWAYS, NULL, NULL);
 	DWORD count = 0;
