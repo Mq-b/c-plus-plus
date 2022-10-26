@@ -22,7 +22,7 @@ int main() {
 	std::cout << i3 << std::endl;
 
 	std::cout << 1234_int << std::endl;
-	
+
 	mylib::Int<int>b(15);
 	i.swap(b);
 
