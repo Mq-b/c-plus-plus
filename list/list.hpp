@@ -128,33 +128,40 @@ namespace mylib {
             _fill(count, value);
         }
 
-        explicit list(size_type count, const Allocator& alloc = Allocator()) {
-
-        }
+        explicit list(size_type count, const Allocator& alloc = Allocator()) :_theSize(count) {}
 
         template< std::input_or_output_iterator InputIt >
         list(InputIt first, InputIt last, const Allocator& alloc = Allocator()) {
 
         }
 
-        list(const list& other) {
+        list(const list& other) :Alloc(other.Alloc), head(other.head), tail(other.tail), _theSize(other._theSize) {}
 
-        }
+        list(const list& other, const Allocator& alloc) :Alloc(alloc),head(other.head), tail(other.tail), _theSize(other._theSize) {}
 
-        list(const list& other, const Allocator& alloc) {
+        list(list&& other) :Alloc(other.Alloc), head(other.head), tail(other.tail), _theSize(other._theSize) {}
 
-        }
-
-        list(list&& other) {
-
-        }
-
-        list(list&& other, const Allocator& alloc) {
-
-        }
+        list(list&& other, const Allocator& alloc) :Alloc(alloc),head(other.head), tail(other.tail), _theSize(other._theSize) {}
 
         template<typename T>
         list(std::initializer_list<T> init, const Allocator& alloc = Allocator()) {
+            _init();
+            _init_list(init);
+        }
+
+        ~list() {
+
+        }
+
+        list& operator=(const list& other) {
+
+        }
+
+        list& operator=(list&& other) noexcept {
+
+        }
+
+        list& operator=(std::initializer_list<Ty> ilist) {
 
         }
 
@@ -178,7 +185,22 @@ namespace mylib {
             }
             _theSize = count;
         }
+
+        template<typename T>
+        void _init_list(std::initializer_list<T> init) {
+            size_type count = init.size();
+            Node<value_type>* p = head;
+            for (size_type i = 0; i < count; i++) {
+                p->next = ::new(Alloc.allocate(1))Node<value_type>{ init.begin()[i], p, p->next };
+                p = p->next;
+            }
+            _theSize = count;
+        }
+
     };
+
+    template<typename T>
+    list(std::initializer_list<T>)->list<T>;
 
 }
 
