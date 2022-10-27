@@ -2,7 +2,7 @@
 #include<iostream>
 
 int main() {
-	HANDLE hFile = CreateFile(L"1.txt", GENERIC_WRITE, 0, 0, OPEN_ALWAYS, 0, 0);
+	HANDLE hFile = CreateFile("1.txt", GENERIC_WRITE, 0, 0, OPEN_ALWAYS, 0, 0);
 	LARGE_INTEGER liMove;
 	//设置移动文件指针的字节数
 	liMove.QuadPart = 2;
