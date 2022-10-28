@@ -3461,14 +3461,18 @@ int main()
 #include"lib/vector.hpp"
 #include<list>
 
-int main() {
-	std::list l1{ 1,2,3 };
-	std::list l2{ 1,2,3 };
-	l1 = l2;
-	std::cout << &(*l2.begin()) << '\n' << &(*l1.begin()) << '\n';
-	const std::list l3(l1.begin(), l1.end());
-	std::cout << *++l1.begin() << std::endl;
-	//*l3.begin() = 100;
 
-	*l2.begin() = 10;
+constexpr uint16_t f(int) {
+	return 10;
+}
+constexpr uint16_t f(char) {
+	return 10;
+}
+
+enum class T :int {
+	A = f(1)
+};
+
+int main() {
+	auto n = 5.6l;
 }

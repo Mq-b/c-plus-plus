@@ -335,6 +335,7 @@ namespace mylib {
             }
             p->next = tail;
             tail->previous = p;
+            tail->next = nullptr;
         }
 
         template<typename T>
@@ -355,6 +356,7 @@ namespace mylib {
             }
             p->next = tail;
             tail->previous = p;
+            tail->next = nullptr;
         }
 
         void _copy(Node<value_type>* head, Node<value_type>* tail, size_type count) {
@@ -367,24 +369,24 @@ namespace mylib {
             }
             mp->next = tail;
             tail->previous = mp;
+            tail->next = nullptr;
             _theSize = count;
         }
 
         void _free() {//!!!!!!!!!!!!!!
-            if (empty()) {
-                return;
-            }
+            /*if (empty()) return;
             Node<value_type>* p = head->next;
-            for (size_type i = 0; i < size() ; i++) {
-                auto tmp = p;
-                p = p->next;
+            Node<value_type>* tmp = nullptr;
+            while (p != nullptr) {
+                tmp = p;
+                p = tmp->next;
                 Alloc.deallocate(tmp, 1);
             }
             Alloc.deallocate(head, 1);
             Alloc.deallocate(tail, 1);
             _theSize = 0;
-            head = nullptr;
-            tail = nullptr;
+            head->next = nullptr;
+            tail->next = nullptr;*/
         }
 
     };
