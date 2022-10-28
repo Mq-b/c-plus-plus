@@ -3458,6 +3458,7 @@ int main()
 #include<iostream>
 #include"lib/span.hpp"
 #include<vector>
+#include"lib/vector.hpp"
 #include<list>
 
 int main() {
@@ -3465,6 +3466,9 @@ int main() {
 	std::list l2{ 1,2,3 };
 	l1 = l2;
 	std::cout << &(*l2.begin()) << '\n' << &(*l1.begin()) << '\n';
-	std::list l3(l1.begin(), l1.end());
+	const std::list l3(l1.begin(), l1.end());
 	std::cout << *++l1.begin() << std::endl;
+	//*l3.begin() = 100;
+
+	*l2.begin() = 10;
 }

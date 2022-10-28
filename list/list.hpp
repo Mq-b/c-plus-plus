@@ -23,11 +23,18 @@ namespace mylib {
     template<typename Ty>
     class List_const_iterator {
     public:
-        Node<Ty>* current;
 
-        List_const_iterator(Node<Ty>* p) :current{ p } {}
+        using value_type      = Ty;
+        using difference_type = std::ptrdiff_t;
+        using pointer         = Ty*;
+        using reference       = const value_type&;
+        using const_reference = const value_type&;
+
+        Node<value_type>* current;
+
+        List_const_iterator(Node<value_type>* p) :current{ p } {}
         
-        constexpr Ty& operator*()const {
+        constexpr reference operator*()const noexcept{
             return current->object;
         }
 
@@ -67,16 +74,17 @@ namespace mylib {
     class List_iterator :public List_const_iterator<Ty> {
     public:
 
+        using value_type      = typename List_const_iterator<Ty>::value_type;
+        using difference_type = typename List_const_iterator<Ty>::difference_type;
+        using pointer         = typename List_const_iterator<Ty>::pointer;
+        using reference       = typename value_type&;
+
         List_iterator(){}
 
-        List_iterator(Node<Ty>* p) :List_const_iterator<Ty>{ p } {}
+        List_iterator(Node<value_type>* p) :List_const_iterator<value_type>{ p } {}
 
-        constexpr Ty& operator*() {
+        constexpr reference operator*()const {
             return this->current->object;
-        }
-
-        constexpr Ty& operator*()const {
-            return List_const_iterator<Ty>::operator*();
         }
 
         constexpr List_iterator& operator++(int) {
@@ -200,6 +208,8 @@ namespace mylib {
                     p = p->next;
                 }
                 _theSize = count;
+                p->next = tail;
+                tail->previous = p;
             }
         }
 
@@ -258,7 +268,7 @@ namespace mylib {
         }
 
         reverse_iterator rbegin() noexcept {
-            return reverse_iterator(iterator(end()));
+            return reverse_iterator(end());
         }
 
         const_reverse_iterator rbegin() const noexcept {
@@ -282,11 +292,19 @@ namespace mylib {
         }
 
         [[nodiscard]] bool empty() const noexcept {
-            return size();
+            return size() == 0;
         }
 
         size_type size() const noexcept {
             return _theSize;
+        }
+
+        size_type max_size() const noexcept {
+            return std::numeric_limits<difference_type>::max();
+        }
+
+        void clear() noexcept {
+            _free();
         }
 
     //private:
@@ -352,18 +370,21 @@ namespace mylib {
             _theSize = count;
         }
 
-        void _free() {
+        void _free() {//!!!!!!!!!!!!!!
             if (empty()) {
                 return;
             }
-            Node<value_type>* p = head;
+            Node<value_type>* p = head->next;
             for (size_type i = 0; i < size() ; i++) {
-                Alloc.deallocate(p->next, 1);
+                auto tmp = p;
                 p = p->next;
+                Alloc.deallocate(tmp, 1);
             }
             Alloc.deallocate(head, 1);
             Alloc.deallocate(tail, 1);
             _theSize = 0;
+            head = nullptr;
+            tail = nullptr;
         }
 
     };
