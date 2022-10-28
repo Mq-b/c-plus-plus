@@ -3458,3 +3458,13 @@ int main()
 #include<iostream>
 #include"lib/span.hpp"
 #include<vector>
+#include<list>
+
+int main() {
+	std::list l1{ 1,2,3 };
+	std::list l2{ 1,2,3 };
+	l1 = l2;
+	std::cout << &(*l2.begin()) << '\n' << &(*l1.begin()) << '\n';
+	std::list l3(l1.begin(), l1.end());
+	std::cout << *++l1.begin() << std::endl;
+}

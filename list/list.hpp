@@ -80,25 +80,25 @@ namespace mylib {
         }
 
         constexpr List_iterator& operator++(int) {
-            this->current = this->current->next;
-            return *this;
-        }
-
-        constexpr List_iterator& operator++() {
             auto old = *this;
             ++(*this);
             return old;
         }
 
-        constexpr List_iterator& operator--(int) {
-            this->current = this->current->previous;
+        constexpr List_iterator& operator++() {
+            this->current = this->current->next;
             return *this;
         }
 
-        constexpr List_iterator& operator--() {
+        constexpr List_iterator& operator--(int) {
             auto old = *this;
             --(*this);
             return old;
+        }
+
+        constexpr List_iterator& operator--() {
+            this->current = this->current->previous;
+            return *this;
         }
         
     };
@@ -143,26 +143,150 @@ namespace mylib {
 
         list(list&& other, const Allocator& alloc) :Alloc(alloc),head(other.head), tail(other.tail), _theSize(other._theSize) {}
 
-        template<typename T>
-        list(std::initializer_list<T> init, const Allocator& alloc = Allocator()) {
+        list(std::initializer_list<Ty> init, const Allocator& alloc = Allocator()) {
             _init();
             _init_list(init);
         }
 
         ~list() {
-
+            _free();
         }
 
         list& operator=(const list& other) {
-
+            _free();
+            _init();
+            _copy(other.head, other.tail, other._theSize);
+            return *this;
         }
 
         list& operator=(list&& other) noexcept {
-
+            _free();
+            _init();
+            _copy(other.head, other.tail, other._theSize);
+            return *this;
         }
 
         list& operator=(std::initializer_list<Ty> ilist) {
+            _free();
+            _init();
+            _init_list(ilist);
+            return *this;
+        }
 
+        void assign(size_type count, const Ty& value) {
+            if (count > size()) {
+                _free();
+                _init();
+                _fill(count, value);
+            }else {
+                _fill(count, value);
+            }
+        }
+
+        template< std::input_or_output_iterator InputIt >
+        void assign(InputIt first, InputIt last) {
+            size_type count = std::distance(first, last);
+            Node<value_type>* p = head;
+            if (count <= size()) {
+                for (auto i = first; i != last; i++) {
+                    p->next->object = *i;
+                    p = p->next;
+                }
+            }else {
+                _free();
+                _init();
+                for (auto i = first; i != last; i++) {
+                    p->next = ::new(Alloc.allocate(1))Node<value_type>{ *i , p, p->next };
+                    p = p->next;
+                }
+                _theSize = count;
+            }
+        }
+
+        void assign(std::initializer_list<Ty> ilist) {
+            if (ilist.size() > size()) {
+                _free();
+                _init();
+                _init_list(ilist);
+            }else {
+                _init_list(ilist);
+            }
+        }
+
+        allocator_type get_allocator() const noexcept {
+            return Alloc;
+        }
+
+        reference front() {
+            return head->next->object;
+        }
+
+        const_reference front() const {
+            return head->next->object;
+        }
+
+        reference back() {
+            return tail->previous->object;
+        }
+
+        const_reference back() const {
+            return tail->previous->object;
+        }
+
+        iterator begin() noexcept {
+            return head->next;
+        }
+
+        const_iterator begin() const noexcept {
+            return head->next;
+        }
+
+        const_iterator cbegin() const noexcept {
+            return head->next;
+        }
+
+        iterator end() noexcept {
+            return tail;
+        }
+
+        const_iterator end() const noexcept {
+            return tail;
+        }
+
+        const_iterator cend() const noexcept {
+            return tail;
+        }
+
+        reverse_iterator rbegin() noexcept {
+            return reverse_iterator(iterator(end()));
+        }
+
+        const_reverse_iterator rbegin() const noexcept {
+            return reverse_iterator(cend());
+        }
+
+        const_reverse_iterator crbegin() const noexcept {
+            return const_reverse_iterator(cend());
+        }
+
+        reverse_iterator rend() noexcept {
+            return reverse_iterator(begin());
+        }
+
+        const_reverse_iterator rend() const noexcept {
+            return const_reverse_iterator(cbegin());
+        }
+
+        const_reverse_iterator crend() const noexcept {
+            return const_reverse_iterator(cbegin());
+        }
+
+        [[nodiscard]] bool empty() const noexcept {
+            return size();
+        }
+
+        size_type size() const noexcept {
+            return _theSize;
         }
 
     //private:
@@ -172,36 +296,77 @@ namespace mylib {
         allocator_type Alloc;
 
         void _init() {
-            head = new Node<value_type>{ 0 };
-            tail = new Node<value_type>{ 0 };
+            head = ::new(Alloc.allocate(1))Node<value_type>{ 0 };
+            tail = ::new(Alloc.allocate(1))Node<value_type>{ 0 };
             _theSize = 0;
         }
 
         void _fill(size_type count,const value_type& v) {
             Node<value_type> *p = head;
-            for (size_type i = 0; i < count; i++){
-                p->next = ::new(Alloc.allocate(1))Node<value_type>{ v, p, p->next };
-                p = p->next;
+            if (count > size()) {
+                for (size_type i = 0; i < count; i++) {
+                    p->next = ::new(Alloc.allocate(1))Node<value_type>{ v, p, p->next };
+                    p = p->next;
+                }
+                _theSize = count;
+            }else {
+                for (size_type i = 0; i < count; i++) {
+                    p->next->object = v;
+                    p = p->next;
+                }
             }
-            _theSize = count;
+            p->next = tail;
+            tail->previous = p;
         }
 
         template<typename T>
         void _init_list(std::initializer_list<T> init) {
             size_type count = init.size();
             Node<value_type>* p = head;
-            for (size_type i = 0; i < count; i++) {
-                p->next = ::new(Alloc.allocate(1))Node<value_type>{ init.begin()[i], p, p->next };
-                p = p->next;
+            if (count > size()) {
+                for (size_type i = 0; i < count; i++) {
+                    p->next = ::new(Alloc.allocate(1))Node<value_type>{ init.begin()[i], p, p->next };
+                    p = p->next;
+                }
+                _theSize = count;
+            }else {
+                for (size_type i = 0; i < count; i++) {
+                    p->next->object = init.begin()[i];
+                    p = p->next;
+                }
             }
+            p->next = tail;
+            tail->previous = p;
+        }
+
+        void _copy(Node<value_type>* head, Node<value_type>* tail, size_type count) {
+            Node<value_type>* mp = this->head;
+            Node<value_type>* tp = head;
+            for (size_type i = 0; i < count; i++) {
+                mp->next = ::new(Alloc.allocate(1))Node<value_type>{ tp->next->object, mp, mp->next };
+                mp = mp->next;
+                tp = tp->next;
+            }
+            mp->next = tail;
+            tail->previous = mp;
             _theSize = count;
         }
 
+        void _free() {
+            if (empty()) {
+                return;
+            }
+            Node<value_type>* p = head;
+            for (size_type i = 0; i < size() ; i++) {
+                Alloc.deallocate(p->next, 1);
+                p = p->next;
+            }
+            Alloc.deallocate(head, 1);
+            Alloc.deallocate(tail, 1);
+            _theSize = 0;
+        }
+
     };
-
-    template<typename T>
-    list(std::initializer_list<T>)->list<T>;
-
 }
 
 #endif // !__LIST_HPP__
