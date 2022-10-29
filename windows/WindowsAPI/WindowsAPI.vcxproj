@@ -133,7 +133,10 @@
     <ClCompile Include="02文件大小.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="03设置文件尾.cpp" />
+    <ClCompile Include="03设置文件尾.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="04异步读写.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="1.txt" />

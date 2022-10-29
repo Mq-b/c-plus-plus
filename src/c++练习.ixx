@@ -3460,19 +3460,19 @@ int main()
 #include<vector>
 #include"lib/vector.hpp"
 #include<list>
-
-
-constexpr uint16_t f(int) {
-	return 10;
-}
-constexpr uint16_t f(char) {
-	return 10;
-}
-
-enum class T :int {
-	A = f(1)
+struct S
+{
+	static const int x = 0; // 静态数据成员
+	// 如果 ODR 使用它，就需要一个类外的定义
 };
 
+const int& f(const int& r){
+	return 6;
+}
+
+int n = 1 ? (1, S::x) // S::x 在此处未被 ODR 使用
+	: f(S::x);  // S::x 在此处被 ODR 使用：需要一个定义         
+
 int main() {
-	auto n = 5.6l;
+	std::cout << &S::x << '\n';
 }
