@@ -2842,6 +2842,7 @@
 //	return 0;
 //}
 #include <functional>
+#include <cassert>
 #/*include<iostream>
 #include<vector>
 #include<set>
@@ -3460,19 +3461,11 @@ int main()
 #include<vector>
 #include"lib/vector.hpp"
 #include<list>
-struct S
-{
-	static const int x = 0; // 静态数据成员
-	// 如果 ODR 使用它，就需要一个类外的定义
-};
-
-const int& f(const int& r){
-	return 6;
-}
-
-int n = 1 ? (1, S::x) // S::x 在此处未被 ODR 使用
-	: f(S::x);  // S::x 在此处被 ODR 使用：需要一个定义         
+#include<bit>
 
 int main() {
-	std::cout << &S::x << '\n';
+	bool x = 1000000000000000;
+	//memset((void*)&x, 1, 0xFE);
+	assert(x);
+	puts("6");
 }

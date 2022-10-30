@@ -136,7 +136,10 @@
     <ClCompile Include="03设置文件尾.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="04异步读写.cpp" />
+    <ClCompile Include="04异步读写.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="05标准输入编码问题.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="1.txt" />
