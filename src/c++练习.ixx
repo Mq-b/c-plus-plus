@@ -3464,8 +3464,6 @@ int main()
 #include<bit>
 
 int main() {
-	bool x = 1000000000000000;
-	//memset((void*)&x, 1, 0xFE);
-	assert(x);
-	puts("6");
+	const auto r = '\xaa';
+	std::cout.put(r);
 }

@@ -30,6 +30,9 @@
     <ClCompile Include="05标准输入编码问题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="06使用WindowsAPI显式调用dll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="1.txt">

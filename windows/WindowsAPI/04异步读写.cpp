@@ -1,6 +1,21 @@
 #include<Windows.h>
 #include<iostream>
 
+/*异步IO完成通知方法:																
+* 触发设备内核对象:允许一个线程发出IO请求，另一个线程对结果进行处理
+* 当向一个设备同时发出多个IO请求的时候，此方法无效
+* 
+* 触发事件内核对象:这种方法允许我们向一个设备同时发出多个IO请求
+* 它允许一个线程发出IO请求，另一个线程对结果进行处理
+* 
+* 使用提醒IO:这种方法允许我们向一个设备发出多个IO请求
+* 发出IO请求的线程必须对结果进行处理
+* 
+* 使用IO完成端口:这种方法允许我们向一个设备同时发出多个IO请求
+* 它允许一个线程发出IO请求，另一个线程对结果进行处理。推荐使用，伸缩性和灵活性都很好
+* IO完成接口的初衷就是与线程池配合使用
+*/
+
 void write() {
 	const char* str = "66666好啊好好";
 	//注意倒数第二个参数，异步
@@ -38,10 +53,26 @@ void read() {
 	DWORD readCount = 0;
 
 	OVERLAPPED ol2 = { 0 };
+	ol2.Offset = 2;
+	OVERLAPPED ol1 = { 0 };
+	ol1.hEvent = CreateEvent(NULL, true, false, NULL);
+	ol2.hEvent = CreateEvent(NULL, true, false, NULL);
 	BOOL ret2 = ReadFile(hFile2, buffer, 64, &readCount, &ol2);
 	if (false == ret2) {
 		DWORD err = GetLastError();
 		if (ERROR_IO_PENDING == err) {
+			HANDLE h[2]{};
+			h[0] = ol1.hEvent;
+			h[1] = ol2.hEvent;
+			DWORD objnum = WaitForMultipleObjects(2, h, true, INFINITE);
+			switch (objnum) 
+			{
+				case WAIT_OBJECT_0:
+					break;
+				case WAIT_OBJECT_0+1:
+					break;
+			}
+
 			printf("正在异步操作\n");
 			WaitForSingleObject(hFile2, INFINITE);//等待
 			printf("异步读完毕\n");
@@ -53,10 +84,11 @@ void read() {
 		}
 	}
 
+	CloseHandle(ol1.hEvent);
+	CloseHandle(ol2.hEvent);
 	CloseHandle(hFile2);
 }
 int main() {
 	write();	//异步写
 	read();		//异步读
-	
 }
