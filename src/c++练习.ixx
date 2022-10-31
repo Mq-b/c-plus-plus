@@ -3463,7 +3463,35 @@ int main()
 #include<list>
 #include<bit>
 
+struct X {
+	X() { puts(__func__); }
+	~X() { puts(__func__); }
+	int n = 10;
+};
+X f() {
+	X x;
+	std::cout << &x << '\n';
+	x.n = 6;
+	return x;
+}
+
+X ff() {
+	return f();
+}
+
+X fff() {
+	return ff();
+}
+
+X ffff() {
+	return fff();
+}
+
+X fffff() {
+	return ffff();
+}
 int main() {
-	const auto r = '\xaa';
-	std::cout.put(r);
+	auto x = fffff();
+	std::cout << x.n << '\n';
+	std::cout << &x << '\n';
 }
