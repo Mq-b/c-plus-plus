@@ -33,10 +33,18 @@
     <ClCompile Include="06使用WindowsAPI显式调用dll.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="07使用导出的dll类.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="1.txt">
       <Filter>资源文件</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Student.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

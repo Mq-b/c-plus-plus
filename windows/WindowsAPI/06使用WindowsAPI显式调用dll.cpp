@@ -5,7 +5,7 @@ using Addl = int(*)(int, int);
 
 int main() {
 	WCHAR path[255]{};
-	HMODULE hModule = GetModuleHandle(L"WindowsAPI.dll");
+	HMODULE hModule = GetModuleHandle(L"func.dll");
 	DWORD len = 0;
 	if (NULL == hModule) {		// //若源程序没载入user32.dll则LoadLibrary它
 		hModule = LoadLibrary(L"WindowsAPI.dll");
