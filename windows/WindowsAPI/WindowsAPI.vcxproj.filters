@@ -36,6 +36,9 @@
     <ClCompile Include="07使用导出的dll类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="08下载网页资源.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="1.txt">
