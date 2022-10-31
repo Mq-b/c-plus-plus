@@ -152,7 +152,10 @@
     <ClCompile Include="08下载网页资源.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="09控制台输入输出emoji表情.cpp" />
+    <ClCompile Include="09控制台输入输出emoji表情.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="10操作剪贴板.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="1.txt" />

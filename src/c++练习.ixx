@@ -3464,5 +3464,5 @@ int main()
 #include<bit>
 
 int main() {
-	std::cout << "🤣🤣🤣\n";
+	
 }

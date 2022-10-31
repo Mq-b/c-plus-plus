@@ -42,6 +42,9 @@
     <ClCompile Include="09控制台输入输出emoji表情.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="10操作剪贴板.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="1.txt">
