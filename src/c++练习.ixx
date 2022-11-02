@@ -3462,7 +3462,7 @@ int main()
 #include"lib/vector.hpp"
 #include<list>
 #include<bit>
-
-int main() {
-	
-}
+#include <new>
+#include<ranges>
+#include<fmt/core.h>
+#include<string_view>
