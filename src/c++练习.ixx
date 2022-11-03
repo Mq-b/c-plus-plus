@@ -3469,6 +3469,9 @@ int main()
 #include<new>
 #include<iostream>
 #include<vector>
-int main() {
 
+int main() {
+	std::vector i{ 1,2,3 };
+	i.push_back(1);
+	auto p = static_cast<void(std::vector<int>::*)(int&&)>(&std::vector<int>::push_back);
 }

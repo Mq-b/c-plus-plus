@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#ab85a5e64b883034b7633b5fbd76836c5"><param name="Name" value="Int() noexcept=default"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#a1ed86d6e76077927d0b751c7d182ac90"><param name="Name" value="Int(Type &amp;&amp;v) noexcept"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#ae71be8c2945d9497696f41edafba7b84"><param name="Name" value="Int(const Int &amp;v) noexcept"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#a65d6b676b462592639582d72e496fa18"><param name="Name" value="getValue()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html"><param name="Name" value="mylib::Int"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html"><param name="Name" value="mylib::Int"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#ab85a5e64b883034b7633b5fbd76836c5"><param name="Name" value="Int() noexcept=default"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html"><param name="Name" value="mylib::Int"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#a1ed86d6e76077927d0b751c7d182ac90"><param name="Name" value="Int(Type &amp;&amp;v) noexcept"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html"><param name="Name" value="mylib::Int"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#ae71be8c2945d9497696f41edafba7b84"><param name="Name" value="Int(const Int &amp;v) noexcept"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html"><param name="Name" value="mylib::Int"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#a65d6b676b462592639582d72e496fa18"><param name="Name" value="getValue()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html"><param name="Name" value="mylib::Int"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#a374bf583a3ba9b8580ae28dae71e8101"><param name="Name" value="operator Type() const noexcept"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html"><param name="Name" value="mylib::Int"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#a6d1c2f10058b571bfd865d0371381cc6"><param name="Name" value="operator&lt;&lt;(std::ostream &amp;out, const Int&lt; T &gt; &amp;v) noexcept"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html"><param name="Name" value="mylib::Int"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#af44ceffb406c050f2b7249ed181ab654"><param name="Name" value="swap(Int&lt; T &gt; &amp;v) noexcept"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html"><param name="Name" value="mylib::Int"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#a42f89dec9ce1570a67480ae5fce79f8c"><param name="Name" value="toType() const noexcept"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#a374bf583a3ba9b8580ae28dae71e8101"><param name="Name" value="operator Type() const noexcept"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#a6d1c2f10058b571bfd865d0371381cc6"><param name="Name" value="operator&lt;&lt;(std::ostream &amp;out, const Int&lt; T &gt; &amp;v) noexcept"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#af44ceffb406c050f2b7249ed181ab654"><param name="Name" value="swap(Int&lt; T &gt; &amp;v) noexcept"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmylib_1_1_int.html#a42f89dec9ce1570a67480ae5fce79f8c"><param name="Name" value="toType() const noexcept"></OBJECT>
+</UL>
+</BODY>
+</HTML>
