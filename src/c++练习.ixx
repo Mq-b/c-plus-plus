@@ -3466,3 +3466,9 @@ int main()
 #include<ranges>
 #include<fmt/core.h>
 #include<string_view>
+#include<new>
+#include<iostream>
+#include<vector>
+int main() {
+
+}

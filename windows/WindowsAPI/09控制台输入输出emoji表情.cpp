@@ -9,4 +9,5 @@ int main() {
 	std::wstring l;
 	std::getline(std::wcin, l);
 	std::wcout << std::filesystem::path(l).string().c_str();
+	
 }
