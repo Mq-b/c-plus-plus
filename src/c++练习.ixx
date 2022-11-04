@@ -3458,3 +3458,6 @@ int main()
 //	std::cout << a << ' ' << b << std::endl;
 #include"lib/mylib.h"
 
+int main() {
+
+}

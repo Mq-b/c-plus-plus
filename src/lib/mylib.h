@@ -4,7 +4,11 @@
 #include"array.hpp"
 #include"string_view.hpp"
 #include"span.hpp"
+#include"sundry.hpp"
 #include<fmt/core.h>
+#include<json/json.h>
+#include<json/value.h>
+#include<xlnt/xlnt.hpp>
 
 #include<iostream>
 #include<vector>
@@ -20,6 +24,8 @@
 #include<memory>
 #include<fstream>
 #include<thread>
+#include<algorithm>
+#include<concepts>
 
 namespace stdr  = ::std::ranges;
 namespace stdv  = ::std::views;
