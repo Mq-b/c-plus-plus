@@ -3456,22 +3456,5 @@ int main()
 //	int a = 1, b = 2;
 //	swap(a, b);
 //	std::cout << a << ' ' << b << std::endl;
-#include<iostream>
-#include"lib/span.hpp"
-#include<vector>
-#include"lib/vector.hpp"
-#include<list>
-#include<bit>
-#include <new>
-#include<ranges>
-#include<fmt/core.h>
-#include<string_view>
-#include<new>
-#include<iostream>
-#include<vector>
+#include"lib/mylib.h"
 
-int main() {
-	std::vector i{ 1,2,3 };
-	i.push_back(1);
-	auto p = static_cast<void(std::vector<int>::*)(int&&)>(&std::vector<int>::push_back);
-}
