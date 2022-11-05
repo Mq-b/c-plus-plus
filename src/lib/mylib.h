@@ -26,6 +26,7 @@
 #include<thread>
 #include<algorithm>
 #include<concepts>
+#include <type_traits>
 
 namespace stdr  = ::std::ranges;
 namespace stdv  = ::std::views;
