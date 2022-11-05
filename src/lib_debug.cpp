@@ -42,6 +42,9 @@ struct Test {
 			for (; n; n--)
 				std::cout << "t\n";
 		}
+		void t() {
+			std::cout << "重载的t\n";
+		}
 		void operator()(int n) {
 			std::cout << n << '\n';
 		}
@@ -79,7 +82,7 @@ struct Test {
 		F4();
 
 		Test_bind t_b;
-		auto p4 = my::bind(&Test_bind::t, &t_b, 2);
+		auto p4 = my::bind((void(Test_bind::*)(int)) & Test_bind::t, &t_b, 2);
 		p4();
 		std::function F5 = p4;
 		F5();
