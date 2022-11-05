@@ -36,6 +36,17 @@ static void f4(X&& x) {
 }
 
 struct Test {
+
+	struct Test_bind {
+		void t(int n) {
+			for (; n; n--)
+				std::cout << "t\n";
+		}
+		void operator()(int n) {
+			std::cout << n << '\n';
+		}
+	};
+
 	constexpr Test()noexcept = default;
 
 	void Test_max_min_bind_sum() {
@@ -53,13 +64,30 @@ struct Test {
 		std::function F = ff;
 		auto p = my::bind(F, 1);
 		p();
+		std::function F2 = p;
+		F2();
 
 		auto p2 = my::bind(ff, 10);
 		p2();
+		std::function F3 = p2;
+		F3();
 
 		//可以传递带捕获的lambda
 		auto p3 = my::bind([=](int v) {return ff(v); }, 10);
 		p3();
+		std::function F4 = p3;
+		F4();
+
+		Test_bind t_b;
+		auto p4 = my::bind(&Test_bind::t, &t_b, 2);
+		p4();
+		std::function F5 = p4;
+		F5();
+
+		auto p5 = my::bind(Test_bind(), 2);
+		p5();
+		std::function F6 = p5;
+		F6();
 	}
 
 	void Test_forward() {
@@ -69,6 +97,7 @@ struct Test {
 	void file_copy() {
 		mylibf::copy(R"(D:\自用\vs的c++\c++2022_1_19\src\文件2.txt)", R"(D:\自用\vs的c++\c++2022_1_19\src\文件.txt)");
 	}
+
 };
 
 int main() {

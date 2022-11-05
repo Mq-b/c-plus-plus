@@ -10,24 +10,6 @@
 #include<json/value.h>
 #include<xlnt/xlnt.hpp>
 
-#include<iostream>
-#include<vector>
-#include<list>
-#include<bit>
-#include<new>
-#include<ranges>
-#include<string_view>
-#include<filesystem>
-#include<chrono>
-#include<string>
-#include<array>
-#include<memory>
-#include<fstream>
-#include<thread>
-#include<algorithm>
-#include<concepts>
-#include <type_traits>
-
 namespace stdr   = ::std::ranges;
 namespace stdv   = ::std::views;
 namespace stdf   = ::std::filesystem;

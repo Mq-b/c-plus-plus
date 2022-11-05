@@ -98,6 +98,14 @@ namespace mylib {
 		};
 	}
 
+	template<class...Args, class T, class A>requires (!std::is_class_v<A> && !std::is_pointer_v<A>)
+	inline auto bind(A func, T f, Args...args) {
+		return [=]()mutable
+		{
+			return (f->*func)(forward<Args>(args)...);
+		};
+	}
+
 	template<class Ty>
 	constexpr Ty&& forward(remove_reference_t<Ty>& Arg)noexcept {
 		return static_cast<Ty&&>(Arg);
@@ -110,7 +118,7 @@ namespace mylib {
 	}
 
 	template <class Ty>
-	constexpr remove_reference_t<Ty>&& move(Ty&& Arg) noexcept { // forward _Arg as movable
+	constexpr remove_reference_t<Ty>&& move(Ty&& Arg) noexcept { 
 		return static_cast<remove_reference_t<Ty>&&>(Arg);
 	}
 
