@@ -1,7 +1,23 @@
 #ifndef __SUNDRY_HPP__
 #define __SUNDRY_HPP__
 
-#include"mylib.h"
+#include<iostream>
+#include<vector>
+#include<list>
+#include<bit>
+#include<new>
+#include<ranges>
+#include<string_view>
+#include<filesystem>
+#include<chrono>
+#include<string>
+#include<array>
+#include<memory>
+#include<fstream>
+#include<thread>
+#include<algorithm>
+#include<concepts>
+#include <type_traits>
 
 namespace mylib {
 
@@ -98,6 +114,29 @@ namespace mylib {
 		return static_cast<remove_reference_t<Ty>&&>(Arg);
 	}
 
+	namespace file {
+		//inline，防止违反ODR
+		inline void copy(std::string_view read, std::string_view write) {
+			std::ifstream ifs(read.data(), std::ios::binary | std::ios::in);
+			std::ofstream ofs(write.data(), std::ios::binary | std::ios::out);
+
+			if (!ifs.is_open() || !ofs.is_open())
+			{
+				std::cerr << "文件打开失败" << std::endl;
+				throw std::runtime_error("文件打开失败");
+			}
+			char* buffer = new char[1024] {};
+			std::streamsize len{};
+			while (!ifs.eof()) {
+				len = ifs.read(buffer, 1024).gcount();
+				ofs.write(buffer, len);
+			}
+			ifs.close();
+			ofs.close();
+			delete buffer;
+		}
+	}
+	
 }
 
 #endif // !__SUNDRY_HPP__

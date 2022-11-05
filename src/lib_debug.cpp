@@ -66,10 +66,14 @@ struct Test {
 		f(X());
 	}
 
+	void file_copy() {
+		mylibf::copy(R"(D:\自用\vs的c++\c++2022_1_19\src\文件2.txt)", R"(D:\自用\vs的c++\c++2022_1_19\src\文件.txt)");
+	}
 };
 
 int main() {
 	Test t;
 	t.Test_max_min_bind_sum();
 	t.Test_forward();
+	t.file_copy();
 }
