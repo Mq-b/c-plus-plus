@@ -31,3 +31,6 @@ target_link_libraries(Test1 jsoncpp_lib)
 
 find_package(xlnt CONFIG REQUIRED)
 target_link_libraries(Test1 xlnt::xlnt)
+
+ find_package(GTest CONFIG REQUIRED)
+ target_link_libraries(Test1 PRIVATE GTest::gmock GTest::gtest GTest::gmock_main GTest::gtest_main)

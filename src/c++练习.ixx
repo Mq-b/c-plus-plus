@@ -1,4 +1,1 @@
-﻿#include"lib/mylib.h"
-int main() {
-
-}
+﻿#include"lib//mylib.h"

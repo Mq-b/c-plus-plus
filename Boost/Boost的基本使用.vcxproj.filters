@@ -18,5 +18,8 @@
     <ClCompile Include="src\01boost初识大数计算.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="02侵入式序列化与反序列化.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
