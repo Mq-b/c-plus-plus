@@ -18,10 +18,13 @@
     <ClCompile Include="src\01boost初识大数计算.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="02侵入式序列化与反序列化_子类.cpp">
+    <ClCompile Include="02侵入式序列化_子类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="03侵入式序列化STL容器与数组_指针.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="04非侵入式序列化.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

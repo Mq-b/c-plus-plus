@@ -129,10 +129,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="02侵入式序列化与反序列化_子类.cpp">
+    <ClCompile Include="02侵入式序列化_子类.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="03侵入式序列化STL容器与数组_指针.cpp" />
+    <ClCompile Include="03侵入式序列化STL容器与数组_指针.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="04非侵入式序列化.cpp" />
     <ClCompile Include="src\01boost初识大数计算.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
