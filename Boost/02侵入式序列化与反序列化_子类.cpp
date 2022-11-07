@@ -2,6 +2,8 @@
 #include <iostream>
 #include <boost/archive/text_oarchive.hpp>
 #include <boost/archive/text_iarchive.hpp>
+#include<boost/serialization/base_object.hpp>
+
 class A
 {
 private:
@@ -22,7 +24,25 @@ public:
     constexpr A()noexcept = default;
     void print() { std::cout << a << ' ' << b << std::endl; }
 };
-int main(){
+
+class B :public A//序列化一个子类
+{
+    friend class boost::serialization::access;
+    char c{};
+    template<class Archive>
+    void serialize(Archive& ar, const unsigned int version)
+    {
+        ar& boost::serialization::base_object<A>(*this); // 注意这里
+        ar& c;
+    }
+public:
+    B(char v = 0) :c(v) {}
+    void print() {
+        std::cout << c << '\n';
+    }
+};
+
+void A_test(){
     std::ofstream fout("file.txt");// 把对象写到file.txt文件中
     boost::archive::text_oarchive oa(fout); // 文本的输出归档类，使用一个ostream来构造
     A obj(1, 2.5);
@@ -35,4 +55,25 @@ int main(){
     ia >> newobj; // 恢复到newobj对象
     newobj.print();
     fin.close();
+}
+//和A的反序列化方式没有任何区别
+void B_test() {
+    std::ofstream fout("file.txt");
+    boost::archive::text_oarchive oa(fout);
+    B obj(97);
+    oa << obj; 
+    fout.close();
+
+    std::ifstream fin("file.txt");
+    boost::archive::text_iarchive ia(fin); 
+    B newobj;
+    ia >> newobj; 
+    newobj.print();
+    newobj.A::print();//访问父类
+    fin.close();
+}
+
+int main() {
+    //A_test();//侵入式序列化和反序列化
+    B_test();//侵入式序列化子类和反序列化
 }
