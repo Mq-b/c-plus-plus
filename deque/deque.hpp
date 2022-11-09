@@ -18,18 +18,6 @@ public:
 
 };
 
-template<class Ty>
-class Deque_unchecked_const_iterator {
-public:
-
-};
-
-template<class Ty>
-class Deque_unchecked_iterator :public Deque_unchecked_const_iterator<Ty> {
-public:
-
-};
-
 template <class Ty, class Alloc = std::allocator<Ty>>
 class deque {
 private:

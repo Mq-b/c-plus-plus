@@ -1,5 +1,6 @@
 #pragma once
 
+#define STD ::std::
 #include"vector.hpp"
 #include"array.hpp"
 #include"string_view.hpp"

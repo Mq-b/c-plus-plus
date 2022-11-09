@@ -122,6 +122,10 @@ namespace mylib {
 		return static_cast<remove_reference_t<Ty>&&>(Arg);
 	}
 
+	template <class Ty>
+	inline constexpr bool is_function_v = // only function types and reference types can't be const qualified
+		!std::is_const_v<const Ty> && !std::is_reference_v<Ty>;
+
 	namespace file {
 		//inline，防止违反ODR
 		inline void copy(std::string_view read, std::string_view write) {
