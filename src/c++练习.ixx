@@ -5,6 +5,4 @@
 #include<Windows.h>
 #include<thread>
 #include<vector>
-int main() {
-
-}
+#include<new>
