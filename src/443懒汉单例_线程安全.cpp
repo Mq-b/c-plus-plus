@@ -1,17 +1,8 @@
-﻿#include"lib//mylib.h"
-#include<map>
-#include<string>
-#include<deque>
-#include<Windows.h>
 #include<thread>
-#include<vector>
-#include<new>
-#include<thread>
-using namespace stdl;
-
 #include<iostream>
+#include<mutex>
 
-class SingleInstance{
+class SingleInstance {
 public:
     static SingleInstance*& GetInstance();
 
@@ -36,19 +27,19 @@ private:
     inline static std::mutex m_Mutex;
 };
 
-SingleInstance*& SingleInstance::GetInstance(){
-    if (m_SingleInstance == nullptr){
+SingleInstance*& SingleInstance::GetInstance() {
+    if (m_SingleInstance == nullptr) {
         std::lock_guard<std::mutex> lock(m_Mutex);
-        if (m_SingleInstance == nullptr){
+        if (m_SingleInstance == nullptr) {
             m_SingleInstance = new (std::nothrow) SingleInstance{};
         }
     }
     return m_SingleInstance;
 }
 
-void SingleInstance::deleteInstance(){
-    std::lock_guard<std::mutex> lock(m_Mutex); 
-    if (m_SingleInstance){
+void SingleInstance::deleteInstance() {
+    std::lock_guard<std::mutex> lock(m_Mutex);
+    if (m_SingleInstance) {
         delete m_SingleInstance;
         m_SingleInstance = nullptr;
     }
