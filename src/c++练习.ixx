@@ -11,6 +11,5 @@
 #include <algorithm>
 #include<iostream>
 #include<format>
-int main() {
+using namespace my::literals;
 
-}

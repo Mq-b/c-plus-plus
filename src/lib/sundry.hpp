@@ -131,16 +131,14 @@ namespace mylib {
 		const char* str;
 	};
 
-	template<A a>
-	constexpr auto operator""_f() {
-		return[=]<typename... T>(T... Args) { return std::format(a.str, Args...); };
-	}
+	namespace literals {
 
-	int main() {
-		auto ret = "({},{},{},{})"_f(2, 4.5, 10, "***");
-		std::cout << ret << '\n';
-	}
+		template<A a>
+		constexpr auto operator""_f() {
+			return[=]<typename... T>(T... Args) { return std::format(a.str, Args...); };
+		}
 
+	}
 
 	namespace file {
 		//inline，防止违反ODR
