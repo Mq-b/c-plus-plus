@@ -126,6 +126,22 @@ namespace mylib {
 	inline constexpr bool is_function_v = // only function types and reference types can't be const qualified
 		!std::is_const_v<const Ty> && !std::is_reference_v<Ty>;
 
+	struct A {
+		constexpr A(const char* s)noexcept :str(s) {}
+		const char* str;
+	};
+
+	template<A a>
+	constexpr auto operator""_f() {
+		return[=]<typename... T>(T... Args) { return std::format(a.str, Args...); };
+	}
+
+	int main() {
+		auto ret = "({},{},{},{})"_f(2, 4.5, 10, "***");
+		std::cout << ret << '\n';
+	}
+
+
 	namespace file {
 		//inline，防止违反ODR
 		inline void copy(std::string_view read, std::string_view write) {
