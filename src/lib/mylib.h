@@ -21,4 +21,3 @@ namespace stde_  = ::std::execution;
 namespace stde   = ::std::experimental;
 namespace my     = ::mylib;
 namespace mylibf = ::mylib::file;
-

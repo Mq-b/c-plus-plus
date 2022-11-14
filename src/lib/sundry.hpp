@@ -131,6 +131,26 @@ namespace mylib {
 		const char* str;
 	};
 
+	template<typename T, typename F>
+	concept erase_ = requires(T v, F f) {
+		f(*v.begin());
+	};
+
+	template<typename T, typename F>
+		requires erase_<T, F>
+	void erase(T& v, F f) {
+		for (auto i = v.begin(); i != v.end(); f(*i) ? i = v.erase(i) : i++);
+	}
+
+	template<typename U, typename F>
+		requires std::regular_invocable<F, U&>
+	std::vector<U>& operator | (std::vector<U>& vl, F f) {
+		for (auto& i : vl) {
+			f(i);
+		}
+		return vl;
+	}
+
 	namespace literals {
 
 		template<A a>
