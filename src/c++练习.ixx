@@ -13,6 +13,3 @@
 #include<format>
 using namespace my::literals;
 
-int main() {
-
-}

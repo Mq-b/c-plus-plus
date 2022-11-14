@@ -13,7 +13,7 @@ protected:
 	Test& operator=(const Test&) = default;
 };
 
-struct X :protected Test<int> {//使用继承
+struct X :public Test<X> {//使用继承单例
 
 };
 
