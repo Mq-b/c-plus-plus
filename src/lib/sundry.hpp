@@ -141,7 +141,7 @@ namespace mylib {
 	void erase(T& v, F f) {
 		for (auto i = v.begin(); i != v.end(); f(*i) ? i = v.erase(i) : i++);
 	}
-
+	
 	template<typename U, typename F>
 		requires std::regular_invocable<F, U&>
 	std::vector<U>& operator | (std::vector<U>& vl, F f) {
