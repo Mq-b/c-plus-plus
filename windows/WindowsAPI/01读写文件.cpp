@@ -3,7 +3,7 @@
 
 int main() {
 	const char* str = "66666好啊好好";
-	HANDLE hFile = CreateFile(L"1.txt", GENERIC_READ | GENERIC_WRITE, NULL, NULL, OPEN_ALWAYS, NULL, NULL);
+	HANDLE hFile = CreateFile("1.txt", GENERIC_READ | GENERIC_WRITE, NULL, NULL, OPEN_ALWAYS, NULL, NULL);
 	DWORD count = 0;
 	if (INVALID_HANDLE_VALUE == hFile) {
 		fputs("CreateFile failed!", stderr);
@@ -20,7 +20,7 @@ int main() {
 	FlushFileBuffers(hFile);
 	CloseHandle(hFile);
 
-	HANDLE hFile2 = CreateFile(L"1.txt", GENERIC_READ, 0, NULL, OPEN_EXISTING, NULL, NULL);
+	HANDLE hFile2 = CreateFile("1.txt", GENERIC_READ, 0, NULL, OPEN_EXISTING, NULL, NULL);
 	char buffer[64]{};
 	DWORD readCount = 0;
 	BOOL ret2 = ReadFile(hFile2, buffer, 64, &readCount, NULL);

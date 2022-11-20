@@ -2,7 +2,7 @@
 #include<iostream>
 
 int main() {
-	HANDLE hFile = CreateFile(L"1.txt", GENERIC_READ | GENERIC_WRITE, NULL, NULL, OPEN_ALWAYS, NULL, NULL);
+	HANDLE hFile = CreateFile("1.txt", GENERIC_READ | GENERIC_WRITE, NULL, NULL, OPEN_ALWAYS, NULL, NULL);
 	DWORD count = 0;
 	if (INVALID_HANDLE_VALUE == hFile) {
 		fputs("CreateFile failed!", stderr);
