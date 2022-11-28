@@ -1,3 +1,4 @@
+int array[6]{ 1,2,3,4,5,6 };
 struct X {
 	static int value;
 };
