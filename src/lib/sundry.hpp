@@ -106,6 +106,37 @@ namespace mylib {
 		};
 	}
 
+	template<class F, class Ptr = void*>
+	struct function {
+		function() = delete;
+		function(F f) {
+			this->func = f;
+			this->p = nullptr;
+		}
+		function(F func, Ptr p) {
+			this->func = func;
+			this->p = p;
+		}
+		template<class...Args>
+			requires (std::regular_invocable<F, Args...> && (std::is_pointer_v<F> || std::is_class_v<F>))
+		auto operator()(Args&&...args) {
+			return func(args...);
+		}
+		template<class...Args>
+			requires requires (F func, Ptr p, Args&&...args) { (p->*func)(args...); }
+		auto operator()(Args&&...args) {
+			return (p->*func)(args...);
+		}
+	private:
+		F func;
+		Ptr p;
+	};
+
+	consteval std::pair<int, int>minmax(std::vector<int>vec) {
+		std::ranges::sort(vec);
+		return { vec.front(),vec.back() };
+	}
+
 	template<class Ty>
 	constexpr Ty&& forward(remove_reference_t<Ty>& Arg)noexcept {
 		return static_cast<Ty&&>(Arg);
