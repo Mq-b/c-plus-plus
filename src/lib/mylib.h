@@ -11,3 +11,5 @@ namespace stde   = ::std::experimental;
 namespace my     = ::mylib;
 namespace mylibf = ::mylib::file;
 
+using namespace my::literals;
+using namespace std::literals;

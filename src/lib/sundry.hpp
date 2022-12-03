@@ -77,6 +77,11 @@ namespace mylib {
 		return std::max({ static_cast<Type>(args)... }, std::less<>());
 	}
 
+	template<size_t...I>
+	size_t max(std::index_sequence<I...>) {
+		return std::max({ I... });
+	}
+
 	template<typename...Ts, typename Type = std::common_type_t<Ts...>>
 	constexpr auto sum(const Ts&...args)noexcept {
 		return (static_cast<Type>(args) + ...);
@@ -210,7 +215,7 @@ namespace mylib {
 			}
 			ifs.close();
 			ofs.close();
-			delete buffer;
+			delete[] buffer;
 		}
 	}
 	

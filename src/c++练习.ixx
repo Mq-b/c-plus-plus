@@ -1,9 +1,5 @@
 ﻿#include"lib/sundry.hpp"
-//#include"lib/mylib.h"
-
-//using namespace my::literals;
-using namespace std::literals;
-
+#include"lib/mylib.h"
 int main() {
 
 }
