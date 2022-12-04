@@ -1,6 +1,8 @@
 #pragma once
 
-#define STD ::std::
+#define STD        ::std::
+#define LOG	       ::my::singleton<my::clog>::get().object
+
 namespace stdr   = ::std::ranges;
 namespace stdv   = ::std::views;
 namespace stdf   = ::std::filesystem;

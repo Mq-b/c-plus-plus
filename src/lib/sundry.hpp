@@ -21,6 +21,49 @@
 
 namespace mylib {
 
+	template<typename T, typename M = std::mutex>
+	class singleton
+	{
+		inline static M mutex{};
+		inline static T object;
+
+		struct lock_with_life
+		{
+			std::lock_guard<M> lock;
+			T& object;
+			lock_with_life(M& m, T& value) :lock{ m }, object{ value } {}
+		};
+
+		singleton() = delete;
+	public:
+
+		static auto get()
+		{
+			return lock_with_life{ mutex,object };
+		}
+	};
+
+	struct clog {
+		template<typename T, typename M>
+		friend class singleton;
+		inline static std::mutex m;
+		std::unique_lock<std::mutex> loc;
+
+		template<class T>
+		clog& operator <<(const T& message) {
+			std::cout << message;
+			return *this;
+		}
+		clog& operator <<(std::ostream& (*fp)(std::ostream&)) {
+			std::cout << fp;
+			return *this;
+		}
+
+	private:
+		clog() :loc{ m } {}
+	};
+
+
 	template<typename T>
 	struct _1 {
 		using Type = T;
