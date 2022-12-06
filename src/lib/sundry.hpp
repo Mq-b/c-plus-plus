@@ -185,6 +185,14 @@ namespace mylib {
 		return { vec.front(),vec.back() };
 	}
 
+	template<class...Args, class Type = std::common_type_t<Args...>>
+	auto minmax(Args&& ...args) -> std::pair<Type, Type> {
+		std::vector vec{ std::forward<Type>(args)... };
+		auto max = std::ranges::max(vec);
+		auto min = std::ranges::min(vec);
+		return { min,max };
+	}
+
 	template<class Ty>
 	constexpr Ty&& forward(remove_reference_t<Ty>& Arg)noexcept {
 		return static_cast<Ty&&>(Arg);
