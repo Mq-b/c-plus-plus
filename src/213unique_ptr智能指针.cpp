@@ -7,7 +7,15 @@ struct node {
 	int data;
 	node* next;
 };
-
+struct F {
+	void operator()(int* p) {
+		for (int i = 0; i < 3; i++) {
+			std::cout << p[i] << ' ';
+		}
+		std::cout << "delete\n";
+		delete[] p;
+	}
+};
 int main()
 {
 	unique_ptr<int>up1(new int(11));//创建指针对象同时初始化
@@ -38,6 +46,10 @@ int main()
 	unique_ptr<node>n(new node);	//处理自定义数据类型
 	(*n).data = 100;
 	std::cout << "n.get()->data = " << n->data << std::endl;
+
+	std::unique_ptr<int[], F> ptr(new int[3] {1, 2, 3}, F());// 自定义释放规则
+	//ptr = nullptr;//这两种放都可以释放
+	ptr.reset();
 }
 //移动构造后原来的智能指针不能再操控它的内存了，是野指针
 //释放控制权后的智能指针不能再操控了，且需要手动释放

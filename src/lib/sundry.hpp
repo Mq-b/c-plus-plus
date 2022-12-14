@@ -297,7 +297,7 @@ namespace mylib {
 
 	template<typename T>
 	inline std::string type_name_v = type_name<T>::name;
-
+	
 	namespace file {
 		//inline，防止违反ODR
 		inline void copy(std::string_view read, std::string_view write) {
@@ -322,5 +322,20 @@ namespace mylib {
 	}
 	
 }
+#define STD       ::std::
+#define LOG	      ::my::singleton<my::clog>::get().object
+
+namespace stdr   = ::std::ranges;
+namespace stdv   = ::std::views;
+namespace stdf   = ::std::filesystem;
+namespace stdl   = ::std::literals;
+namespace stdc   = ::std::chrono;
+namespace stdp   = ::std::pmr;
+namespace stde   = ::std::experimental;
+namespace my     = ::mylib;
+namespace mylibf = ::mylib::file;
+
+using namespace my::literals;
+using namespace std::literals;
 
 #endif // !__SUNDRY_HPP__
