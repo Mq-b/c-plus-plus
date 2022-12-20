@@ -1,6 +1,3 @@
 ﻿#include"lib/sundry.hpp"
-#include<memory>
-
-int main() {
-	
-}
+#include"fmt/color.h"
+#include<numbers>

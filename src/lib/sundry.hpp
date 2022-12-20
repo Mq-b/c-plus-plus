@@ -233,11 +233,12 @@ namespace mylib {
 		return vl;
 	}
 
+	struct A {
+		constexpr A(const char* s)noexcept :str(s) {}
+		const char* str;
+	};
+
 	inline namespace literals {
-		struct A {
-			constexpr A(const char* s)noexcept :str(s) {}
-			const char* str;
-		};
 
 		template<A a>
 		constexpr auto operator""_f() {

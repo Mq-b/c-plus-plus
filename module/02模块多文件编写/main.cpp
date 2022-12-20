@@ -1,7 +1,9 @@
 //import mylib;
 //import mylib2;
 import total;
+
 import<iostream>;
+
 int main() {
 	mylib::println(66666);
 	mylib::println("666");
