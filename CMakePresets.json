@@ -35,7 +35,7 @@
       "name": "windows-base",
       "description": "面向具有 Visual Studio 开发环境的 Windows。",
       "hidden": true,
-      "generator": "Ninja",
+      "generator": "Visual Studio 17 2022",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "installDir": "${sourceDir}/out/install/${presetName}",
       "cacheVariables": {
