@@ -1,11 +1,10 @@
 ﻿#include"lib/sundry.hpp"
-#include"fmt/color.h"
+#include<numbers>
 
-template<auto Func, class...Args>
-constexpr auto F_ = [](Args...args) {
-	return Func(std::forward<Args>(args)...);
-};
+void f(int n) {
+	std::cout << n << '\n';
+}
 
 int main() {
-	std::cout << "6666\n";
+	Call(f, int)(1);
 }

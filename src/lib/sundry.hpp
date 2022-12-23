@@ -91,7 +91,7 @@ namespace mylib {
 	};
 
 	template <class>
-	constexpr bool is_lvalue_reference_v = false; 
+	constexpr bool is_lvalue_reference_v = false;
 
 	template <class Ty>
 	constexpr bool is_lvalue_reference_v<Ty&> = true;
@@ -129,8 +129,8 @@ namespace mylib {
 	constexpr auto sum(const Ts&...args)noexcept {
 		return (static_cast<Type>(args) + ...);
 	}
-	
-	template<class ...Args,class F>requires std::is_pointer_v<F>
+
+	template<class ...Args, class F>requires std::is_pointer_v<F>
 	inline auto bind(F f, Args&&...args) {
 		return [=]()mutable
 		{
@@ -147,7 +147,7 @@ namespace mylib {
 	}
 
 	template<class...Args, class T, class A>requires (!std::is_class_v<A> && !std::is_pointer_v<A>)
-	inline auto bind(A func, T f, Args...args) {
+		inline auto bind(A func, T f, Args...args) {
 		return [=]()mutable
 		{
 			return (f->*func)(forward<Args>(args)...);
@@ -205,7 +205,7 @@ namespace mylib {
 	}
 
 	template <class Ty>
-	constexpr remove_reference_t<Ty>&& move(Ty&& Arg) noexcept { 
+	constexpr remove_reference_t<Ty>&& move(Ty&& Arg) noexcept {
 		return static_cast<remove_reference_t<Ty>&&>(Arg);
 	}
 
@@ -223,7 +223,7 @@ namespace mylib {
 	void erase(T& v, F f) {
 		for (auto i = v.begin(); i != v.end(); f(*i) ? i = v.erase(i) : i++);
 	}
-	
+
 	template<typename U, typename F>
 		requires std::regular_invocable<F, U&>
 	std::vector<U>& operator | (std::vector<U>& vl, F f) {
@@ -298,7 +298,12 @@ namespace mylib {
 
 	template<typename T>
 	inline std::string type_name_v = type_name<T>::name;
-	
+
+	template<auto Func, class...Args>
+	constexpr auto F_ = [](Args...args) {
+		return Func(std::forward<Args>(args)...);
+	};
+
 	namespace file {
 		//inline，防止违反ODR
 		inline void copy(std::string_view read, std::string_view write) {
@@ -321,19 +326,26 @@ namespace mylib {
 			delete[] buffer;
 		}
 	}
-	
+
 }
 #define STD       ::std::
 #define LOG	      ::my::singleton<my::clog>::get().object
 
-namespace stdr   = ::std::ranges;
-namespace stdv   = ::std::views;
-namespace stdf   = ::std::filesystem;
-namespace stdl   = ::std::literals;
-namespace stdc   = ::std::chrono;
-namespace stdp   = ::std::pmr;
-namespace stde   = ::std::experimental;
-namespace my     = ::mylib;
+#define Fu(item)					\
+	{								\
+		int _[] = { (item,0)... };	\
+	}								\
+
+#define Call(func,...) (::my::F_<func , __VA_ARGS__>)
+
+namespace stdr = ::std::ranges;
+namespace stdv = ::std::views;
+namespace stdf = ::std::filesystem;
+namespace stdl = ::std::literals;
+namespace stdc = ::std::chrono;
+namespace stdp = ::std::pmr;
+namespace stde = ::std::experimental;
+namespace my = ::mylib;
 namespace mylibf = ::mylib::file;
 
 using namespace my::literals;
