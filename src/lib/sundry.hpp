@@ -304,6 +304,21 @@ namespace mylib {
 		return Func(std::forward<Args>(args)...);
 	};
 
+	template <typename F, typename ...Ts>
+	auto concat(F t, Ts ...ts)
+	{
+		if constexpr (sizeof...(ts) > 0) {
+			return [=](auto ...parameters) {
+				return t(concat(ts...)(parameters...));
+			};
+		}
+		else {
+			return [=](auto ...parameters) {
+				return t(parameters...);
+			};
+		}
+	}
+
 	namespace file {
 		//inline，防止违反ODR
 		inline void copy(std::string_view read, std::string_view write) {
