@@ -342,6 +342,22 @@ namespace mylib {
 		}
 	}
 
+	//RAII模式，标准输入重定向到文件
+	class redirect_cout_region
+	{
+		using buftype = decltype(std::cout.rdbuf());
+		std::ofstream ofs;
+		buftype buf_backup;
+	public:
+		explicit redirect_cout_region(const std::string& filename) : ofs{ filename }, buf_backup{ std::cout.rdbuf(ofs.rdbuf()) }
+		{}
+		redirect_cout_region() : ofs{}, buf_backup{ std::cout.rdbuf(ofs.rdbuf()) }
+		{}
+		~redirect_cout_region() {
+			std::cout.rdbuf(buf_backup);
+		}
+	};
+
 }
 #define STD        ::std::
 #define LOG	       ::my::singleton<my::clog>::get().object

@@ -1,4 +1,4 @@
-﻿#include"lib/sundry.hpp"
+﻿//#include"lib/sundry.hpp"
 
 int main() {
 	
