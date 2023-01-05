@@ -1,25 +1,27 @@
-#ifndef __SUNDRY_HPP__
-#define __SUNDRY_HPP__
+module;
 
-#include<iostream>
-#include<vector>
-#include<list>
-#include<bit>
-#include<new>
-#include<ranges>
-#include<string_view>
-#include<filesystem>
-#include<chrono>
-#include<string>
-#include<array>
-#include<memory>
-#include<fstream>
-#include<thread>
-#include<algorithm>
-#include<concepts>
-#include <type_traits>
+export module sundry;
 
-namespace mylib {
+export import<iostream>;
+export import<vector>;
+export import<list>;
+export import<bit>;
+export import<new>;
+export import<ranges>;
+export import<string_view>;
+export import<filesystem>;
+export import<chrono>;
+export import<string>;
+export import<array>;
+export import<memory>;
+export import<fstream>;
+export import<thread>;
+export import<algorithm>;
+export import<concepts>;
+export import <type_traits>;
+
+
+export namespace mylib {
 
 	template<typename T, typename M = std::mutex>
 	class singleton
@@ -320,7 +322,7 @@ namespace mylib {
 	}
 
 	namespace file {
-		//inline，防止违反ODR
+		
 		inline void copy(std::string_view read, std::string_view write) {
 			std::ifstream ifs(read.data(), std::ios::binary | std::ios::in);
 			std::ofstream ofs(write.data(), std::ios::binary | std::ios::out);
@@ -340,46 +342,23 @@ namespace mylib {
 			ofs.close();
 			delete[] buffer;
 		}
+
+		//RAII模式，标准输入重定向到文件
+		class redirect_cout_region
+		{
+			using buftype = decltype(std::cout.rdbuf());
+			std::ofstream ofs;
+			buftype buf_backup;
+		public:
+			explicit redirect_cout_region(const std::string& filename) : ofs{ filename }, buf_backup{ std::cout.rdbuf(ofs.rdbuf()) }
+			{}
+			redirect_cout_region() : ofs{}, buf_backup{ std::cout.rdbuf(ofs.rdbuf()) }
+			{}
+			~redirect_cout_region() {
+				std::cout.rdbuf(buf_backup);
+			}
+		};
+
 	}
 
-	//RAII模式，标准输入重定向到文件
-	class redirect_cout_region
-	{
-		using buftype = decltype(std::cout.rdbuf());
-		std::ofstream ofs;
-		buftype buf_backup;
-	public:
-		explicit redirect_cout_region(const std::string& filename) : ofs{ filename }, buf_backup{ std::cout.rdbuf(ofs.rdbuf()) }
-		{}
-		redirect_cout_region() : ofs{}, buf_backup{ std::cout.rdbuf(ofs.rdbuf()) }
-		{}
-		~redirect_cout_region() {
-			std::cout.rdbuf(buf_backup);
-		}
-	};
-
 }
-#define STD        ::std::
-#define LOG	       ::my::singleton<my::clog>::get().object
-
-#define Fu(item)					\
-	{								\
-		int _[] = { (item,0)... };	\
-	}								\
-
-#define Call(func,...) (::my::F_<func , __VA_ARGS__>)
-
-namespace stdr   = ::std::ranges;
-namespace stdv   = ::std::views;
-namespace stdf   = ::std::filesystem;
-namespace stdl   = ::std::literals;
-namespace stdc   = ::std::chrono;
-namespace stdp   = ::std::pmr;
-namespace stde   = ::std::experimental;
-namespace my     = ::mylib;
-namespace mylibf = ::mylib::file;
-
-using namespace my::literals;
-using namespace std::literals;
-
-#endif // !__SUNDRY_HPP__
