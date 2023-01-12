@@ -360,5 +360,4 @@ export namespace mylib {
 		};
 
 	}
-
 }

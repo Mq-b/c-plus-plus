@@ -20,5 +20,5 @@ namespace stde = ::std::experimental;
 namespace my = ::mylib;
 namespace mylibf = ::mylib::file;
 
-export using namespace my::literals;
+using namespace my::literals;
 using namespace std::literals;

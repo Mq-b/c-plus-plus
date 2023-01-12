@@ -1,9 +1,5 @@
-﻿import sundry;
-#include"lib/t.hpp"
+﻿#include<iostream>
+#include<string_view>
+#include<format>
+#include<functional>
 
-
-int main() {
-
-	std::cout << "max {0} {0}\n"_f(10);
-	
-}
