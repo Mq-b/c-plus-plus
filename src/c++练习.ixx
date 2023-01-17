@@ -1,10 +1,9 @@
 ﻿#include<iostream>
-#include<string_view>
 #include<format>
-#include<functional>
 #include <string>
-#include <iomanip>
-#include<istream>
+#include<ranges>
+#include<vector>
+#include<fmt/color.h>
 
 int main() {
 
