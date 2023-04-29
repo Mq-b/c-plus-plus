@@ -1,16 +1,9 @@
-﻿#include <iostream>
-#include<type_traits>
+﻿#include<iostream>
+#include<string.h>
 
-struct X {
-	X() = default;
-	X(const X&) = default;
-	X(X&&) = delete;
-};
-X f() {
-	X x;
-	return x;
-}
+void f(int arr[0]) { std::cout << *arr << '\n'; }
 
 int main() {
-	X x = f();
+    int* p = new int{ 1 };
+    f(p);
 }
