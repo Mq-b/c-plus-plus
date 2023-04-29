@@ -1,9 +1,12 @@
 ﻿#include<iostream>
 #include<string.h>
 
-void f(int arr[0]) { std::cout << *arr << '\n'; }
+struct S {
+    int a;
+};
+using s2 = S[2];
 
 int main() {
-    int* p = new int{ 1 };
-    f(p);
+    //s2{ 1,2 };//error
+    s2 s2{ 1,2 };//ok
 }
