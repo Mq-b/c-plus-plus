@@ -1,12 +1,19 @@
-﻿#include<iostream>
-#include<string.h>
+﻿#include <iostream>
+#include<exception>
 
-struct S {
-    int a;
+struct MyException :std::exception {
+	const char* data{};
+	MyException(const char* s) :data(s) { puts("MyException()"); }
+	~MyException() { puts("~MyException()"); }
+	char const* what()const noexcept{ return data; }
 };
-using s2 = S[2];
 
+void f()try {
+	throw MyException("乐");
+}
+catch (const std::exception& e) {
+	std::cerr << e.what() << '\n';
+}
 int main() {
-    //s2{ 1,2 };//error
-    s2 s2{ 1,2 };//ok
+	f();
 }

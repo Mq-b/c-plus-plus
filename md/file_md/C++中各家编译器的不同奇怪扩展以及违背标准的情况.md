@@ -18,6 +18,7 @@
   - [`{}`初始化，到底谁错了？](#初始化到底谁错了)
     - [总结](#总结-6)
   - [`msvc`的`std::exception`](#msvc的stdexception)
+    - [总结](#总结-7)
 
 
 # 前言
@@ -497,3 +498,122 @@ int main() {
 ---
 
 ## `msvc`的`std::exception`
+
+```cpp
+#include<iostream>
+#include<exception>
+
+struct MyException :std::exception {
+	MyException(const char* message) :exception(message) {}
+};
+
+void f()try{
+	throw MyException("乐");
+}catch (const std::exception&e){
+	std::cerr << e.what() << '\n';
+}
+
+int main() {
+	f();
+}
+```
+
+以上代码是否正确？
+
+    实际上在msvc下是正确的，当然，标准C++的规定里，std::exception类压根没有const char*的构造函数。
+    如果是gcc，clang，那自然无法通过编译。
+    
+`std::exception`的构造函数参阅[文档](https://zh.cppreference.com/w/cpp/error/exception/exception)
+
+
+`msvc`实现了这个构造函数:
+
+```cpp
+explicit exception(char const* const _Message) noexcept
+    : _Data()
+{
+    __std_exception_data _InitData = { _Message, true };
+    __std_exception_copy(&_InitData, &_Data);
+}
+```
+
+正常的写法自然应该是重写虚函数`what()`，如下:
+
+```cpp
+#include <iostream>
+#include<exception>
+
+struct MyException :std::exception {
+	const char* data{};
+	MyException(const char* s) :data(s) { puts("MyException()"); }
+	~MyException() { puts("~MyException()"); }
+	char const* what()const{ return data; }
+};
+
+void f()try {
+	throw MyException("乐");
+}
+catch (const std::exception& e) {
+	std::cerr << e.what() << '\n';
+}
+int main() {
+	f();
+}
+```
+
+以上代码是否正确？
+
+    实际上还是msvc专属的，因为what()方法
+
+按照标准规定，`what()`应该声明为下面这样：
+```cpp
+virtual const char* what() const noexcept;
+```
+
+但是呢，在`msvc`的实现是：
+
+```cpp
+_NODISCARD virtual char const* what() const
+{
+    return _Data._What ? _Data._What : "Unknown exception";
+}
+```
+
+`msvc`的可没有`noexcept`修饰，自然可以按照上面的写法了（笑）。
+
+那么正确的写法应该是下面这样:
+
+```cpp
+#include <iostream>
+#include<exception>
+
+struct MyException :std::exception {
+	const char* data{};
+	MyException(const char* s) :data(s) { puts("MyException()"); }
+	~MyException() { puts("~MyException()"); }
+	char const* what()const noexcept{ return data; }
+};
+
+void f()try {
+	throw MyException("乐");
+}
+catch (const std::exception& e) {
+	std::cerr << e.what() << '\n';
+}
+int main() {
+	f();
+}
+```
+
+那么我相信你还会有疑问：“`msvc`的是非`noexcept`的，你重写的是有`noexcept`的，在`C++17`，这不是构成重载了吗？明明两个函数不一样”。
+
+    的确，根据规定：只有异常说明不同的函数不能重载。（与返回类型相似，异常说明是函数类型的一部分，但不是函数签名的一部分） (C++17 起)
+    但是呢，重写实际上只是要求了不能损失不抛出保证，即原本是noexcept要加noexcept。原本不是的你不加也行。
+
+### 总结
+
+是不是好像又觉得`msvc`怎么总喜欢在这些无关紧要的地方搞特殊？也不是核心语言特性，就是一些规定好的库实现都搞特殊。
+
+很容易让开发者依赖到，毕竟不会人人写代码都防着编译器，先看看文档，能跑大概率就当没问题，有这个构造函数了。
+
+没有什么好办法，这些事情我们得自己注意到，迟早会栽跟头。
