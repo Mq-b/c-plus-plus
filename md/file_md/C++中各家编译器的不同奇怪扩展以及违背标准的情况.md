@@ -706,11 +706,48 @@ int main() {
 }
 ```
 
+运行结果:
+
+    const int(&&)[]
+    const int(&&)[]
+
 `msvc`和`clang`编译正确，`gcc13`编译错误，很少见，真的很少见。
 
-怎么说呢？一般来说，都是`gcc`和`clang`会是一样的，很少会有不同（至少在本文，这是第二次）。
+怎么说呢？一般来说，都是`gcc`和`clang`会是一样的，很少会有不同（至少在本文，这是第二次，上一次就是`gcc`的`BUG`）。
+
+这显然也是一个`gcc`的`BUG`，按照重载决议，这里显然是右值引用优于左值引用的，这是个右值表达式。
+
+`gcc`对这个`{}`的重载决议的匹配是有大问题的，上面是非常简单的`demo`，但是稍微想想也该知道，这应该证明很多情况都有问题，比如下面的这种：
+
+```cpp
+#include<iostream>
+struct X { int x, y; };
+
+struct Y {
+    Y(std::initializer_list<int>){}
+};
+
+void f(const int(&)[]) { puts("const int(&)[]"); }
+void f(const int(&)[2]) { puts("const int(&)[2]"); }
+void f(int(&&)[]) { puts("int(&&)[]"); }
+void f(X) { puts("X"); }
+void f(Y) { puts("Y"); }
 
 
+int main() {
+    f({ 1,2,3 });
+    f({ 1,2 });
+    f({ .x=1,.y=2 });
+}
+```
+
+运行结果:
+
+    int(&&)[]
+    const int(&)[2]
+    X
+
+依然是`gcc`**无法通过编译**。
 
 ---
 
