@@ -19,6 +19,11 @@
     - [总结](#总结-6)
   - [`msvc`的`std::exception`](#msvc的stdexception)
     - [总结](#总结-7)
+  - [`msvc`又赢了？默认实参问题](#msvc又赢了默认实参问题)
+    - [总结](#总结-8)
+  - [`#define`的问题](#define的问题)
+  - [重载决议](#重载决议)
+  - [窄化转换](#窄化转换)
 
 
 # 前言
@@ -616,3 +621,101 @@ int main() {
 很容易让开发者依赖到，毕竟不会人人写代码都防着编译器，先看看文档，能跑大概率就当没问题，有这个构造函数了。
 
 没有什么好办法，这些事情我们得自己注意到，迟早会栽跟头。
+
+---
+
+## `msvc`又赢了？默认实参问题
+
+```cpp
+struct X {
+	int n = 6;
+	static const int a = 6;
+	void f(int n = sizeof + n) { std::cout << n << '\n'; }
+	void f_(int n = a) { std::cout << n << '\n'; }
+};
+
+int main(){
+	X().f();//error
+	X().f_();//ok
+}
+```
+
+以上代码是否正确？
+
+在`clang` `gcc`下，正确，运行结果：
+
+    4
+    6
+
+`msvc` 编译错误，编译器给出的信息如下：
+
+[error C2648: “X::n”](https://learn.microsoft.com/zh-cn/cpp/error-messages/compiler-errors-2/compiler-error-c2648?view=msvc-170): 将成员作为默认参数使用要求静态成员
+
+[error C2355: “this”](https://learn.microsoft.com/zh-cn/cpp/error-messages/compiler-errors-1/compiler-error-c2355?view=msvc-170): 只能在非静态成员函数或非静态数据成员初始值设定项的内部引用
+
+其实我觉得已经说的非常清楚了，尤其是你点进`msdn`看微软给的`demo`，但我们还是强调一下`C++`的基本规定：
+
+    默认实参中不能使用非静态的类成员（即使它们不被求值），除非用于构成成员指针或在成员访问表达式中使用。
+
+`f_()`只是一个对照组，不用太过在意。
+
+**所以说`msvc`是正确的**，即使是在最新的`gcc13.1`和`clang16`，这个问题依旧没有被修复，`msvc`这局可以说赢了！
+
+### 总结
+
+`msvc`又扳回一局了，那么接下来是否还可以呢？实际上默认实参那个操作倒也不算非常常见，我们将介绍一些更加常见，更可能使用到的一些编译器不同点。
+
+---
+
+## `#define`的问题
+
+`define`在`C/C++`当中十分常见，你几乎可以在任何场景看到它的使用，起本身语法其实也算是挺多的，但是即使是标准规定的语法，某些编译器也没有，比如 **`msvc`**。
+
+`C++20`起，增加了一个`__VA_OPT__`这样的语法：
+
+```cpp
+#define F(...) f(0 __VA_OPT__(,) __VA_ARGS__)
+#define G(X, ...) f(0, X __VA_OPT__(,) __VA_ARGS__)
+#define SDEF(sname, ...) S sname __VA_OPT__(= { __VA_ARGS__ })
+F(a, b, c) // 替换为 f(0, a, b, c)
+F()        // 替换为 f(0)
+G(a, b, c) // 替换为 f(0, a, b, c)
+G(a, )     // 替换为 f(0, a)
+G(a)       // 替换为 f(0, a)
+SDEF(foo);       // 替换为 S foo;
+SDEF(bar, 1, 2); // 替换为 S bar = { 1, 2 };
+```
+
+是不是好像觉得也没啥意思了？毕竟不是什么很特殊的随便经常会用到的东西，我也在思考，`msvc`在预处理器这里给的扩展是很多的，到底要不要都提一下？
+
+没啥必要，看需求使用就是。
+
+---
+
+## 重载决议
+
+```cpp
+#include<iostream>
+void f(const int(&)[]) { puts("const int(&)[]"); }
+void f(const int(&)[2]) { puts("const int(&)[2]"); }
+void f(int(&&)[]) { puts("const int(&&)[]"); }
+
+int main() {
+    f({ 1,2,3 });
+    f({ 1,2 });
+}
+```
+
+`msvc`和`clang`编译正确，`gcc13`编译错误，很少见，真的很少见。
+
+怎么说呢？一般来说，都是`gcc`和`clang`会是一样的，很少会有不同（至少在本文，这是第二次）。
+
+
+
+---
+
+## 窄化转换
+
+
+
+---

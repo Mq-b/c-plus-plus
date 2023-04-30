@@ -1,19 +1,9 @@
-﻿#include <iostream>
-#include<exception>
+﻿#include<iostream>
+void f(const int(&)[]) { puts("const int(&)[]"); }
+void f(const int(&)[2]) { puts("const int(&)[2]"); }
+void f(int(&&)[]) { puts("const int(&&)[]"); }
 
-struct MyException :std::exception {
-	const char* data{};
-	MyException(const char* s) :data(s) { puts("MyException()"); }
-	~MyException() { puts("~MyException()"); }
-	char const* what()const noexcept{ return data; }
-};
-
-void f()try {
-	throw MyException("乐");
-}
-catch (const std::exception& e) {
-	std::cerr << e.what() << '\n';
-}
 int main() {
-	f();
+    f({ 1,2,3 });
+    f({ 1,2 });
 }
