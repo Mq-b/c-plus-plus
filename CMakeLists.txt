@@ -23,17 +23,17 @@ add_executable (Test1 "src/c++练习.ixx")
 #target_link_libraries(Test1 "C:/str/vcpkg/packages/fmt_x64-windows/lib/fmt.lib")
 
 #上面注释的是根据本地目录引入三方库fmt的方式，其实直接像下面这样直接使用vcpkg的也可以(但是必须都设置了环境变量)
-find_package(fmt CONFIG REQUIRED)
-target_link_libraries(Test1 fmt::fmt-header-only)
+#find_package(fmt CONFIG REQUIRED)
+#target_link_libraries(Test1 fmt::fmt-header-only)
 
-find_package(jsoncpp CONFIG REQUIRED)
-target_link_libraries(Test1 jsoncpp_lib)
+#find_package(jsoncpp CONFIG REQUIRED)
+#target_link_libraries(Test1 jsoncpp_lib)
 
-find_package(xlnt CONFIG REQUIRED)
-target_link_libraries(Test1 xlnt::xlnt)
+#find_package(xlnt CONFIG REQUIRED)
+#target_link_libraries(Test1 xlnt::xlnt)
 
 #find_package(GTest CONFIG REQUIRED)
 #target_link_libraries(Test1 PRIVATE GTest::gmock GTest::gtest GTest::gmock_main GTest::gtest_main)
 
-find_package(tinyxml CONFIG REQUIRED)
-target_link_libraries(Test1 PRIVATE unofficial-tinyxml::unofficial-tinyxml)
+#find_package(tinyxml CONFIG REQUIRED)
+#target_link_libraries(Test1 PRIVATE unofficial-tinyxml::unofficial-tinyxml)
