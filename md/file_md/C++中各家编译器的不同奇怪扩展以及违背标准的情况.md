@@ -24,6 +24,7 @@
   - [`#define`的问题](#define的问题)
   - [重载决议](#重载决议)
     - [总结](#总结-9)
+  - [`msvc`查找标识符的奇怪问题](#msvc查找标识符的奇怪问题)
 - [总结](#总结-10)
 
 
@@ -757,6 +758,68 @@ int main() {
 
 ---
 
+## `msvc`查找标识符的奇怪问题
+
+```cpp
+template<size_t n>
+struct X {
+	static const int n = X<n-1>::n+n;
+};
+template<>
+struct X<0> {
+	static const int n = 0;
+};
+```
+
+给出如上代码，你觉得是否可以正常通过编译呢？
+
+    我相信，如果你细心的话就已经发现了，这个非类型模板形参的名字，似乎和静态数据成员重名了。
+
+**都是`n`** 那么这是否有问题呢？的确，这就是本节内容的重点。
+
+此代码在`gcc`不可被编译，无法通过语法检查，但是在`msvc`，毫无问题，先说结论，这应该可以算作是一个`msvc`的扩展的问题。（如你有其他更清楚的看法也可以提出来）。
+
+**`gcc11`**编译器给出的提示如下:
+
+    main.cpp:1:10: error: 'size_t' has not been declared
+    1 | template<size_t n>
+      |          ^~~~~~
+    main.cpp:3:28: error: 'n' was not declared in this scope
+    3 |     static const int n = X<n-1>::n+n;
+      |                            ^
+    main.cpp:3:31: error: template argument 1 is invalid
+    3 |     static const int n = X<n-1>::n+n;
+      |                               ^
+    error: 'n' was not declared in this scope
+    3 |     static const int n = X<n-1>::n+n;
+      |                                    ^
+ 
+我们可以看到，主要无非就是表达`n`还没有被声明，似乎完全不在乎**非类型模板形参`n`**?
+
+其实倒也不是，如果你换一种写法:
+
+```cpp
+#include "iostream"
+template<size_t n>
+struct X{
+     static const int n=n;
+};
+```
+
+    main.cpp:4:29: error: declaration of 'const int n' shadows template parameter
+    4 |      static const int n=n;
+      |                             ^
+    main.cpp:2:10: note: template parameter 'n' declared here
+    2 | template<size_t n>
+      |          ^~~~~~
+
+意思无非是告诉我们，**“你不要再重复声明n了，n是一个模板形参，你看，你自己写在这里`template<size_t n>`”**
+
+相信看多了编译器提示的开发者也很清楚这种情况，显然编译器也不清楚你到底要干嘛，就是单纯不可以而已。没啥太多的参考价值。
+
+**扯了这么多似乎也的确有点废话了，你如果有更好的想法也可以提出来说说。**
+
 # 总结
 
 实际上本文暂时是这样的，后序还会看情况慢慢更新。毕竟说实在的，这种不同编译器的不同行为，数不胜数。
+
