@@ -25,6 +25,7 @@
   - [重载决议](#重载决议)
     - [总结](#总结-9)
   - [`msvc`查找标识符的奇怪问题](#msvc查找标识符的奇怪问题)
+  - [`msvc`有趣的返回值使用匿名结构体扩展](#msvc有趣的返回值使用匿名结构体扩展)
 - [总结](#总结-10)
 
 
@@ -818,6 +819,70 @@ struct X{
 相信看多了编译器提示的开发者也很清楚这种情况，显然编译器也不清楚你到底要干嘛，就是单纯不可以而已。没啥太多的参考价值。
 
 **扯了这么多似乎也的确有点废话了，你如果有更好的想法也可以提出来说说。**
+
+## `msvc`有趣的返回值使用匿名结构体扩展
+
+```cpp
+#include<iostream>
+struct { int max{},  min{}; } f() {
+	return { 2,1 };
+}
+
+int main() {
+	auto result = f();
+	std::cout << result.max << ' ' << result.min << '\n';
+}
+```
+
+运行结果:
+
+    2 1
+
+这段代码在`msvc`可以通过编译，在`gcc`和`clang`不可。
+
+其实这个扩展可以用来解决长期以来多返回值使用结构体的问题，在 **`C++17`** 以前，`std::optional`还未诞生的时候，大家多是用下面这种写法（不要说`std::tuple`，它用`std::get<N>`毫无可读性，太卢瑟了）：
+
+```cpp
+struct factor_t {
+		bool is_prime;
+		long factor;
+	};
+factor_t factor(long n) {
+	factor_t r{};
+	for (long i = 2; i <= n / 2; ++i) {
+		if (n % i == 0) {
+			r.is_prime = false;
+			r.factor = i;
+			return r;
+		}
+	}
+	r.is_prime = true;
+}
+```
+
+在`C++14`后，函数可以使用`auto`做返回值占位进行推导，那么倒是稍微好点，可以不用使用全局命名空间，写作下面这样：
+
+```cpp
+auto factor(long n) {
+    struct factor_t {
+		bool is_prime;
+		long factor;
+	};
+	factor_t r{};
+	for (long i = 2; i <= n / 2; ++i) {
+		if (n % i == 0) {
+			r.is_prime = false;
+			r.factor = i;
+			return r;
+		}
+	}
+	r.is_prime = true;
+}
+```
+
+定义在局部，稍微好一些，当然最好的还是使用`C++17`的 [**`std::optional`**](https://github.com/Mq-b/Cpp20-STL-Cookbook-src#82-stdoptional-%E7%AE%A1%E7%90%86%E5%8F%AF%E9%80%89%E5%80%BC) 了。
+
+**总而言之这个扩展是有一定的作用的，简化了一些写法，但是请清楚自己在写什么，不要在有跨平台需求的项目里使用如此写法。**
 
 # 总结
 
