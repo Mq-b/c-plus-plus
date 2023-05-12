@@ -1,9 +1,9 @@
-﻿#include<iostream>
-struct { int max{},  min{}; } f() {
-	return { 2,1 };
-}
+﻿#include <iostream>
 
 int main() {
-	auto result = f();
-	std::cout << result.max << ' ' << result.min << '\n';
+	using t = int;
+	t a = 1;
+	a.~t();
+	std::cout << a << '\n';
+	
 }
