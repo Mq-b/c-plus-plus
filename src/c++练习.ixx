@@ -1,9 +1,6 @@
 ﻿#include <iostream>
+#include<atomic>
 
 int main() {
-	using t = int;
-	t a = 1;
-	a.~t();
-	std::cout << a << '\n';
-	
+	std::atomic<int>n = 0;
 }
