@@ -1,6 +1,6 @@
 ﻿#include<coroutine>
 #include<iostream>
-#include<print>
+#include<format>
 
 struct CoRet{
 	struct promise_type {
@@ -35,8 +35,9 @@ struct Input{
 CoRet Guess(Note&note) {
 	int res = (rand() % 30) + 1;
 	Input input{note};
+
 	int g = co_await input;//暂停，跳转回到main
-	std::println("corutine: You guess {}", g);
+	std::cout<<std::format("corutine: You guess {}\n", g);
 
 	co_yield(res);//返回随机数值
 
@@ -46,14 +47,14 @@ int main() {
 	srand(time(nullptr));
 	Note note{};
 	auto ret = Guess(note);
-	std::println("main: make a guess ...");
+	std::cout<<std::format("main: make a guess ...\n");
 	note.guess = 10;
 	ret._h.resume();//回到协程
 
-	std::println("main: result is {}", ret._h.promise()._out);
+	std::cout<<std::format("main: result is {}\n", ret._h.promise()._out);
 
 	ret._h.resume();//回到协程 co_yield
 	if (ret._h.done()) {//协程执行完毕
-		std::println("main: the result is {}", ret._h.promise()._res);
+		std::cout<<std::format("main: the result is {}\n", ret._h.promise()._res);
 	}
 }

@@ -17,14 +17,14 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #link_directories(${LINK_DIR})
 
 # 将源代码添加到此项目的可执行文件,下面的文件有多少决定项目生成会运行多少个源文件
-add_executable (Test1 "src/467协程.cpp")
+add_executable (Test1 "src/c++练习.ixx" "src/468协程的小细节.cpp")
 
 # 告诉链接器共享库文件的位置，这样链接器就相当于知道了curl的实现
 #target_link_libraries(Test1 "C:/str/vcpkg/packages/fmt_x64-windows/lib/fmt.lib")
 
 #上面注释的是根据本地目录引入三方库fmt的方式，其实直接像下面这样直接使用vcpkg的也可以(但是必须都设置了环境变量)
-find_package(fmt CONFIG REQUIRED)
-target_link_libraries(Test1 fmt::fmt-header-only)
+#find_package(fmt CONFIG REQUIRED)
+#target_link_libraries(Test1 fmt::fmt-header-only)
 
 #find_package(jsoncpp CONFIG REQUIRED)
 #target_link_libraries(Test1 jsoncpp_lib)
