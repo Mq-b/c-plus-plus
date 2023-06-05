@@ -3,15 +3,15 @@
 
 struct promise;
 struct coroutine : std::coroutine_handle<promise>{
-    using promise_type = ::promise;//ĞèÒª½øĞĞÓĞÏŞ¶¨Ãû×Ö²éÕÒ ĞèÒªÕâ¸ö±ğÃû
+    using promise_type = ::promise;//éœ€è¦è¿›è¡Œæœ‰é™å®šåå­—æŸ¥æ‰¾ éœ€è¦è¿™ä¸ªåˆ«å
 };
 
-struct promise{//primise¾ÍÊÇpromise_type
-    coroutine get_return_object()//·µ»ØÖµÀàĞÍÒªÇó¿ÉÒÔÀàĞÍ::promise_type
+struct promise{//primiseå°±æ˜¯promise_type
+    coroutine get_return_object()//è¿”å›å€¼ç±»å‹è¦æ±‚å¯ä»¥ç±»å‹::promise_type
     {
         return { coroutine::from_promise(*this) };
     }
-    std::suspend_always initial_suspend() noexcept { return {}; }//×¢Òâ·µ»ØÀàĞÍ
+    std::suspend_always initial_suspend() noexcept { return {}; }//æ³¨æ„è¿”å›ç±»å‹
     std::suspend_always final_suspend() noexcept { return {}; }
     void return_void() {}
     void unhandled_exception() {}
@@ -27,33 +27,33 @@ struct S {
 void bad1() {
     S s{ 0 };
     coroutine h = s.f();
-    std::cout << "ÀÖºÇ\n";
-    //h.resume(); // Ğ­³Ì»Ö¸´²¢Ö´ĞĞÁË
+    std::cout << "ä¹å‘µ\n";
+    //h.resume(); // åç¨‹æ¢å¤å¹¶æ‰§è¡Œäº†
 
 }
 void bad3()
 {
-    coroutine h = [i = 0]() -> coroutine // Ò»¸ö lambda £¬Í¬Ê±Ò²ÊÇ¸öĞ­³Ì
+    coroutine h = [i = 0]() -> coroutine // ä¸€ä¸ª lambda ï¼ŒåŒæ—¶ä¹Ÿæ˜¯ä¸ªåç¨‹
     {
         std::cout << i << '\n';
         co_return;
-    }(); // Á¢¼´µ÷ÓÃ
-    std::cout << "ÀÖºÇ\n";
-    // lambda ±»Ïú»Ù
-    std::cout << std::boolalpha << h.done() << '\n';//Èç¹ûcoroutineµÄÄÇ¸öº¯ÊıµÄ·µ»ØÀàĞÍÊÇsuspend_never£¬ÄÇÃ´ÕâÀï»á´òÓ¡true£¬Ğ­³ÌÖ´ĞĞÍê±Ï
-    h.resume(); // ÊÍ·ÅºóÊ¹ÓÃÁË (anonymous lambda type)::i ±»Ö¸´ú¶ÔÏóµÄÉú´æÆÚ½áÊøºó»Ö¸´Ğ­³Ì£¬UB£¬Èç¹ûÊÇsuspend_never·µ»ØÀàĞÍ£¬ÄÇÃ´ÕâÀï»áÅ×³öÒì³£
+    }(); // ç«‹å³è°ƒç”¨
+    std::cout << "ä¹å‘µ\n";
+    // lambda è¢«é”€æ¯
+    std::cout << std::boolalpha << h.done() << '\n';//å¦‚æœcoroutineçš„é‚£ä¸ªå‡½æ•°çš„è¿”å›ç±»å‹æ˜¯suspend_neverï¼Œé‚£ä¹ˆè¿™é‡Œä¼šæ‰“å°trueï¼Œåç¨‹æ‰§è¡Œå®Œæ¯•
+    h.resume(); // é‡Šæ”¾åä½¿ç”¨äº† (anonymous lambda type)::i è¢«æŒ‡ä»£å¯¹è±¡çš„ç”Ÿå­˜æœŸç»“æŸåæ¢å¤åç¨‹ï¼ŒUBï¼Œå¦‚æœæ˜¯suspend_neverè¿”å›ç±»å‹ï¼Œé‚£ä¹ˆè¿™é‡Œä¼šæŠ›å‡ºå¼‚å¸¸
     h.destroy();
 }
 void good()
 {
-    coroutine h = [](int i) -> coroutine // i ÊÇÒ»¸öĞ­³ÌĞÎ²Î
+    coroutine h = [](int i) -> coroutine // i æ˜¯ä¸€ä¸ªåç¨‹å½¢å‚
     {
         std::cout << i;
         co_return;
     }(0);
-    std::cout << "ÀÖºÇ\n";//ÏÈ´òÓ¡Õâ¸ö£¬±íÊ¾ÕâÊÇ¶èĞÔÆô¶¯µÄĞ­³Ì
-    // lambda ±»Ïú»Ù
-    h.resume(); // Ã»ÓĞÎÊÌâ£¬ i ÒÑ¾­×÷Îª°´Öµ´«µİµÄ²ÎÊı±»¸´ÖÆµ½Ğ­³ÌÖ¡ÖĞ ²»»áUB£¬µ«ÊÇ·µ»ØÖµ¸Ä³Ésuspend_neverµÄ»°£¬ºÍbad3()ÊÇÒ»ÑùµÄÎÊÌâ
+    std::cout << "ä¹å‘µ\n";//å…ˆæ‰“å°è¿™ä¸ªï¼Œè¡¨ç¤ºè¿™æ˜¯æƒ°æ€§å¯åŠ¨çš„åç¨‹
+    // lambda è¢«é”€æ¯
+    h.resume(); // æ²¡æœ‰é—®é¢˜ï¼Œ i å·²ç»ä½œä¸ºæŒ‰å€¼ä¼ é€’çš„å‚æ•°è¢«å¤åˆ¶åˆ°åç¨‹å¸§ä¸­ ä¸ä¼šUBï¼Œä½†æ˜¯è¿”å›å€¼æ”¹æˆsuspend_neverçš„è¯ï¼Œå’Œbad3()æ˜¯ä¸€æ ·çš„é—®é¢˜
     h.destroy();
 }
 int main() {
@@ -63,6 +63,6 @@ int main() {
     puts("---");
     good();
 }
-//Ê¹ÓÃsuspend_never×öinitial_suspendµÄ·µ»ØÀàĞÍ¾Í»áÖ´ĞĞÍêĞ­³ÌÁË£¬¼´»áÏÈcout´òÓ¡0
-//Èç¹û½«·µ»ØÖµ¸Ä³Ésuspend_always£¬ÄÇÃ´±ØÈ»ÏÈ´òÓ¡¡°ÀÖºÇ¡±£¬Èç¹û²»Ê¹ÓÃh.resume();ÈÃĞ­³Ì»Ö¸´Ö´ĞĞ£¬ÄÇÃ´²»»á´òÓ¡0
-//Ğ­³ÌÖ»±£´æº¯ÊıÕ»ÀïµÄ¶ÔÏó ²»±£´æthis
+//ä½¿ç”¨suspend_neveråšinitial_suspendçš„è¿”å›ç±»å‹å°±ä¼šæ‰§è¡Œå®Œåç¨‹äº†ï¼Œå³ä¼šå…ˆcoutæ‰“å°0
+//å¦‚æœå°†è¿”å›å€¼æ”¹æˆsuspend_alwaysï¼Œé‚£ä¹ˆå¿…ç„¶å…ˆæ‰“å°â€œä¹å‘µâ€ï¼Œå¦‚æœä¸ä½¿ç”¨h.resume();è®©åç¨‹æ¢å¤æ‰§è¡Œï¼Œé‚£ä¹ˆä¸ä¼šæ‰“å°0
+//åç¨‹åªä¿å­˜å‡½æ•°æ ˆé‡Œçš„å¯¹è±¡ ä¸ä¿å­˜this

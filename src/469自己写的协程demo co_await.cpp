@@ -3,29 +3,29 @@
 
 struct promise;
 struct coroutine : std::coroutine_handle<promise> {
-    using promise_type = ::promise;//ĞèÒª½øĞĞÓĞÏŞ¶¨Ãû×Ö²éÕÒ ĞèÒªÕâ¸ö±ğÃû
+    using promise_type = ::promise;//éœ€è¦è¿›è¡Œæœ‰é™å®šåå­—æŸ¥æ‰¾ éœ€è¦è¿™ä¸ªåˆ«å
 };
 
-struct promise {//primise¾ÍÊÇpromise_type
-    coroutine get_return_object()//·µ»ØÖµÀàĞÍÒªÇó¿ÉÒÔÀàĞÍ::promise_type
+struct promise {//primiseå°±æ˜¯promise_type
+    coroutine get_return_object()//è¿”å›å€¼ç±»å‹è¦æ±‚å¯ä»¥ç±»å‹::promise_type
     {
         return { coroutine::from_promise(*this) };
     }
-    std::suspend_never initial_suspend() noexcept { return {}; }//×¢Òâ·µ»ØÀàĞÍ
+    std::suspend_never initial_suspend() noexcept { return {}; }//æ³¨æ„è¿”å›ç±»å‹
     std::suspend_always final_suspend() noexcept { return {}; }
     void return_void() {}
     void unhandled_exception() {}
 };
-struct Note { int guess; };//ÓÃÀ´Ğ­³Ì´«µİÖµ
+struct Note { int guess; };//ç”¨æ¥åç¨‹ä¼ é€’å€¼
 struct Input {
     Note& _in;
     bool await_ready() {
-        return false;//Èç¹û¸Ä³Étrue£¬ÄÇÃ´²»»áÔİÍ£Ğ­³Ì»áÖ´ĞĞ½áÊø£¬ÄÇÃ´mainº¯ÊıµÄresume()¾Í»áÅ×³öÒì³£
+        return false;//å¦‚æœæ”¹æˆtrueï¼Œé‚£ä¹ˆä¸ä¼šæš‚åœåç¨‹ä¼šæ‰§è¡Œç»“æŸï¼Œé‚£ä¹ˆmainå‡½æ•°çš„resume()å°±ä¼šæŠ›å‡ºå¼‚å¸¸
     }
     void await_suspend(std::coroutine_handle<coroutine::promise_type>h) {
-        //Ğ­³ÌÔİÍ£ºóÌø×ªµ½ÄÄ void·µ»ØÀàĞÍÊÇÔİÍ£ºóÌø×ªµ½µ÷ÓÃµ½µ÷ÓÃÕß
+        //åç¨‹æš‚åœåè·³è½¬åˆ°å“ª voidè¿”å›ç±»å‹æ˜¯æš‚åœåè·³è½¬åˆ°è°ƒç”¨åˆ°è°ƒç”¨è€…
     }
-    int await_resume() { return _in.guess; }//µ÷ÓÃco_waitµÄ·µ»ØÖµ
+    int await_resume() { return _in.guess; }//è°ƒç”¨co_waitçš„è¿”å›å€¼
 };
 
 coroutine f(Note& note) {
