@@ -1,4 +1,4 @@
-﻿#include<coroutine>
+#include<coroutine>
 #include<iostream>
 #include<format>
 

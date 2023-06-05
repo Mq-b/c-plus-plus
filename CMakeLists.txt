@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 23)
 
 #设置exe的输出目录${PROJECT_SOURCE_DIR}就是当前顶级目录，然后创建bin文件夹里生成exe
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/source-charset:utf-8>")#指定源字符集UTF8
 
 #set(INC_DIR C:/str/vcpkg/packages/fmt_x64-windows/include)
 
