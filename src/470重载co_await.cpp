@@ -25,12 +25,10 @@ struct promise {
 template<typename T>
 struct Future {
 	T n;
-	Future(T v) :n{ v } { puts("Future"); }
-	~Future() { puts("~Future"); }
 	bool await_ready() {
 		return false;
 	}
-	void await_suspend(std::coroutine_handle<coroutine::promise_type>h) {
+	void await_suspend(std::coroutine_handle<>h) {
 		std::thread thread{[this, h] {//创建异步任务
 			int t = this->n;
 			for (int i = 1; i < t; ++i)
@@ -63,4 +61,3 @@ int main() {
 	std::cout << std::boolalpha << result.done() << '\n';
 	std::cout << "co_yield value: " << result.promise().n << '\n';
 }
-//我只要暂停协程回到调用者就会析构我的局部对象
