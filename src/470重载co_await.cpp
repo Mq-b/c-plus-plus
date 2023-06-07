@@ -1,6 +1,7 @@
 #include <coroutine>
 #include <iostream>
 #include<thread>
+#include<future>
 #include<chrono>
 using namespace std::literals;
 
@@ -10,6 +11,7 @@ struct coroutine : std::coroutine_handle<promise> {
 };
 
 struct promise {
+	std::future<int>future;
 	int n;
 	coroutine get_return_object()
 	{
@@ -28,14 +30,14 @@ struct Future {
 	bool await_ready() {
 		return false;
 	}
-	void await_suspend(std::coroutine_handle<>h) {
-		std::thread thread{[this, h] {//创建异步任务
+	void await_suspend(std::coroutine_handle<promise>h) {
+		h.promise().future = std::async([this, h] {
 			int t = this->n;
 			for (int i = 1; i < t; ++i)
 				this->n *= i;
 			if (!h.done())h.resume();//执行完任务之后重新启动协程
-		}};
-		thread.detach();
+			return n;
+			});
 	}
 	T await_resume() { return n; }
 };
@@ -56,7 +58,7 @@ coroutine f() {
 int main() {
 	auto result = f();
 	std::cout << "main\n";
-	std::this_thread::sleep_for(100ms);
+	result.promise().future.wait();//也可以用get()在main函数直接获取值，无所谓
 	result.resume();
 	std::cout << std::boolalpha << result.done() << '\n';
 	std::cout << "co_yield value: " << result.promise().n << '\n';
