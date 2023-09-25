@@ -1,7 +1,5 @@
 #include<iostream>
 
-#include<iostream>
-
 struct X {
 	X() { puts("X"); }
 	~X() { puts("~X"); }

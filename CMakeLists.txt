@@ -2,6 +2,9 @@
 
 set(CMAKE_CXX_STANDARD 20)
 
+#file(GLOB_RECURSE srcs CIBFIGURE_DEPENDS "./*.cpp")获取当前目录所有后缀为.cpp的，存储在srcs变量中
+#message("目录文件：${srcs}")//打印
+
 #设置exe的输出目录${PROJECT_SOURCE_DIR}就是当前顶级目录，然后创建bin文件夹里生成exe
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/source-charset:utf-8>")#指定源字符集UTF8
