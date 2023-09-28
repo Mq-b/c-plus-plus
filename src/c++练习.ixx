@@ -1,11 +1,6 @@
 #include <iostream>
-#include <memory>
-consteval void f(int n)
-{
-    constexpr int v = n;
-}
+#include "lib/array.hpp"
 
-int main()
-{
-    f(1);
+int main(){
+   
 }
